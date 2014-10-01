@@ -1,0 +1,168 @@
+---
+title: "RStudio"
+author: "Jonathan Marshall"
+date: "2 October 2014"
+output:
+  beamer_presentation: default
+  ioslides_presentation:
+    fig_retina: null
+    incremental: yes
+  slidy_presentation:
+    highlight: espresso
+    incremental: yes
+---
+
+## Overview of todays session
+
+- What is RStudio?
+- How might we use it at Massey?
+- A **shiny** interlude...
+- What is R Markdown?
+- Your turn - let's play!
+
+## An integrated development environment for R
+
+- Sits on top of R
+- Adds convenience
+- Is more attractive than plain R
+- The integrated environment gives added functionality
+
+## An integrated development environment for R
+
+- R Console
+- Environment, workspace, variables
+- Data viewer
+- History
+- Plots
+- Package manager
+- Help system
+- Text editor
+- Debugger
+
+## Improved console
+
+Tab auto-complete with drop-down lists for commands, data frame names etc.
+
+<div class="centered">
+![RStudio console](figures/rstudio_console.png)
+</div>
+
+## Environment overview
+
+Environment overview showing data frames, variables, functions. Import data-sets and clear workspace with a click.
+
+<div class="centered">
+![RStudio console](figures/rstudio_env.png)
+</div>
+
+## Data viewer
+
+Integration of `View()` function into a tab for viewing data.
+
+<div class="centered">
+![RStudio console](figures/rstudio_data.png)
+</div>
+
+## History
+
+History is integrated, and you can copy commands to the console or editor window with a click.
+
+<div class="centered">
+![RStudio console](figures/rstudio_hist.png)
+</div>
+
+## Plots 
+
+Can go backward and forward through plot history.
+
+<div class="centered">
+![RStudio console](figures/rstudio_plots.png)
+</div>
+
+## Plots
+
+<div class="centered">
+![RStudio console](figures/rstudio_plot2.png)
+</div>
+
+## Package manager
+
+Can load, unload, install, remove, update packages, and get package help with a click.
+
+<div class="centered">
+![RStudio console](figures/rstudio_package.png)
+</div>
+
+## Help system
+
+Search and history are incorporated.
+
+<div class="centered">
+![RStudio console](figures/rstudio_help.png)
+</div>
+
+## Text editor
+
+Syntax highlighting
+
+<div class="centered">
+![RStudio console](figures/rstudio_edit1.png)
+</div>
+
+## Text editor
+
+Tab auto-complete, auto-indentation.
+
+<div class="centered">
+![RStudio console](figures/rstudio_edit2.png)
+</div>
+
+## Text editor
+
+Jump to definition/help etc.
+
+<div class="centered">
+![RStudio console](figures/rstudio_edit3.png)
+</div>
+
+## Text editor
+
+Function and variable extraction.
+
+<div class="centered">
+![RStudio console](figures/rstudio_edit4.png)
+</div>
+
+## Text editor
+
+Function and variable extraction.
+
+<div class="centered">
+![RStudio console](figures/rstudio_edit5.png)
+</div>
+
+## Debugging
+
+Add breakpoints just by clicking on the line in the editor.
+
+On error, automatically grab traceback and re-run with debug.
+
+<div class="centered">
+![RStudio console](figures/rstudio_debug.png)
+</div>
+
+## Debugging
+
+Step over/in, with traceback, variable state etc.
+
+<div class="centered">
+![RStudio console](figures/rstudio_debug2.png)
+</div>
+
+## But wait, there's more...
+
+- Integration of source control (e.g. git)
+- Integrated package development
+- Package deployment (e.g. via github)
+- Dynamic documents using R Markdown
+- And other shiny stuff...

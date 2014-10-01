@@ -1,0 +1,56 @@
+---
+title: "Report on lamb birthweight"
+author: "Your name goes here"
+date: "2 October 2014"
+output: html_document
+---
+
+```{r Read data, echo=FALSE}
+# read in the data
+lambs <- read.csv("http://www.massey.ac.nz/~jcmarsha/rstudio/lambs.csv")
+```
+
+----
+
+Introduction
+------------
+
+Lamb birth weight is the single largest influence on survival of lambs in the first few days of life. This report assesses whether feeding regime of the ewe or shearing treatment effect the birthweight of the lambs.
+
+In a trial at Massey University in the late 1990s, mixed-aged, Border Leicester x Romney (n = 160) ewes were randomly allocated after preganancy diagnosis to a factorial experiment involving two shearing treatments (shorn on day 70 vs not); two pregnancy ranks (single or twin); and four feeding regimes (HH, HM, MH, MM), where the first letter refers to feed during days 70-101 of pregancy, and the second during days 102-140. The M (maintenance) feeding group were fed at a level calculated to maintain maternal conceptus-free weight, while the H (high) feeding group were fed to gain around 100g per day above this during the relevant period.
+
+All up, 204 lambs were included in the study.
+
+Exploratory Data Analysis
+-------------------------
+
+Boxplots of birthweight by sex, birth rank, feeding regime and shearing status are presented below.
+
+```{r Univariate plots, fig.width=5, fig.height=4}
+plot(BirthWeight ~ Sex, data=lambs, xlab="Birthweight (kg)", main="Birth weight of lambs", horizontal=T)
+```
+
+Males appear on average heavier than females...
+
+**TODO: Complete this section**
+
+Multivariate Analysis
+---------------------
+
+A linear model for birthweight was constructed to assess the effect of feeding regime and shearing status, adjusted for sex and birth rank.  The model was
+$$
+\mathsf{E}[Y_{ijkl}] = Sex_i + Rank_j + Feed_k + Shorn_l
+$$
+where $i, j, k, l$ represent the levels of Sex, Rank, Feed and Shorn respectively.  The model output is below.
+
+**TODO: Complete this section**
+
+```{r Linear model,echo=FALSE}
+# fit linear model, output ANOVA table
+```
+
+There were significant differences between sex ($P=$) ...
+
+A summary of the effects is shown in the table below.
+
+**TODO: Complete this section**

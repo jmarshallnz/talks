@@ -1,0 +1,43 @@
+---
+title: "Example report on lamb birth weights"
+author: "Jonathan Marshall"
+date: "2 October 2014"
+output: html_document
+---
+
+Lamb birth weight is the single largest influence on survival of lambs in the first few days of life.  For this assignment we'll be looking at a dataset on the birth weight of lambs collected during a trial at Massey in late 1990s[^trialref].
+
+[^trialref]: Trial 5 from P.R.Kenyon, S.T.Morris, D.K.Revell and S.N.McCutcheon (1999) *Improving lamb birthweight through mid- to late-pregnancy shearing: a review of recent studies.* Proc. of NZ Soc. An. Prod **59**:70--72.
+
+Mixed-aged, Border Leicester x Romney ($n=160$) ewes were randomly allocated after preganancy diagnosis to a factorial experiment involving two shearing treatments (shorn on day 70 vs not); two pregnancy ranks (single or twin); and four feeding regimes (HH, HM, MH, MM), where the first letter refers to feed during days 70-101 of pregancy, and the second during days 102-140.  The M (maintenance) feeding group were fed at a level calculated to maintain maternal conceptus-free weight, while the H (high) feeding group were fed to gain around 100g per day above this during the relevant period.
+
+Of particular interest is how feed management and shearing during pregnancy influence lamb birth weight.  The data set consists of the following variables from 204 lambs.
+
+Variable     Description
+--------     -----------
+DamID        Identifying number for the ewe.
+LambID       Identifying number for the lamb.
+DateBirth    Date of birth of the lamb.
+Rank         Whether the lamb was Single or a Twin.
+Sex          The sex of the lamb (Male, Female).
+BirthWeight  The weight of the lamb at birth (in kg).
+Feed         The feed regime of the ewe (HH, HM, MH, MM).
+Shorn        Whether the ewe was shorn during pregnancy (Yes, No).
+--------     -----------
+
+Create an R Markdown document that:
+
+1. Provides plots (e.g. boxplots) to assess differences in Birthweight between sexes, birth rank, feeding regime and shearing status.
+
+2. Fits a multivariate linear model to assess whether the feeding regime and shearing status of the ewes are important to birthweight of their lambs.
+
+3. Assesses whether the effects (if any) of feeding regime or shearing status differ between twins and singles.
+
+4. Provides an estimate, with confidence interval, of the average birthweight of a male twin lamb born to a shorn ewe on the HM treatment.
+
+5. Provides a table of the linear model coefficients, standard errors and P-values using `xtable` (hint: add `results="asis"` to the R code block, and print the table with `type="html"`.
+
+A template R markdown document to get you started is available here:
+
+[template.Rmd](template.Rmd)
+

@@ -1,0 +1,93 @@
+---
+title: "Debugging in RStudio"
+author: "Jonathan Marshall"
+date: "2 October 2014"
+output: html_document
+---
+
+In this exercise we'll look at debugging R using the RStudio integration.
+
+We'll be debugging some code that I wrote (incorrectly!) for simple boundary correction of a univariate kernel density estimator.
+
+A kernel density estimator is a way to estimate an unknown density function $f$ from which we have drawn a sample $X = {x_1, x_2, \ldots x_n}$ of size $n$.  Given the sample $X$, we estimate $f$ using
+$$
+\hat{f}(x) = \frac{1}{n}\sum_{i=1}^n K_h(x - x_i) 
+$$
+where $K_h$ is a kernel function with associated bandwidth $h$.  This estimator can be shown to be consistent and has bias of order $O(h^2)$ as $n\rightarrow \infty$ in the case where $f$ has support larger than the range of $X$.
+
+However, if the support of $f$ is constrained, at the boundaries $\hat{f}$ will be not only biased, but will be inconsistent, as points close to the boundary will have some of the weight of the kernel function $K_h$ fall outside the support, thus when $\hat{f}$ is truncated to the known support, points close to the boundary will have less weight than others.  In the simple case of a single boundary (e.g. at $x=0$) it can be shown that $\mathsf{E}[\hat{f}] = f/2$ in the limit at $n \rightarrow 0$.
+
+A simple correction to this is to divide the estimate $\hat{f}$ by the integral of the kernel $K_h$ centered at $x$ over the support.  i.e.
+$$
+b(x) = \int_{\mathsf{supp}(f)} K_h(z - x)dz.
+$$
+For the gaussian univariate kernel, $b(x)$ is just an application of `pnorm`, so relatively trivial to implement.
+
+However, a few common R coding errors has meant that I didn't get it right!
+
+[My first attempt can be found here](density_bc.R)
+
+Download and load it up into R studio, then hit the `Source` button to source the file so R knows about the function. Then work through the following points.
+
+1. By default, it applies no boundary correction as the limits are set at `x0=-Inf` and `x1=Inf`.  Try running the function on some uniform data as follows
+    `r ''````
+    x <- runif(100)
+    d1 <- density(x)
+    d2 <- density_bc(x)
+    plot(d1)
+    lines(d2, col="red")
+    ```
+
+    This should result in no red, as I had an error in the code.
+
+2.  Try debugging this by placing a breakpoint (click in the inner margin to the left of the line number, or use `Shift F9` while on the line) next to the `density(x)` line in the file.  Then re-run the line `d2 <- density_bc(x)`.  You'll then be in the debugger.  Step through the code using the Next button (or `F10`).  At any point you can evaluate the values of the local variables in the usual way.  You can also change variables if you like (or run any other R functions on them).
+
+3.  The first thing you should notice is that I incorrectly used `&&` when I should have used the component-wise `&` operator.  Fix that up, stop the debugger (`F8`), re-source the file (`Ctrl S`) and re-run the `d2 <- density_nc(x)`.  If you hit the breakpoint, just hit Continue (`Shift F5`) to continue.  Hopefully it should give you something sensible now!
+
+4.  Now let's run the same test, this time restricting our density estimate to the interval $[0,1]$, the support of $f$ as follows
+
+    `r ''````
+    x <- runif(100)
+    d1 <- density(x)
+    d2 <- density_bc(x, 0, 1)
+    plot(d1)
+    lines(d2, col="red")
+    ```
+    
+    You should notice that it still isn't right - it isn't restricting the range of `x` at all!  Debug it again and fix up the further issue with the computation of `inside`.  Once done, you should get it correctly restricted to between 0 and 1.
+
+5.  You should notice, however, that the estimate still doesn't look right - it should look relatively flat, like the uniform distribution we sampled `x` from.  Debug further to figure out what is going wrong.
+
+6.  Once you have it all working, you might think we've got a pretty good function.  However, there's still problems.  In particular, it's not very robust.  Make sure you remove your breakpoint before continuing, then try this
+
+    `r ''````
+    x[50] <- NA
+    d1 <- density_bc(x)
+    ```
+    Bam!  You should hit an error.  Notice that RStudio gives you some options.  Click `Show Traceback` to see the call stack (the order of function calls).  Click `Rerun with Debug` to re-run it.  You'll see it's dying in the `density` function as `x` contains missing values.  A simple way to fix this up is to notice that `density` has a `na.rm` parameter available to it.  Fix it up and re-run.
+
+7.  Let's try testing robustness further with
+
+    `r ''````
+    x <- rexp(100, 0.1)
+    d1 <- density(x)
+    d2 <- density_bc(x, 0, NA)
+    plot(d1)
+    liens(d2, col="red")
+    ```
+
+    This will fail - figure out why using breakpoints, and fix it up so that both `x0` and `x1` might be able to take `NA` (and perhaps `NULL`?) parameters.
+
+8.  Finally, we'd expect the function to work even if end up with points outside the support of $f$.  Try this:
+
+    `r ''````
+    x <- runif(100)
+    d1 <- density(x)
+    d2 <- density_bc(x, 0, 0.5)
+    plot(d1)
+    lines(d2, col="red")
+    ```
+    
+    Figure out why it's failing, and fix it up.
+
+Well done - you debuggered it!

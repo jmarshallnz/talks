@@ -1,0 +1,14 @@
+---
+title: "RStudio and R Markdown tutorial"
+author: "Jonathan Marshall"
+date: "2 October 2014"
+output: html_document
+---
+
+Things for you to do
+
+[Produce a report](report.html)
+
+[Play with debugging](debugging.html)
+
+[Have a go at shiny](shiny.html)

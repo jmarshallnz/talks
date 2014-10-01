@@ -1,0 +1,37 @@
+---
+title: "A shiny example"
+author: "Jonathan Marshall"
+date: "2 October 2014"
+output: html_document
+---
+
+In this exercise we'll try our hand at altering a shiny app.
+
+You may need to install the `shiny` package to get this to work (not sure if the lab machines have it.)  If so, the easiest way is as follows
+
+    `r ''````
+    setInternet2() # only applies on windows
+    library(devtools)
+    install_github("rstudio/shiny")
+    ```
+
+We're going to alter the K-means shiny app (originally written by Joe Cheng from RStudio) to see how it all works.  Grab both the following files
+
+http://www.massey.ac.nz/~jcmarsha/rstudio/kmeans/ui.R  
+http://www.massey.ac.nz/~jcmarsha/rstudio/kmeans/server.R
+
+and copy them to the same folder on your computer.  Load them both up into RStudio.  Try running it by hitting the `Run App` button to check everything is working.
+
+Now we're going to alter it.  Try the following:
+
+1. Notice that if you select the `Species` field you get an error, so first thing to do is restrict the options in the `selectInput` to the numeric measures.  This can be done in `ui.R`.  Check it all works.
+
+2. Try changing the numeric input field for the number of clusters to a slider instead.
+
+3. Add some text output below the plot on the right with the K-means output.  You can do this using the `verbatimTextOutput` function in `ui.R` which can then be filled using a `renderPrint` function in `server.R`
+
+4. Try using a `tabsetPanel` so that the plot and text output on the right are contained in tabs, rather than being one under the other.
+
+5. Have a play around with other stuff!  e.g. it may be useful to see the percent variation explained by the clustering in a line of text under the plot? See the `renderText` function for that.
+
+
