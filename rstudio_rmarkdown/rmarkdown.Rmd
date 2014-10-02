@@ -3,9 +3,9 @@ title: "R Markdown"
 author: "Jonathan Marshall"
 date: "2 October 2014"
 output:
-  beamer_presentation: default
   ioslides_presentation:
     fig_retina: null
+  beamer_presentation: default
   slidy_presentation:
     highlight: espresso
 ---
@@ -28,13 +28,13 @@ rinline <- function(code){
 
 ## The tools we use
 
-> - Code + Narrative = Report
+> - Code + Writeup = Report
 > - Computing language (R) and authoring language (??).
 > - The authoring language could be:
 >     - MS Word, OpenOffice
 >     - HTML
 >     - LaTeX
-> - If we change the code, we may need to also change the narrative.
+> - If we change the code, we may need to also change the writeup.
 > - Two (or more) files to maintain.
 
 ## Existing solutions
@@ -66,12 +66,6 @@ A numbered list describing the method.
 \end{enumerate}
 ```
 > - The content is obscured by the markup
-
-## Ducks or dogs?
-
-<div class="centered">
-![Ducks or dogs?](figures/ducks_are_dogs.jpg)
-</div>
 
 ## A Markdown example
 
@@ -150,7 +144,7 @@ The average speed is `r mean(cars$speed)`
 ## A single document to rule them all
 
 > - Place analysis in R codeblocks.
-> - Need only one document for both narrative and code.
+> - Need only one document for both writeup and code.
 > - Can share that (and data) for reproducible research.
 > - Easy to alter should analysis change - it's a single file.
 > - Output to
