@@ -1,0 +1,84 @@
+---
+title: "Source Attribution"
+author: "Jonathan Marshall"
+date: "Friday, May 29, 2015"
+output:
+  ioslides_presentation:
+    css: css/ioslides.css
+    logo: figures/IDReC_identity_final_adj2.png
+    widescreen: yes
+---
+
+## {.flexbox .vcenter .emphasised .centered}
+
+Given a human case, which source did it come from?
+
+## Genetic diversity (MLST)
+
+<div class="centered">
+![All humans](figures/mlst1.png)
+</div>
+
+## Genetic diversity (2005-2007)
+<div class="centered">
+![2005-2007](figures/mlst_Before.png)
+</div>
+
+## Genetic diversity (2008-2014)
+<div class="centered">
+![2008-2014](figures/mlst_After.png)
+</div>
+
+## Genetic diversity
+<div class="centered">
+![All humans](figures/mlst1.png)
+</div>
+
+## Genetic diversity (Urban)
+<div class="centered">
+![Urban dwellers](figures/mlst_Urban.png)
+</div>
+
+## Genetic diversity (Rural)
+<div class="centered">
+![Rural dwellers](figures/mlst_Rural.png)
+</div>
+
+## Genetic diversity
+<div class="centered">
+![All humans](figures/mlst1.png)
+</div>
+
+## Genetic diversity (Urban 2005-2007)
+<div class="centered">
+![Urban 2005-2007](figures/mlst_UrbanBefore.png)
+</div>
+
+## Genetic diversity (Urban 2008-2014)
+<div class="centered">
+![Urban 2008-2014](figures/mlst_UrbanAfter.png)
+</div>
+
+## Genetic diversity (Rural 2005-2007)
+<div class="centered">
+![Rural 2005-2007](figures/mlst_RuralBefore.png)
+</div>
+
+## Genetic diversity (Rural 2008-2014)
+<div class="centered">
+![Rural 2008-2014](figures/mlst_RuralAfter.png)
+</div>
+
+## Has poultry changed? (2005-2007)
+<div class="centered">
+![Poultry 2005-2007](figures/mlst_poultry_Before.png)
+</div>
+
+## Has poultry changed? (2008-2014)
+<div class="centered">
+![Poultry 2008-2014](figures/mlst_poultry_After.png)
+</div>
+
+## {.flexbox .vcenter .centered}
+
+https://github.com/jmarshallnz/talks
