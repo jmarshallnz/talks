@@ -1,0 +1,136 @@
+---
+title: "Dynamic source attribution in New Zealand"
+author: "Jonathan Marshall"
+date: "2 November 2015"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+library(knitr)
+opts_chunk$set(echo=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
+sts = read.csv("data/st_counts.csv")
+```
+
+# Determine the source of infection for human cases
+
+## New Zealand campylobacteriosis cases
+
+*TODO: dygraph/timeseries of NZ/Manawatu cases*
+
+## Hypotheses
+
+*TODO: possibly split with a slide visualising data for each question*
+
+- Are some genotypes more likely to cause human disease than others?
+
+- Does the proportion of human cases attributed to each source change seasonally?
+
+- Is the intervention in the poultry industry related to the drop in the number of cases after 2007?
+
+- Is the proportion of human cases related to rurality?
+
+## Data
+
+*TODO: Map of where the Manawatu is*
+
+*TODO: Overview of data from Manawatu*
+
+## MLST distribution of human cases
+
+```{r, mlst dist human, fig.width=8.5}
+# find the top 14 sequence types
+par(mar=c(4,4,0,2))
+top20 = order(-sts$Human)[1:20]
+barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=c(rep("lightblue", 20), "grey90"), border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+```
+
+## MLSTs are source specific
+
+```{r, source specific mlst, fig.width=7}
+ST_to_plot = c(474, 61, 50, 2381)
+par(mfrow=c(2,2), mar=c(4,3,1,1)) # TODO: mgp?
+for (st in ST_to_plot) {
+  bp = sts %>% filter(ST == st) %>% select(Poultry, Ruminants, Other, Water) %>% as.matrix
+  barplot(bp, col="lightblue", border=NA, yaxt="n", cex.names = 0.9, las=1, col.axis="grey50", ylim=c(0,75))
+#  x = unlist(par()["mfg"])[2]
+  axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+#  text(ifelse(x == 1, 5, 0.2), 70, st, col = "grey50", cex = 2, adj=c(ifelse(x == 1, 1, 0), 0.5))
+  title(paste("ST",st), col.main="grey50", cex.main=1.3)
+}
+```
+
+# Modelling
+
+## Modelling overview
+
+- Two R packages are in development.
+
+- **sourceR** focuses on inferring whether some genotypes are more likely to cause
+human disease than others, and what influence that has on attribution.
+
+- **islandR** focuses on combining genomic models for the likelihood of observing a genotype from each source, with a model describing the likelihood of human disease from sources given covariate information from each case.
+
+## sourceR
+
+- Developed at Massey with Poppy Miller and Chris Jewell.
+
+- Generalises the modified Hald model of Mullner et. al. *TODO: Add citation as footnote*
+
+- Models human case numbers of each genotype in terms of the relative frequency of
+observing each genotype on each source, source-level effects, and type effects.
+
+## sourceR: Model
+
+$$
+\begin{aligned}
+Y_{itl} &\sim \mathsf{Poisson}(\lambda_{itl})\\
+\lambda_{itl} &= q_i \sum_j a_{jtl} p_{ijt}
+\end{aligned}
+$$
+
+- $a_{jtl}$ captures propensity of source $j$ to act as a vehicle for disease at time $t$ in location $l$.
+- $p_{ijt}$ is the relative occurrence of type $i$ on source $j$ at time $t$.
+- $q_i$ captures propensity of genotype $i$ to be over-represented in human cases.
+
+## sourceR: Output
+
+*TODO: Heatmap/boxplot showing which ST are more likely to cause human disease*
+
+## islandR
+
+- Developed at Massey.
+
+- Key idea: split probability of human case into
+
+    - Term incorporating genomic information
+    - Term involving covariate information for the case
+
+- The asymmetric Island model from D. Wilson *TODO: Add citation as footnote* is used as the genomic model.
+
+- A time-series model is used to add covariate information from each human case.
+
+## Overview of islandR model
+
+*TODO: Show how P(human | ST, location, time) splits up*
+
+## Overview of estimation (MCMC)
+
+*TODO: Add very general info on MCMC - this is first slide to drop for CHRO?*
+
+## Results
+
+*TODO: Plot of attribution proportions through time, per source, per urban/rural*
+
+*TODO: Plot of attribution totals through time, per source, per urban/rural*
+
+*TODO: Overall summary of results*
+
+## Summary
+
+- Two R packages on the way, **sourceR** and **islandR**
+
+- 
