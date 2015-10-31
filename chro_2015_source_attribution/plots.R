@@ -68,6 +68,11 @@ writeSpatialShape(us, "test.shp")
 
 
 # attribution mapping
+attribution = read.csv("~/data/R/islandR/attribution.csv")
+attribution = attribution %>% mutate(Year = (Time - 1) %/% 12 + 2005, Month = as.factor(Month))
+attribution = attribution %>% left_join(humans %>% select(-Date))
+write.csv(attribution, "data/attribution.csv", row.names=FALSE)
+
 attribution = read.csv("data/attribution.csv")
 par(mfrow=c(4,1), mar=c(4,4,2,2))
 for (src in levels(attribution$Source)) {
@@ -77,14 +82,29 @@ for (src in levels(attribution$Source)) {
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=paste(d$Source[1], "Urban", sep=" - "))
   polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col="grey80", border=NA)
   lines(times, d$mu[times], lwd=2)
-  
+
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=paste(d$Source[1], "Rural", sep=" - "))
   polygon(c(times, rev(times)), c(d$ui[times+n_times], rev(d$li[times+n_times])), col="grey80", border=NA)
   lines(times, d$mu[times+n_times], lwd=2)
 }
 
-# TODO1: Add cases per month to this and produce totals plots.
+par(mfrow=c(4,1), mar=c(4,4,2,2))
+for (src in levels(attribution$Source)) {
+  d = attribution[attribution$Source == src,]
+  mu = d$mu * d$Count
+  li = d$li * d$Count
+  ui = d$ui * d$Count
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=paste(d$Source[1], "Urban", sep=" - "))
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col="grey80", border=NA)
+  lines(times, mu[times], lwd=2)
 
-# TODO2: Convert to dygraph?
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=paste(d$Source[1], "Rural", sep=" - "))
+  polygon(c(times, rev(times)), c(ui[times+n_times], rev(li[times+n_times])), col="grey80", border=NA)
+  lines(times, mu[times+n_times], lwd=2)
+}
 
-# TODO3: Map using leaflet?
+# TODO: Convert to dygraph?
+
+# TODO: Map using leaflet?
