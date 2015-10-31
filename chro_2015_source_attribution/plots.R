@@ -65,3 +65,26 @@ plot(map.shp)
 
 u = unionSpatialPolygons(map.shp, rep(1, length(map.shp)))
 writeSpatialShape(us, "test.shp")
+
+
+# attribution mapping
+attribution = read.csv("data/attribution.csv")
+par(mfrow=c(4,1), mar=c(4,4,2,2))
+for (src in levels(attribution$Source)) {
+  d = attribution[attribution$Source == src,]
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=paste(d$Source[1], "Urban", sep=" - "))
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col="grey80", border=NA)
+  lines(times, d$mu[times], lwd=2)
+  
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=paste(d$Source[1], "Rural", sep=" - "))
+  polygon(c(times, rev(times)), c(d$ui[times+n_times], rev(d$li[times+n_times])), col="grey80", border=NA)
+  lines(times, d$mu[times+n_times], lwd=2)
+}
+
+# TODO1: Add cases per month to this and produce totals plots.
+
+# TODO2: Convert to dygraph?
+
+# TODO3: Map using leaflet?
