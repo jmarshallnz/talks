@@ -1,42 +1,65 @@
 ---
-title: "Dynamic source attribution in New Zealand"
+title: "Source attribution in New Zealand"
 author: "Jonathan Marshall"
 date: "2 November 2015"
 output: 
   ioslides_presentation: 
     widescreen: yes
+    css: css/ioslides.css
+    logo: figures/idrec_square.png
 ---
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 library(dplyr)
 library(knitr)
+library(mgcv)
+library(maptools)
+library(rgdal)
 opts_chunk$set(echo=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
 sts = read.csv("data/st_counts.csv")
+ur = read.csv("data/ur_counts.csv")
+humans = read.csv("data/human_by_month.csv")
+humans$Date = as.Date(humans$Date)
+humans$Month = as.factor(humans$Month)
+alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 ```
 
-# Determine the source of infection for human cases
+## Manawatu sentinel surveillance site
 
-## New Zealand campylobacteriosis cases
+```{r, manawatu map, fig.width=8.5, fig.height=6}
+manawatu = readShapeSpatial("maps/test.shp")
 
-*TODO: dygraph/timeseries of NZ/Manawatu cases*
+nzmg.proj = '+proj=nzmg +lat_0=-41.0 +lon_0=173.0 +x_0=2510000.0 +y_0=6023150.0 +ellps=intl +units=m +towgs84=59.47,-5.04,187.44,0.47,-0.1,1.024,-4.5993 '
 
-## Hypotheses
+nz = readOGR("maps/NZ_region-NZTM2000.shp", layer="NZ_region-NZTM2000", verbose=FALSE)
+nz2 = spTransform(nz, nzmg.proj)
+#dst.proj = '+proj=longlat  +datum=WGS84 +no_defs'
+#project()
+#latlong = project(triamp[,1:2], src.proj, inverse=TRUE, ellps.default = NA)
 
-*TODO: possibly split with a slide visualising data for each question*
+#nz2 = spTransform(nz, CRS(dst.proj))
+par(mar=c(0,0,0,0))
+plot(nz2, col="grey80", border=NA, xlim=c(2300000,3000000), ylim=c(5900000, 6760000))
+plot(manawatu, col="steelblue", border=NA, add=TRUE)
+```
 
-- Are some genotypes more likely to cause human disease than others?
+## Manawatu campylobacteriosis cases
 
-- Does the proportion of human cases attributed to each source change seasonally?
+```{r, human cases, fig.width=8.5}
+mod.gam = gam(Count ~ s(as.numeric(Date)) + Month, data=humans)
+co = coef(mod.gam)
+avg_month = mean(co[grepl("Month",names(co))])
 
-- Is the intervention in the poultry industry related to the drop in the number of cases after 2007?
-
-- Is the proportion of human cases related to rurality?
-
-## Data
-
-*TODO: Map of where the Manawatu is*
-
-*TODO: Overview of data from Manawatu*
+par(mar=c(4,4,0.5,2))
+plot(Count ~ Date, data=humans, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,40), xlab="", ylab="")
+y = predict(mod.gam, data.frame(Date=as.numeric(humans$Date), Month="1"), se.fit=TRUE)
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+axis(1, col="grey50", col.axis="grey50", at=as.Date(paste0(2005:2015,"-01-01")), labels=rep("",11))
+mtext(2005:2014, side=1, col="grey50", at=as.Date(paste0(2005:2014,"-07-01")), line=1)
+y_fit = y$fit + avg_month
+polygon(c(humans$Date, rev(humans$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha("steelblue", 0.3), border=NA)
+lines(humans$Date, y_fit, col="steelblue", lwd=2)
+```
 
 ## MLST distribution of human cases
 
@@ -44,7 +67,8 @@ sts = read.csv("data/st_counts.csv")
 # find the top 14 sequence types
 par(mar=c(4,4,0,2))
 top20 = order(-sts$Human)[1:20]
-barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=c(rep("lightblue", 20), "grey90"), border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
+barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 ```
 
@@ -55,7 +79,7 @@ ST_to_plot = c(474, 61, 50, 2381)
 par(mfrow=c(2,2), mar=c(4,3,1,1)) # TODO: mgp?
 for (st in ST_to_plot) {
   bp = sts %>% filter(ST == st) %>% select(Poultry, Ruminants, Other, Water) %>% as.matrix
-  barplot(bp, col="lightblue", border=NA, yaxt="n", cex.names = 0.9, las=1, col.axis="grey50", ylim=c(0,75))
+  barplot(bp, col=alpha("steelblue",0.5), border=NA, yaxt="n", cex.names = 0.9, las=1, col.axis="grey50", ylim=c(0,75))
 #  x = unlist(par()["mfg"])[2]
   axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 #  text(ifelse(x == 1, 5, 0.2), 70, st, col = "grey50", cex = 2, adj=c(ifelse(x == 1, 1, 0), 0.5))
@@ -63,28 +87,70 @@ for (st in ST_to_plot) {
 }
 ```
 
+## MLSTs differ by rurality
+
+```{r, mlst dist rurality, fig.width=8.5}
+# find the top 14 sequence types
+par(mar=c(4,4,1,2), mfrow=c(2,1))
+top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
+cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
+barplot(c(ur$Urban[top20], sum(ur$Urban[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+title("Urban", col.main="grey50", cex.main=1.3)
+barplot(c(ur$Rural[top20], sum(ur$Rural[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+title("Rural", col.main="grey50", cex.main=1.3)
+```
+
+## MLSTs differ by rurality
+
+```{r, mlst dist rurality highlight, fig.width=8.5}
+# find the top 14 sequence types
+par(mar=c(4,4,1,2), mfrow=c(2,1))
+top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
+highlight = ur$ST[top20] %in% c(38,42,48,61,354,474)
+cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
+cols[highlight] = "steelblue"
+barplot(c(ur$Urban[top20], sum(ur$Urban[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+title("Urban", col.main="grey50", cex.main=1.3)
+barplot(c(ur$Rural[top20], sum(ur$Rural[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+title("Rural", col.main="grey50", cex.main=1.3)
+```
+
+## Hypotheses
+
+- Does the proportion of human cases attributed to each source change seasonally?
+
+- Is the intervention in the poultry industry related to the drop in the number of cases from 2008 onwards?
+
+- Is the proportion of human cases related to rurality?
+
+- Are some genotypes more likely to cause human disease than others?
+
 # Modelling
 
-## Modelling overview
+## Modelling
 
 - Two R packages are in development.
 
-- **sourceR** focuses on inferring whether some genotypes are more likely to cause
-human disease than others, and what influence that has on attribution.
+- **sourceR** infers whether some genotypes are more likely to cause human disease than others.
 
-- **islandR** focuses on combining genomic models for the likelihood of observing a genotype from each source, with a model describing the likelihood of human disease from sources given covariate information from each case.
+- **islandR** combines a genomic model for observing genotypes on each source with an epidemiological model incorporating covariates for each case.
 
 ## sourceR
 
 - Developed at Massey with Poppy Miller and Chris Jewell.
 
-- Generalises the modified Hald model of Mullner et. al. *TODO: Add citation as footnote*
+- Generalises the modified Hald model of Müllner et. al. 2009.
 
 - Models human case numbers of each genotype in terms of the relative frequency of
 observing each genotype on each source, source-level effects, and type effects.
 
-## sourceR: Model
+## sourceR model
 
+The counts $Y_{itl}$ of genotype $i$ at time $t$ in location $l$ are given by
 $$
 \begin{aligned}
 Y_{itl} &\sim \mathsf{Poisson}(\lambda_{itl})\\
@@ -96,9 +162,11 @@ $$
 - $p_{ijt}$ is the relative occurrence of type $i$ on source $j$ at time $t$.
 - $q_i$ captures propensity of genotype $i$ to be over-represented in human cases.
 
-## sourceR: Output
+## sourceR results
 
 *TODO: Heatmap/boxplot showing which ST are more likely to cause human disease*
+
+# islandR
 
 ## islandR
 
@@ -109,17 +177,51 @@ $$
     - Term incorporating genomic information
     - Term involving covariate information for the case
 
-- The asymmetric Island model from D. Wilson *TODO: Add citation as footnote* is used as the genomic model.
+- The asymmetric Island model from D. Wilson 2008 is used as the genomic model.
 
 - A time-series model is used to add covariate information from each human case.
 
-## Overview of islandR model
+## islandR model{.bigequation .flexbox .vcenter}
 
-*TODO: Show how P(human | ST, location, time) splits up*
+$$
+P(\mathsf{st}) = \sum_j P(\mathsf{st} \mid \mathsf{source}_j) P(\mathsf{source}_j)
+$$
 
-## Overview of estimation (MCMC)
+## islandR model{.bigequation .flexbox .vcenter}
 
-*TODO: Add very general info on MCMC - this is first slide to drop for CHRO?*
+$$
+P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} P(\mathsf{source}_j)
+$$
+
+## islandR model{.bigequation .flexbox .vcenter}
+
+$$
+P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j)}_\text{attribution to source}
+$$
+
+## islandR model{.bigequation .flexbox .vcenter}
+
+$$
+P(\mathsf{st} \mid \underbrace{t, \mathbf{x}}_\text{covariates}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j \mid t, \mathbf{x})}_\text{attribution with covariates}
+$$
+
+## islandR attribution
+
+Nested within each source $j$ we have
+$$
+\begin{aligned}
+\mathsf{logit}\left(P(\mathsf{source}_j \mid t, \mathbf{x})\right) &= \mathsf{Location}_\mathbf{x} \cdot \mathbf{1}\left[t \geq 2008\right] \cdot \mathsf{Month}_t + \epsilon_{\mathbf{x}t}\\
+\epsilon_{\mathbf{x}t} &\sim \mathsf{Normal}(\rho \epsilon_{\mathbf{x}(t-1)}, \sigma^2)
+\end{aligned}
+$$
+
+- Covariates are estimated as a Gibbs step conditional on correlation $\rho$, variance $\sigma^2$ and $P(\mathsf{source}_j \mid t, \mathbf{x})$.
+
+- $\phi$ and $\sigma^2$ are then updated using Gibbs conditional on the covariates and $P(\mathsf{source}_j \mid t, \mathbf{x})$.
+
+- $P(\mathsf{source}_j \mid t, \mathbf{x})$ are then updated from the full conditional prior, interleaved with Metropolis Hastings steps.
+
+# Results
 
 ## Results
 
@@ -131,6 +233,18 @@ $$
 
 ## Summary
 
-- Two R packages on the way, **sourceR** and **islandR**
+- Two R packages are on the way.
 
-- 
+- **sourceR**: focus is inferring which genotypes are over-represented in human cases, but can also include 'grouping' covariates.
+
+- **islandR**: focus is inferring attribution given covariate information for human cases.
+
+# Questions?
+
+Slides:  http://bit.ly/1MnICKi
+
+Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
+
+Github:  [jmarshallnz](https://github.com/jmarshallnz)
+
+![idrec_long](figures/logo_banner.png)
