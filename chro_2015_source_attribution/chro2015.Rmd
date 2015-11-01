@@ -1,5 +1,5 @@
 ---
-title: "Source attribution in New Zealand"
+title: "Source attribution in Manawatu"
 author: "Jonathan Marshall"
 date: "2 November 2015"
 output: 
@@ -19,9 +19,14 @@ opts_chunk$set(echo=FALSE, fig.height = 5, fig.align='center', bg='transparent',
 sts = read.csv("data/st_counts.csv")
 ur = read.csv("data/ur_counts.csv")
 humans = read.csv("data/human_by_month.csv")
+nz = read.csv("data/nz_cases.csv", stringsAsFactors=FALSE)
+attribution = read.csv("data/attribution.csv")
 humans$Date = as.Date(humans$Date)
 humans$Month = as.factor(humans$Month)
+nz$Date = as.Date(nz$Date)
+nz$Month = as.factor(nz$Month)
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
+par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ```
 
 ## Manawatu sentinel surveillance site
@@ -31,15 +36,10 @@ manawatu = readShapeSpatial("maps/midcentral.shp")
 
 nzmg.proj = '+proj=nzmg +lat_0=-41.0 +lon_0=173.0 +x_0=2510000.0 +y_0=6023150.0 +ellps=intl +units=m +towgs84=59.47,-5.04,187.44,0.47,-0.1,1.024,-4.5993 '
 
-nz = readOGR("maps/NZ_region-NZTM2000.shp", layer="NZ_region-NZTM2000", verbose=FALSE)
-nz2 = spTransform(nz, nzmg.proj)
-#dst.proj = '+proj=longlat  +datum=WGS84 +no_defs'
-#project()
-#latlong = project(triamp[,1:2], src.proj, inverse=TRUE, ellps.default = NA)
-
-#nz2 = spTransform(nz, CRS(dst.proj))
+nz.map = readOGR("maps/NZ_region-NZTM2000.shp", layer="NZ_region-NZTM2000", verbose=FALSE)
+nz2.map = spTransform(nz.map, nzmg.proj)
 par(mar=c(0,0,0,0))
-plot(nz2, col="grey80", border=NA, xlim=c(2300000,3000000), ylim=c(5900000, 6760000))
+plot(nz2.map, col="grey80", border=NA, xlim=c(2300000,3000000), ylim=c(5900000, 6760000))
 plot(manawatu, col="steelblue", border=NA, add=TRUE)
 ```
 
@@ -50,22 +50,40 @@ mod.gam = gam(Count ~ s(as.numeric(Date)) + Month, data=humans)
 co = coef(mod.gam)
 avg_month = mean(co[grepl("Month",names(co))])
 
-par(mar=c(4,4,0.5,2))
+par(mar=c(3,3,0.5,1), mgp=c(2,.7,0), tck=-.015)
 plot(Count ~ Date, data=humans, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,40), xlab="", ylab="")
 y = predict(mod.gam, data.frame(Date=as.numeric(humans$Date), Month="1"), se.fit=TRUE)
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 axis(1, col="grey50", col.axis="grey50", at=as.Date(paste0(2005:2015,"-01-01")), labels=rep("",11))
-mtext(2005:2014, side=1, col="grey50", at=as.Date(paste0(2005:2014,"-07-01")), line=1)
+mtext(2005:2014, side=1, col="grey50", at=as.Date(paste0(2005:2014,"-07-01")), line=0.5)
 y_fit = y$fit + avg_month
 polygon(c(humans$Date, rev(humans$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha("steelblue", 0.3), border=NA)
 lines(humans$Date, y_fit, col="steelblue", lwd=2)
+```
+
+## New Zealand campylobacteriosis cases
+
+```{r, nz cases, fig.width=8.5}
+mod.gam = gam(Cases ~ s(as.numeric(Date)) + Month, data=nz)
+co = coef(mod.gam)
+avg_month = mean(co[grepl("Month",names(co))])
+
+par(mar=c(3,3,0.5,1), mgp=c(2,.7,0), tck=-.015)
+plot(Cases ~ Date, data=nz, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,2000), xlab="", ylab="")
+y = predict(mod.gam, data.frame(Date=as.numeric(nz$Date), Month="Apr"), se.fit=TRUE)
+axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+axis(1, col="grey50", col.axis="grey50", at=as.Date(paste0(2005:2015,"-01-01")), labels=rep("",11))
+mtext(2005:2014, side=1, col="grey50", at=as.Date(paste0(2005:2014,"-07-01")), line=0.5)
+y_fit = y$fit + avg_month
+polygon(c(nz$Date, rev(nz$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha("steelblue", 0.3), border=NA)
+lines(nz$Date, y_fit, col="steelblue", lwd=2)
 ```
 
 ## MLST distribution of human cases
 
 ```{r, mlst dist human, fig.width=8.5}
 # find the top 14 sequence types
-par(mar=c(4,4,0,2))
+par(mar=c(3,3,0,1), mgp=c(2,.7,0), tck=-.015)
 top20 = order(-sts$Human)[1:20]
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
 barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
@@ -76,7 +94,7 @@ axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 
 ```{r, source specific mlst, fig.width=7}
 ST_to_plot = c(474, 61, 50, 2381)
-par(mfrow=c(2,2), mar=c(4,3,1,1)) # TODO: mgp?
+par(mfrow=c(2,2), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.02)
 for (st in ST_to_plot) {
   bp = sts %>% filter(ST == st) %>% select(Poultry, Ruminants, Other, Water) %>% as.matrix
   barplot(bp, col=alpha("steelblue",0.5), border=NA, yaxt="n", cex.names = 0.9, las=1, col.axis="grey50", ylim=c(0,75))
@@ -91,7 +109,7 @@ for (st in ST_to_plot) {
 
 ```{r, mlst dist rurality, fig.width=8.5}
 # find the top 14 sequence types
-par(mar=c(4,4,1,2), mfrow=c(2,1))
+par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
 top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
 barplot(c(ur$Urban[top20], sum(ur$Urban[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
@@ -106,7 +124,7 @@ title("Rural", col.main="grey50", cex.main=1.3)
 
 ```{r, mlst dist rurality highlight, fig.width=8.5}
 # find the top 14 sequence types
-par(mar=c(4,4,1,2), mfrow=c(2,1))
+par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
 top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
 highlight = ur$ST[top20] %in% c(38,42,48,61,354,474)
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
@@ -223,13 +241,106 @@ $$
 
 # Results
 
-## Results
+## Urban attribution
 
-*TODO: Plot of attribution proportions through time, per source, per urban/rural*
+```{r, fig.width=10}
+urban = attribution[attribution$Location == 0,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Poultry", "Ruminants")
+for (src in seq_along(sources)) {
+  d = urban[urban$Source == sources[src],]
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, d$mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
 
-*TODO: Plot of attribution totals through time, per source, per urban/rural*
+## Rural attribution
 
-*TODO: Overall summary of results*
+```{r, fig.width=10}
+rural = attribution[attribution$Location == 1,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Poultry", "Ruminants")
+for (src in seq_along(sources)) {
+  d = rural[rural$Source == sources[src],]
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, d$mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Urban attribution
+
+```{r, fig.width=10}
+urban = attribution[attribution$Location == 0,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Poultry", "Ruminants")
+for (src in seq_along(sources)) {
+  d = urban[urban$Source == sources[src],]
+  mu = d$mu * d$Count
+  li = d$li * d$Count
+  ui = d$ui * d$Count
+
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  title(ylab="Cases", col="grey50")
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Rural attribution
+
+```{r, fig.width=10}
+rural = attribution[attribution$Location == 1,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Poultry", "Ruminants")
+for (src in seq_along(sources)) {
+  d = rural[rural$Source == sources[src],]
+  mu = d$mu * d$Count
+  li = d$li * d$Count
+  ui = d$ui * d$Count
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  title(ylab="Cases", col="grey50")
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Summary
+
+- Urban cases tend to be more associated with poultry, and rural cases with ruminants.
+
+- Attribution in urban areas more associated with ruminants after the poultry intervention in 2007.
+
+- Attribution in rural areas at a similar level pre and post intervention.
+
+- Seasonal pattern in both rural and urban areas has perhaps changed following 2007.
+
+- Very few cases associated with water or other sources.
 
 ## Summary
 
@@ -248,3 +359,92 @@ Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
 Github:  [jmarshallnz](https://github.com/jmarshallnz)
 
 ![banner](figures/logo_banner.png)
+
+## Urban water/other attribution
+
+```{r, fig.width=10}
+urban = attribution[attribution$Location == 0,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Other", "Water")
+for (src in seq_along(sources)) {
+  d = urban[urban$Source == sources[src],]
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, d$mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Rural water/other attribution
+
+```{r, fig.width=10}
+rural = attribution[attribution$Location == 1,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Other", "Water")
+for (src in seq_along(sources)) {
+  d = rural[rural$Source == sources[src],]
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, d$mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Urban water/other attribution
+
+```{r, fig.width=10}
+urban = attribution[attribution$Location == 0,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Other", "Water")
+for (src in seq_along(sources)) {
+  d = urban[urban$Source == sources[src],]
+  mu = d$mu * d$Count
+  li = d$li * d$Count
+  ui = d$ui * d$Count
+
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  title(ylab="Cases", col="grey50")
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
+
+## Rural water/other attribution
+
+```{r, fig.width=10}
+rural = attribution[attribution$Location == 1,]
+par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
+cols = c("plum4", "steelblue")
+sources = c("Other", "Water")
+for (src in seq_along(sources)) {
+  d = rural[rural$Source == sources[src],]
+  mu = d$mu * d$Count
+  li = d$li * d$Count
+  ui = d$ui * d$Count
+  n_times = max(d$Time)
+  times = 1:n_times
+  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  lines(times, mu[times], lwd=2, col=cols[src])
+  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
+  axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
+  title(ylab="Cases", col="grey50")
+  mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
+}
+```
