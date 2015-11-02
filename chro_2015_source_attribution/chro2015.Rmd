@@ -31,20 +31,6 @@ alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ```
 
-## Acknowledgements
-
-- **MidCentral Public Health Services**: Tui Shadbolt, <br>
-Adie Transom
-- **Medlab Central**: Lynn Rogers
-- **ESR**: Phil Carter
-- **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson,<br>
-Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra, Angie Reynolds
-- **Ministry for Primary Industries**: Donald Campbell,<br>
-Peter van der Logt
-- Poppy Miller, Chris Jewell
-- Petra Müllner
-- Nigel French
-
 ## Manawatu sentinel surveillance site
 
 ```{r, manawatu map, fig.width=8.5, fig.height=6}
@@ -160,43 +146,25 @@ title("Rural", col.main="grey50", cex.main=1.3)
 title(ylab="Cases", col.lab="grey50")
 ```
 
-## Hypotheses
+## Questions
 
 - Does the proportion of human cases attributed to each source change seasonally?
 
-- Is the intervention in the poultry industry related to the drop in the number of cases from 2008 onwards?
+- Did the intervention in the poultry industry work?
 
-- Is the proportion of human cases related to rurality?
+- Is attribution related to rurality?
 
-- Are some genotypes more likely to cause human disease than others?
+- Do some genotypes cause human disease more than others?
 
-# Modelling
-
-## Modelling
-
-- Two R packages are in development.
-
-- **sourceR** infers whether some genotypes are more likely to cause human disease than others.
-
-- **islandR** combines a genomic model for observing genotypes on each source with an epidemiological model incorporating covariates for each case.
+# Modelling | R packages sourceR and islandR
 
 ## sourceR
 
-- Developed at Massey with Poppy Miller and Chris Jewell.
+Work with Poppy Miller and Chris Jewell, generalising the modified Hald model of Müllner et. al. 2009.
 
-- Generalises the modified Hald model of Müllner et. al. 2009.
-
-- Models human case numbers of each genotype in terms of the relative frequency of
-observing each genotype on each source, source-level effects, and type effects.
-
-## sourceR model
-
-Human cases $Y_{itl}$ of genotype $i$ at time $t$ in location $l$ are given by
+Model human cases $Y_{itl}$ of genotype $i$ at time $t$ in location $l$ by
 $$
-\begin{aligned}
-Y_{itl} &\sim \mathsf{Poisson}(\lambda_{itl})\\
-\lambda_{itl} &= q_i \sum_j a_{jtl} p_{ijt}
-\end{aligned}
+Y_{itl} \sim \mathsf{Poisson}(q_i \sum_j a_{jtl} p_{ijt})
 $$
 
 - $a_{jtl}$ captures propensity of source $j$ to act as a vehicle for disease at time $t$ in location $l$.
@@ -217,19 +185,6 @@ title(ylab="Genotype effect", col.lab="grey50")
 ```
 
 # islandR
-
-## islandR
-
-- Developed at Massey.
-
-- Key idea: split the probability of human case into
-
-    - Term incorporating genomic information
-    - Term involving covariate information for the case
-
-- The asymmetric Island model from D. Wilson 2008 is used as the genomic model.
-
-- A time-series model is used to add covariate information from each human case.
 
 ## islandR model{.bigequation .flexbox .vcenter}
 
@@ -288,7 +243,8 @@ for (src in seq_along(sources)) {
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, d$mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -308,7 +264,8 @@ for (src in seq_along(sources)) {
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, d$mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -328,11 +285,14 @@ for (src in seq_along(sources)) {
   mu = d$mu * d$Count
   li = d$li * d$Count
   ui = d$ui * d$Count
+  xi = d$xi * d$Count
+  yi = d$yi * d$Count
 
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -353,10 +313,13 @@ for (src in seq_along(sources)) {
   mu = d$mu * d$Count
   li = d$li * d$Count
   ui = d$ui * d$Count
+  xi = d$xi * d$Count
+  yi = d$yi * d$Count
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -369,23 +332,29 @@ for (src in seq_along(sources)) {
 
 - Urban cases tend to be more associated with poultry, and rural cases with ruminants.
 
-- Attribution in urban areas more associated with ruminants after the poultry intervention in 2007.
+- There does seem to be some evidence for seasonality in attribution.
 
-- Attribution in rural areas at a similar level pre and post poultry intervention.
-
-- Seasonal pattern in both rural and urban areas has perhaps changed following 2007.
+- The poultry intervention in 2007 resulted in a marked reduction in poultry related cases in urban areas, less strong in rural areas.
 
 - Very few cases associated with water or other sources.
 
 - **Limitation**: Genomic model assumed constant through time.
 
-## Summary
+- Two R packages are on the way, **sourceR** and **islandR**.
 
-- Two R packages are on the way.
+## Acknowledgements
 
-- **sourceR**: focus is inferring which genotypes are over-represented in human cases, but can also include 'grouping' covariates.
-
-- **islandR**: focus is inferring attribution given covariate information for human cases.
+- **MidCentral Public Health Services**: Tui Shadbolt, <br>
+Adie Transom
+- **Medlab Central**: Lynn Rogers
+- **ESR**: Phil Carter
+- **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson,<br>
+Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra, Angie Reynolds
+- **Ministry for Primary Industries**: Donald Campbell,<br>
+Peter van der Logt
+- Poppy Miller, Chris Jewell
+- Petra Müllner
+- Nigel French
 
 # Thanks!{.banner}
 
@@ -409,7 +378,8 @@ for (src in seq_along(sources)) {
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, d$mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -429,7 +399,8 @@ for (src in seq_along(sources)) {
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, d$mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -449,11 +420,14 @@ for (src in seq_along(sources)) {
   mu = d$mu * d$Count
   li = d$li * d$Count
   ui = d$ui * d$Count
+  xi = d$xi * d$Count
+  yi = d$yi * d$Count
 
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
@@ -474,10 +448,13 @@ for (src in seq_along(sources)) {
   mu = d$mu * d$Count
   li = d$li * d$Count
   ui = d$ui * d$Count
+  xi = d$xi * d$Count
+  yi = d$yi * d$Count
   n_times = max(d$Time)
   times = 1:n_times
   plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main="grey50", ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.3), border=NA)
+  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
+  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)

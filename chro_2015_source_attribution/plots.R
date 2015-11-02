@@ -68,10 +68,10 @@ writeSpatialShape(us, "test.shp")
 
 
 # attribution mapping
-attribution = read.csv("~/data/R/islandR/attribution.csv")
+attribution = read.csv("attribution.csv")
 attribution = attribution %>% mutate(Year = (Time - 1) %/% 12 + 2005, Month = as.factor(Month))
 attribution = attribution %>% left_join(humans %>% select(-Date))
-write.csv(attribution, "data/attribution.csv", row.names=FALSE)
+write.csv(attribution, "data/attribution2.csv", row.names=FALSE)
 
 attribution = read.csv("data/attribution.csv")
 par(mfrow=c(4,1), mar=c(4,4,2,2))
