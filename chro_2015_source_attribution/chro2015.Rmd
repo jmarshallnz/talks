@@ -1,6 +1,7 @@
 ---
-title: "Source attribution in Manawatu"
-author: "Jonathan Marshall"
+title: "Dynamic Source attribution"
+subtitle: "A story from the Manawatu"
+author: "Jonathan Marshall, Massey University"
 date: "2 November 2015"
 output: 
   ioslides_presentation: 
@@ -21,6 +22,7 @@ ur = read.csv("data/ur_counts.csv")
 humans = read.csv("data/human_by_month.csv")
 nz = read.csv("data/nz_cases.csv", stringsAsFactors=FALSE)
 attribution = read.csv("data/attribution.csv")
+q = read.csv("data/sourcer_q_sub.csv")
 humans$Date = as.Date(humans$Date)
 humans$Month = as.factor(humans$Month)
 nz$Date = as.Date(nz$Date)
@@ -28,6 +30,17 @@ nz$Month = as.factor(nz$Month)
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ```
+
+## Acknowledgements
+
+- **MidCentral Public Health Services**: Tui Shadbolt and Adie Transom
+- **Medlab Central**: Lynn Rogers
+- **ESR**: Phil Carter
+- **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson, Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra, Angie Reynolds
+- **Ministry for Primary Industries**: Donald Campbell, Peter van der Logt
+- Poppy Miller, Chris Jewell
+- Petra Müllner
+- Nigel French
 
 ## Manawatu sentinel surveillance site
 
@@ -51,7 +64,7 @@ co = coef(mod.gam)
 avg_month = mean(co[grepl("Month",names(co))])
 
 par(mar=c(3,3,0.5,1), mgp=c(2,.7,0), tck=-.015)
-plot(Count ~ Date, data=humans, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,40), xlab="", ylab="")
+plot(Count ~ Date, data=humans, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,40), xlab="", ylab="Cases", col.lab="grey50")
 y = predict(mod.gam, data.frame(Date=as.numeric(humans$Date), Month="1"), se.fit=TRUE)
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 axis(1, col="grey50", col.axis="grey50", at=as.Date(paste0(2005:2015,"-01-01")), labels=rep("",11))
@@ -68,7 +81,7 @@ mod.gam = gam(Cases ~ s(as.numeric(Date)) + Month, data=nz)
 co = coef(mod.gam)
 avg_month = mean(co[grepl("Month",names(co))])
 
-par(mar=c(3,3,0.5,1), mgp=c(2,.7,0), tck=-.015)
+par(mar=c(3,3.5,0.5,1), mgp=c(2,.7,0), tck=-.015)
 plot(Cases ~ Date, data=nz, type="l", col="grey50", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,2000), xlab="", ylab="")
 y = predict(mod.gam, data.frame(Date=as.numeric(nz$Date), Month="Apr"), se.fit=TRUE)
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
@@ -77,6 +90,7 @@ mtext(2005:2014, side=1, col="grey50", at=as.Date(paste0(2005:2014,"-07-01")), l
 y_fit = y$fit + avg_month
 polygon(c(nz$Date, rev(nz$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha("steelblue", 0.3), border=NA)
 lines(nz$Date, y_fit, col="steelblue", lwd=2)
+title(ylab="Cases", col.lab="grey50", line=2.5)
 ```
 
 ## MLST distribution of human cases
@@ -88,6 +102,7 @@ top20 = order(-sts$Human)[1:20]
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
 barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
+title(ylab="Cases", col.lab="grey50")
 ```
 
 ## MLSTs are source specific
@@ -102,6 +117,7 @@ for (st in ST_to_plot) {
   axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 #  text(ifelse(x == 1, 5, 0.2), 70, st, col = "grey50", cex = 2, adj=c(ifelse(x == 1, 1, 0), 0.5))
   title(paste("ST",st), col.main="grey50", cex.main=1.3)
+  title(ylab="Isolates", col.lab="grey50")
 }
 ```
 
@@ -110,14 +126,16 @@ for (st in ST_to_plot) {
 ```{r, mlst dist rurality, fig.width=8.5}
 # find the top 14 sequence types
 par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
-top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
+top20 = match(sts$ST[order(-sts$Human)[1:20]], ur$ST)
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
-barplot(c(ur$Urban[top20], sum(ur$Urban[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+barplot(c(ur$Urban[top20], sum(ur$Urban[-top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 title("Urban", col.main="grey50", cex.main=1.3)
-barplot(c(ur$Rural[top20], sum(ur$Rural[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+title(ylab="Cases", col.lab="grey50")
+barplot(c(ur$Rural[top20], sum(ur$Rural[-top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 title("Rural", col.main="grey50", cex.main=1.3)
+title(ylab="Cases", col.lab="grey50")
 ```
 
 ## MLSTs differ by rurality
@@ -125,16 +143,18 @@ title("Rural", col.main="grey50", cex.main=1.3)
 ```{r, mlst dist rurality highlight, fig.width=8.5}
 # find the top 14 sequence types
 par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
-top20 = ur$ST %in% sts$ST[order(-sts$Human)[1:20]]
+top20 = match(sts$ST[order(-sts$Human)[1:20]], ur$ST)
 highlight = ur$ST[top20] %in% c(38,42,48,61,354,474)
 cols = c(rep(alpha("steelblue",0.5), 20), "grey90")
-cols[highlight] = "steelblue"
-barplot(c(ur$Urban[top20], sum(ur$Urban[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+cols[c(highlight,FALSE)] = "steelblue"
+barplot(c(ur$Urban[top20], sum(ur$Urban[-top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 title("Urban", col.main="grey50", cex.main=1.3)
-barplot(c(ur$Rural[top20], sum(ur$Rural[!top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
+title(ylab="Cases", col.lab="grey50")
+barplot(c(ur$Rural[top20], sum(ur$Rural[-top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis="grey50")
 axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 title("Rural", col.main="grey50", cex.main=1.3)
+title(ylab="Cases", col.lab="grey50")
 ```
 
 ## Hypotheses
@@ -180,9 +200,18 @@ $$
 - $p_{ijt}$ is the relative occurrence of type $i$ on source $j$ at time $t$.
 - $q_i$ captures propensity of genotype $i$ to be over-represented in human cases.
 
-## sourceR results
+## sourceR genotype effects
 
-*TODO: Heatmap/boxplot showing which ST are more likely to cause human disease*
+```{r, fig.width=10}
+medians = tapply(q$value, q$ST, median)
+q$ST = factor(q$ST, levels=names(medians)[order(-medians)])
+# right, we'll need to filter it further, but that will do for now.
+par(mar=c(3,3,0,1), mgp=c(2,.7,0), tck=-.015)
+boxplot(value ~ ST, data=q, outpch='.', whisklty = 'solid', ylim=c(0,18), las=2, xaxs="i", yaxs="i", frame=F, axes=F, border="steelblue")
+axis(2, at=seq(0,15,by=5), col="grey50", col.axis="grey50", cex.axis=0.8)
+axis(1, at=1:length(medians), labels=levels(q$ST), col="grey50", col.axis="grey50", cex.axis=0.7, las=2)
+title(ylab="Genotype effect", col.lab="grey50")
+```
 
 # islandR
 
@@ -301,7 +330,7 @@ for (src in seq_along(sources)) {
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
-  title(ylab="Cases", col="grey50")
+  title(ylab="Cases", col.lab="grey50")
   mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
 }
 ```
@@ -325,7 +354,7 @@ for (src in seq_along(sources)) {
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
-  title(ylab="Cases", col="grey50")
+  title(ylab="Cases", col.lab="grey50")
   mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
 }
 ```
@@ -420,7 +449,7 @@ for (src in seq_along(sources)) {
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
-  title(ylab="Cases", col="grey50")
+  title(ylab="Cases", col.lab="grey50")
   mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
 }
 ```
@@ -444,7 +473,7 @@ for (src in seq_along(sources)) {
   lines(times, mu[times], lwd=2, col=cols[src])
   axis(1, at=seq(0,120,by=12), labels=rep("", 11), col="grey50", col.axis="grey50", cex.axis=0.8)
   axis(2, at=seq(0,40,by=10), col="grey50", col.axis="grey50", cex.axis=0.8, las=1)
-  title(ylab="Cases", col="grey50")
+  title(ylab="Cases", col.lab="grey50")
   mtext(2005:2014, side=1, col="grey50", at=seq(0,108,by=12)+6, line=0.5)
 }
 ```
