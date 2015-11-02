@@ -1,11 +1,11 @@
 ---
-title: "Dynamic Source attribution"
+title: "Source attribution"
 subtitle: "A story from the Manawatu"
 author: "Jonathan Marshall, Massey University"
 date: "2 November 2015"
 output: 
   ioslides_presentation: 
-    widescreen: yes
+    widescreen: no
     css: css/ioslides.css
     logo: figures/idrec_square.png
 ---
@@ -33,11 +33,14 @@ par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 
 ## Acknowledgements
 
-- **MidCentral Public Health Services**: Tui Shadbolt and Adie Transom
+- **MidCentral Public Health Services**: Tui Shadbolt, <br>
+Adie Transom
 - **Medlab Central**: Lynn Rogers
 - **ESR**: Phil Carter
-- **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson, Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra, Angie Reynolds
-- **Ministry for Primary Industries**: Donald Campbell, Peter van der Logt
+- **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson,<br>
+Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra, Angie Reynolds
+- **Ministry for Primary Industries**: Donald Campbell,<br>
+Peter van der Logt
 - Poppy Miller, Chris Jewell
 - Petra Müllner
 - Nigel French
@@ -107,12 +110,12 @@ title(ylab="Cases", col.lab="grey50")
 
 ## MLSTs are source specific
 
-```{r, source specific mlst, fig.width=7}
+```{r, source specific mlst, fig.width=8, fig.height=5.5}
 ST_to_plot = c(474, 61, 50, 2381)
 par(mfrow=c(2,2), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.02)
 for (st in ST_to_plot) {
   bp = sts %>% filter(ST == st) %>% select(Poultry, Ruminants, Other, Water) %>% as.matrix
-  barplot(bp, col=alpha("steelblue",0.5), border=NA, yaxt="n", cex.names = 0.9, las=1, col.axis="grey50", ylim=c(0,75))
+  barplot(bp, col=alpha("steelblue",0.5), border=NA, yaxt="n", cex.names = 1, las=1, col.axis="grey50", ylim=c(0,75))
 #  x = unlist(par()["mfg"])[2]
   axis(2, col="grey50", col.axis="grey50", las=1, cex.axis=0.8)
 #  text(ifelse(x == 1, 5, 0.2), 70, st, col = "grey50", cex = 2, adj=c(ifelse(x == 1, 1, 0), 0.5))
@@ -188,7 +191,7 @@ observing each genotype on each source, source-level effects, and type effects.
 
 ## sourceR model
 
-The counts $Y_{itl}$ of genotype $i$ at time $t$ in location $l$ are given by
+Human cases $Y_{itl}$ of genotype $i$ at time $t$ in location $l$ are given by
 $$
 \begin{aligned}
 Y_{itl} &\sim \mathsf{Poisson}(\lambda_{itl})\\
@@ -202,7 +205,7 @@ $$
 
 ## sourceR genotype effects
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 medians = tapply(q$value, q$ST, median)
 q$ST = factor(q$ST, levels=names(medians)[order(-medians)])
 # right, we'll need to filter it further, but that will do for now.
@@ -219,7 +222,7 @@ title(ylab="Genotype effect", col.lab="grey50")
 
 - Developed at Massey.
 
-- Key idea: split probability of human case into
+- Key idea: split the probability of human case into
 
     - Term incorporating genomic information
     - Term involving covariate information for the case
@@ -249,7 +252,10 @@ $$
 ## islandR model{.bigequation .flexbox .vcenter}
 
 $$
-P(\mathsf{st} \mid \underbrace{t, \mathbf{x}}_\text{covariates}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j \mid t, \mathbf{x})}_\text{attribution with covariates}
+\begin{aligned}
+&P(\mathsf{st} \mid \underbrace{t, \mathbf{x}}_\text{covariates}) =\\
+&\quad \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j \mid t, \mathbf{x})}_\text{attribution with covariates}
+\end{aligned}
 $$
 
 ## islandR attribution
@@ -272,7 +278,7 @@ $$
 
 ## Urban attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 urban = attribution[attribution$Location == 0,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -292,7 +298,7 @@ for (src in seq_along(sources)) {
 
 ## Rural attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 rural = attribution[attribution$Location == 1,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -312,7 +318,7 @@ for (src in seq_along(sources)) {
 
 ## Urban attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 urban = attribution[attribution$Location == 0,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -337,7 +343,7 @@ for (src in seq_along(sources)) {
 
 ## Rural attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 rural = attribution[attribution$Location == 1,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -365,7 +371,7 @@ for (src in seq_along(sources)) {
 
 - Attribution in urban areas more associated with ruminants after the poultry intervention in 2007.
 
-- Attribution in rural areas at a similar level pre and post intervention.
+- Attribution in rural areas at a similar level pre and post poultry intervention.
 
 - Seasonal pattern in both rural and urban areas has perhaps changed following 2007.
 
@@ -379,7 +385,7 @@ for (src in seq_along(sources)) {
 
 - **islandR**: focus is inferring attribution given covariate information for human cases.
 
-# Questions?{.banner}
+# Thanks!{.banner}
 
 Slides:  http://bit.ly/1MnICKi
 
@@ -391,7 +397,7 @@ Github:  [jmarshallnz](https://github.com/jmarshallnz)
 
 ## Urban water/other attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 urban = attribution[attribution$Location == 0,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -411,7 +417,7 @@ for (src in seq_along(sources)) {
 
 ## Rural water/other attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 rural = attribution[attribution$Location == 1,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -431,7 +437,7 @@ for (src in seq_along(sources)) {
 
 ## Urban water/other attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 urban = attribution[attribution$Location == 0,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
@@ -456,7 +462,7 @@ for (src in seq_along(sources)) {
 
 ## Rural water/other attribution
 
-```{r, fig.width=10}
+```{r, fig.width=8.5}
 rural = attribution[attribution$Location == 1,]
 par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 cols = c("plum4", "steelblue")
