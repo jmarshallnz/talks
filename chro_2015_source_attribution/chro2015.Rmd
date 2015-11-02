@@ -377,6 +377,8 @@ for (src in seq_along(sources)) {
 
 - Very few cases associated with water or other sources.
 
+- **Limitation**: Genomic model assumed constant through time.
+
 ## Summary
 
 - Two R packages are on the way.
