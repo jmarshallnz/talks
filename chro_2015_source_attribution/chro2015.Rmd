@@ -356,13 +356,15 @@ Peter van der Logt
 - Petra Müllner
 - Nigel French
 
-# Thanks!{.banner}
+##{.banner}
 
 Slides:  http://bit.ly/1MnICKi
 
 Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
 
 Github:  [jmarshallnz](https://github.com/jmarshallnz)
+
+<div class="hugetext">**Thanks for listening!**</div>
 
 ![banner](figures/logo_banner.png)
 
