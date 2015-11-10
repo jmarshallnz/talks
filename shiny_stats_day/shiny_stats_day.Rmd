@@ -1,0 +1,253 @@
+---
+title: "Oooh, shiny!"
+subtitle: "Interactive slides for teaching linear models"
+author: "Jonathan Marshall"
+date: "30 September 2015"
+output: ioslides_presentation
+---
+
+# Teaching linear models | In three lectures
+
+## A unique cohort
+
+- I teach second year vet students linear models.
+
+- Vet students are smart and hard working.
+
+- They spend a lot of time together so know each other well.
+
+- Most just want to know the **how**.
+
+- A subset wants to know more than just how, but also **why**.
+
+- Goal: Cover multiple regression and analysis of variance (with interactions), using R.
+
+## Time and content split
+
+- 150 minutes of lectures and 360 minutes of labs.
+
+- Lectures are there to reinforce what they've learnt in labs, and explain concepts.
+
+- Summary notes supply more detail.
+
+## Topics covered
+
+Session  Topics
+-------  ------
+Lab      RStudio, EDA (scatter plots), simple linear regression.
+Lecture  Least squares, model assumptions, diagnostics.
+Lab      Multiple linear regression.
+Lecture  Multiple linear regression, F-test, factorial models.
+Lab      Factorial models.
+Lecture  Additive models, interactions
+Lab      Interactions, mixed models.
+
+## Labs
+
+- Use RStudio exclusively.
+
+- Have ~50 students per group (STB2).
+
+- Two postgrads as helpers (thanks Khair + Penny!)
+
+## The R stumbling block
+
+- Supply example code (decreasing in later labs).
+
+- Encourage mistakes early.
+
+- Teach students to produce reports from a script.
+
+    - encourages scripting rather than interactive R.
+    - encourages reproducible research.
+    - saves them time on their assignment.
+
+- Constantly encourage documentation.
+
+## Lectures
+
+- Can spend a lot of time on each lecture.
+
+- Include graphical explanations in preference to the maths where possible.
+
+- Include interactives that allow students to explore concepts during lecture.
+
+# Tools
+
+## Tools
+
+- RStudio for development.
+
+- RMarkdown + ioslides for HTML presentation.
+
+- Shiny for interactives.
+
+- Shiny-server for serving up webapps.
+
+## RStudio
+
+- It contains helpful shortcuts.
+
+- Has syntax highlighting.
+
+- Integrates with git for version control.
+
+## R Markdown for slides
+
+- Markdown is a (simple) markup language.
+
+- Designed for generating HTML, but can generate Word and PDF.
+
+- Rmarkdown adds R codeblocks into markdown.
+
+- One document to rule them all.
+
+## Work flow
+
+- Rmarkdown is a front-end for **knitr** and **pandoc**.
+
+- knitr processes the R markdown (.Rmd) file, runs R code and converts
+to plain markdown (.md).
+
+- pandoc then processes the markdown document, turning it into HTML (or Word/PDF via LaTeX).
+
+- Automated by the "Knit HTML" button in RStudio.
+
+# Example
+
+# Ooooh, shiny!
+
+## Interactivity: Shiny
+
+- R package for developing webapps without having to know HTML or javascript.
+
+- Define the user interface in `ui.R`.
+
+- Define what happens on interaction in `server.R`.
+
+- Shiny then generates the HTML, bundles the javascript and calls into R for the execution.
+
+## Incorporating interactives in slides
+
+- The slides are just HTML.
+
+- Can add a shiny app directly in an R codeblock and run it from RStudio.
+
+- Host the shiny app elsewhere, link using an `<iframe>` in a slide, access from a web browser.
+
+## Shiny server
+
+- Webserver package for *nix that links up with R.
+
+- Really easy to deploy into a VM (e.g. using Vagrant)
+
+- If on port 8080, it is viewable on both the Massey wired and wireless networks.
+
+- **Disadvantage**: Not available outside of Massey network at present.
+
+# Examples
+
+## Other interactives in R
+
+- dygraphs
+
+- D3
+
+- Leaflet
+
+
+## Advantages
+
+- Easy to write slides, but not really easier than any other method.
+
+- Inline R-code is really useful for examples. No need to copy and paste code or output.
+
+- Can incorporate interactives.
+
+- Can produce both HTML or PDF slides for printing.
+
+## Disadvantages
+
+- Layout is somewhat fixed. Themes/colours are available.
+
+- CSS+HTML is pretty powerful for altering things, but is a new language/paradigm to learn.
+
+- Printing. Getting PDF version of slides similar to HTML can take some work.
+
+    - Plot sizes
+    - R output size
+    - Layout more restricted.
+
+# Feedback
+
+## Student feedback
+
+```{r, echo=FALSE}
+fb = read.csv("227215_feedback_2015.csv", stringsAsFactors=FALSE, check.names=FALSE)
+fb[,1] = gsub("\\\\n", "\n", fb[,1])
+par(mar=c(4,8,4,2))
+barplot(as.numeric(fb[1,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[1,1], cex.main=0.9)
+```
+
+## Student feedback
+
+```{r, echo=FALSE}
+par(mar=c(4,8,4,2))
+barplot(as.numeric(fb[2,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[2,1], cex.main=0.9)
+```
+
+## Student feedback
+
+```{r, echo=FALSE}
+par(mar=c(4,8,4,2))
+barplot(as.numeric(fb[3,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[3,1], cex.main=0.9)
+```
+
+## Student feedback
+
+```{r, echo=FALSE}
+par(mar=c(4,8,4,2))
+barplot(as.numeric(fb[5,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[5,1], cex.main=0.9)
+```
+
+## Student behaviour
+
+- ~60% produced their assignments using RStudio exclusively.
+
+- The rest copy + pasted their work into Word.
+
+- No sign. diff in assignment marks!
+
+- EXAM???
+
+## Changes for next time
+
+- More interactives for concept motivation.
+
+- Get interactives working outside Massey network.
+
+- Make sure dataset for project is as straight-forward as possible.
+
+- Have 'bonus' marks available on project.
+
+## Tips and tricks
+
+- Use a version control system (e.g. git)
+
+- Content first, then worry about pretty.
+
+- Embrace the simple layout. Markdown is deliberately limited.
+
+- Colours/fonts/centering etc. are best done using CSS.
+
+- The web development community is huge. Google invariably knows the answer.
+
+# Thanks for listening!
