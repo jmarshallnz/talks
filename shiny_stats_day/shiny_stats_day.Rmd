@@ -2,25 +2,26 @@
 title: "Oooh, shiny!"
 subtitle: "Interactive slides for teaching linear models"
 author: "Jonathan Marshall"
-date: "30 September 2015"
-output: ioslides_presentation
+date: "12 November 2015"
+output:
+  ioslides_presentation: 
+    widescreen: yes
+    css: ioslides.css
 ---
 
 # Teaching linear models | In three lectures
 
 ## A unique cohort
 
-- I teach second year vet students linear models.
+- I teach second year vet students biostatistics.
 
 - Vet students are smart and hard working.
 
 - They spend a lot of time together so know each other well.
 
-- Most just want to know the **how**.
+- Most just want to know the **how**, but some want the **why**.
 
-- A subset wants to know more than just how, but also **why**.
-
-- Goal: Cover multiple regression and analysis of variance (with interactions), using R.
+- Goal: Cover multiple regression and analysis of variance using R.
 
 ## Time and content split
 
@@ -54,8 +55,6 @@ Lab      Interactions, mixed models.
 
 - Supply example code (decreasing in later labs).
 
-- Encourage mistakes early.
-
 - Teach students to produce reports from a script.
 
     - encourages scripting rather than interactive R.
@@ -64,9 +63,23 @@ Lab      Interactions, mixed models.
 
 - Constantly encourage documentation.
 
+## Creating notebooks from R scripts
+
+- 'Compile Notebook' button in RStudio invokes `knitr::spin`.
+
+- Roxygen comments starting `#'` in an R script are treated as narrative text.
+
+- Can include markdown for formatting.
+
+- R code is placed in-line, as is any output (text/plots).
+
+- Results in an HTML or Word document (.docx). Familiarity helps!
+
+# Example
+
 ## Lectures
 
-- Can spend a lot of time on each lecture.
+- Can spend a lot of time preparing lectures.
 
 - Include graphical explanations in preference to the maths where possible.
 
@@ -78,7 +91,7 @@ Lab      Interactions, mixed models.
 
 - RStudio for development.
 
-- RMarkdown + ioslides for HTML presentation.
+- Rmarkdown + ioslides for HTML presentation.
 
 - Shiny for interactives.
 
@@ -92,7 +105,7 @@ Lab      Interactions, mixed models.
 
 - Integrates with git for version control.
 
-## R Markdown for slides
+## Rmarkdown for slides
 
 - Markdown is a (simple) markup language.
 
@@ -139,7 +152,7 @@ to plain markdown (.md).
 
 - Webserver package for *nix that links up with R.
 
-- Really easy to deploy into a VM (e.g. using Vagrant)
+- Really easy to deploy into a VM (e.g. using Vagrant).
 
 - If on port 8080, it is viewable on both the Massey wired and wireless networks.
 
@@ -147,14 +160,150 @@ to plain markdown (.md).
 
 # Examples
 
-## Other interactives in R
+## Other interactives: dygraphs
 
-- dygraphs
+```{r, echo=FALSE, fig.width=10, fig.height=5, warning=F, message=F}
+library(splines)
+library(mgcv)
+library(dplyr)
+library(dygraphs)
+library(htmlwidgets)
+library(xts)
 
-- D3
+ratings <- read.csv("dygraphs/news_current_affairs.csv")
 
-- Leaflet
+ratings$Date <- as.Date(ratings$Date)
 
+# grab show data
+show_cols <- c(4,2,3,5,1)
+ratings[,1:5] <- ratings[,show_cols]
+names(ratings)[1:5] <- names(ratings)[show_cols]
+show_names <- gsub("\\.", " ", gsub("^X([0-9])+", "\\1", names(ratings)))
+
+# fit a GAM model to each show
+for (i in seq_along(show_cols)) {
+  # smooth
+  g <- gam(ratings[,i] ~ s(as.numeric(Date), bs="ad"), data=ratings)
+  first_date <- min(ratings$Date[!is.na(ratings[,i])])
+  last_date  <- max(ratings$Date[!is.na(ratings[,i])])
+  date_range <- seq(first_date, to=last_date, by=1)
+  y <- predict(g, newdata=data.frame(Date=date_range), se.fit=T)
+
+  # add these as additional columns in the data frame
+  ratings[ratings$Date %in% date_range,paste0("fit.", i, ".mean")] <- y$fit
+  ratings[ratings$Date %in% date_range,paste0("fit.", i, ".se")] <- y$se.fit*1.96
+
+  # our plotting handler hack relies on 0's in place of NAs where we want
+  # to render the model fit, else the custom bar plotter in dygraphs doesn't allow
+  # the error bars (which are hacked to be fit + se) to be drawn
+  
+  # ideally this would be done by a custom dataHandler in dygraphs
+  ratings[ratings$Date %in% date_range,i] <- ifelse(is.na(ratings[ratings$Date %in% date_range,i]), 0, ratings[ratings$Date %in% date_range,i])
+}
+
+cols <- data.frame(r=c(203,73,254,52,163),g=c(15,175,74,135,47),b=c(21,156,75,191,34))
+cols <- cols[c(1,3,5,4,2),]
+#cols <- cols[show_cols[c(2,3,5,1,4)],]
+
+# compute faded colour (fade to white)
+fade_colour <- function(col, alpha) {
+  faded <- (255-alpha)/255 * 255 + alpha/255 * col
+  rgb(faded$r, faded$g, faded$b, maxColorValue=255)
+}
+
+# value formatter for labels
+value_fmt <- "function(y, opts, series_name) {
+  if (y != 0)
+    return y.toFixed(0);
+  return '-';
+}"
+
+date_fmt <- "function(x, opts, series_name) {
+  day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  var date = new Date(x);
+  return day_names[date.getDay()] + ', ' + date.getDate() + ' ' + month_names[date.getMonth()] + ' ' + (date.getYear()+1900);
+}"
+
+# point callback so that our '0' values don't render
+point_cb <- "function(g, seriesName, canvasContext, cx, cy, color, pointSize) {
+  var area = g.layout_.getPlotArea();
+  if (cy != area.y + area.h)
+    Dygraph.Circles.DEFAULT(g, seriesName, canvasContext, cx, cy, color, pointSize);
+}"
+
+# plotter for the series
+plot_se <- "function(e) {
+  // create new points for data and model fit
+  var newFit = [];
+  var newData = [];
+  for (var i = 0; i < e.points.length; i++) {
+    var o = e.points[i];
+    newData.push({
+      canvasx:  o.canvasx,
+      canvasy:  o.yval == 0 ? NaN : o.canvasy,
+      x:        o.x,
+      y:        o.yval == 0 ? NaN : o.y
+    })
+    newFit.push({
+      canvasx:  o.canvasx,
+      canvasy:  e.plotArea.h * o.y_top + e.plotArea.y,
+      x:        o.x,
+      y:        o.y_top,
+      y_bottom: o.y_top + (1-o.y_bottom),
+      y_top:    o.y_top - (1-o.y_bottom)
+    })
+  }
+  // call the base functions
+  var f = {
+        points: newData,
+        setName: e.setName,
+        drawingContext: e.drawingContext,
+        color: e.color,
+        strokeWidth: e.strokeWidth,
+        dygraph: e.dygraph,
+        axis: e.axis,
+        plotArea: e.plotArea,
+        seriesIndex: e.seriesIndex,
+        seriesCount: e.seriesCount,
+        singleSeriesName: e.singleSeriesName,
+        allSeriesPoints: e.allSeriesPoints
+  };
+  Dygraph.Plotters.linePlotter(f);
+  f.points = newFit;
+  f.strokeWidth = 2;
+  Dygraph.Plotters.errorPlotter(f);
+  Dygraph.Plotters.linePlotter(f);
+}"
+
+cols_fit  <- rgb(cols$r, cols$g, cols$b, maxColorValue=255)
+cols_data <- fade_colour(cols, 160)
+
+max_viewers <- 1000001 #max(ratings[,show_cols], na.rm=T)
+
+rownames(ratings) <- ratings$Date
+ratings <- xts(ratings[,-6], order.by=ratings$Date)
+
+# draw the dygraph using a custom plotter for each series
+d <- dygraph(data=ratings, main="Viewership of news and current affairs");
+for (i in seq_along(show_cols))
+  d <- d %>% dySeries(c(paste0("fit.",i,".mean"), names(ratings)[i], paste0("fit.",i,".se")), label=show_names[i], color=cols_fit[i], strokeWidth=0.5, plotter=JS(plot_se))
+
+xlab <- "<span style='color:#7f7f7f'>General additive model with adaptive smoothing and 95% credible intervals<br>Data source: Nielsen Television Audience Measurement, All 5+ via <a href='http://www.throng.co.nz'>www.throng.co.nz</a></span>"
+gray <- rgb(0.5, 0.5, 0.5)
+lightgray <- rgb(0.9, 0.9, 0.9)
+d %>% dyOptions(fillAlpha=0.4, maxNumberWidth=7, useDataTimezone = TRUE) %>%
+      dyAxis('x', label=xlab, labelHeight=12, drawGrid=FALSE,
+             axisLineColor=gray, axisLabelColor=gray,
+             axisLabelFontSize=10, valueFormatter=JS(date_fmt)) %>%
+      dyAxis('y', valueRange=c(0, max_viewers),
+             axisLineColor=gray, axisLabelColor=gray,
+             axisLabelFontSize=10, gridLineColor=lightgray,
+             valueFormatter=JS(value_fmt)) %>%
+      dyLegend(width=750) %>%
+      dyCSS("dygraphs/tvratings.css") %>%
+      dyCallbacks(drawHighlightPointCallback = JS(point_cb))
+```
 
 ## Advantages
 
@@ -176,57 +325,57 @@ to plain markdown (.md).
 
     - Plot sizes
     - R output size
-    - Layout more restricted.
+    - Further restricts layout
 
 # Feedback
 
-## Student feedback
+## Feedback: Interactives
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.width=10, fig.height=5}
 fb = read.csv("227215_feedback_2015.csv", stringsAsFactors=FALSE, check.names=FALSE)
 fb[,1] = gsub("\\\\n", "\n", fb[,1])
-par(mar=c(4,8,4,2))
-barplot(as.numeric(fb[1,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
-axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
-title(fb[1,1], cex.main=0.9)
+par(mar=c(4,8,2,2))
+barplot(as.numeric(fb[2,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=1, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=1, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[2,1], cex.main=1.3)
 ```
 
-## Student feedback
+## Feedback: Interactives
 
-```{r, echo=FALSE}
-par(mar=c(4,8,4,2))
-barplot(as.numeric(fb[2,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
-axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
-title(fb[2,1], cex.main=0.9)
+It allowed me to understand the connections between the different values and what they actually mean
+
+The interactive bits in the lectures were very helpful to understand some concepts!
+
+wish they worked outside of massey
+
+Very helpful to visualise the maths
+
+I did appreciate it, however I did not actively do them myself. Didn't bother to open in html format at home, just looked at pdf
+
+The interactive bits were helpful.
+
+## Feedback: Compiling notebooks
+
+```{r, echo=FALSE, fig.width=10, fig.height=5}
+par(mar=c(4,8,2,2))
+barplot(as.numeric(fb[3,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=1, col.axis="grey50")
+axis(1, at=seq(0,15,by=5), line=0, cex.axis=1, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
+title(fb[3,1], cex.main=1.3)
 ```
 
-## Student feedback
+## Feedback: Compiling notebooks
 
-```{r, echo=FALSE}
-par(mar=c(4,8,4,2))
-barplot(as.numeric(fb[3,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
-axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
-title(fb[3,1], cex.main=0.9)
-```
+Definitely. Not just for the assignment but for Biostats learning in general. Writing the comments actually encouraged us to think about what we were doing rather than just blindly typing in code.
 
-## Student feedback
+They could be useful indeed. But I did not use them as I found it easier to simply copy and paste the R outputs into a separate word document
 
-```{r, echo=FALSE}
-par(mar=c(4,8,4,2))
-barplot(as.numeric(fb[5,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=0.8, col.axis="grey50")
-axis(1, at=seq(0,15,by=5), line=0, cex.axis=0.8, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
-title(fb[5,1], cex.main=0.9)
-```
+I didn't use it as it wouldn't work on my computer.
 
-## Student behaviour
+Yesss!!! It saved heaps and heaps of time for my assignment.
 
-- ~60% produced their assignments using RStudio exclusively.
+Massive time saver!
 
-- The rest copy + pasted their work into Word.
-
-- No sign. diff in assignment marks!
-
-- EXAM???
+I didn't find it that useful for the assignment but it was useful for making notes relating to the script so when coming back to it after a break i knew what did what.
 
 ## Changes for next time
 
@@ -234,20 +383,14 @@ title(fb[5,1], cex.main=0.9)
 
 - Get interactives working outside Massey network.
 
-- Make sure dataset for project is as straight-forward as possible.
+- Add ratings to interactives for feedback?
 
-- Have 'bonus' marks available on project.
+##
 
-## Tips and tricks
+Slides:  http://bit.ly/1MnICKi
 
-- Use a version control system (e.g. git)
+Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
 
-- Content first, then worry about pretty.
+Github:  [jmarshallnz](https://github.com/jmarshallnz)
 
-- Embrace the simple layout. Markdown is deliberately limited.
-
-- Colours/fonts/centering etc. are best done using CSS.
-
-- The web development community is huge. Google invariably knows the answer.
-
-# Thanks for listening!
+<div class="hugetext">**Thanks for listening!**</div>

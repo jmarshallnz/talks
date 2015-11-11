@@ -32,3 +32,9 @@ img[alt=banner] {
   width: 1100px;
   opacity: 0.7;
 }
+
+.hugetext {
+  position: absolute;
+  top: 50%;
+  font-size: 300%;
+}
