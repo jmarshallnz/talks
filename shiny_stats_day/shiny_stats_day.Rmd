@@ -5,10 +5,14 @@ author: "Jonathan Marshall"
 date: "12 November 2015"
 output:
   ioslides_presentation: 
-    widescreen: yes
+    widescreen: no
     css: ioslides.css
 ---
 
+```{r, echo=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo=FALSE, fig.width = 8.5, fig.height=5, dev.args = list(bg='transparent'))
+```
 # Teaching linear models | In three lectures
 
 ## A unique cohort
@@ -21,7 +25,7 @@ output:
 
 - Most just want to know the **how**, but some want the **why**.
 
-- Goal: Cover multiple regression and analysis of variance using R.
+- **Goal**: Cover multiple regression and analysis of variance using R.
 
 ## Time and content split
 
@@ -162,7 +166,7 @@ to plain markdown (.md).
 
 ## Other interactives: dygraphs
 
-```{r, echo=FALSE, fig.width=10, fig.height=5, warning=F, message=F}
+```{r, fig.height=5, warning=FALSE, message=FALSE}
 library(splines)
 library(mgcv)
 library(dplyr)
@@ -331,7 +335,7 @@ d %>% dyOptions(fillAlpha=0.4, maxNumberWidth=7, useDataTimezone = TRUE) %>%
 
 ## Feedback: Interactives
 
-```{r, echo=FALSE, fig.width=10, fig.height=5}
+```{r}
 fb = read.csv("227215_feedback_2015.csv", stringsAsFactors=FALSE, check.names=FALSE)
 fb[,1] = gsub("\\\\n", "\n", fb[,1])
 par(mar=c(4,8,2,2))
@@ -356,7 +360,7 @@ The interactive bits were helpful.
 
 ## Feedback: Compiling notebooks
 
-```{r, echo=FALSE, fig.width=10, fig.height=5}
+```{r}
 par(mar=c(4,8,2,2))
 barplot(as.numeric(fb[3,-1]), horiz=TRUE, names=names(fb)[-1], las=1, border=NA, col="lightblue", xlim=c(0,17), xaxt="n", cex.names=1, col.axis="grey50")
 axis(1, at=seq(0,15,by=5), line=0, cex.axis=1, tcl=-0.2, mgp=c(3,0.5,0), col="grey50", col.axis="grey50")
