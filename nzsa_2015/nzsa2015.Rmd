@@ -32,6 +32,35 @@ ax_col = "grey20"
 fig_width = 10
 ```
 
+##
+
+<div align="center">
+  <img src="figures/superbug.png" />
+</div>
+
+## Campylobacteriosis
+
+<table class='container'>
+ <tr>
+  <td style='vertical-align:top'>
+- *Campylobacter* 'twisted bacteria'
+
+- Predominantly food-borne.
+
+- NZ's most notified disease.
+
+- 6770 cases in 2014.
+
+- For every case notified, there are an estimated 7.6 community cases. (Wheeler et. al. 1999)
+
+- Each case is estimated to cost around $600. (Lake et. al. 2009)
+
+</td>
+  <td style='width:420px, vertical-align:top'>
+   <img src='figures/campy.jpg' width='370px' title='', alt='' />
+  </td>
+</tr></table>
+
 ## Manawatu sentinel surveillance site
 
 ```{r, manawatu map, fig.width=8.5, fig.height=6}
@@ -82,6 +111,33 @@ polygon(c(nz$Date, rev(nz$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=
 lines(nz$Date, y_fit, col="steelblue", lwd=2)
 title(ylab="Cases", col.lab=ax_col, line=2.5)
 ```
+
+## MLST for *Campylobacter*
+
+<table class='container'>
+ <tr>
+  <td style='vertical-align:top'>
+- Seven housekeeping genes (loci).
+
+- Unique genes are assigned different numbers (alleles).
+
+- The combination of alleles gives the **multilocus sequence type**.
+
+</td>
+  <td style='width:400px, vertical-align:top'>
+   <img src='figures/campy_genome.jpg' width='400px' title='', alt='' />
+  </td>
+</tr></table>
+
+## MLST for *Campylobacter*
+
+ST   aspA glnA gltA glyA pgm txt uncA
+--   ---- ---- ---- ---- --- --- ----
+474     2    4    1    2   2   1    5
+61      1    4    2    2   6   3   17
+2381  175  251  216  282 359 293  102
+48      2    4    1    2   7   1    5
+2370    1    4    2    2   6   5   17
 
 ## MLST distribution of human cases
 
@@ -155,8 +211,6 @@ title(ylab="Cases", col.lab=ax_col)
 
 - Is attribution related to rurality?
 
-- Do some genotypes cause human disease more than others?
-
 # Modelling | R package islandR
 
 ## islandR model{.bigequation .flexbox .vcenter}
@@ -170,6 +224,82 @@ $$
 $$
 P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} P(\mathsf{source}_j)
 $$
+
+## islandR model{.bigequation .flexbox .vcenter}
+
+$$
+P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j)}_\text{attribution to source}
+$$
+
+## Genomic model
+
+Assume that *Campylobacter* genotypes arise from two or more homogeneous mixing populations
+where we have
+
+- **Mutation**, where novel alleles are produced.
+
+- **Recombination**, where the allele at a given loci has been observed before, but
+not in this allelic profile.
+
+- **Migration** between sources, where genotypes have been observed previously.
+
+## Mutation
+
+ST   aspA glnA gltA glyA pgm txt uncA
+--   ---- ---- ---- ---- --- --- ----
+474     2    4    1    2   2   1    5
+?       2    4    1    2  29   1    5
+
+<br />
+
+- We have a novel allele at the pgm locus.
+
+- We assume this genotype has arisen through **mutation**.
+
+## Recombination
+
+ST   aspA glnA gltA glyA pgm txt uncA
+--   ---- ---- ---- ---- --- --- ----
+474     2    4    1    2   2   1    5
+?       2    4    1    2   1   1    5
+45     4    7    10    4   1   7    1
+3718   2    4     1    4   1   1    5
+
+<br />
+
+- We have seen this pgm allele before, but haven't seen this genotype.
+
+- We assume it arose through **recombination**.
+
+## Migration
+
+ST   aspA glnA gltA glyA pgm txt uncA
+--   ---- ---- ---- ---- --- --- ----
+474     2    4    1    2   2   1    5
+?       2    4    1    2   2   1    5
+
+<br />
+
+- This is just 474. We've seen it before, but possibly not on this source.
+
+- We assume it arose through **migration**.
+
+## Genomic model{.smaller}
+
+$$
+\phi(y \mid k,X) = \sum_{c\in X} \frac{M_{S_ck}}{N_{S_c}} \prod_{l=1}^7 \left\{\begin{array}{ll}
+\mu_k & \text{if $y^{l}$ is novel,}\\
+(1-\mu_k)R_k\sum_{j=1}^K M_{jk}f^l_{y^lj} & \text{if $y^{l}\neq c^l$}\\
+(1-\mu_k)\left[1 - R_k(1 - \sum_{j=1}^K M_{jk}f^l_{y^lj})\right] & \text{if $y^{l}=c^l$}
+\end{array} \right.
+$$
+
+- $X$ are the previously observed sequences.
+- $c$ comes from source $S_c$.
+- $\mu_k$ be the probability of a novel mutant allele from source $k$.
+- $R_k$ be the probability that a type has undergone recombination in souce $k$.
+- $M_{jk}$ be the probability of an allele migrating from source $j$ to $k$.
+- $f^l_{aj}$ be the frequency with which allele $a$ has been observed at locus $l$ in those genotypes sampled from source $j$.
 
 ## islandR model{.bigequation .flexbox .vcenter}
 
@@ -198,7 +328,7 @@ $$
 
 - $\phi$ and $\sigma^2$ are then updated using Gibbs conditional on the covariates and $P(\mathsf{source}_j \mid t, \mathbf{x})$.
 
-- $P(\mathsf{source}_j \mid t, \mathbf{x})$ are then updated from the full conditional prior, interleaved with Metropolis Hastings steps.
+- $P(\mathsf{source}_j \mid t, \mathbf{x})$ are block updated from the full conditional, interleaved with Metropolis Hastings steps.
 
 # Results
 
