@@ -131,13 +131,13 @@ title(ylab="Cases", col.lab=ax_col, line=2.5)
 
 ## MLST for *Campylobacter*
 
-ST   aspA glnA gltA glyA pgm txt uncA
---   ---- ---- ---- ---- --- --- ----
-474     2    4    1    2   2   1    5
-61      1    4    2    2   6   3   17
-2381  175  251  216  282 359 293  102
-48      2    4    1    2   7   1    5
-2370    1    4    2    2   6   5   17
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2    2    1     5
+61      1     4     2     2    6    3    17
+2381  175   251   216   282  359  293   102
+48      2     4     1     2    7    1     5
+2370    1     4     2     2    6    5    17
 
 ## MLST distribution of human cases
 
@@ -238,17 +238,17 @@ where we have
 
 - **Mutation**, where novel alleles are produced.
 
-- **Recombination**, where the allele at a given loci has been observed before, but
+- **Recombination**, where the allele at a given locus has been observed before, but
 not in this allelic profile.
 
 - **Migration** between sources, where genotypes have been observed previously.
 
 ## Mutation
 
-ST   aspA glnA gltA glyA pgm txt uncA
---   ---- ---- ---- ---- --- --- ----
-474     2    4    1    2   2   1    5
-?       2    4    1    2  29   1    5
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2    29    1    5
 
 <br />
 
@@ -258,12 +258,12 @@ ST   aspA glnA gltA glyA pgm txt uncA
 
 ## Recombination
 
-ST   aspA glnA gltA glyA pgm txt uncA
---   ---- ---- ---- ---- --- --- ----
-474     2    4    1    2   2   1    5
-?       2    4    1    2   1   1    5
-45     4    7    10    4   1   7    1
-3718   2    4     1    4   1   1    5
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     1    1    5
+45      4     7    10     4     1    7    1
+3718    2     4     1     4     1    1    5
 
 <br />
 
@@ -273,10 +273,10 @@ ST   aspA glnA gltA glyA pgm txt uncA
 
 ## Migration
 
-ST   aspA glnA gltA glyA pgm txt uncA
---   ---- ---- ---- ---- --- --- ----
-474     2    4    1    2   2   1    5
-?       2    4    1    2   2   1    5
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     2    1    5
 
 <br />
 
