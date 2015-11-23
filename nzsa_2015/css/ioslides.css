@@ -32,3 +32,7 @@ img[alt=banner] {
   width: 1100px;
   opacity: 0.7;
 }
+
+slides > slide:not(.nobackground):after {
+  content: '';
+}
