@@ -456,7 +456,7 @@ Peter van der Logt
 
 ##{.banner}
 
-Slides:  http://bit.ly/1MnICKi
+Slides:  http://bit.ly/1M5PP4O
 
 Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
 
