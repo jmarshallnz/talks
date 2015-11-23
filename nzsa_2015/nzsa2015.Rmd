@@ -231,7 +231,7 @@ $$
 P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st} \mid \mathsf{source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j)}_\text{attribution to source}
 $$
 
-## Genomic model
+## Genomic model | D. Wilson (2009)
 
 Assume that *Campylobacter* genotypes arise from two or more homogeneous mixing populations
 where we have
