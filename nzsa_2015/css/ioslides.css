@@ -21,6 +21,12 @@ hgroup,h2 {
   font-size: 150%;
 }
 
+.hugetext {
+  position: absolute;
+  top: 50%;
+  font-size: 300%;
+}
+
 img[alt=banner] {
   width: 500px;
 }
