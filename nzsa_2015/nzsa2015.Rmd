@@ -249,63 +249,8 @@ not in this allelic profile.
 
 - **Migration** between sources, where genotypes have been observed previously.
 
-## Mutation
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2    29    1    5
-
-<br />
-
-- We have a novel allele at the pgm locus.
-
-- We assume this genotype has arisen through **mutation**.
-
-## Recombination
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2     1    1    5
-45      4     7    10     4     1    7    1
-3718    2     4     1     4     1    1    5
-
-<br />
-
-- We have seen this pgm allele before, but haven't seen this genotype.
-
-- We assume it arose through **recombination**.
-
-## Migration
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2     2    1    5
-
-<br />
-
-- This is just 474. We've seen it before, but possibly not on this source.
-
-- We assume it arose through **migration**.
-
-## Genomic model{.smaller}
-
-$$
-\phi(y \mid k,X) = \sum_{c\in X} \frac{M_{S_ck}}{N_{S_c}} \prod_{l=1}^7 \left\{\begin{array}{ll}
-\mu_k & \text{if $y^{l}$ is novel,}\\
-(1-\mu_k)R_k\sum_{j=1}^K M_{jk}f^l_{y^lj} & \text{if $y^{l}\neq c^l$}\\
-(1-\mu_k)\left[1 - R_k(1 - \sum_{j=1}^K M_{jk}f^l_{y^lj})\right] & \text{if $y^{l}=c^l$}
-\end{array} \right.
-$$
-
-- $X$ are the previously observed sequences.
-- $c$ comes from source $S_c$.
-- $\mu_k$ be the probability of a novel mutant allele from source $k$.
-- $R_k$ be the probability that a type has undergone recombination in souce $k$.
-- $M_{jk}$ be the probability of an allele migrating from source $j$ to $k$.
-- $f^l_{aj}$ be the frequency with which allele $a$ has been observed at locus $l$ in those genotypes sampled from source $j$.
+Uses a pseudo-likelihood (leave-one-out approach) to estimate mutation, recombination
+and migration rates via MCMC.
 
 ## islandR model{.bigequation .flexbox .vcenter}
 
@@ -568,3 +513,73 @@ for (src in seq_along(sources)) {
   mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
 }
 ```
+
+## Genomic model | D. Wilson (2009)
+
+Assume that *Campylobacter* genotypes arise from two or more homogeneous mixing populations
+where we have
+
+- **Mutation**, where novel alleles are produced.
+
+- **Recombination**, where the allele at a given locus has been observed before, but
+not in this allelic profile.
+
+- **Migration** between sources, where genotypes have been observed previously.
+
+## Mutation
+
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2    29    1    5
+
+<br />
+
+- We have a novel allele at the pgm locus.
+
+- We assume this genotype has arisen through **mutation**.
+
+## Recombination
+
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     1    1    5
+45      4     7    10     4     1    7    1
+3718    2     4     1     4     1    1    5
+
+<br />
+
+- We have seen this pgm allele before, but haven't seen this genotype.
+
+- We assume it arose through **recombination**.
+
+## Migration
+
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     2    1    5
+
+<br />
+
+- This is just 474. We've seen it before, but possibly not on this source.
+
+- We assume it arose through **migration**.
+
+## Genomic model{.smaller}
+
+$$
+\phi(y \mid k,X) = \sum_{c\in X} \frac{M_{S_ck}}{N_{S_c}} \prod_{l=1}^7 \left\{\begin{array}{ll}
+\mu_k & \text{if $y^{l}$ is novel,}\\
+(1-\mu_k)R_k\sum_{j=1}^K M_{jk}f^l_{y^lj} & \text{if $y^{l}\neq c^l$}\\
+(1-\mu_k)\left[1 - R_k(1 - \sum_{j=1}^K M_{jk}f^l_{y^lj})\right] & \text{if $y^{l}=c^l$}
+\end{array} \right.
+$$
+
+- $X$ are the previously observed sequences.
+- $c$ comes from source $S_c$.
+- $\mu_k$ be the probability of a novel mutant allele from source $k$.
+- $R_k$ be the probability that a type has undergone recombination in source $k$.
+- $M_{jk}$ be the probability of an allele migrating from source $j$ to $k$.
+- $f^l_{aj}$ be the frequency with which allele $a$ has been observed at locus $l$ in those genotypes sampled from source $j$.
