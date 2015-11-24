@@ -216,6 +216,12 @@ title(ylab="Cases", col.lab=ax_col)
 ## islandR model{.bigequation .flexbox .vcenter}
 
 $$
+Y \sim \mathsf{Multinomial}(n, P(\mathsf{st}_1), \ldots, P(\mathsf{st}_{S}))
+$$
+
+## islandR model{.bigequation .flexbox .vcenter}
+
+$$
 P(\mathsf{st}) = \sum_j P(\mathsf{st} \mid \mathsf{source}_j) P(\mathsf{source}_j)
 $$
 
