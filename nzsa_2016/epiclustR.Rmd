@@ -9,6 +9,8 @@ output:
     fig_retina: null
     logo: figures/idrec_square.png
     widescreen: yes
+    includes:
+      in_header: "include_header_VideoFrame.html"
 ---
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
