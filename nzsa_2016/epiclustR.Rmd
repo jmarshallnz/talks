@@ -18,11 +18,6 @@ library(maptools)
 library(rgdal)
 library(meshblocknz)
 opts_chunk$set(echo=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
-sts = read.csv("data/st_counts.csv")
-ur = read.csv("data/ur_counts.csv")
-humans = read.csv("data/human_by_month.csv")
-nz = read.csv("data/nz_cases.csv", stringsAsFactors=FALSE)
-attribution = read.csv("data/attribution.csv")
 
 dhb_cases = read.csv("data/dhb_cases.csv") %>%
   filter(!is.na(PopulationInterpolated)) %>%
@@ -39,10 +34,6 @@ spat <- read.table("data/Meshblocks.txt", header=TRUE) %>%
 spat.nb <- epiclustR::load_spatial_neighbours("data/Weights.GAL")
 
 load("data/TA2006.Rdata"); TA <- new
-humans$Date = as.Date(humans$Date)
-humans$Month = as.factor(humans$Month)
-nz$Date = as.Date(nz$Date)
-nz$Month = as.factor(nz$Month)
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ax_col = "grey20"
@@ -145,19 +136,16 @@ nzmg.proj = '+proj=nzmg +lat_0=-41.0 +lon_0=173.0 +x_0=2510000.0 +y_0=6023150.0 
 nz.map = readOGR("maps/NZ_region-NZTM2000.shp", layer="NZ_region-NZTM2000", verbose=FALSE)
 nz2.map = spTransform(nz.map, nzmg.proj)
 par(mar=c(0,0,0,0))
-plot(nz2.map, col="grey80", border=NA, xlim=c(2300000,3000000), ylim=c(5900000, 6760000))
+plot(nz2.map, col="grey80", border=NA, xlim=c(2300000,3000000), ylim=c(5800000, 6760000))
 plot(manawatu, col=col[1], border=NA, add=TRUE)
 ```
+</div>
 
 ## Manawatu campylobacteriosis cases
 
 ```{r, human cases, fig.width=fig_width}
 cases <- apply(TA$data$cases, 1, sum)
 dates <- as.Date(names(cases))
-mod.gam = gam(cases ~ s(as.numeric(dates)), family="poisson", data=humans)
-#co = coef(mod.gam)
-y = predict(mod.gam, se.fit=TRUE)
-#avg_month = mean(co[grepl("Month",names(co))])
 mod <- loess(cases ~ as.numeric(dates), span = 1/10)
 y <- predict(mod, se=TRUE)
 
