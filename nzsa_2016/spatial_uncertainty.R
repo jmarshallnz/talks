@@ -309,6 +309,8 @@ for (i in 1:nrow(Uta)) {#seq_len(nrow(U))) {
   dev.off()
 }
 
+system("ffmpeg -y -r 10 -i outbreak_map_nt_%04d.png outbreak_map.mp4")
+
 system("convert -delay 10 -loop 0 -dispose background outbreak_map_nt_*.png outbreak_map2.gif")
 system("convert outbreak_map2.gif -transparent white outbreak_map.gif")
 
@@ -330,7 +332,6 @@ for (i in 1:nrow(Uta)) {#seq_len(nrow(U))) {
 #  dev.off()
 }, video.name="outbreak_map.mp4", ffmpeg="avconv", ani.width=960, ani.height=480, interval=1/24)
 
-system("avconv -y -r 10 -i outbreak_map_nt_%04d.png outbreak_map.mp4")
 
 system("convert -delay 10 -loop 0 -dispose background outbreak_map_nt_*.png outbreak_map2.gif")
 system("convert outbreak_map2.gif -transparent white outbreak_map.gif")
