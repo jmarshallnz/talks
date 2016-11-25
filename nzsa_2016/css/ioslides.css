@@ -1,0 +1,53 @@
+b,strong {
+  color: #404040;
+  font-weight: bold;
+}
+
+hgroup,h2 {
+  font-weight: bold;
+  color: #577492;
+}
+
+.mi {
+  color: #404040;
+/*  font-size: 95%; */
+}
+
+.math {
+  color: #404040;
+}
+
+.bigequation {
+  font-size: 150%;
+}
+
+.bigmoveup {
+  font-size: 150%;
+  margin-top: -20px;
+}
+
+.moveup {
+  margin-top: -50px;
+}
+
+.hugetext {
+  position: absolute;
+  top: 50%;
+  font-size: 300%;
+}
+
+img[alt=banner] {
+  width: 500px;
+}
+
+.banner img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1100px;
+  opacity: 0.7;
+}
+
+slides > slide:not(.nobackground):after {
+  content: '';
+}
