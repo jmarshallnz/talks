@@ -212,7 +212,7 @@ $$
 </div>
 
 <div align='center'>
-   <img src='temporal.gif' width='640px' title='', alt='' />
+   <img src='video/temporal.gif' width='640px' title='', alt='' />
 </div>
 
 ## Spatial trend
@@ -224,7 +224,7 @@ $$
 </div>
 
 <div class='moveup' align='center'>
-   <img src='spatial.gif' width='640px' title='', alt='' />
+   <img src='video/spatial.gif' width='640px' title='', alt='' />
 </div>
 
 ## Outbreak detection
@@ -315,26 +315,26 @@ lines(1.01 - c(0.01,0,0,0.01), c(-0.01,-0.01,1.01,1.01))
 
 ## Results: Trend through time
 
-<div align='center'>
-   <img src='temporal_fit.gif' width='960px' title='', alt='' />
-</div>
-
-## Results: Trend through space
-
 <center>
-   <video src='spatial_fit.mp4' width='960px' loop='true' autoplay='true'/>
+   <video src='video/temporal_fit.mp4' width='960px' loop='true' autoplay='true'/>
 </center>
 
 ## Results: Trend through space
 
 <center>
-   <video src='spatial_palmy_fit.mp4' width='960px' loop='true' autoplay='true'/>
+   <video src='video/spatial_fit.mp4' width='960px' loop='true' autoplay='true'/>
+</center>
+
+## Results: Trend through space
+
+<center>
+   <video src='video/spatial_palmy_fit.mp4' width='960px' loop='true' autoplay='true'/>
 </center>
 
 ## Results: Outbreaks
 
 <center>
-   <video src='outbreak_map.mp4' width='960px' loop='true' autoplay='true' controls='true'/>
+   <video src='video/outbreak_map.mp4' width='960px' loop='true' autoplay='true' controls='true'/>
 </center>
 
 ## Summary

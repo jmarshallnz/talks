@@ -124,6 +124,7 @@ for (i in seq_len(nrow(o))) {
 system("convert -delay 4 -loop 0 -dispose background temp_fit*.png temporal_fit2.gif")
 system("convert temporal_fit2.gif -transparent white temporal_fit.gif")
 
+system("~/ffmpeg -y -r 24 -i png/temp_fit%04d.png temp_fit.mp4")
 
 
 
