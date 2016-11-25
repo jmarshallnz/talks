@@ -7,7 +7,7 @@ brewerBrBG9 <- rev(c("#01665E","#35978F","#80CDC1","#C7EAE5","#F5F5F5","#F6E8C3"
 
 breaks <- c(-Inf, 0.2, 0.5, 0.8, 0.95, 1.05, 1.3, 2.0, 5.0, Inf)
 
-shapeFile <- "~/Massey/Projects/EpiclustR/PrepareDatasets/NZ/Data/NZ_shapefiles/AU2006.shp"
+shapeFile <- "maps/AU2006.shp"
 map.shp <- readShapeSpatial(shapeFile)
 ids <- slot(map.shp, "data")[[1]]
 map.shp$num <- 1:length(ids);
@@ -39,7 +39,7 @@ dt = c(0, cumsum(abs(diff(d))))
 o = spline(dt, d, method="periodic", xout = seq(min(dt), max(dt), length.out=length(d)*12+1))$y[-1]
 
 for (i in seq_along(o)) {
-  png(sprintf("plot%04d.png", i), width=640, height=400, bg="transparent")
+  png(sprintf("png/spatial%04d.png", i), width=640, height=400, bg="transparent")
   par(pin = c(5/sqrt(ratio), sqrt(ratio) * 5), mar=c(0,0,0,0), bg="#FFFFFF")
   plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0, bty="n")
   
@@ -57,6 +57,7 @@ for (i in seq_along(o)) {
 system("convert -delay 4 -loop 0 plot*.png spatial2.gif")
 system("convert spatial2.gif -transparent white spatial.gif")
 
+system("~/ffmpeg -y -r 24 -i png/spatial%04d.png video/spatial.mp4")
 
 
 # temporal uncertainty here...
@@ -73,7 +74,9 @@ d = rnorm(20, sd=0.3)
 d = c(d, d[1])
 dt = c(0, cumsum(abs(diff(d))))
 o = spline(dt, d, method="periodic", xout = seq(min(dt), max(dt), length.out=length(d)*12+1))$y[-1]
-foo = animation::saveGIF(for (i in o) {
+for (i in seq_along(o)) {
+  png(sprintf("png/temp%04d.png", i), width=640, height=320)
+  par(bg="#FFFFFF")
   plot(R ~ t, axes=FALSE, bty='n', ylab='', xlab='', ylim=c(0,5), cex=1.3)
   polygon(c(dnorm(y)*0.3, -dnorm(y)*0.3), Rt + 0.3*c(y, rev(y)), col="grey70", border=NA)
   lines(quad_fit ~ that, lwd=2)
@@ -81,13 +84,13 @@ foo = animation::saveGIF(for (i in o) {
   axis(1, at=-2:2, labels = c(expression(t-2, t-1, t, t+1, t+2)))
   tr <- -2:2
   Rr <- predict(m, data.frame(t = tr))
-  Rr[3] = Rr[3] + i
+  Rr[3] = Rr[3] + o[i]
   mr <- lm(Rr ~ poly(tr, 4))
   lines(predict(mr, data.frame(tr=that)) ~ that, col="red", lwd=2)
   points(0, Rr[3], pch=19, cex=1.3, col="red")
-}, interval=1/20, movie.name="temporal.gif", ani.width=640, ani.height=320)
-
-
+  dev.off()
+}
+system("~/ffmpeg -y -r 24 -i png/temp%04d.png video/temporal.mp4")
 
 ax_col <- "grey20"
 

@@ -212,9 +212,9 @@ R_t \sim \mathsf{Normal}(2R_{t-1} + R_{t-2}, \tau_R)
 $$
 </div>
 
-<div align='center'>
-   <img src='video/temporal.gif' width='640px' title='', alt='' />
-</div>
+<center>
+   <video src='video/temporal.mp4' width='640px' loop='true' autoplay='true'/>
+</center>
 
 ## Spatial trend
 
@@ -224,8 +224,8 @@ U_{ip} \sim \mathsf{Normal}(\frac{1}{n_i}\sum_{j\sim i} U_{ip}, n_i\tau_R)
 $$
 </div>
 
-<div class='moveup' align='center'>
-   <img src='video/spatial.gif' width='640px' title='', alt='' />
+<div class="moveup" align="center">
+  <video src='video/spatial.mp4' width='640px' loop='true' autoplay='true'/>
 </div>
 
 ## Outbreak detection
