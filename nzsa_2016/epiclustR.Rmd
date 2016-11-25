@@ -5,9 +5,10 @@ author: "Jonathan Marshall, Massey University"
 date: "25 November 2016"
 output: 
   ioslides_presentation: 
-    widescreen: yes
     css: css/ioslides.css
+    fig_retina: null
     logo: figures/idrec_square.png
+    widescreen: yes
 ---
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
