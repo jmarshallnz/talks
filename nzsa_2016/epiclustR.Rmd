@@ -129,7 +129,8 @@ box(col=ax_col)
 
 ## Manawatu sentinel surveillance site
 
-```{r, manawatu map, fig.width=8.5, fig.height=6}
+<div class="moveup">
+```{r, manawatu map, fig.width=8.5, fig.height=7}
 manawatu = readShapeSpatial("maps/midcentral.shp")
 
 nzmg.proj = '+proj=nzmg +lat_0=-41.0 +lon_0=173.0 +x_0=2510000.0 +y_0=6023150.0 +ellps=intl +units=m +towgs84=59.47,-5.04,187.44,0.47,-0.1,1.024,-4.5993 '
