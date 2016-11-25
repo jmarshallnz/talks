@@ -22,6 +22,7 @@ xylims <- bbox(map.shp[num,])
 
 ratio <- (xylims[2,2] - xylims[2,1]) / (xylims[1,2] - xylims[1,1])
 
+# TODO: Switch this to use appropriate colorRamp
 get_col<-function(c, pal)
 {
   o <- ((floor(c) + 1 - c)*col2rgb(pal[floor(c)]) + (c-floor(c))*col2rgb(pal[floor(c)+1]))/255
