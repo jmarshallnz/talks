@@ -290,26 +290,31 @@ au_shp = unionSpatialPolygons(phu, sprintf("%02d", au_reg$Region))
 ta_reg = phu@data %>% left_join(TA$data$spat_list, by=c("MB06"="Spatial"))
 ta_shp = unionSpatialPolygons(phu, sprintf("%02d", ta_reg$Region))
 
+scasesTA = apply(epiclustR:::ssapply(TA$mod, epiclustR:::extract_variable, 'scases'), 1, median)
+ecasesTA = apply(epiclustR:::ssapply(TA$mod, epiclustR:::extract_variable, 'ecases'), 1, median)
+scasesAU = apply(epiclustR:::ssapply(AU$mod, epiclustR:::extract_variable, 'scases'), 1, median)
+ecasesAU = apply(epiclustR:::ssapply(AU$mod, epiclustR:::extract_variable, 'ecases'), 1, median)
+
 library(dplyr)
 
-for (i in 1:nrow(Uta)) {#seq_len(nrow(U))) {
-  png(sprintf("outbreak_map_nt_%04d.png", i), width=960, height=480, bg="transparent")
+for (i in 1:nrow(Rta)) {#seq_len(nrow(U))) {
+  png(sprintf("png/outbreak_map_nt_%04d.png", i), width=960, height=480, bg="transparent")
   layout(matrix(1:4, 2, 2), heights=c(4,1), widths=c(1,1))
   par(mai=c(0,0,0,0), bg="#FFFFFF")
-  cat("plotting", i, "of", nrow(U), "\n")
+  cat("plotting", i, "of", nrow(Rta), "\n")
   # tail mX off over a bunch of frames
   plot_ob_map2(ta_shp, Rta[i,])
   par(mai=c(0.5,0.5,0,0.5))
   plot_temporal(weeks, scasesTA, ecasesTA, i)
   par(mai=c(0,0,0,0))
-  plot_ob_map2(au_shp, Rau[i,])
+  plot_ob_map2(au_shp, Rau[i,], bbox=matrix(c(2717946,6081900,2754889,6099322), 2))
   par(mai=c(0.5,0.5,0,0.5))
   plot_temporal(weeks, scasesAU, ecasesAU, i)
   # plot_map(U[i,], bbox=matrix(c(2727946,6086900,2734889,6094322), 2))
   dev.off()
 }
 
-system("ffmpeg -y -r 10 -i outbreak_map_nt_%04d.png outbreak_map.mp4")
+system("~/ffmpeg -y -r 10 -i png/outbreak_map_nt_%04d.png video/outbreak_map.mp4")
 
 system("convert -delay 10 -loop 0 -dispose background outbreak_map_nt_*.png outbreak_map2.gif")
 system("convert outbreak_map2.gif -transparent white outbreak_map.gif")
