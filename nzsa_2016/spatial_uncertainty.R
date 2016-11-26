@@ -272,7 +272,7 @@ plot_temporal <- function(weeks, scases, ecases, week) {
   axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
   mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)
   lines(weeks, scases, col="black", lwd=2)
-  rect(weeks[week]-15, 0, weeks[week]+15, 12, col=alpha("steelblue", 0.7), border=NA)
+  rect(weeks[week]-14, 0, weeks[week]+14, 12, col=alpha("steelblue", 0.7), border=NA)
 }
 
 library(maptools)
@@ -304,17 +304,17 @@ for (i in 1:nrow(Rta)) {#seq_len(nrow(U))) {
   cat("plotting", i, "of", nrow(Rta), "\n")
   # tail mX off over a bunch of frames
   plot_ob_map2(ta_shp, Rta[i,])
-  par(mai=c(0.5,0.5,0,0.5))
+  par(mai=c(0.5,0.416,0,0.416))
   plot_temporal(weeks, scasesTA, ecasesTA, i)
-  par(mai=c(0,0,0,0))
-  plot_ob_map2(au_shp, Rau[i,], bbox=matrix(c(2717946,6081900,2754889,6099322), 2))
-  par(mai=c(0.5,0.5,0,0.5))
+  par(mai=c(0.1,0.5,0.1,0.5))
+  plot_ob_map2(au_shp, Rau[i,], bbox=matrix(c(2717946,6078900,2754889,6102322), 2))
+  par(mai=c(0.5,0.416,0,0.416))
   plot_temporal(weeks, scasesAU, ecasesAU, i)
   # plot_map(U[i,], bbox=matrix(c(2727946,6086900,2734889,6094322), 2))
   dev.off()
 }
 
-system("~/ffmpeg -y -r 10 -i png/outbreak_map_nt_%04d.png video/outbreak_map.mp4")
+system("~/ffmpeg -y -r 10 -i png/outbreak_map_nt_%04d.png -b:v 1M video/outbreak_map.mp4")
 
 system("convert -delay 10 -loop 0 -dispose background outbreak_map_nt_*.png outbreak_map2.gif")
 system("convert outbreak_map2.gif -transparent white outbreak_map.gif")
