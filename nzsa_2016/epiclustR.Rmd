@@ -384,7 +384,7 @@ Ahmed Fayaz, Anne Midwinter, Antoine Nohra, Lynn Rogers
 
 ##{.banner}
 
-Slides:  http://bit.ly/1M5PP4O
+Slides:  http://jmarshallnz.github.io/talks/nzsa2016.html
 
 Twitter: [&#64;jmarshallnz](https://twitter.com/jmarshallnz)
 
