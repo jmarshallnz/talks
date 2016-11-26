@@ -337,29 +337,31 @@ lines(1.01 - c(0.01,0,0,0.01), c(-0.01,-0.01,1.01,1.01))
 ## Results: Outbreaks
 
 <center>
-  <video id='outbreaks' width='960px' loop='true'>
+  <video id='outbreaks' width='960px'>
     <source src='video/outbreak_map.mp4' />
   </video>
 </center>
 <script>
 var vid = document.getElementById("outbreaks");
 vid.addEventListener('click', function() {
-//	video.listen('frame');
+  video.listen('frame');
   this.paused ? this.play() : this.pause();
 });
-vid.current = 0;
-vid.times = [ 96, 137, 158, 214, 233, 256, 283, 343, 356, 1000 ]
-vid.addEventListener('timeupdate', function() {
-    for (t = 0; t < this.times.length; t++) {
-      if (this.currentTime < this.times[t]/10) {
-          if (this.current < t) {
-              this.pause();
-          }
-          this.current = t;
-          break;
+var video = VideoFrame({
+  id : 'outbreaks',
+  frameRate: 10,
+  callback : function(frame) {
+    var frames = [ 96, 137, 158, 214, 233, 256, 283, 343, 356, 1000 ]
+    for (t = 0; t < frames.length; t++) {
+      if (frame == frames[t]-1) {
+        video.stopListen();
+        video.video.pause();
+        video.seekForward(1);
       }
     }
+  }
 });
+video.listen('frame');
 </script>
 
 ## Summary
