@@ -16,7 +16,11 @@ xylims <- attr(map.shp, "bbox")
 xylims2 <- matrix(c(1752500, 1757500, 5918500, 5922000), 2, 2, byrow=T)
 xylims <- xylims2 + c(-3000,-3000,3000,3000)
 
-num <- c(229:235, 245:257, 284:285, 293)
+num <- c(229:235, 248:253, 256:257, 261:262, 283, 293)
+#center <- t(simplify2array(lapply(map.shp@polygons, function(x) { x@labpt })))
+#text(center[,1], center[,2], 1:nrow(center))
+
+#plot(map.shp, xlim=xylims[1,], ylim=xylims[2,])
 
 xylims <- bbox(map.shp[num,])
 
@@ -29,28 +33,36 @@ get_col<-function(c, pal)
   return(rgb(o[1,], o[2,], o[3,]))
 }
 
+get_col <- function(c, pal) {
+  func <- colorRamp(pal, space="Lab")
+  rgb(func(c), maxColorValue = 255)
+}
+
 set.seed(2)
-risk <- runif(6,1,4)
+risk <- runif(5)
 
 # generate a bunch of random risks around the average risk
 set.seed(3)
-d = rnorm(20, mean=mean(risk), sd=1)
+d = rnorm(40, mean=mean(risk), sd=0.3)
 d = c(d, d[1])
 dt = c(0, cumsum(abs(diff(d))))
 o = spline(dt, d, method="periodic", xout = seq(min(dt), max(dt), length.out=length(d)*12+1))$y[-1]
 
 for (i in seq_along(o)) {
-  png(sprintf("png/spatial%04d.png", i), width=640, height=400, bg="transparent")
+  png(sprintf("png/spatial_2_%04d.png", i), width=640, height=400, bg="transparent")
   par(pin = c(5/sqrt(ratio), sqrt(ratio) * 5), mar=c(0,0,0,0), bg="#FFFFFF")
   plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0, bty="n")
   
   cols <- rep("grey90",length(ids))
-  cols[251] <- get_col(o[i], brewerBrBG9)
-  cols[c(248:250,252:253,229)] <- get_col(risk, brewerBrBG9)
+#  cols[251] <- get_col(o[i], brewerBrBG9)
+#  cols[c(248:250,252:253,229)] <- get_col(risk, brewerBrBG9)
+  cols[232] <- get_col(o[i], brewerBrBG9[1:4])
+  cols[c(230:231,233:234,262)] <- get_col(risk, brewerBrBG9[1:4])
 
   plot(map.shp[num,], lty=1, col=cols[num], border="black", lwd=0.6, add=T)
-  
-  coords <- slot(slot(map.shp, "polygons")[[251]], "labpt")
+#  center <- t(simplify2array(lapply(map.shp[num,]@polygons, function(x) { x@labpt })))
+#  text(center[,1], center[,2], num)
+  coords <- slot(slot(map.shp, "polygons")[[232]], "labpt")
   text(coords[1], coords[2], expression(U[i]))
   dev.off()
 }
@@ -58,7 +70,7 @@ for (i in seq_along(o)) {
 system("convert -delay 4 -loop 0 plot*.png spatial2.gif")
 system("convert spatial2.gif -transparent white spatial.gif")
 
-system("~/ffmpeg -y -r 24 -i png/spatial%04d.png video/spatial.mp4")
+system("~/ffmpeg -y -r 24 -i png/spatial_2_%04d.png video/spatial2.mp4")
 
 
 # temporal uncertainty here...
