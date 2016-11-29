@@ -205,6 +205,17 @@ for (i in seq_len(dim(V)[1])) {
 
 system("avconv -y -r 24 -i spatial_palmy_fit%04d.png spatial_palmy_fit.mp4")
 
+svg('foo.svg')
+
+# testing spplot/gridSVG to see if we can get this auto-animated
+spplot(phu, c("pre2008", "post2008"), col='transparent', xlim=c(2727946, 2734889),
+       ylim=c(6086900, 6094322))
+
+print(spplot(phu, "pre2008", col='transparent', xlim=c(2727946, 2734889),
+       ylim=c(6086900, 6094322)), prefix='map')
+
+# hmm, the grid.export command seems to take FOREVER...
+grid.export(name='test.svg')
 
 
 
