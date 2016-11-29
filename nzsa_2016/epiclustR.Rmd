@@ -366,6 +366,10 @@ video.listen('frame');
 
 ## Summary
 
+- Model smooth trends in space and time.
+
+- Identify potential outbreaks over and above the trends.
+
 - Seems to be a reduction in urban cases pre/post 2008.
 
 - Outbreak detection dependent on how localised cases are and whether outbreak regions match.
