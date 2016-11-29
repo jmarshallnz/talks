@@ -300,7 +300,7 @@ var video = VideoFrame({
   id : 'outbreaks',
   frameRate: 10,
   callback : function(frame) {
-    var frames = [ 96, 137, 158, 214, 233, 256, 283, 343, 356, 1000 ]
+    var frames = [ 96, 137, 158, 214, 233, 256, 283, 356, 1000 ]
     for (t = 0; t < frames.length; t++) {
       if (frame == frames[t]-1) {
         video.stopListen();
@@ -316,6 +316,8 @@ video.listen('frame');
 </article></slide><slide class=''><hgroup><h2>Summary</h2></hgroup><article  id="summary">
 
 <ul>
+<li><p>Model smooth trends in space and time.</p></li>
+<li><p>Identify potential outbreaks over and above the trends.</p></li>
 <li><p>Seems to be a reduction in urban cases pre/post 2008.</p></li>
 <li><p>Outbreak detection dependent on how localised cases are and whether outbreak regions match.</p></li>
 <li><p>It helps if outbreak regions align with epidemiology.</p></li>
