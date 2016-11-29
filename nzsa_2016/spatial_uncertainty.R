@@ -131,8 +131,8 @@ for (i in seq_len(nrow(o))) {
   axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
   axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
   mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)
-  lines(weeks, o[i,], lwd=1.5, col=alpha(col[1],1))
-  lines(weeks, med, col=col[1], lwd=2.5)
+  lines(weeks, o[i,], lwd=2.5, col=alpha(col[1],1))
+  lines(weeks, med, col=col[1], lwd=4)
   polygon(c(weeks, rev(weeks)), c(lci, rev(uci)), col=alpha(col[1], 0.5), border=NA)
   dev.off()
 }
@@ -140,7 +140,7 @@ for (i in seq_len(nrow(o))) {
 system("convert -delay 4 -loop 0 -dispose background temp_fit*.png temporal_fit2.gif")
 system("convert temporal_fit2.gif -transparent white temporal_fit.gif")
 
-system("~/ffmpeg -y -r 24 -i png/temp_fit%04d.png temp_fit.mp4")
+system("~/ffmpeg -y -r 24 -i temp_fit%04d.png temp_fit.mp4")
 
 
 
