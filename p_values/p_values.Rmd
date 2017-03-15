@@ -1,0 +1,254 @@
+---
+title: "The insidious evil of P-values"
+subtitle: "(Not really)"
+author: "Jonathan Marshall"
+date: "16 March 2017"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# P-values are evil
+
+## Biggest(??) problem with P-values
+
+- P-values tell you only about how odd your data are in a statistical sense.
+
+- But lots of things are odd in a statistical sense.
+
+- Much more important is whether there is any practical or scientific relevance.
+
+- If all you have is a P-value, then you have only a tiny amount of evidence.
+
+- Add more science!&trade;
+
+## P-values encourage dichotomy
+
+- The $P < 0.05$ criteria drilled by statistics teachers is harmful.
+
+- Encourages thinking about things as 'yes' and 'no', whereas P really gives
+you a measure of how much yes and no you have.
+
+- Publication bias means lots more $P < 0.05$ than you should expect in the literature, so results are overstated and don't reproduce.
+
+- Encourages searching for significance (P-hacking).
+
+## No-one understands P-values
+
+<iframe src="http://www.espn.com/core/video/iframe?id=14212614&endcard=false" allowfullscreen frameborder="0"></iframe>
+
+## What the P-value means
+
+- Suppose you have a treatment that you suspect improves the health of sick animals.
+
+- You have a simple numeric measure of the effect of the treatment, and an ideal
+experimental situation of control and experimental groups.
+
+- You use the usual independent t test to compare the mean improvement between treatment and control groups.
+
+- Your result is $p=0.01$.
+
+- Recall the definition of the P-value:
+
+<div align='center'>*A p-value is the probability of the available
+(or of even less likely) data,<br />given that the null hypothesis is true.*</div>
+
+## What the P-value means
+
+1. You have absolutely disproved the null hypothesis (that is, there is no difference between the population means)
+
+2. You have found the probability of the null hypothesis being true.
+
+3. You have absolutely proved your experimental hypothesis (that there is a difference between the population means).
+
+4. You can deduce the probability of the experimental hypothesis being true.
+
+5. You know, if you decide to reject the null hypothesis, the probability that you are making the wrong decision.
+
+6. You have a reliable experimental finding in the sense that if, hypothetically, the experiment were repeated a great number of times, you would obtain a significant result on 99% of occasions.
+
+## No-one knows what P-values mean
+
+```{r, fig.align='center'}
+d <- c(80, 89.7, 100, 97)
+barplot(d, names=c("Stats instructors", "Other scientists", "Students", "Academics"), ylab = "Percentage with at least one mistake")
+```
+
+## P-values don't tell you about effect size
+
+- Suppose you have a small P-value. That gives no information about practical importance.
+
+    - You might have a large effect size (so practically important) but also a fairly large uncertainty.
+    - Or, you might have a small effect size (so practically useless) but a small uncertainty.
+
+- Suppose you have a large P-value. This gives no information about practical importance.
+
+    - You might have a large effect size (so practically important) but also large uncertainty.
+    - You might have a small effect size (so practically useless) but also medium uncertainty.
+
+## P-values can't be compared
+
+Suppose you have two independent experiments with estimates of 25 and 10 units respectively, where both have standard errors of 10 units.
+
+- The first would have small P-value (about 0.01) while the second has a large P-value (about 0.3)
+
+- So it seems like there's a clear difference between the two experiments.
+
+- But if you look at the difference in the estimates, this is 15 units, with standard error 14, which again has a P-value of about 0.3! There is no difference!
+
+- (Within a regression setup, you *can* compare P-values of different estimates though as they've been adjusted for the other terms)
+
+## P-values aren't what you want
+
+What you want: How likely is it that my hypothesis is true, given the data I have collected?
+
+What you get: If your hypothesis was true, your data (or something more extreme) would be this likely if only chance was involved.
+
+The P-value is a **conditional** probability that is around the wrong way.
+
+## P-values aren't only about chance!
+
+- A common misconception is that the P-value tells you whether your result was due to chance.
+
+- Actually, it tells you whether your results are *consistent* with being due to chance.
+
+- It's almost certainly a mix of real effect plus chance!
+
+## The hypotheses used are silly
+
+- It is **highly** unlikely that the difference between groups is zero.
+
+- So testing whether the difference is zero is completely meaningless.
+
+- Instead, we should be testing for meaningful effect sizes.
+
+- One way to do that in simple cases is to look at the effect size as well as
+the P-value.
+
+- BEWARE: If your study is low-powered, then if your P-value is small then your
+effect size is probably inflated and could even be the wrong sign.
+
+## Your hypothesis includes your model
+
+- As part of your hypothesis, you're making an assumption about how the data
+have arisen.
+
+- e.g. you're assuming independence, simple random sampling, that differences
+are in center rather than in spread etc.
+
+- Also includes covariate choice.
+
+- A small P-value could be due to model mis-specification, as under the wrong model the data you see could well be unlikely.
+
+## Common analyses make P-values too small
+
+- A big one is step-wise regression.
+
+- This can involve fitting a model with all covariates (and possibly interactions), and progressively removing the ones that have high p-values.
+
+- Problem is that the ones you're left with *necessarily* have low p-values, and that
+these p-values are lower than they should be because they ignore the other variables.
+
+- Better to present the full model: at least there the p-values are unbiased.
+
+- How you use the model is important though. Parsimony is a good thing if interpreted correctly.
+
+## P-hacking is super tempting
+
+- You almost certainly have lots of variables. It makes sense to look at your data to see what it says.
+
+- It makes sense to refine your hypotheses, or even develop hypotheses after looking at your data.
+
+- But if you see it in your data, then the statistical test is a bit meaningless, as you know the result anyway.
+
+- If you publish the results then it's hard to present them all, so typically you pick out the important ones. Thus, small P-values (from meaningless tests) are in the paper.
+
+## The garden of forking paths
+
+- All the decisions you make during an analysis ignore all the other paths you could have taken.
+
+- i.e. refining hypotheses will mean others don't get tested.
+
+- When you see no differences then you usually move on.
+
+- "We found nothing!" doesn't get published in Nature.
+
+# The Gelman and Loken paper
+
+## Key idea 1: You don't have to fish to screw up
+
+- Most people know about fishing for significance and the problem with presenting results
+that reach significance while ignoring those that don't.
+
+- You'll probably do a set of analyses based on the data you see, and if you'd seen other data, you'd have done something else.
+
+- This is enough to mean your P-value is probably too small, as your tests have in some way been fit to the data you see.
+
+- e.g Democrat and Republican maths test. Does context (military, health care) make a difference?
+
+## Key idea 2: Main effects or interactions?
+
+- You have a hypothesis, and start by comparing the main effects. You find there isn't anything there.
+
+- But your hypothesis is plausible, so it makes sense to look at interactions. Maybe the key thing is in the interaction?
+
+- But what about other interactions? Introducing interactions often means LOTS of things to test, whereby you start running out of data.
+
+- e.g. Interaction between upper body strength and socio-economic status associated with attitudes for economic redistribution.
+
+- There is a one to many map between scientific and statistical hypotheses. e.g. Appearance/non-appearance of ESP, menstrual cycle and voting intention.
+
+## Key idea 3: Choices in data analysis.
+
+- e.g. Women at peak fertility are 3 times more likely to wear red or pink shirts.
+
+- Choice as to what 'peak fertility' means.
+
+- Who to exclude from the study?
+
+- Which colours to study?
+
+- Should you combine results from separate studies?
+
+- All the choices made can be justified with something that is scientifically defensible.
+
+- Nonetheless, a path has been chosen, so your P-values and effect sizes are probably dependent on the path and will typically be too small.
+
+## What to do??
+
+- Try and replace decisions made after seeing the data with decisions made before it (e.g. pre-registration)
+
+- Try and account for multiple things: keep all terms in your model for your final result where it makes sense to do so.
+
+- Report multiple model results where confounding occurs.
+
+- Use techniques to correct effect sizes, such as shrinkage in regression.
+
+## Correcting effect sizes
+
+- Use a Bayesian analysis with more sensible priors on the hypotheses under test.
+
+- Use hierarchical models where you treat coefficients as random effects with some common distribution. This effectively shrinks coefficients towards zero.
+
+- Use LASSO or other penalised regression techniques - these penalise over-fitting more than traditional regression.
+
+- Use models that automatically allow for interactions where
+they make sense, such as random forests - they also give variable importance scores.
+
+## My conclusion
+
+- P-values aren't really evil.
+
+- But they are far less useful than they're made out to be.
+
+- Best to assume they **always** overstate things.
+
+- Make sure you have other evidence about the hypotheses.
+
+- Be clear that things are still uncertain!
+
+- Most scientists tend to already do these things :)
