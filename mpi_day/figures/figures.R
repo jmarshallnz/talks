@@ -160,14 +160,16 @@ ui <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.9)) %>% m
 xi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.3)) %>% mutate(Variable='xi')
 yi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.7)) %>% mutate(Variable='yi')
 d <- rbind(m, li, ui, xi, yi)
-d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value)
+d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(mu:yi), function(x) { x*100 })
 
+# TODO: Legend and colours same as above
 library(ggplot2)
 ggplot(d) + geom_ribbon(aes(x=Rurality, ymin=li, ymax=ui, fill=Source), alpha=0.25) + 
   geom_ribbon(aes(x=Rurality, ymin=xi, ymax=yi, fill=Source), alpha=0.35) + geom_line(aes(x=Rurality, y=mu, colour=Source)) +
   theme_bw() +
   scale_x_continuous(expand=c(0,0)) +
-  scale_y_continuous(expand=c(0,0))
+  scale_y_continuous(expand=c(0,0), name="Percentage of cases")
 
+####### Plot of ST-474 attribution, tidied up...
 
-
+####### Plot of ST-474 tree/MDS ????
