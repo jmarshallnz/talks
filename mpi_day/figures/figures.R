@@ -160,7 +160,7 @@ ui <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.9)) %>% m
 xi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.3)) %>% mutate(Variable='xi')
 yi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.7)) %>% mutate(Variable='yi')
 d <- rbind(m, li, ui, xi, yi)
-d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(mu:yi), function(x) { x*100 })
+d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(li:yi), function(x) { x*100 })
 
 # TODO: Legend and colours same as above
 library(ggplot2)
