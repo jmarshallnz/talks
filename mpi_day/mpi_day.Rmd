@@ -135,19 +135,19 @@ TODO:
 
 ## Temporal trend
 
-TODO:
+TODO: Temporal video
 
 ## Spatial trend broad
 
-TODO:
+TODO: Spatial video1
 
 ## Spatial trend Palmy
 
-TODO:
+TODO: Spatial video2
 
 ## Outbreaks
 
-TODO:
+TODO: Outbreak plot, highlighting the two events
 
 ## Outbreak: Pahiatua water supply
 
@@ -159,4 +159,4 @@ TODO: Attribution of Palmerston North raw milk
 
 ## Outbreaks: Havelock North
 
-TODO: HBDHB outbreak map, highlighted HN outbreaks
+TODO: HBDHB outbreak time series, highlighted HN outbreaks
