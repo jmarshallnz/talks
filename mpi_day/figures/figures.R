@@ -1,4 +1,10 @@
 library(dplyr)
+library(forcats)
+library(tidyr)
+library(ggplot2)
+library(mgcv)
+
+data_folder <- "data/sa_report"
 
 ## STUFF FOR ALL PLOTS
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
@@ -7,7 +13,7 @@ ax_col = "grey20"
 fig_width = 10
 
 ###### NZ Cases of campy through time
-cases <- read.csv("~/data/sa_report/data/dhb_cases.csv", stringsAsFactors = FALSE) %>%
+cases <- read.csv(file.path(data_folder, "dhb_cases.csv"), stringsAsFactors = FALSE) %>%
   mutate(Population = PopulationInterpolated)
 
 # filter out where we don't have a population
@@ -42,9 +48,7 @@ title(ylab="Cases per 100,000", col.lab=ax_col, line=2.5)
 
 
 ###### ST dist on humans
-library(forcats)
-library(tidyr)
-attr <- read.csv("~/data/sa_report/data/extract_attribution.csv")
+attr <- read.csv(file.path(data_folder, "extract_attribution.csv"))
 sts <- attr %>% mutate(Source = fct_collapse(Source, Poultry = c("Supplier A", "Supplier B", "Supplier Other"),
                                             Water = "Environmental water"))
 
@@ -94,63 +98,42 @@ title(ylab="Cases", col.lab=ax_col)
 ###### Attribution results
 
 #TODO: This should be urban/rural, but for some reason the fit seems very bad :(
-attr_dyn = read.csv("~/data/sa_report/data/attribution_dynamic.csv", stringsAsFactors = FALSE)
-source_map4 = read.csv("~/data/sa_report/source_maps/4_source.csv", stringsAsFactors = FALSE) %>% filter(Label != "Human") %>%
+attr_dyn = read.csv(file.path(data_folder, "attribution_dynamic_urban_rural_TEST_PRIORS.csv"), stringsAsFactors = FALSE)
+source_map4 = read.csv(file.path(data_folder, "4_source.csv"), stringsAsFactors = FALSE) %>% filter(Label != "Human") %>%
   dplyr::select(Number, Label) %>% unique %>% arrange(Number)
 
 times = 1:max(attr_dyn$Month)
 years = max(attr_dyn$Month)/12 - 1
+attr_dyn <- attr_dyn %>% mutate(Year = 2005 + (Month-1) %/% 12,
+                    Month = (Month-1) %% 12 + 1,
+                    Date = as.Date(sprintf('%04d-%02d-01', Year, Month)),
+                    UR_bool = fct_relevel(UR_bool, "Urban", "Rural"))
 
-urban = attr_dyn #[attr_dyn$UR_bool == "Rural",]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, d$mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,144,by=12), labels=rep("", 13), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  mtext(2005:2016, side=1, col=ax_col, at=seq(0,132,by=12)+6, line=0.5)
-}
+ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) + 
+  geom_ribbon(aes(x=Date, ymin=li, ymax=ui, fill=Source), alpha=0.4) +
+  geom_ribbon(aes(x=Date, ymin=xi, ymax=yi, fill=Source), alpha=0.7) +
+  geom_line(aes(x=Date, y=mu)) +
+  facet_grid(Source ~ UR_bool) +
+  theme_bw() +
+  scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
+  scale_x_date(expand=c(0, 0)) +
+  scale_y_continuous(name = "Attributed human cases", labels = scales::percent)
 
-####### Attribution results: Totals
+#### TOTALS
 
-# TODO: Ideally this would be UR results
-attr_dyn = read.csv("~/data/sa_report/data/attribution_dynamic.csv", stringsAsFactors = FALSE)
-source_map4 = read.csv("~/data/sa_report/source_maps/4_source.csv", stringsAsFactors = FALSE) %>% filter(Label != "Human") %>%
-  dplyr::select(Number, Label) %>% unique %>% arrange(Number)
-
-times = 1:max(attr_dyn$Month)
-years = max(attr_dyn$Month)/12 - 1
-
-urban = attr_dyn
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  mu = d$mu * d$Count
-  li = d$li * d$Count
-  ui = d$ui * d$Count
-  xi = d$xi * d$Count
-  yi = d$yi * d$Count
-
-  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,144,by=12), labels=rep("", 13), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,40,by=10), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  title(ylab="Cases", col.lab=ax_col)
-  mtext(2005:2016, side=1, col=ax_col, at=seq(0,132,by=12)+6, line=0.5)
-}
+ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) + 
+  geom_ribbon(aes(x=Date, ymin=li*Count, ymax=ui*Count, fill=Source), alpha=0.4) +
+  geom_ribbon(aes(x=Date, ymin=xi*Count, ymax=yi*Count, fill=Source), alpha=0.7) +
+  geom_line(aes(x=Date, y=mu*Count)) +
+  facet_grid(Source ~ UR_bool) +
+  theme_bw() +
+  scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
+  scale_x_date(expand=c(0, 0)) +
+  scale_y_continuous(name="Attributed human cases")
 
 
 ####### Plot of Jing's work
-cat <- read.table("~/data/sa_report/data/jing/cateI_capital.txt")
+cat <- read.table(file.path(data_folder, "cateI_capital.txt"))
 names(cat) <- c("Rurality", "Poultry", "Ruminants", "Water", "Other")
 
 # drop down to quantiles and means
@@ -162,13 +145,29 @@ yi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.7)) %>% m
 d <- rbind(m, li, ui, xi, yi)
 d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(li:yi), function(x) { x*100 })
 
-# TODO: Legend and colours same as above
-library(ggplot2)
+write.csv(d, file.path(data_folder, 'ur_categorical.csv'), row.names = FALSE)
+d <- read.csv(file.path(data_folder, 'ur_categorical.csv'))
+d$Source <- factor(d$Source, c('Poultry', 'Ruminants', 'Water', 'Other'))
+
+prior_labeller <- function(x) {
+  x <- ifelse(x == "0", "No expert reliance", ifelse(x == "2", "Strong expert reliance", ""))
+}
+
 ggplot(d) + geom_ribbon(aes(x=Rurality, ymin=li, ymax=ui, fill=Source), alpha=0.25) + 
   geom_ribbon(aes(x=Rurality, ymin=xi, ymax=yi, fill=Source), alpha=0.35) + geom_line(aes(x=Rurality, y=mu, colour=Source)) +
   theme_bw() +
-  scale_x_continuous(expand=c(0,0)) +
-  scale_y_continuous(expand=c(0,0), name="Percentage of cases")
+  scale_x_continuous(expand=c(0,0), labels=c('Highly Rural', rep('', 5), 'Highly Urban'), name='') +
+  scale_y_continuous(expand=c(0,0), name="Percentage of cases") +
+  scale_color_manual(values = c("plum4", "steelblue", "brown", "green4")) +
+  scale_fill_manual(values = c("plum4", "steelblue", "brown", "green4")) +
+  theme(legend.position = c(0.95,0.95),
+        legend.justification = "right",
+        legend.margin=margin(0,0,0,0),
+        axis.text.x = element_text(hjust=c(rep(-0.1,6),1.1))) +
+  guides(fill=guide_legend(title=NULL,nrow=1),
+         color=guide_legend(title=NULL, nrow=1))
+
+
 
 ####### Plot of ST-474 attribution, tidied up...
 
