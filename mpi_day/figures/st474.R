@@ -86,8 +86,7 @@ ggplot(r) +
   geom_violin(aes(Source, p, fill=Source), scale='width') +
   facet_grid(.~X) +
   theme_bw(base_size=20) +
-  theme(panel.spacing = unit(0.8, "cm"), plot.margin=unit(c(0.5,1,0.5,0.5), 'cm'),
-        axis.text.x = element_text(hjust=c(rep(-0.1,6),1.1))) +
+  theme(axis.text.x = element_text(hjust=c(0.2,0.5,0.5,0.5,0.8))) +
   xlab("") +
   scale_x_discrete(limits=rev(levels(r$Source))) +
   scale_y_continuous(name = "Attributed human cases", labels = scales::percent) +
