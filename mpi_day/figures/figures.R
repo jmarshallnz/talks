@@ -12,7 +12,6 @@ fig_height <- 540
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ax_col = "grey20"
-fig_width = 10
 
 ###### NZ Cases of campy through time
 cases <- read.csv(file.path(data_folder, "dhb_cases.csv"), stringsAsFactors = FALSE) %>%
@@ -94,7 +93,7 @@ ur <- attr %>% filter(Source == "Human", !is.na(UR_bool)) %>% group_by(ST, UR_bo
 png("figures/04_st_urban_rural.png", width = fig_width, height = fig_height)
 par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
 top20 = match(sts$ST[order(-sts$Human)[1:20]], ur$ST)
-cols = c(rep(alpha("steelblue",0.5), 20), "grey70")
+cols = c(rep(alpha("steelblue",0.7), 20), "grey50")
 barplot(c(ur$Urban[top20], sum(ur$Urban[-top20])), names=c(ur$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis=ax_col)
 axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
 title("Urban", col.main=ax_col, cex.main=1.3)
@@ -125,7 +124,7 @@ ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) +
   geom_ribbon(aes(x=Date, ymin=xi, ymax=yi, fill=Source), alpha=0.7) +
   geom_line(aes(x=Date, y=mu)) +
   facet_grid(Source ~ UR_bool) +
-  theme_bw() +
+  theme_bw(base_size=20) +
   scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
   scale_x_date(expand=c(0, 0)) +
   scale_y_continuous(name = "Attributed human cases", labels = scales::percent)
@@ -139,7 +138,7 @@ ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) +
   geom_ribbon(aes(x=Date, ymin=xi*Count, ymax=yi*Count, fill=Source), alpha=0.7) +
   geom_line(aes(x=Date, y=mu*Count)) +
   facet_grid(Source ~ UR_bool) +
-  theme_bw() +
+  theme_bw(base_size=20) +
   scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
   scale_x_date(expand=c(0, 0)) +
   scale_y_continuous(name="Attributed human cases")
@@ -173,7 +172,7 @@ prior_labeller <- function(x) {
 png("figures/07_attribution_rurality.png", width = fig_width, height = fig_height)
 ggplot(d) + geom_ribbon(aes(x=Rurality, ymin=li, ymax=ui, fill=Source), alpha=0.25) + 
   geom_ribbon(aes(x=Rurality, ymin=xi, ymax=yi, fill=Source), alpha=0.35) + geom_line(aes(x=Rurality, y=mu, colour=Source)) +
-  theme_bw() +
+  theme_bw(base_size = 20) +
   scale_x_continuous(expand=c(0,0), labels=c('Highly Rural', rep('', 5), 'Highly Urban'), name='') +
   scale_y_continuous(expand=c(0,0), name="Percentage of cases") +
   scale_color_manual(values = c("plum4", "steelblue", "brown", "green4")) +

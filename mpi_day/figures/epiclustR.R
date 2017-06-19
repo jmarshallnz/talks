@@ -352,7 +352,7 @@ cases <- apply(TA$data$cases, 1, sum)
 png("figures/14_outbreak_plot.png", width=fig_width, height=fig_height)
 par(mgp=c(2,.7,0), tck=-.015, bg="#FFFFFF")
 plot(weeks, cases, ylim=c(0,20), type='l', col="grey60", xaxs='i', yaxs='i', xlab='', lwd=1,
-     ylab='', axes=FALSE, col.lab=ax_col)
+     ylab='Cases per week', axes=FALSE, col.lab=ax_col)
 axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
 axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
 mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)

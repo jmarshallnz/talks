@@ -64,7 +64,7 @@ layout3 = layout2[match(V(t2)$name, V(t)$name),]
 png("figures/08_474_tree_sources.png", width=fig_width, height=fig_height)
 par(mar=c(0,0,0,0))
 plot(t2, vertex.label=NA, vertex.size=4, vertex.color = cols[final$source[wch]], layout = layout3, rescale=FALSE)
-legend('topright', legend=levels(final$source)[1:6], col='black', pch=21, pt.bg = cols, bty='n')
+legend('topright', legend=levels(final$source)[1:6], col='black', pch=21, pt.bg = cols, bty='n', cex=1.7)
 dev.off()
 
 png("figures/09_474_tree_humans.png", width=fig_width, height=fig_height)
@@ -72,7 +72,7 @@ par(mar=c(0,0,0,0))
 vsize <- rep(3,nrow(final))
 vsize[wch] <- 4
 plot(t, vertex.label=NA, vertex.size=vsize, vertex.color = cols[final$source], layout = layout2, rescale = FALSE)
-legend('topright', legend=levels(final$source), col='black', pch=21, pt.bg = cols, bty='n')
+legend('topright', legend=levels(final$source), col='black', pch=21, pt.bg = cols, bty='n', cex=1.7)
 dev.off()
 
 # ATTRIBUTION
@@ -83,12 +83,14 @@ r <- read.csv("data/474/attribution.csv") %>%
 png("figures/10_474_attribution.png", width=fig_width, height=fig_height)
 r <- r %>% mutate(Col = cols[Source])
 ggplot(r) +
-  geom_violin(aes(Source, p*100, fill=Source), scale='width') +
+  geom_violin(aes(Source, p, fill=Source), scale='width') +
   facet_grid(.~X) +
-  theme_bw(base_size=15) +
-  ylab("Percentage attributed to source") +
+  theme_bw(base_size=20) +
+  theme(panel.spacing = unit(0.8, "cm"), plot.margin=unit(c(0.5,1,0.5,0.5), 'cm'),
+        axis.text.x = element_text(hjust=c(rep(-0.1,6),1.1))) +
   xlab("") +
   scale_x_discrete(limits=rev(levels(r$Source))) +
+  scale_y_continuous(name = "Attributed human cases", labels = scales::percent) +
   coord_flip() +
   scale_fill_manual(values = cols, guide=FALSE)
 dev.off()

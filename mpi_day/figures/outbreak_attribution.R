@@ -87,28 +87,16 @@ filtered <- posterior %>% left_join(restrict) %>%
 
 write.csv(filtered, "data/rawmilk.csv", row.names=FALSE)
 
-# plot the attribution
-filtered <- read.csv("data/rawmilk.csv")
-
-# TODO: Colours + combine
-ggplot(filtered) +
-  geom_violin(aes(Source, p*100), scale='width', fill='lightgrey') +
-  theme_bw(base_size=15) +
-  ylab("Percentage attribted to source") +
-  xlab("") +
-  coord_flip()
-#dev.off()
-
 
 # plot the attribution
 outbreaks <- rbind(read.csv("data/pahiatua.csv") %>% mutate(Outbreak="Pahiatua"),
                    read.csv("data/rawmilk.csv") %>% mutate(Outbreak="Raw milk")) %>%
   mutate(Source = fct_relevel(Source, "Poultry", "Cattle", "Sheep", "Other"))
 
-png("figures/11_outbreak_attribution.png", width=fig_width, height=fig_height)
+png("figures/15_outbreak_attribution.png", width=fig_width, height=fig_height)
 ggplot(outbreaks) +
   geom_violin(aes(Source, p, fill=Source), scale='width') +
-  theme_bw(base_size=15) +
+  theme_bw(base_size=20) +
   facet_grid(. ~ Outbreak) +
   scale_fill_manual(values = c("plum4", "steelblue", "steelblue2", "brown"), guide = "none") +
   xlab("") +
