@@ -7,7 +7,7 @@ library(tidyr)
 db = read.csv("data/sa_report/extract_attribution.csv", stringsAsFactors = FALSE)
 
 # use a source map to map sources to final sources for attribution
-source_map = read.csv("data/sa_report/4_source.csv")
+source_map = read.csv("data/sa_report/5_source.csv")
 
 db = db %>% left_join(source_map, by="Source") %>%
             filter(!is.na(Label))
@@ -42,27 +42,31 @@ pred = predict(mod, FUN=identity) %>%
 
 write.csv(pred, "data/attr_two_times.csv", row.names=FALSE)
 
+library(forcats)
 p <- pred %>% mutate(pC = p*Count, p = p*100) %>% gather("Version", "Value", p, pC) %>%
   mutate(Version = fct_recode(Version, Percent='p', Cases = 'pC'),
-         Source = fct_relevel(Source, 'Poultry', 'Ruminants', 'Water', 'Other'),
+         Source = fct_relevel(Source, 'Poultry', 'Cattle', 'Sheep', 'Water', 'Other'),
          Year = fct_relevel(Year, 'Before'),
          Year = fct_recode(Year, `2005-2007`='Before', `2008-2016`='After'))
 
 fig_width <- 960
 fig_height <- 540
 
-png("figures/05_attribution_both.png", width=fig_width, height=fig_height)
+library(ggplot2)
 
+#TODO: Flip this around
+
+png("figures/05_attribution_both_b.png", width=fig_width, height=fig_height)
 ggplot(p) +
   geom_violin(aes(Source, Value, fill=Source), scale='width') +
-  facet_grid(Year~Version, scales = 'free_x') +
+  facet_grid(Version~Year, scales = 'free_y') +
   theme_bw(base_size=20) +
   # theme(axis.text.x = element_text(hjust=c(0.2,0.5,0.5,0.5,0.8))) +
   xlab("") +
-  scale_x_discrete(limits=rev(levels(p$Source))) +
+ # scale_x_discrete(limits=rev(levels(p$Source))) +
   scale_y_continuous(name = "Attributed human cases") +
-  coord_flip() +
-  scale_fill_manual(values = c("plum4", "steelblue", "brown", "green4"), guide=FALSE)
+#  coord_flip() +
+  scale_fill_manual(values = c("plum4", "steelblue", "steelblue2", "brown", "green4"), guide=FALSE)
 
 dev.off()
 

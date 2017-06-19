@@ -1,0 +1,14 @@
+Source,Number,Label
+Human,0,Human
+Supplier A,1,Poultry
+Supplier B,1,Poultry
+Supplier Other,1,Poultry
+Duck_poultry,5,Other
+Turkey,5,Other
+Spent_hen,5,Other
+Cattle,2,Cattle
+Sheep,3,Sheep
+Cat_dog_pet,5,Other
+Water_bird_wild,5,Other
+Wild_bird_other,5,Other
+Environmental water,4,Water
