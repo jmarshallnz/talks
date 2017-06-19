@@ -1,31 +1,12 @@
 # spatial stuff
 library(RColorBrewer)
-library(classInt)
+#library(classInt)
 library(maptools)
 
 brewerBrBG9 <- rev(c("#01665E","#35978F","#80CDC1","#C7EAE5","#F5F5F5","#F6E8C3","#DFC27D","#BF812D","#8C510A"))
 
 breaks <- c(-Inf, 0.2, 0.5, 0.8, 0.95, 1.05, 1.3, 2.0, 5.0, Inf)
 col    = c("steelblue", "plum4")
-
-shapeFile <- "../nzsa_2016/maps/AU2006.shp"
-map.shp <- readShapeSpatial(shapeFile)
-ids <- slot(map.shp, "data")[[1]]
-map.shp$num <- 1:length(ids);
-
-xylims <- attr(map.shp, "bbox")
-xylims2 <- matrix(c(1752500, 1757500, 5918500, 5922000), 2, 2, byrow=T)
-xylims <- xylims2 + c(-3000,-3000,3000,3000)
-
-num <- c(229:235, 248:253, 256:257, 261:262, 283, 293)
-#center <- t(simplify2array(lapply(map.shp@polygons, function(x) { x@labpt })))
-#text(center[,1], center[,2], 1:nrow(center))
-
-#plot(map.shp, xlim=xylims[1,], ylim=xylims[2,])
-
-xylims <- bbox(map.shp[num,])
-
-ratio <- (xylims[2,2] - xylims[2,1]) / (xylims[1,2] - xylims[1,1])
 
 get_col <- function(c, pal) {
   func <- colorRamp(pal, space="Lab")
@@ -70,8 +51,6 @@ for (i in seq_len(nrow(o))) {
   dev.off()
 }
 
-system("convert -delay 4 -loop 0 -dispose background temp_fit*.png temporal_fit2.gif")
-system("convert temporal_fit2.gif -transparent white temporal_fit.gif")
 
 system(paste0("~/ffmpeg -y -r 24 -i ", file.path(temp_dir, 'temp_fit%04d.png'), " figures/temporal_fit.mp4"))
 
@@ -100,7 +79,13 @@ cols <- colorRampPalette(brewerBrBG9, space='Lab')(num_cols)
 num_alpha <- 10
 breaks_alpha <- seq(0,1,length.out=num_alpha+1)
 
-uncertainty <- apply(U, 1:2, function(x) { 1-(max(sum(x > 0), sum(x < 0)) / length(x)*2 - 1) })
+uncertain_func <- function(x) {
+  y <- 1-(max(sum(x > 0), sum(x < 0)) / length(x)*2 - 1)
+  # those more uncertain, make more so (y == 1)
+  sqrt(y)
+}
+
+uncertainty <- apply(U, 1:2, uncertain_func)
 uncertainty <- apply(uncertainty, 2, function(x) { as.numeric(cut(x, breaks=breaks_alpha, include.lowest = TRUE)) })
 
 cols_unc <- lapply(cols, function(x) { colorRampPalette(c(x, 'grey50'), space='Lab')(num_alpha+1) })
@@ -140,6 +125,7 @@ for (i in seq_len(dim(V)[1])) {
 #system("convert spatial_fit2.gif -transparent white spatial_fit.gif")
 
 system(paste0("~/ffmpeg -y -r 24 -i ", file.path(temp_dir, 'spatial_fit%04d.png'), " figures/spatial_fit.mp4"))
+system(paste0("avconv -y -r 24 -i ", file.path(temp_dir, 'spatial_fit%04d.png'), " figures/spatial_fit.mp4"))
 
 #system("avconv -y -r 24 -i spatial_fit%04d.png spatial_fit.mp4")
 
@@ -154,6 +140,7 @@ for (i in seq_len(dim(V)[1])) {
 #system("convert spatial_palmy_fit2.gif -transparent white spatial_palmy_fit.gif")
 
 system(paste0("~/ffmpeg -y -r 24 -i ", file.path(temp_dir, 'spatial_palmy_fit%04d.png'), " figures/spatial_fit_palmy.mp4"))
+system(paste0("avconv -y -r 24 -i ", file.path(temp_dir, 'spatial_palmy_fit%04d.png'), " figures/spatial_fit_palmy.mp4"))
 
 #system("avconv -y -r 24 -i spatial_palmy_fit%04d.png spatial_palmy_fit.mp4")
 
@@ -178,6 +165,9 @@ plot_temporal(weeks, scasesTA, ecasesTA)
 plot_temporal(weeks, scasesAU, ecasesAU)
 
 # TODO: Merge the AU in with the TA
+
+setdiff(which(ecasesAU - scasesAU > 1), which(ecasesTA - scasesTA > 1))
+
 
 
 
@@ -347,6 +337,71 @@ ecasesAU = apply(epiclustR:::ssapply(AU$mod, epiclustR:::extract_variable, 'ecas
 plot_temporal(weeks, scasesTA, ecasesTA)
 plot_temporal(weeks, scasesAU, ecasesAU)
 
+plot_temporal(weeks, scasesTA, ecasesTA)
+axis(2)
+
+# Find the Raw Milk outbreak and Pahiatua outbreaks
+wch_rawmilk <- which(ecasesTA - scasesTA > 0.4)[5]
+wch_pahiatua <- which(ecasesTA - scasesTA > 0.4)[1]
+
+ecasesTA[wch_rawmilk] <- scasesTA[wch_rawmilk]+1
+
+# make a plot with these on them
+cases <- apply(TA$data$cases, 1, sum)
+
+png("figures/14_outbreak_plot.png", width=fig_width, height=fig_height)
+par(mgp=c(2,.7,0), tck=-.015, bg="#FFFFFF")
+plot(weeks, cases, ylim=c(0,20), type='l', col="grey60", xaxs='i', yaxs='i', xlab='', lwd=1,
+     ylab='', axes=FALSE, col.lab=ax_col)
+axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
+axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
+mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)
+lines(weeks, ecasesTA, col="red", lwd=1.5)
+lines(weeks, scasesTA, col="black", lwd=3)
+dev.off()
+
+png("figures/14_outbreak_plot_highlight.png", width=fig_width, height=fig_height)
+par(mgp=c(2,.7,0), tck=-.015, bg="#FFFFFF")
+plot(weeks, cases, ylim=c(0,20), type='l', col="grey60", xaxs='i', yaxs='i', xlab='', lwd=1,
+     ylab='', axes=FALSE, col.lab=ax_col)
+axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
+axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
+mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)
+lines(weeks, ecasesTA, col="red", lwd=1.5)
+lines(weeks, scasesTA, col="black", lwd=3)
+dim <- 0.85
+bright <- 0.3
+rect(weeks[1],0,weeks[wch_pahiatua-5],20,col=alpha("white", dim), border=NA)
+rect(weeks[wch_pahiatua-5],0,weeks[wch_pahiatua+5],20,col=NA, border='black', lwd=3)
+rect(weeks[wch_pahiatua+5],0,weeks[wch_rawmilk-5],20,col=alpha("white", dim), border=NA)
+rect(weeks[wch_rawmilk-5],0,weeks[wch_rawmilk+5],20,col=NA, border='black', lwd=3)
+rect(weeks[wch_rawmilk+5],0,weeks[length(weeks)],20,col=alpha("white", dim), border=NA)
+dev.off()
+
+
+
+rect(weeks[week]-14, 0, weeks[week]+14, 12, col=alpha("steelblue", 0.7), border=NA)
+
+
+TA$data$cases[wch_rawmilk,]
+
+TA$data$mbrg
+case_list_ta <- TA$data$case_list %>% mutate(Spatial = as.character(Spatial)) %>% left_join(TA$data$spat_list)
+
+
+rawmilk_cases <- case_list_ta %>% filter(ReportWeek %in% weeks[wch_rawmilk+-1:1], Region == "Palmerston North City")
+
+# join up to main database to get info on ST
+library(campydb)
+s <- read_samples("~/data/db_config.txt") %>% left_join(read_isolates("~/data/db_config.txt"), by="LabID")
+e1 <- read_episurv_extra("~/data/db_config.txt")
+db <- s %>% left_join(e1, by=c("HospitalNo" = "hospitalnu"))
+
+rawmilk_final <- rawmilk_cases %>% left_join(db, by=c("CaseID" = "episurvnum")) %>%
+  select(one_of(names(rawmilk_cases)), ST) %>% filter(!is.na(ST))
+
+write.csv(rawmilk_final, "data/outbreak_rawmilk.csv", row.names=FALSE)
+
 
 
 # compute the expected cases for all observations
@@ -391,203 +446,53 @@ system("convert outbreak_fit2.gif -transparent white outbreak_fit.gif")
 
 
 
+###########################
 
+cases <- apply(TA$data$cases, 1, sum)
+dates <- as.Date(names(cases))
+mod <- loess(cases ~ as.numeric(dates), span = 1/10)
+y <- predict(mod, se=TRUE)
 
-
-
-
-
-
-
-pdf("priors_u1.pdf", width=5/sqrt(ratio), height=5*sqrt(ratio))
-par(pin = c(4.6/sqrt(ratio), sqrt(ratio) * 4.6), omi = c(0,0,0,0))
-plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0)
-
-cols <- rep("grey90",length(ids))
-cols[251] <- "grey60"
-cols[c(248:250,252:253,229)] <- get_col(risk, pal)
-num <- c(229:235, 245:257, 284:285, 293)
-plot(map.shp[num,], lty=1, col=cols[num], border="black", lwd=0.6, add=T)
-
-coords <- slot(slot(map.shp, "polygons")[[251]], "labpt")
-text(coords[1], coords[2], expression(U[i]))
-box()
+png("figures/11_temporal_cases.png", width = fig_width, height = fig_height)
+par(mar=c(3,3,0.5,1), mgp=c(2,.7,0), tck=-.015)
+plot(cases ~ dates, type="l", col="grey60", axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,20), xlab="", ylab="Cases", col.lab=ax_col)
+axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
+axis(1, col=ax_col, col.axis=ax_col, at=as.Date(paste0(2006:2017,"-01-01")), labels=rep("",12))
+mtext(2006:2016, side=1, col=ax_col, at=as.Date(paste0(2006:2016,"-07-01")), line=0.5)
+y_fit = y$fit
+polygon(c(dates, rev(dates)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha(col[1], 0.5), border=NA)
+lines(dates, y_fit, col=col[1], lwd=2)
 dev.off()
 
-risk <- runif(6,1,4)
 
-pdf("priors_u2.pdf", width=5/sqrt(ratio), height=5*sqrt(ratio))
-par(pin = c(4.6/sqrt(ratio), sqrt(ratio) * 4.6), omi = c(0,0,0,0))
-plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0)
+############ SPATIAL CASES
 
-cols <- rep("grey90",length(ids))
-cols[251] <- get_col(mean(risk), pal)
-cols[c(248:250,252:253,229)] <- get_col(risk, pal)
-num <- c(229:235, 245:257, 284:285, 293)
-plot(map.shp[num,], lty=1, col=cols[num], border="black", lwd=0.6, add=T)
+cases1 <- apply(TA$data$cases[TA$data$t2p==1,], 2, sum)/sum(TA$data$t2p==1)*52
+cases2 <- apply(TA$data$cases[TA$data$t2p==2,], 2, sum)/sum(TA$data$t2p==2)*52
 
-coords <- slot(slot(map.shp, "polygons")[[251]], "labpt")
-text(coords[1], coords[2], expression(U[i]))
+spat_case <- cbind(TA$data$spat_list, Case1 = cases1 / colSums(TA$data$popn), Case2 = cases2 / colSums(TA$data$popn))
+map_data <- phu@data %>% mutate(MB06 = as.character(MB06)) %>% dplyr::left_join(spat_case, by=c('MB06' = 'Spatial')) %>%
+  mutate(Case1 = ifelse(is.na(Case1), 0, Case1), Case2 = ifelse(is.na(Case2), 0, Case2))
 
-box()
+# do quantile stuff
+brewerBrBG9 <- c("#F5F5F5","#F6E8C3","#DFC27D","#BF812D","#8C510A")
+rate <- c(map_data$Case1,map_data$Case2)
+cuts <- quantile(log(rate[rate > 0]), 0:5/5)
+cols1 <- brewerBrBG9[cut(log(map_data$Case1), cuts)]
+cols1[is.na(cols1)] <- brewerBrBG9[1]
+cols2 <- brewerBrBG9[cut(log(map_data$Case2), cuts)]
+cols2[is.na(cols2)] <- brewerBrBG9[1]
+
+png("figures/12_spatial_cases08.png", width = fig_width, height = fig_height)
+par(mfrow=c(1,2), mar=c(0,0,0,0))
+plot(phu, col=cols1, border="grey60", lwd=0.3)
+plot(phu, xlim=c(2727946, 2734889), ylim=c(6086900, 6094322), col=cols1, border="grey60", lwd=0.3)
 dev.off()
 
-pdf("priors_u3.pdf", width=5/sqrt(ratio), height=5*sqrt(ratio))
-par(pin = c(4.6/sqrt(ratio), sqrt(ratio) * 4.6), omi = c(0,0,0,0))
-plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0)
-
-cols <- rep("grey90",length(ids))
-cols[251] <- get_col(mean(risk)-1, pal)
-cols[c(248:250,252:253,229)] <- get_col(risk, pal)
-num <- c(229:235, 245:257, 284:285, 293)
-plot(map.shp[num,], lty=1, col=cols[num], border="black", lwd=0.6, add=T)
-
-coords <- slot(slot(map.shp, "polygons")[[251]], "labpt")
-text(coords[1], coords[2], expression(U[i]))
-box()
-dev.off()
-
-pdf("priors_u4.pdf", width=5/sqrt(ratio), height=5*sqrt(ratio))
-par(pin = c(4.6/sqrt(ratio), sqrt(ratio) * 4.6), omi = c(0,0,0,0))
-plot(x = xylims[1,], y = xylims[2,], type = "n", xaxt = "n", yaxt = "n", xlab="", ylab="", xlim = xylims[1,], ylim = xylims[2,], cex.lab = 1.0)
-
-cols <- rep("grey90",length(ids))
-cols[251] <- get_col(mean(risk)+1, pal)
-cols[c(248:250,252:253,229)] <- get_col(risk, pal)
-num <- c(229:235, 245:257, 284:285, 293)
-plot(map.shp[num,], lty=1, col=cols[num], border="black", lwd=0.6, add=T)
-
-coords <- slot(slot(map.shp, "polygons")[[251]], "labpt")
-text(coords[1], coords[2], expression(U[i]))
-box()
-dev.off()
-
-zhome <- "~/Massey/Projects/EpiclustR/runs/NZ_fullrun/"
-workingDir         <- paste(zhome,"NZ/RUX2_region",sep="") # directory containing this code
-casesFile          <- paste(zhome,"NZ/Data.txt",sep="")
-regionFile         <- paste(zhome,"NZ/Regions.txt",sep="")      # Region file (single row for each meshblock with region number)
-regionNamesFile    <- paste(zhome,"NZ/RegionNames.txt",sep="")  # Region number:name:bigname mapping
-meshblocksFile     <- paste(zhome,"NZ/Meshblocks.txt", sep="")
-temporalFile       <- "smoothedCases.txt"
-spatiotemporalFile <- "expectedCases.txt"
-outputFile         <- "pnorth.pdf"                              # output file
-startDate          <- "2008-08-30"                               # date of first timepoint
-
-library(RColorBrewer)
-setwd(workingDir)
-
-
-# ignore the burnin samples
-burn_in_samples <- 5000/20
-
-# to get the latter we'd need a running cummulative "RU" similar to cumX.txt
-
-expectedCasesRU <- read.table(temporalFile)
-expectedCasesRU <- apply(expectedCasesRU[-(1:burn_in_samples),],2,mean)
-
-num_times <- length(expectedCasesRU)
-
-cases <- matrix(scan(casesFile), nrow=num_times)
-observedCases <- apply(cases,1,sum)
-
-expectedCasesRUX <- read.table(spatioTemporalFile)
-expectedCasesRUX <- apply(expectedCasesRUX[-(1:burn_in_samples),],2,mean)
-
-X <- as.matrix(read.table("posteriorX.txt"))
-tolerance <- quantile(X,c(0.75,0.95,0.98,0.99))
-
-regions <- scan(regionFile)
-if (file.exists(regionNamesFile))
-{
-  region_names <- read.table(regionNamesFile, header=T)
-} else
-{
-  region_names <- data.frame(number=1:num_regions, region=1:num_regions, bigregion=1:num_regions);
-}
-num_regions <- max(regions)
-
-# we want the actual expected cases for each region at each time point for the last 4 weeks
-# ideally this would be done by knowing fe+R_t+U_i for each region at each iteration (or the cummulative sum thereof)
-
-# instead, we do it inefficiently...
-
-mbs <- read.table(meshblocksFile)
-num_mbs <- length(regions)
-
-R <- matrix(scan("R.txt", skip=burn_in_samples), ncol=num_times, byrow=T)
-fe <- scan("fixedEffects.txt", skip=burn_in_samples)
-U <- matrix(scan("U.txt", skip=burn_in_samples), ncol=num_mbs, byrow=T)
-
-wch <- list()
-for (r in 1:num_regions)
-{
-  wch[[r]] <- which(regions==r)
-}
-
-num_weeks <- min(4,num_times)
-
-expectedCases <- matrix(0, num_regions, num_weeks)
-observedCases <- matrix(0, num_regions, num_weeks)
-for (t in 1:num_weeks)
-{
-  e <- rep(0,length(num_mbs))
-  for (m in 1:num_mbs)
-  {
-    e[m] <- mbs[m,2]*mean(exp(fe + R[,num_times-num_weeks+t] + U[,m]))
-  }
-  for (r in 1:num_regions)
-  {
-    expectedCases[r,t] <- sum(e[wch[[r]]])
-    observedCases[r,t] <- sum(cases[num_times-num_weeks+t,wch[[r]]])
-  }
-}
-
-
-# find where to place our year labels
-year_labels <- NULL
-for (t in 1:num_times)
-{
-  d <- as.POSIXlt(as.Date(startDate) + 7*(t-1))
-  week <- floor(d$yday/7)
-  if (week == 25)
-    year_labels <- rbind(year_labels,c(t,d$year+1900))
-}
-
-# find the first year
-first_week <- floor(as.POSIXlt(as.Date(startDate))$yday/7)
-num_years <- (num_times+52) %/% 52
-
-
-# now output each region
-
-
-reg <- 1:num_regions
-
-reg <- 1
-
-reg <- 39
-
-pdf("PN_outbreak2.pdf", width=8, height=5)
-max_cases_per_region <- round(quantile(cases_per_region, 0.99) / 3 + 0.5)*3
-for (r in reg)
-{
-  m <- max(max_cases_per_region, cases_per_region[,r])
-  title <- paste(region_names$region[r],", ",region_names$bigregion[r], sep="")
-  plot(1:num_times, t="n", xlab="", xaxt="n", yaxt="n", ylab="", main=title, xlim=c(1,num_times), ylim=c(-1,1))
-  polygon(141.2+c(0,2.6,2.6,0),c(-2,-2,2,2),col="grey80", border="grey80")
-  axis(2, labels=c(0,0.5,1), at=c(0,0.5,1))
-  segments(1:num_times, 0, 1:num_times, as.numeric(X[r,]), col="black")
-  case_axis <- seq(0,max_cases_per_region,length.out=4)
-  axis(4, labels=case_axis, at=-1*case_axis/m)
-  wh <- which(cases_per_region[,r] > 0)
-  segments(wh, 0, wh, -cases_per_region[wh,r]/m, col="green3")
-
-  axis(1, at=seq(-first_week,num_years*52-first_week,by=52), labels = FALSE)
-  axis(1, at=seq(-first_week,num_years*52-first_week,by=52/12), labels = FALSE, tck=-.02)
-  for (i in 1:nrow(year_labels))
-    mtext(year_labels[i,2], side=1, line=1, at=year_labels[i,1], cex=0.9)
-  legend(x = "topleft", fill= c("black", "green3"), legend=c("Outbreak probability", "Observed cases"), bg = "white", bty="n")
-}
+png("figures/13_spatial_cases16.png", width = fig_width, height = fig_height)
+par(mfrow=c(1,2), mar=c(0,0,0,0))
+plot(phu, col=cols2, border="grey60", lwd=0.3)
+plot(phu, xlim=c(2727946, 2734889), ylim=c(6086900, 6094322), col=cols2, border="grey60", lwd=0.3)
 dev.off()
 
 

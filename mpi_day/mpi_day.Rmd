@@ -10,28 +10,6 @@ output:
     logo: figures/idrec_square.png
 ---
 
-```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
-library(dplyr)
-library(knitr)
-library(mgcv)
-library(maptools)
-library(rgdal)
-opts_chunk$set(echo=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
-sts = read.csv("data/st_counts.csv")
-ur = read.csv("data/ur_counts.csv")
-humans = read.csv("data/human_by_month.csv")
-nz = read.csv("data/nz_cases.csv", stringsAsFactors=FALSE)
-attribution = read.csv("data/attribution.csv")
-humans$Date = as.Date(humans$Date)
-humans$Month = as.factor(humans$Month)
-nz$Date = as.Date(nz$Date)
-nz$Month = as.factor(nz$Month)
-alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
-par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-ax_col = "grey20"
-fig_width = 10
-```
-
 ## Modelling foodborne disease
 
 - Determining likely source of human disease
@@ -40,11 +18,11 @@ fig_width = 10
 
 - Risk of raw milk
 
-# Determining likely source of human disease
-
 ## Campylobacteriosis in New Zealand
 
-- Timeseries of NZ campy.
+<div align="center">
+  <img src="figures/01_nzcases.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Campylobacteriosis in New Zealand
 
@@ -56,6 +34,8 @@ fig_width = 10
 
 - Costs money
 
+# Determining likely source of human disease
+
 ## Where are people getting it from?
 
 TODO: Picture of person getting infected from sources/river etc
@@ -66,10 +46,8 @@ TODO: Picture of person getting infected from sources/river etc
 
 ## Use genetic information
 
-TODO: Update so it is up to 2016...
-
 <div align="center">
-  <img src="figures/genetics.png" alt="Drawing" style="width: 1000px;" align="center">
+  <img src="figures/genetics.png" alt="Drawing" style="width: 1050;" align="center">
 </div>
 
 ## Overview of genetic info
@@ -81,15 +59,21 @@ TODO: Slide on genetic information
 
 ## MLST dist on humans
 
-Barplot of human ST distribution (common ones)
+<div align="center">
+  <img src="figures/02_st_human.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## MLST dist on sources
 
-Barplots of same STs, overlaid onto human dist (frequency)
+<div align="center">
+  <img src="figures/03_st_sources.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## MLST dist rurality
 
-Barplots of urban/rural STs
+<div align="center">
+  <img src="figures/04_st_urban_rural.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Island model
 
@@ -97,65 +81,107 @@ TODO: Maths of island model
 
 ## Results: Proportion cases urban/rural
 
-Results from dynamic island model
+<div align="center">
+  <img src="figures/05_attribution_proportions.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Results: Total cases urban/rural
 
-Results from dynamic island model
+<div align="center">
+  <img src="figures/06_attribution_totals.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Limitations
 
-- ST level may be too coarse? Many types shared.
-   - ST-474 tree + attribution
+- ST level may be too coarse as many types are shared across sources.
 
-- Urban/rural division not fine enough.
-   - Picture from Jing
+- Urban/rural division may not be fine enough?
+
+## Attribution by rurality
+
+<div align="center">
+  <img src="figures/07_attribution_rurality.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/08_474_tree_sources.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/09_474_tree_humans.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 attribution
+
+<div align="center">
+  <img src="figures/10_474_attribution.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 # Outbreak detection
 
 ## Time series Manawatu
 
-TODO: Time series manawatu + smoothed line
+<div align="center">
+  <img src="figures/11_temporal_cases.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Spatial trend Manawatu before 2008
 
-TODO: Spatial trend of manawatu before 2008
+<div align="center">
+  <img src="figures/12_spatial_cases08.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Spatial trend Manawatu post 2008
 
-TODO Spatial trend of manawatu after 2008
+<div align="center">
+  <img src="figures/13_spatial_cases16.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Model
 
 TODO:
 
-- Maths
-
-- Idea
+- Maths / Idea
 
 ## Temporal trend
 
-TODO: Temporal video
+<center>
+   <video src='figures/temporal_fit.mp4' width='960px' loop='true' autoplay='true'/>
+</center>
 
 ## Spatial trend broad
 
-TODO: Spatial video1
+<center>
+   <video src='figures/spatial_fit.mp4' width='960px' loop='true' autoplay='true'/>
+</center>
 
 ## Spatial trend Palmy
 
-TODO: Spatial video2
+<center>
+   <video src='figures/spatial_fit_palmy.mp4' width='960px' loop='true' autoplay='true'/>
+</center>
 
 ## Outbreaks
 
-TODO: Outbreak plot, highlighting the two events
+<div align="center">
+  <img src="figures/14_outbreak_plot.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
-## Outbreak: Pahiatua water supply
+## Outbreaks
 
-TODO: Attr Pahiatua
+<div align="center">
+  <img src="figures/14_outbreak_plot_highlight.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
-## Outbreak: Palmerston North raw milk
+## Outbreaks: Pahiatua water supply, Palmerston North raw milk
 
-TODO: Attribution of Palmerston North raw milk
+<div align="center">
+  <img src="figures/15_outbreak_attribution.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
 
 ## Outbreaks: Havelock North
 

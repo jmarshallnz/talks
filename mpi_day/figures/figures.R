@@ -5,6 +5,8 @@ library(ggplot2)
 library(mgcv)
 
 data_folder <- "data/sa_report"
+fig_width <- 960
+fig_height <- 540
 
 ## STUFF FOR ALL PLOTS
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
@@ -35,6 +37,7 @@ mod.gam = gam(Rate ~ s(as.numeric(Date)) + Month, data=nz_cases)
 co = coef(mod.gam)
 avg_month = mean(co[grepl("Month",names(co))])
 
+png("figures/01_nzcases.png", width = fig_width, height = fig_height)
 par(mar=c(3,3.5,0.5,1), mgp=c(2,.7,0), tck=-.015)
 plot(Rate ~ Date, data=nz_cases, type="l", col=ax_col, axes=FALSE, xaxs="i", yaxs="i", ylim=c(0,600), xlab="", ylab="", xlim=as.Date(c("2006-01-01", "2017-01-01")))
 y = predict(mod.gam, data.frame(Date=as.numeric(nz_cases$Date), Month="Apr"), se.fit=TRUE)
@@ -45,7 +48,7 @@ y_fit = y$fit + avg_month
 polygon(c(nz_cases$Date, rev(nz_cases$Date)), c(y_fit+y$se.fit, rev(y_fit - y$se.fit)), col=alpha("steelblue", 0.3), border=NA)
 lines(nz_cases$Date, y_fit, col="steelblue", lwd=2)
 title(ylab="Cases per 100,000", col.lab=ax_col, line=2.5)
-
+dev.off()
 
 ###### ST dist on humans
 attr <- read.csv(file.path(data_folder, "extract_attribution.csv"))
@@ -53,16 +56,20 @@ sts <- attr %>% mutate(Source = fct_collapse(Source, Poultry = c("Supplier A", "
                                             Water = "Environmental water"))
 
 sts <- sts %>% group_by(ST, Source) %>% summarize(Count = n()) %>% spread(Source, Count, fill=0)
+
+png("figures/02_st_human.png", width = fig_width, height = fig_height)
 par(mar=c(3,3,0,1), mgp=c(2,.7,0), tck=-.015)
 top20 = order(-sts$Human)[1:20]
 barplot(c(sts$Human[top20], sum(sts$Human[-top20])), names=c(sts$ST[top20], "Other"), col=cols, border=NA, yaxt="n", cex.names = 0.9, las=2, col.axis=ax_col)
 axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
 title(ylab="Cases", col.lab=ax_col)
+dev.off()
 
 ###### ST dist on animals
 
 sources <- c("Cattle", "Sheep", "Poultry", "Water")
 
+png("figures/03_st_sources.png", width = fig_width, height = fig_height)
 par(mfrow=c(2,2), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.02)
 for (s in sources) {
   cols = c(rep(alpha("steelblue",0.5), 20), "grey70")
@@ -76,6 +83,7 @@ for (s in sources) {
   title(ylab="Percentage", col.lab=ax_col)
   title(main = s)
 }
+dev.off()
 
 
 ###### ST dist by rurality
@@ -83,6 +91,7 @@ for (s in sources) {
 ur <- attr %>% filter(Source == "Human", !is.na(UR_bool)) %>% group_by(ST, UR_bool) %>% summarize(Count=n()) %>%
   spread(UR_bool, Count, fill=0)
 
+png("figures/04_st_urban_rural.png", width = fig_width, height = fig_height)
 par(mfrow=c(2,1), mar=c(3,3,1,1), mgp=c(2,.7,0), tck=-.03)
 top20 = match(sts$ST[order(-sts$Human)[1:20]], ur$ST)
 cols = c(rep(alpha("steelblue",0.5), 20), "grey70")
@@ -94,6 +103,7 @@ barplot(c(ur$Rural[top20], sum(ur$Rural[-top20])), names=c(ur$ST[top20], "Other"
 axis(2, col=ax_col, col.axis=ax_col, las=1, cex.axis=0.8)
 title("Rural", col.main=ax_col, cex.main=1.3)
 title(ylab="Cases", col.lab=ax_col)
+dev.off()
 
 ###### Attribution results
 
@@ -109,6 +119,7 @@ attr_dyn <- attr_dyn %>% mutate(Year = 2005 + (Month-1) %/% 12,
                     Date = as.Date(sprintf('%04d-%02d-01', Year, Month)),
                     UR_bool = fct_relevel(UR_bool, "Urban", "Rural"))
 
+png("figures/05_attribution_proportion.png", width = fig_width, height = fig_height)
 ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) + 
   geom_ribbon(aes(x=Date, ymin=li, ymax=ui, fill=Source), alpha=0.4) +
   geom_ribbon(aes(x=Date, ymin=xi, ymax=yi, fill=Source), alpha=0.7) +
@@ -118,9 +129,11 @@ ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) +
   scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
   scale_x_date(expand=c(0, 0)) +
   scale_y_continuous(name = "Attributed human cases", labels = scales::percent)
+dev.off()
 
 #### TOTALS
 
+png("figures/06_attribution_totals.png", width = fig_width, height = fig_height)
 ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) + 
   geom_ribbon(aes(x=Date, ymin=li*Count, ymax=ui*Count, fill=Source), alpha=0.4) +
   geom_ribbon(aes(x=Date, ymin=xi*Count, ymax=yi*Count, fill=Source), alpha=0.7) +
@@ -130,22 +143,26 @@ ggplot(attr_dyn %>% filter(Source %in% c('Poultry', 'Ruminants'))) +
   scale_fill_manual(values = c("plum4", "steelblue"), guide = FALSE) +
   scale_x_date(expand=c(0, 0)) +
   scale_y_continuous(name="Attributed human cases")
+dev.off()
 
 
 ####### Plot of Jing's work
-cat <- read.table(file.path(data_folder, "cateI_capital.txt"))
-names(cat) <- c("Rurality", "Poultry", "Ruminants", "Water", "Other")
+if (0) {
+  cat <- read.table(file.path(data_folder, "cateI_capital.txt"))
+  names(cat) <- c("Rurality", "Poultry", "Ruminants", "Water", "Other")
+  
+  # drop down to quantiles and means
+  m <- cat %>% group_by(Rurality) %>% summarize_all(mean) %>% mutate(Variable='mu')
+  li <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.1)) %>% mutate(Variable='li')
+  ui <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.9)) %>% mutate(Variable='ui')
+  xi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.3)) %>% mutate(Variable='xi')
+  yi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.7)) %>% mutate(Variable='yi')
+  d <- rbind(m, li, ui, xi, yi)
+  d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(li:yi), function(x) { x*100 })
+  
+  write.csv(d, file.path(data_folder, 'ur_categorical.csv'), row.names = FALSE)
+}
 
-# drop down to quantiles and means
-m <- cat %>% group_by(Rurality) %>% summarize_all(mean) %>% mutate(Variable='mu')
-li <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.1)) %>% mutate(Variable='li')
-ui <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.9)) %>% mutate(Variable='ui')
-xi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.3)) %>% mutate(Variable='xi')
-yi <- cat %>% group_by(Rurality) %>% summarize_all(quantile, probs=c(0.7)) %>% mutate(Variable='yi')
-d <- rbind(m, li, ui, xi, yi)
-d <- d %>% gather('Source', 'Value', Poultry:Other) %>% spread(Variable, Value) %>% mutate_at(vars(li:yi), function(x) { x*100 })
-
-write.csv(d, file.path(data_folder, 'ur_categorical.csv'), row.names = FALSE)
 d <- read.csv(file.path(data_folder, 'ur_categorical.csv'))
 d$Source <- factor(d$Source, c('Poultry', 'Ruminants', 'Water', 'Other'))
 
@@ -153,6 +170,7 @@ prior_labeller <- function(x) {
   x <- ifelse(x == "0", "No expert reliance", ifelse(x == "2", "Strong expert reliance", ""))
 }
 
+png("figures/07_attribution_rurality.png", width = fig_width, height = fig_height)
 ggplot(d) + geom_ribbon(aes(x=Rurality, ymin=li, ymax=ui, fill=Source), alpha=0.25) + 
   geom_ribbon(aes(x=Rurality, ymin=xi, ymax=yi, fill=Source), alpha=0.35) + geom_line(aes(x=Rurality, y=mu, colour=Source)) +
   theme_bw() +
@@ -166,9 +184,4 @@ ggplot(d) + geom_ribbon(aes(x=Rurality, ymin=li, ymax=ui, fill=Source), alpha=0.
         axis.text.x = element_text(hjust=c(rep(-0.1,6),1.1))) +
   guides(fill=guide_legend(title=NULL,nrow=1),
          color=guide_legend(title=NULL, nrow=1))
-
-
-
-####### Plot of ST-474 attribution, tidied up...
-
-####### Plot of ST-474 tree/MDS ????
+dev.off()
