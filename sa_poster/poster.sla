@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCRIBUSUTF8NEW Version="1.4.3.svn">
+    <DOCUMENT ANZPAGES="1" PAGEWIDTH="2384" PAGEHEIGHT="3371" BORDERLEFT="0" BORDERRIGHT="0" BORDERTOP="0" BORDERBOTTOM="0" PRESET="-1" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" ORIENTATION="0" PAGESIZE="Custom" FIRSTNUM="1" BOOK="0" AUTOSPALTEN="0" ABSTSPALTEN="0" UNITS="2" DFONT="Arial Regular" DSIZE="12" DCOL="1" DGAP="0" TabFill="" TabWidth="36" AUTHOR="Christoph Schäfer" COMMENTS="A design grid for an A0 poster" KEYWORDS="Poster, Design Grid" PUBLISHER="" DOCDATE="23 October 2010" DOCTYPE="" DOCFORMAT="SLA.GZ" DOCIDENT="" DOCSOURCE="" DOCLANGINFO="None" DOCRELATION="" DOCCOVER="" DOCRIGHTS="http://creativecommons.org/licenses/by/3.0/legalcode" DOCCONTRIB="" TITLE="Poster Design Grid A0" SUBJECT="" VHOCH="33" VHOCHSC="66" VTIEF="33" VTIEFSC="66" VKAPIT="75" BASEGRID="14.4" BASEO="0" AUTOL="20" UnderlinePos="-1" UnderlineWidth="-1" StrikeThruPos="-1" StrikeThruWidth="-1" GROUPC="1" HCMS="0" DPSo="0" DPSFo="0" DPuse="0" DPgam="0" DPbla="1" DPMo="CineonLog M " DPPr="Fogra27L CMYK Coated Press" DPIn="CineonLog M " DPInCMYK="Fogra27L CMYK Coated Press" DPIn2="CineonLog M " DPIn3="Fogra27L CMYK Coated Press" DISc="1" DIIm="0" ALAYER="1" LANGUAGE="German" MINWORDLEN="3" HYCOUNT="2" AUTOMATIC="1" AUTOCHECK="0" GUIDELOCK="0" SnapToGuides="0" SnapToGrid="0" MINGRID="20.0016" MAJGRID="100.0008" SHOWGRID="0" SHOWGUIDES="1" showcolborders="1" SHOWFRAME="0" SHOWLAYERM="0" SHOWMARGIN="1" SHOWBASE="0" SHOWPICT="1" SHOWControl="0" SHOWLINK="0" rulerMode="1" showrulers="1" showBleed="1" rulerXoffset="0" rulerYoffset="0" GuideRad="10" GRAB="4" POLYC="4" POLYF="0.707106781186548" POLYR="0" POLYCUR="0" POLYFD="0" POLYS="0" AutoSave="1" AutoSaveTime="600000" ScratchBottom="20.0016" ScratchLeft="100.0008" ScratchRight="100.0008" ScratchTop="20.0016" GapHorizontal="0" GapVertical="40.0032" StartArrow="0" EndArrow="0" PEN="Black" BRUSH="None" PENLINE="Black" PENTEXT="Black" StrokeText="Black" TextBackGround="None" TextLineColor="None" TextBackGroundShade="100" TextLineShade="100" TextPenShade="100" TextStrokeShade="100" STIL="1" STILLINE="1" WIDTH="1" WIDTHLINE="1" PENSHADE="100" LINESHADE="100" BRUSHSHADE="100" MAGMIN="10" MAGMAX="3200" MAGSTEP="200" CPICT="None" PICTSHADE="100" PICTSCX="1" PICTSCY="1" PSCALE="1" PASPECT="1" EmbeddedPath="0" HalfRes="1" dispX="0.0173" dispY="0.0173" constrain="15" MINORC="#00ff00" MAJORC="#00ff00" GuideC="#000080" BaseC="#c0c0c0" GuideZ="10" BACKG="1" PAGEC="#ffffff" MARGC="#0000ff" RANDF="0" currentProfile="PostScript">
+        <CheckProfile Name="PDF 1.3" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkOffConflictLayers="0"/>
+        <CheckProfile Name="PDF 1.4" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkOffConflictLayers="0"/>
+        <CheckProfile Name="PDF 1.5" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkOffConflictLayers="0"/>
+        <CheckProfile Name="PDF/X-3" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="1" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkOffConflictLayers="0"/>
+        <CheckProfile Name="PostScript" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkOffConflictLayers="0"/>
+        <COLOR NAME="Black" CMYK="#000000ff" Spot="0" Register="0"/>
+        <COLOR NAME="Blue" RGB="#0000ff" Spot="0" Register="0"/>
+        <COLOR NAME="Cool Black" CMYK="#990000ff" Spot="0" Register="0"/>
+        <COLOR NAME="Cyan" CMYK="#ff000000" Spot="0" Register="0"/>
+        <COLOR NAME="Green" RGB="#00ff00" Spot="0" Register="0"/>
+        <COLOR NAME="Grid Blue" RGB="#385093" Spot="0" Register="0"/>
+        <COLOR NAME="Grid Green" RGB="#7aad3b" Spot="0" Register="0"/>
+        <COLOR NAME="Grid Grey" RGB="#aeafb1" Spot="0" Register="0"/>
+        <COLOR NAME="Grid Red" RGB="#d21f1f" Spot="0" Register="0"/>
+        <COLOR NAME="Magenta" CMYK="#00ff0000" Spot="0" Register="0"/>
+        <COLOR NAME="Red" RGB="#ff0000" Spot="0" Register="0"/>
+        <COLOR NAME="Registration" CMYK="#ffffffff" Spot="0" Register="1"/>
+        <COLOR NAME="Rich Black" CMYK="#996666ff" Spot="0" Register="0"/>
+        <COLOR NAME="Warm Black" CMYK="#00994cff" Spot="0" Register="0"/>
+        <COLOR NAME="White" CMYK="#00000000" Spot="0" Register="0"/>
+        <COLOR NAME="Yellow" CMYK="#0000ff00" Spot="0" Register="0"/>
+        <HYPHEN/>
+        <STYLE NAME="Default Paragraph Style" DefaultStyle="1" ALIGN="0" LINESPMode="0" LINESP="15" INDENT="0" RMARGIN="0" FIRST="0" VOR="0" NACH="0" DROP="0" DROPLIN="2" DROPDIST="0"/>
+        <CHARSTYLE CNAME="Default Character Style" DefaultStyle="1" FONT="Abyssinica SIL Regular" FONTSIZE="12" FEATURES="inherit" FCOLOR="Black" FSHADE="100" SCOLOR="Black" SSHADE="100" TXTSHX="5" TXTSHY="-5" TXTOUT="1" TXTULP="-0.1" TXTULW="-0.1" TXTSTP="-0.1" TXTSTW="-0.1" SCALEH="100" SCALEV="100" BASEO="0" KERN="0" LANGUAGE="German"/>
+        <LAYERS NUMMER="0" LEVEL="0" NAME="Background" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#000000"/>
+        <LAYERS NUMMER="1" LEVEL="1" NAME="Content" SICHTBAR="1" DRUCKEN="1" EDIT="1" FLOW="1" TRANS="1" BLEND="0" OUTL="0" LAYERC="#ff0000"/>
+        <Printer firstUse="1" toFile="0" useAltPrintCommand="1" outputSeparations="0" useSpotColors="1" useColor="0" mirrorH="1" mirrorV="0" useICC="1" doGCR="0" doClip="1" setDevParam="0" useDocBleeds="1" cropMarks="0" bleedMarks="1" registrationMarks="0" colorMarks="1" includePDFMarks="0" PSLevel="3" PDLanguage="3" markOffset="8.90106954814397e-307" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" printer="" filename="" separationName="" printerCommand=""/>
+        <PDF firstUse="0" Thumbnails="0" Articles="0" Bookmarks="0" Compress="1" CMethod="0" Quality="0" MirrorH="0" MirrorV="0" Clip="0" RotateDeg="0" PresentMode="0" RecalcPic="0" Grayscale="0" RGBMode="1" UseProfiles="0" UseProfiles2="0" Binding="0" PicRes="300" Resolution="300" Version="14" Intent="1" Intent2="0" SolidP="Adobe RGB" ImageP="Adobe RGB" PrintP="Europe ISO Coated FOGRA27" InfoString="" BTop="0" BLeft="0" BRight="0" BBottom="0" useDocBleeds="0" cropMarks="0" bleedMarks="0" registrationMarks="0" colorMarks="0" docInfoMarks="0" markOffset="0" ImagePr="0" PassOwner="" PassUser="" Permissions="-4" Encrypt="0" UseLayers="0" UseLpi="0" UseSpotColors="1" doMultiFile="0" displayBookmarks="0" displayFullscreen="0" displayLayers="0" displayThumbs="0" hideMenuBar="0" hideToolBar="0" fitWindow="0" PageLayout="0" openAction="">
+            <Fonts Name="Abyssinica SIL Regular"/>
+            <Subset Name="Cabin Bold"/>
+            <Subset Name="Cabin Regular"/>
+            <Subset Name="Cabin SemiBold"/>
+            <Effekte pageEffectDuration="1" pageViewDuration="1" effectType="0" Dm="0" M="0" Di="0"/>
+            <LPI Color="" Frequency="10" Angle="0" SpotFunction="0"/>
+        </PDF>
+        <DocItemAttributes/>
+        <TablesOfContents/>
+        <PageSets>
+            <Set Name="Single Page" FirstPage="0" Rows="1" Columns="1"/>
+            <Set Name="Double Sided" FirstPage="1" Rows="1" Columns="2">
+                <PageNames Name="Left Page"/>
+                <PageNames Name="Right Page"/>
+            </Set>
+            <Set Name="3-Fold" FirstPage="0" Rows="1" Columns="3">
+                <PageNames Name="Left Page"/>
+                <PageNames Name="Middle"/>
+                <PageNames Name="Right Page"/>
+            </Set>
+            <Set Name="4-Fold" FirstPage="0" Rows="1" Columns="4">
+                <PageNames Name="Left Page"/>
+                <PageNames Name="Middle Left"/>
+                <PageNames Name="Middle Right"/>
+                <PageNames Name="Right Page"/>
+            </Set>
+        </PageSets>
+        <Sections>
+            <Section Number="0" Name="0" From="0" To="0" Type="Type_1_2_3" Start="1" Reversed="0" Active="1"/>
+        </Sections>
+        <MASTERPAGE PAGEXPOS="100.0008" PAGEYPOS="20.0016" PAGEWIDTH="2384" PAGEHEIGHT="3371" BORDERLEFT="0" BORDERRIGHT="0" BORDERTOP="0" BORDERBOTTOM="0" NUM="0" NAM="Normal" MNAM="" Size="Custom" Orientation="0" LEFT="0" PRESET="7274612" VerticalGuides="" HorizontalGuides="" AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0"/>
+        <PAGE PAGEXPOS="100.0008" PAGEYPOS="20.0016" PAGEWIDTH="2384" PAGEHEIGHT="3371" BORDERLEFT="0" BORDERRIGHT="0" BORDERTOP="0" BORDERBOTTOM="0" NUM="0" NAM="" MNAM="" Size="" Orientation="0" LEFT="0" PRESET="7274612" VerticalGuides="" HorizontalGuides="133.209 " AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0"/>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="100.0008" YPOS="20.0016" WIDTH="2383.2" HEIGHT="3369.6" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../../home/jcmarsha/data/R/epiclustR/Poster/figures/main.pdf" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 2383.2 0 2383.2 0 2383.2 0 2383.2 0 2383.2 3369.6 2383.2 3369.6 2383.2 3369.6 2383.2 3369.6 0 3369.6 0 3369.6 0 3369.6 0 3369.6 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 2383.2 0 2383.2 0 2383.2 0 2383.2 0 2383.2 3369.6 2383.2 3369.6 2383.2 3369.6 2383.2 3369.6 0 3369.6 0 3369.6 0 3369.6 0 3369.6 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="0" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="100.0008" YPOS="20.0016" WIDTH="2383.999992" HEIGHT="410.4" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="White" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="54" TEXTRA="54" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 2384 0 2384 0 2384 0 2384 0 2384 410.4 2384 410.4 2384 410.4 2384 410.4 0 410.4 0 410.4 0 410.4 0 410.4 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 2384 0 2384 0 2384 0 2384 0 2384 410.4 2384 410.4 2384 410.4 2384 410.4 0 410.4 0 410.4 0 410.4 0 410.4 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" ALIGN="1" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin Bold" FONTSIZE="105" FCOLOR="White" FSHADE="100" CH="Chickens in the city, cows and sheep in the country"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <ITEXT FONT="Cabin Bold" FONTSIZE="90" FCOLOR="White" FSHADE="100" CH="A simple model for the source of campylobacteriosis"/>
+            <para ALIGN="0"/>
+            <para ALIGN="0"/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="100.0008" YPOS="3252.8016" WIDTH="2390.4" HEIGHT="138.24" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 2390.4 0 2390.4 0 2390.4 0 2390.4 0 2390.4 138.24 2390.4 138.24 2390.4 138.24 2390.4 138.24 0 138.24 0 138.24 0 138.24 0 138.24 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 2390.4 0 2390.4 0 2390.4 0 2390.4 0 2390.4 138.24 2390.4 138.24 2390.4 138.24 2390.4 138.24 0 138.24 0 138.24 0 138.24 0 138.24 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <para ALIGN="1"/>
+            <para ALIGN="1"/>
+            <para ALIGN="1"/>
+            <para ALIGN="1"/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="143.200800000001" YPOS="473.6016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Introduction"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="1316.8008" YPOS="2705.6016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Conclusions"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="2030.38122171946" YPOS="3257.98277443261" WIDTH="428.771660486057" HEIGHT="128.018825567392" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.222641435769377" LOCALSCY="0.222641435769377" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/logos/massey_trans_dark_backdrop.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 428.772 0 428.772 0 428.772 0 428.772 0 428.772 128.019 428.772 128.019 428.772 128.019 428.772 128.019 0 128.019 0 128.019 0 128.019 0 128.019 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 428.772 0 428.772 0 428.772 0 428.772 0 428.772 128.019 428.772 128.019 428.772 128.019 428.772 128.019 0 128.019 0 128.019 0 128.019 0 128.019 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="105.0008" YPOS="3267.13548936473" WIDTH="619.012144739374" HEIGHT="107.876696832579" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.147313694607181" LOCALSCY="0.147313694607181" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/logos/mepilab_horiz_logo_left.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 619.012 0 619.012 0 619.012 0 619.012 0 619.012 107.877 619.012 107.877 619.012 107.877 619.012 107.877 0 107.877 0 107.877 0 107.877 0 107.877 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 619.012 0 619.012 0 619.012 0 619.012 0 619.012 107.877 619.012 107.877 619.012 107.877 619.012 107.877 0 107.877 0 107.877 0 107.877 0 107.877 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="892.097285067873" YPOS="3251.13548936473" WIDTH="384.823463418643" HEIGHT="145.993941706906" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.133480216239557" LOCALSCY="0.133480216239557" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/logos/IDReC_identity_final_stack_crop.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 384.823 0 384.823 0 384.823 0 384.823 0 384.823 145.994 384.823 145.994 384.823 145.994 384.823 145.994 0 145.994 0 145.994 0 145.994 0 145.994 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 384.823 0 384.823 0 384.823 0 384.823 0 384.823 145.994 384.823 145.994 384.823 145.994 384.823 145.994 0 145.994 0 145.994 0 145.994 0 145.994 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1477.92731829574" YPOS="3253.0016" WIDTH="371.922681704262" HEIGHT="170.935900000001" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.0983922438371063" LOCALSCY="0.0983922438371063" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/logos/NZFSSRC_ID_large_dark_transparent_short.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 371.923 0 371.923 0 371.923 0 371.923 0 371.923 170.936 371.923 170.936 371.923 170.936 371.923 170.936 0 170.936 0 170.936 0 170.936 0 170.936 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 371.923 0 371.923 0 371.923 0 371.923 0 371.923 170.936 371.923 170.936 371.923 170.936 371.923 170.936 0 170.936 0 170.936 0 170.936 0 170.936 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="154.0008" YPOS="325.0016" WIDTH="2131.12853406714" HEIGHT="79.8101776554761" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" ISIZE="48" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 2131.13 0 2131.13 0 2131.13 0 2131.13 0 2131.13 79.8102 2131.13 79.8102 2131.13 79.8102 2131.13 79.8102 0 79.8102 0 79.8102 0 79.8102 0 79.8102 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 2131.13 0 2131.13 0 2131.13 0 2131.13 0 2131.13 79.8102 2131.13 79.8102 2131.13 79.8102 2131.13 79.8102 0 79.8102 0 79.8102 0 79.8102 0 79.8102 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH="Sih Jing Liao"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="1"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH=", "/>
+            <ITEXT FONT="Cabin Bold" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH="Jonathan Marshall"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="1"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH=", Nigel French"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="2"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH=", Martin Hazelton"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="1"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH="."/>
+            <para LINESPMode="1"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="30" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="1"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="30" FCOLOR="White" FSHADE="100" CH="Institute of Fundamental Science and "/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="30" FEATURES="inherit superscript" FCOLOR="White" FSHADE="100" CH="2"/>
+            <ITEXT FONT="Cabin Regular" FONTSIZE="30" FCOLOR="White" FSHADE="100" CH="Institute of Veterinary and Animal Biomedical Science, Massey University, New Zealand"/>
+            <trail LINESPMode="1"/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="143.2008" YPOS="1935.2016" WIDTH="1123.2" HEIGHT="302.4" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 302.4 1123.2 302.4 1123.2 302.4 1123.2 302.4 0 302.4 0 302.4 0 302.4 0 302.4 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 302.4 1123.2 302.4 1123.2 302.4 1123.2 302.4 0 302.4 0 302.4 0 302.4 0 302.4 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\setlist[itemize]{leftmargin=0.15in, itemsep=18pt}
+\setlength{\itemsep}{50pt}
+\begin{document}
+\raggedright
+
+%\sansmath
+\fontsize{36}{40}
+\begin{itemize}
+\item Model the observed ST distribution using a Multinomial distribution with parameter vector $\vect{p_j} = \{p_{ij}\}$, where $p_{ij} = P(\mathsf{ST}_i | \mathsf{source}_j)$.
+
+\item Assume apriori that each ST has an equally likely probability of being observed, so that $\vect{p_j} \sim \mathsf{Dirichlet}(\mathbf{1})$.
+
+\item The posterior distribution for $\vect{p_j}$ is $\mathsf{Dirichlet}(\vect{n_j} + 1)$ where $\vect{n_j}$ are the observed counts for each ST on source $j$.
+\end{itemize}
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="1900.0008" YPOS="344.0016" WIDTH="590.4" HEIGHT="67.7567418822235" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin Bold" ISIZE="40" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="54" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 590.4 0 590.4 0 590.4 0 590.4 0 590.4 67.7567 590.4 67.7567 590.4 67.7567 590.4 67.7567 0 67.7567 0 67.7567 0 67.7567 0 67.7567 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 590.4 0 590.4 0 590.4 0 590.4 0 590.4 67.7567 590.4 67.7567 590.4 67.7567 590.4 67.7567 0 67.7567 0 67.7567 0 67.7567 0 67.7567 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" ALIGN="2" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="DejaVu Sans Bold" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH="@"/>
+            <ITEXT FONT="Cabin Bold" FONTSIZE="40" FCOLOR="White" FSHADE="100" CH="jmarshallnz"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="2123.2008" YPOS="333.2016" WIDTH="54" HEIGHT="72" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.135" LOCALSCY="0.135" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/logos/Twitter_Social_Icon_Circle_White.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 54 0 54 0 54 0 54 0 54 72 54 72 54 72 54 72 0 72 0 72 0 72 0 72 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 54 0 54 0 54 0 54 0 54 72 54 72 54 72 54 72 0 72 0 72 0 72 0 72 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="143.2008" YPOS="1560.8016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Asymmetric Island model "/>
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="32" FCOLOR="White" FSHADE="100" CH="(Wilson et. al. 2008)"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="143.2008" YPOS="1870.4016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Dirichlet model"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="143.2008" YPOS="2345.6016" WIDTH="1123.2" HEIGHT="864" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/genotype_dist.pdf" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 864 1123.2 864 1123.2 864 1123.2 864 0 864 0 864 0 864 0 864 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 864 1123.2 864 1123.2 864 1123.2 864 0 864 0 864 0 864 0 864 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="1316.8008" YPOS="1179.2016" WIDTH="1123.2" HEIGHT="1015.2" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 1015.2 1123.2 1015.2 1123.2 1015.2 1123.2 1015.2 0 1015.2 0 1015.2 0 1015.2 0 1015.2 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 1015.2 1123.2 1015.2 1123.2 1015.2 1123.2 1015.2 0 1015.2 0 1015.2 0 1015.2 0 1015.2 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\usepackage{sansmath}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+\raggedright
+
+\fontsize{36}{40}
+Human cases (n=967) from the Manawatu region of New Zealand from 2008-2015 had rurality recorded using a seven-point scale ranging from highly rural to highly urban. We model this using both a categorical model, and a linear trend on the logit scale.
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="143.2008" YPOS="2280.8016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" CH=" Genotype distribution"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="647.2008" YPOS="2280.8016" WIDTH="619.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin Bold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 619.2 0 619.2 0 619.2 0 619.2 0 619.2 64.8 619.2 64.8 619.2 64.8 619.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 619.2 0 619.2 0 619.2 0 619.2 0 619.2 64.8 619.2 64.8 619.2 64.8 619.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" ALIGN="2" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin Bold" FONTSIZE="50" FCOLOR="White" CH=" Manawatu, New Zealand "/>
+            <trail ALIGN="2"/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1320.4008" YPOS="1352.0016" WIDTH="1116" HEIGHT="828" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/rural_attribution.pdf" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1116 0 1116 0 1116 0 1116 0 1116 828 1116 828 1116 828 1116 828 0 828 0 828 0 828 0 828 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1116 0 1116 0 1116 0 1116 0 1116 828 1116 828 1116 828 1116 828 0 828 0 828 0 828 0 828 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="1316.8008" YPOS="473.6016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Statistical model for attribution"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="1316.8008" YPOS="538.4016" WIDTH="1123.2" HEIGHT="532.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 532.8 1123.2 532.8 1123.2 532.8 1123.2 532.8 0 532.8 0 532.8 0 532.8 0 532.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 532.8 1123.2 532.8 1123.2 532.8 1123.2 532.8 0 532.8 0 532.8 0 532.8 0 532.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\usepackage{sansmath}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+\raggedright
+
+\fontsize{36}{40}
+We model the distribution of sequence types observed in human cases, conditional on covariates, using a Multinomial distribution through use of the law of total probability
+\vspace{10pt}
+\[
+P(\mathsf{ST}_i \mid \mathsf{covariates}) = \sum_j P(\mathsf{ST}_i \mid \mathsf{source}_j) P(\mathsf{source}_j \mid \mathsf{covariates})
+\]
+
+\vspace{-10pt}
+where $P(\mathsf{source}_j \mid \mathsf{covariates})$ is the proportion of human cases with a given covariate pattern attributed to source $j$, and $p_{ij}=P(\mathsf{ST}_i \mid \mathsf{source}_j)$ is the probability of type~$i$ arising on source~$j$ from the Island or Dirichlet models.
+
+The term $P(\mathsf{source}_j \mid \mathsf{covariates})$ may be modelled on the logit scale\\
+using a standard linear model formulation.
+
+The model is implemented in the R package {\fontsize{10}{12}\textbf{islandR}}.
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="1316.8008" YPOS="2770.4016" WIDTH="1123.2" HEIGHT="439.2" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 439.2 1123.2 439.2 1123.2 439.2 1123.2 439.2 0 439.2 0 439.2 0 439.2 0 439.2 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 439.2 1123.2 439.2 1123.2 439.2 1123.2 439.2 0 439.2 0 439.2 0 439.2 0 439.2 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\setlist[itemize]{leftmargin=0.15in, itemsep=18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+\raggedright
+\fontsize{36}{40}
+\begin{itemize}
+\item The Asymmetric Island model estimates the genotype distribution with significantly less uncertainty.
+
+\item The Dirichlet model shrinks the genotype distribution via the prior.
+
+\item Attribution results are similar in both models. The Dirichlet model discounts sources other than Poultry and Ruminants, while the Island model attributes a small proportion of cases to Water and Other sources.
+
+\item A linear trend is appropriate for modelling the effect of rurality on attribution, with cases from highly rural areas being more likely associated with ruminants, while cases from highly urban areas being more likely poultry associated.
+\end{itemize}
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="1316.8008" YPOS="1114.4016" WIDTH="1123.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="Black" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin SemiBold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 64.8 1123.2 64.8 1123.2 64.8 1123.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin SemiBold" FONTSIZE="50" FCOLOR="White" FSHADE="100" CH=" Attribution and Rurality"/>
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="142.2008" YPOS="1625.6016" WIDTH="1123.2" HEIGHT="201.6" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 201.6 1123.2 201.6 1123.2 201.6 1123.2 201.6 0 201.6 0 201.6 0 201.6 0 201.6 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 201.6 1123.2 201.6 1123.2 201.6 1123.2 201.6 0 201.6 0 201.6 0 201.6 0 201.6 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\setlist[itemize]{leftmargin=0.15in, itemsep=18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+\raggedright
+
+\fontsize{36}{40}
+\begin{itemize}
+\item Model mutation and recombination on each source and migration between each source using the 7 loci of the MLST scheme.
+
+\item Given mutation, recombination, and migration, we can estimate the probability of observing each ST given the source.
+\end{itemize}
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="125.156301596037" YPOS="950.822784810127" WIDTH="565.911571707131" HEIGHT="612.785812474941" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.737824734950627" LOCALSCY="0.737824734950627" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="1" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/Chicken-25.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 565.912 0 565.912 0 565.912 0 565.912 0 565.912 612.786 565.912 612.786 565.912 612.786 565.912 612.786 0 612.786 0 612.786 0 612.786 0 612.786 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 565.911 0 565.911 0 565.911 0 565.911 0 565.911 612.785 565.911 612.785 565.911 612.785 565.911 612.785 0 612.785 0 612.785 0 612.785 0 612.785 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1639.25261419923" YPOS="2359.53714914695" WIDTH="356.113924050633" HEIGHT="344.41166758393" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.356113924050633" LOCALSCY="0.356113924050633" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/sheep.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 356.114 0 356.114 0 356.114 0 356.114 0 356.114 344.412 356.114 344.412 356.114 344.412 356.114 344.412 0 344.412 0 344.412 0 344.412 0 344.412 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 356.114 0 356.114 0 356.114 0 356.114 0 356.114 344.412 356.114 344.412 356.114 344.412 356.114 344.412 0 344.412 0 344.412 0 344.412 0 344.412 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="2301.4008" YPOS="932.6016" WIDTH="135" HEIGHT="135" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.45" LOCALSCY="0.45" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/qr_code.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 135 0 135 0 135 0 135 0 135 135 135 135 135 135 135 135 0 135 0 135 0 135 0 135 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 135 0 135 0 135 0 135 0 135 135 135 135 135 135 135 135 0 135 0 135 0 135 0 135 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="9" XPOS="143.2008" YPOS="538.4016" WIDTH="1123.2" HEIGHT="367.2" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="Black" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 367.2 1123.2 367.2 1123.2 367.2 1123.2 367.2 0 367.2 0 367.2 0 367.2 0 367.2 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1123.2 0 1123.2 0 1123.2 0 1123.2 0 1123.2 367.2 1123.2 367.2 1123.2 367.2 1123.2 367.2 0 367.2 0 367.2 0 367.2 0 367.2 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <LATEX ConfigFile="100_latex.xml" DPI="0" USE_PREAMBLE="0">
+                <PROPERTY name="additionalheaders" value="%\documentclass{article}&#10;\usepackage{amsmath}&#10;\usepackage{anyfontsize}&#10;\usepackage[no-math]{fontspec}&#10;%\usepackage{sansmath}&#10;\setmainfont{Cabin}&#10;&#10;%\begin{document}"/>
+                <PROPERTY name="font" value=""/>
+                <PROPERTY name="fontsize" value="12pt"/>
+                <PROPERTY name="grid" value="#"/>
+                <PROPERTY name="gridlayer" value="back"/>
+                <PROPERTY name="title" value=""/>
+                <PROPERTY name="xlabel" value=""/>
+                <PROPERTY name="xmax" value="*"/>
+                <PROPERTY name="xmin" value="*"/>
+                <PROPERTY name="ylabel" value=""/>
+                <PROPERTY name="ymax" value="*"/>
+                <PROPERTY name="ymin" value="*"/>
+                <PROPERTY name="zeroaxis" value=""/>\documentclass[10pt]{article}
+\usepackage[paperwidth=15.6in, paperheight=20in,margin=0.15in,tmargin=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{anyfontsize}
+\usepackage[no-math]{fontspec}
+\usepackage{sansmath}
+\setmainfont[Scale=3.2]{Cabin}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{18pt}
+\renewcommand{\baselinestretch}{3.2}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+\raggedright
+
+\fontsize{36}{40}
+In the absence of epidemiological information, the use of genomic information, such as MLST, allows attribution of cases to sources by comparing the types observed in human cases to the types observed in food and environmental samples.
+
+This involves first estimating the genetic diversity on each source, and then estimating the proportion of human cases attributed to each source.
+
+If epidemiological information is also available for cases, it may be incorporated into the attribution step.
+\end{document}</LATEX>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1835.68299394606" YPOS="2190" WIDTH="660.531095211888" HEIGHT="548.498073747936" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.32252494883393" LOCALSCY="0.32252494883393" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/cow.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 660.531 0 660.531 0 660.531 0 660.531 0 660.531 548.498 660.531 548.498 660.531 548.498 660.531 548.498 0 548.498 0 548.498 0 548.498 0 548.498 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 660.531 0 660.531 0 660.531 0 660.531 0 660.531 548.498 660.531 548.498 660.531 548.498 660.531 548.498 0 548.498 0 548.498 0 548.498 0 548.498 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="1820.8008" YPOS="1114.4016" WIDTH="619.2" HEIGHT="64.8" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" IFONT="Cabin Bold" ISIZE="50" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="1" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0.2" TransValueS="0.2" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 619.2 0 619.2 0 619.2 0 619.2 0 619.2 64.8 619.2 64.8 619.2 64.8 619.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 619.2 0 619.2 0 619.2 0 619.2 0 619.2 64.8 619.2 64.8 619.2 64.8 619.2 64.8 0 64.8 0 64.8 0 64.8 0 64.8 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" ALIGN="2" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <ITEXT FONT="Cabin Bold" FONTSIZE="50" FCOLOR="White" CH=" Manawatu, New Zealand "/>
+            <trail ALIGN="2"/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="584.762443438914" YPOS="1309.0016" WIDTH="235.050933626857" HEIGHT="197" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.0829103822316957" LOCALSCY="0.0829103822316957" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/chicken6.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 235.051 0 235.051 0 235.051 0 235.051 0 235.051 197 235.051 197 235.051 197 235.051 197 0 197 0 197 0 197 0 197 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 235.051 0 235.051 0 235.051 0 235.051 0 235.051 197 235.051 197 235.051 197 235.051 197 0 197 0 197 0 197 0 197 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1292.78619909502" YPOS="2295.40066042928" WIDTH="415.846712297382" HEIGHT="402.940561364887" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.167891900568703" LOCALSCY="0.167891900568703" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/highland_calf.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 415.847 0 415.847 0 415.847 0 415.847 0 415.847 402.941 415.847 402.941 415.847 402.941 415.847 402.941 0 402.941 0 402.941 0 402.941 0 402.941 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 415.847 0 415.847 0 415.847 0 415.847 0 415.847 402.941 415.847 402.941 415.847 402.941 415.847 402.941 0 402.941 0 402.941 0 402.941 0 402.941 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="1590.56900452489" YPOS="2466.0016" WIDTH="262.431795475113" HEIGHT="256.85360361991" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.20359332465098" LOCALSCY="0.20359332465098" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/lamb1.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 262.432 0 262.432 0 262.432 0 262.432 0 262.432 256.854 262.432 256.854 262.432 256.854 262.432 256.854 0 256.854 0 256.854 0 256.854 0 256.854 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 262.432 0 262.432 0 262.432 0 262.432 0 262.432 256.854 262.432 256.854 262.432 256.854 262.432 256.854 0 256.854 0 256.854 0 256.854 0 256.854 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+        <PAGEOBJECT OwnPage="0" PTYPE="2" XPOS="737.996937556561" YPOS="969.752262443439" WIDTH="544.994343891403" HEIGHT="578.467330291839" RADRECT="0" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="0.238927814069006" LOCALSCY="0.238927814069006" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="0" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="../../../../../home/jcmarsha/data/talks/sa_poster/figures/chicken4.png" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="0" EMBEDDED="0" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 544.994 0 544.994 0 544.994 0 544.994 0 544.994 578.467 544.994 578.467 544.994 578.467 544.994 578.467 0 578.467 0 578.467 0 578.467 0 578.467 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 544.994 0 544.994 0 544.994 0 544.994 0 544.994 578.467 544.994 578.467 544.994 578.467 544.994 578.467 0 578.467 0 578.467 0 578.467 0 578.467 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="1" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+            <trail/>
+            <PageItemAttributes/>
+        </PAGEOBJECT>
+    </DOCUMENT>
+</SCRIBUSUTF8NEW>
