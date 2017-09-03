@@ -1,0 +1,4 @@
+# create the QR code using Google Charts API from here:
+
+https://createqrcode.appspot.com/
+
