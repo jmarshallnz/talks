@@ -79,17 +79,25 @@ formula = Source ~ ST
 non_primary = "Human"
 data = manawatu
 
-st = st_fit_dirichlet(formula = Source ~ ST,
-                      non_primary = "Human",
-                      data = manawatu)
+st = st_fit(formula = Source ~ ST,
+            non_primary = "Human",
+            method = "dirichlet",
+            data = manawatu)
 
+set.seed(3)
 st2 = st_fit(formula = Source ~ ST,
              non_primary = "Human",
              method="island",
              data = manawatu,
              sequences = ~ ASP + GLN + GLT + GLY + PGM + TKT + UNC,
              iters=10000)
+all.equal(st2, st2_old)
 
+st2_old <- st2
+
+# the island model will return more types in the sampling distribution than the dirichlet, so
+# filter these out and reorder them accordingly (NOTE: This depends on knowing the structure
+# of the sample_dist object - so may change in future)
 st2$sampling_distribution <- st2$sampling_distribution[dimnames(st$sampling_distribution)[[1]],,]
 st2$types <- st$types
 
