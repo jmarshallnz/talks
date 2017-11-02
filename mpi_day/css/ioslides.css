@@ -42,3 +42,8 @@ img[alt=banner] {
 slides > slide:not(.nobackground):after {
   content: '';
 }
+
+.inline img{
+   vertical-align:middle;
+ }
+ 
