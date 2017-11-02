@@ -75,6 +75,33 @@ plot(t, vertex.label=NA, vertex.size=vsize, vertex.color = cols[final$source], l
 legend('topright', legend=levels(final$source), col='black', pch=21, pt.bg = cols, bty='n', cex=1.7)
 dev.off()
 
+fig_width <- 960
+fig_height <- 540
+
+png("figures/09_474_tree_humans_2008.png", width=fig_width, height=fig_height)
+par(mar=c(0,0,0,0))
+wch <- which(final$source != "Human" | (final$source == "Human" & final$Date >= "2008-01-01"))
+t3 <- reduce_tree(t, wch)
+layout3 = layout2[match(V(t3)$name, V(t)$name),]
+vsize <- rep(4,length(wch))
+wch_h <- which(wch %in% which(final$source == "Human"))
+vsize[wch_h] <- 3
+plot(t3, vertex.label=NA, vertex.size=vsize, vertex.color = cols[final$source[wch]], layout = layout3, rescale = FALSE)
+legend('topright', legend=c(levels(final$source)[1:6], "Human 2008-2015"), col='black', pch=21, pt.bg = cols, bty='n', cex=1.7)
+dev.off()
+
+png("figures/09_474_tree_humans_2005.png", width=fig_width, height=fig_height)
+par(mar=c(0,0,0,0))
+wch <- which(final$source != "Human" | (final$source == "Human" & final$Date < "2008-01-01"))
+t4 <- reduce_tree(t, wch)
+layout4 = layout2[match(V(t4)$name, V(t)$name),]
+vsize <- rep(4,length(wch))
+wch_h <- which(wch %in% which(final$source == "Human"))
+vsize[wch_h] <- 3
+plot(t4, vertex.label=NA, vertex.size=vsize, vertex.color = cols[final$source[wch]], layout = layout4, rescale = FALSE)
+legend('topright', legend=c(levels(final$source)[1:6], "Human 2005-2007"), col='black', pch=21, pt.bg = cols, bty='n', cex=1.7)
+dev.off()
+
 # ATTRIBUTION
 
 r <- read.csv("data/474/attribution.csv") %>%

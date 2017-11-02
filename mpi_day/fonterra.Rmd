@@ -1,0 +1,140 @@
+---
+title: "Source Attribution"
+#subtitle: "A story from the Manawatu"
+author: "Jonathan Marshall, Massey University"
+date: "3 November 2017"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+    css: css/ioslides.css
+    logo: figures/idrec_square.png
+---
+
+## Campylobacteriosis cases: which source?
+
+<div align="center">
+<span class='inline'>
+  <img src="figures/sa_pic/Chicken-25.png" alt="Drawing" style="width: 150px;" align="center">
+  <img src="figures/sa_pic/sheep.png" alt="Drawing" style="width: 200px;" align="center">
+  <img src="figures/sa_pic/cow-07.png" alt="Drawing" style="width: 300px;" align="center">
+</span>
+</div>
+<div align="center">
+<span class='inline'>
+  <img src="figures/sa_pic/water.jpg" alt="Drawing" style="width: 450px;" align="center">
+</span>
+</div>
+
+##
+
+<div align="center">
+  <img src="figures/genetics.png" alt="Drawing" style="width: 900px;" align="center">
+</div>
+
+## Genomic distribution on humans
+
+<div align="center">
+  <img src="figures/02_st_human.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Genomic distribution on sources
+
+<div align="center">
+  <img src="figures/03_st_sources.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Source attribution
+
+- Have genomic information from 'case' isolates
+
+    - human cases of campylobacteriosis.
+    
+    - bacteria isolates from contaminated product.
+
+- Use genetic distribution of isolates found on 'sources'
+
+    - food, water, environment for *Campylobacter*.
+    
+    - sources that may have contaminated product.
+
+- Combine to determine the likelihood that each 'source' gave
+rise to each 'case'.
+
+## Contribution of sources to cases
+
+<div align="center">
+  <img src="figures/05_attribution_overall.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Can also incorporate covariates on the cases
+
+- For campylobacteriosis, exposures will differ between rural and urban people.
+
+- Would expect people in very rural locations to have much stronger exposure to
+environmental contamination by ruminants?
+
+- For contamination of product, there might be a batch effect, or an effect of
+time since equipment was sterilised?
+
+## Genomic distribution by rurality
+
+<div align="center">
+  <img src="figures/04_st_urban_rural.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Attribution by rurality
+
+<div align="center">
+  <img src="figures/07_attribution_rurality.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/08_474_tree_sources.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/09_474_tree_humans.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/09_474_tree_humans_2005.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 using whole genome sequencing
+
+<div align="center">
+  <img src="figures/09_474_tree_humans_2008.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## ST-474 attribution
+
+<div align="center">
+  <img src="figures/10_474_attribution.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Attribution for outbreaks
+
+- Can do the same thing when your cases consist of just a subset, such as an outbreak
+or contamination event.
+
+- Outbreak associated with Pahiatua water supply in 2008.
+
+- Outbreak associated with a raw milk supplier in 2011.
+
+## Pahiatua water supply, raw milk outbreaks
+
+<div align="center">
+  <img src="figures/15_outbreak_attribution.png" alt="Drawing" style="width: 960px;" align="center">
+</div>
+
+## Requirements
+
+- Good sampling of potential sources.
+
+- Genomic information at appropriate resolution to allow differences between sources to be seen.
