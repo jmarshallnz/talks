@@ -1,8 +1,8 @@
 ---
-title: "Modelling foodborne disease"
+title: "Modelling campylobacteriosis"
 #subtitle: "A story from the Manawatu"
 author: "Jonathan Marshall, Massey University"
-date: "20 June 2017"
+date: "27 July 2017"
 output: 
   ioslides_presentation: 
     widescreen: yes
