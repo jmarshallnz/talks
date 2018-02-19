@@ -1,0 +1,166 @@
+---
+title: 'ggplot2: Overview'
+author: "Jonathan Marshall"
+output:
+  beamer_presentation:
+    includes:
+      in_header: header.tex
+  ioslides_presentation:
+    widescreen: yes
+  slidy_presentation: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+if (knitr::opts_knit$get("rmarkdown.pandoc.to") == "beamer") {
+  knitr::opts_chunk$set(fig.width = 5, fig.height = 3.5)
+}
+```
+
+## Advantages of ggplot2
+
+- Based on the **grammar of graphics**
+- Uses a consistent 'language' to produce different plots
+- Very flexible, particularly for complex plots
+- Everything is editable
+- Theme system for consistent plots
+
+## What is the grammar of graphics?
+
+Basic idea: Specify plot building blocks and combine them to produce a plot.
+
+- Data. Always use a `data.frame`
+- Aesthetics. Mapping of your data to a plot aesthetic (position/colour/fill/shape)
+- Geometries. Points/Lines/Boxplots/Histograms etc.
+- Statistical transformations
+- Scales and coordinate systems
+- Position adjustments
+- **Faceting** (small multiple plots)
+
+## ggplot2 vs base graphics
+
+- For simple plots, base is usually less verbose to code.
+- For more complex plots, ggplot2 is usually less verbose.
+- ggplot2 **requires** everything to be in a `data.frame` with
+a single observation per row (aka tidy data).
+- base tends to use vectors (the formula form is a bit more like ggplot though)
+
+## Example: A simple histogram
+
+```{r}
+hist(mtcars$mpg)
+```
+
+## Example: A simple histogram
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(x=mpg)) + geom_histogram(bins=5)
+```
+
+## Example: Slightly more complex{.smaller}
+
+```{r}
+plot(mpg ~ disp, data=subset(mtcars, cyl==4), xlim=range(mtcars$disp),
+     ylim=range(mtcars$mpg))
+points(mpg ~ disp, data=subset(mtcars, cyl==6), col='red')
+points(mpg ~ disp, data=subset(mtcars, cyl==8), col='green')
+legend('topright', legend=unique(mtcars$cyl), col=c('black', 'red', 'green'),
+       pch=1, title='Cylinders')
+```
+
+## Example: Slightly more complex
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg, col=factor(cyl))) + geom_point()
+```
+
+## Example: Slightly more complex
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg, col=factor(cyl))) + geom_point() +
+  geom_smooth(method='lm')
+```
+
+## Aesthetic mapping
+
+Each aesthetic on the plot can either be the same or change per data point 
+from a column in the `data.frame`
+
+- Position: x, y
+- Colour: Outside color
+- Fill: Inside color
+- Shape
+- Line type
+- Size
+
+## Example: Changing constant aesthetics (wrong)
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point(aes(col = 'red'))
+```
+
+## Example: Changing constant aesthetics (right)
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point(col = 'red')
+```
+
+## Example: Changing variable aesthetics
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point(aes(col = factor(cyl)))
+```
+
+## Example: Lots of other aesthetics
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) + 
+  geom_point(aes(col = factor(cyl), size=qsec), shape=21, stroke=2, fill='black')
+```
+
+## Geometries
+
+You can have as many geometries as you like. They're **added** to the plot using `+`
+
+- Points: `geom_point`
+- Lines: `geom_lines`
+- Boxplot: `geom_boxplot`
+- Histogram: `geom_histogram`
+- Text: `geom_text`
+- Plus lots of other ones.
+
+## Themes{.smaller}
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) +
+  geom_point(aes(col = factor(cyl), size=qsec), shape=21, stroke=2, fill='black') +
+  theme_bw()
+```
+
+## `theme_minimal()` {.smaller}
+
+```{r}
+ggplot(mtcars, aes(x=disp, y=mpg)) +
+  geom_point(aes(col = factor(cyl), size=qsec), shape=21, stroke=2, fill='black') +
+  theme_minimal(base_size = 20)
+```
+
+## More themes with `ggthemes` {.smaller}
+
+```{r}
+library(ggthemes)
+ggplot(mtcars, aes(x=disp, y=mpg)) +
+  geom_point(aes(col = factor(cyl), size=qsec), shape=21, stroke=2, fill='black') +
+  theme_economist()
+```
+
+## Additional resources
+
+- [ggplot2 homepage](http://ggplot2.tidyverse.org/)
+- [ggplot2 course on datacamp (paid)](https://www.datacamp.com/courses/data-visualization-with-ggplot2-1)
+- [Tutorial from Harvard](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html)
+- [More tutorials](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part1-With-R-Code.html)
+- [Stack overflow](https://stackoverflow.com/questions/tagged/ggplot2)
