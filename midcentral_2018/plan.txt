@@ -1,0 +1,20 @@
+Talk at midcentral (10 mins)
+
+What has come out of the collaboration in terms of statistical tools for public health.
+
+Source Attribution models
+ - islandR
+ - jingR
+ - sourceR
+ - wgMLST work
+
+Spatio-temporal models
+ - epiclustR
+ - sparr
+
+How have things changed?
+ - Time series for Manawatu
+ - Spatial series for Manawatu
+
+Take some stuff from chro2015 talk?
+Take other stuff from report?
