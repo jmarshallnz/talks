@@ -121,6 +121,49 @@ for (i in seq_len(dim(V)[1])) {
   lapply(seq_len(dim(V)[3]), function(y) { plot_map(V[i,,y], uncertainty[,y]) })
   dev.off()
 }
+
+# current code:
+spat_risk <- cbind(AU$data$spat_list, Risk=V[1,,1])
+spat_risk$Spatial = as.numeric(as.character(spat_risk$Spatial))
+
+map_dat <- phu@data %>%
+  dplyr::left_join(spat_risk, by=c('MB06' = 'Spatial'))
+
+col_val <- cut(map_dat$Risk, breaks = breaks)
+map_col <- alpha(alpha_cols[cbind(uncertainty[,1], col_val)], 1)
+sp::plot(phu, col=map_col, lwd=0.02, border='grey80', xlim=bbox[1,], ylim=bbox[2,])
+
+# new effort using geom_sf
+library(sf)
+library(ggplot2)
+sf_phu <- st_read('../nzsa_2016/maps/midcentral_phu.shp')
+
+# Single frame version
+spat_risk <- cbind(AU$data$spat_list, Risk=V[1,,1], Uncertainty = uncertainty[,1])
+spat_risk$Spatial = as.numeric(as.character(spat_risk$Spatial))
+
+map_dat <- sf_phu %>% left_join(spat_risk, by=c('MB06' = 'Spatial'))
+ggplot(map_dat) + geom_sf(aes(fill=Risk), size=0, colour = 'grey80') + 
+  geom_sf(aes(alpha=Uncertainty), fill='grey50', size=0, colour = NA) +
+  scale_fill_distiller(palette = "BrBG") +
+  scale_alpha_continuous(range = c(0,1)) + theme_minimal()
+
+# Animated version\
+library(gganimate)
+all_iters <- lapply(seq_len(dim(V)[1]), function(i) { cbind(AU$data$spat_list, Risk=V[i,,1], Uncertainty = uncertainty[,1], Iteration=i)})
+spat_risk <- bind_rows(all_iters)
+spat_risk$Spatial = as.numeric(as.character(spat_risk$Spatial))
+map_dat <- sf_phu %>% left_join(spat_risk, by=c('MB06' = 'Spatial'))
+anim <- ggplot(map_dat) + geom_sf(aes(fill=Risk), size=0, colour = 'grey80') + 
+  geom_sf(aes(alpha=Uncertainty), fill='grey50', size=0, colour = NA) +
+  scale_fill_distiller(palette = "BrBG") +
+  scale_alpha_continuous(range = c(0,1)) + theme_minimal() +
+  transition_manual(Iteration)
+# This will take ages with this many frames (~3 hours...)
+animate(anim, nframes = 800, fps=24, renderer=ffmpeg_renderer())
+
+# OK, now make things way, way longer and try an animate
+
 #system("convert -delay 4 -loop 0 -dispose background spatial_fit*.png spatial_fit2.gif")
 #system("convert spatial_fit2.gif -transparent white spatial_fit.gif")
 
