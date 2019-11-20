@@ -1,0 +1,139 @@
+---
+title: "What do you do?"
+author: "Jonathan Marshall"
+#date: "27 July 2017"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+    css: css/ioslides.css
+---
+
+## Research trajectory
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE, fig.width=9, fig.height=5}
+library(ggplot2); theme_set(theme_bw(base_size=15))
+library(tidyverse)
+
+dat <- expand.grid(x=c(-1,1), y=c(-1,1))
+dat2 <- data.frame(x = seq(-0.8, 0.8, by=0.01)) %>%
+  mutate(y = 0.5/(x + 1)-1.2)
+
+ggplot(dat, aes(x=x, y=y)) +
+  geom_vline(xintercept = 0) +
+  geom_hline(yintercept = 0) +
+  geom_path(data=dat2, col='red', size=1, arrow=arrow(angle=10, type='closed')) +
+  scale_x_continuous(limits = c(-1,1), breaks = 0, labels = c("Applied"), 
+                     sec.axis = sec_axis(trans = ~., breaks=0, labels = "Theoretical")) +
+  scale_y_continuous(limits = c(-1,1), breaks = 0, labels = c("Frequentist"), 
+                     sec.axis = sec_axis(trans = ~., breaks=0, labels = "Bayesian")) +
+  theme(axis.title = element_blank(),
+        axis.ticks = element_blank())
+```
+
+## Source attribution
+
+- Have a food/environmental borne disease we observe in humans.
+
+- Collect a bunch of samples of the bug that causes the human disease from food, food animals, and the environment.
+
+<div align="center">
+<span class='inline'>
+  <img src="figures/sa_pic/Chicken-25.png" alt="Drawing" style="width: 150px;" align="center">
+  <img src="figures/sa_pic/sheep.png" alt="Drawing" style="width: 200px;" align="center">
+  <img src="figures/sa_pic/cow-07.png" alt="Drawing" style="width: 300px;" align="center">
+</span>
+</div>
+
+- Genotype all the things.
+
+- Model genotype distribution on humans as a mix from genotype distributions on sources.
+
+## Genotyping *Campylobacter*
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE, fig.width=9, fig.height=5}
+library(ggplot2); theme_set(theme_bw(base_size=15))
+library(ggridges)
+genotyping <- read.csv("~/data/R/dirichlet_island/fig_genotype_dist.csv")
+ggplot(genotyping) + geom_density_ridges(aes(x=P, y=Source), fill='darkred', alpha=0.7, size=0.1, bandwidth=0.01) +
+  facet_wrap(~ST, ncol=2) +
+  ylab("") +
+  scale_x_continuous(name = "P(Source | ST)", limits=c(0,1), expand = c(0,0)) +
+  theme(axis.text.x = element_text(hjust=c(-0.1,rep(0.5, 3), 1.1)))
+```
+
+## A possible model
+
+$$
+Y_\mathsf{type} \sim \sum_{\mathsf{source}} X_{\mathsf{type}, \mathsf{source}} p_\mathsf{source}
+$$
+where $Y$ and $X$ are the counts of each type (or type per each source), and $p_\mathsf{source}$ is the
+proportion of human cases attributed to each source.
+
+We could use maximum likelihood to estimate $p$, but a little bit inconvenient (must be positive, add to 1).
+
+Also, we should have uncertainty in both $Y$ and $X$ as these are samples.
+
+## A possible model
+
+Could model the $X$'s to estimate true genotype distribution $\phi_{\mathsf{type}, \mathsf{source}}$ first, then estimate $p$:
+
+$$
+\begin{aligned}
+X_{\mathsf{type}, \mathsf{source}} &\sim \mathsf{Multinomial}(n_\mathsf{source}, \phi_{\mathsf{type}, \mathsf{source}})\\
+Y_\mathsf{type} &\sim \sum_{\mathsf{source}} \phi_{\mathsf{type}, \mathsf{source}} p_\mathsf{source}
+\end{aligned}
+$$
+
+Need to propagate the uncertainty in $\phi$ when estimating $p$. This is easy in a Bayesian context.
+
+## *Campylobacter* you get depends where you live
+
+```{r, echo=FALSE, fig.width=9, fig.height=5}
+plot_df <- read.csv("~/data/R/dirichlet_island/fig_intervention.csv") %>%
+  mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry"))))
+
+# plot
+ggplot(plot_df) +
+  geom_ribbon(aes(x=UR2006_num, ymin=li, ymax=ui, fill=Source), alpha=0.3) +
+  geom_ribbon(aes(x=UR2006_num, ymin=lc, ymax=uc, fill=Source), alpha=0.3) +
+  geom_line(aes(x=UR2006_num, y=m, col=Source), lwd=1) +
+  facet_wrap(~Intervention) +
+  scale_x_continuous(name=NULL, breaks=c(-3,3), labels=c("Rural", "Urban"), expand=c(0,0)) +
+  scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
+  scale_color_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  theme(legend.position = c(0.99,0.89),
+        legend.justification = "right",
+        legend.margin=margin(0,0,0,0),
+        legend.background = element_rect(fill = 'transparent'),
+        axis.text.x = element_text(hjust=c(-0.1,1.1)),
+        axis.text.y = element_text(vjust=c(-0.1,rep(0.5, 3), 1.1)))
+```
+
+## We get uncertainty for free
+
+```{r, echo=FALSE, gganimate = list(nframes = 440, fps = 20), fig.width = 4.5, fig.height = 2.6}
+library(gganimate)
+library(transformr)
+iters_df <- read.csv("~/data/R/dirichlet_island/iters_intervention.csv") %>%
+  mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry"))),
+         Intervention = factor(Intervention, levels=c("Before", "After"), labels=c("2005-2007", "2008-2014")))
+
+# plot
+ggplot(iters_df) +
+  geom_line(aes(x=UR2006_num, y=p, col=Source), lwd=1) +
+  facet_wrap(~Intervention) +
+  scale_x_continuous(name=NULL, breaks=c(-3,3), labels=c("Rural", "Urban"), expand=c(0,0)) +
+  scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
+  scale_color_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  theme_bw(base_size = 7.5) +
+  theme(legend.position = c(0.99,0.79),
+        legend.justification = "right",
+        legend.margin=margin(0,0,0,0),
+        legend.background = element_rect(fill = 'transparent'),
+        axis.text.x = element_text(hjust=c(-0.1,1.1)),
+        axis.text.y = element_text(vjust=c(-0.1,rep(0.5, 3), 1.1))) +
+  transition_states(identity, transition_length = 1, state_length = 0.1) +
+  ease_aes('cubic-in-out')
+```
