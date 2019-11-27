@@ -5,18 +5,24 @@ library(ggplot2)
 library(tidyverse)
 library(lubridate)
 # filter out those where we don't have a location
-attr <- read.csv("data/extract_attribution.csv", )
+attr <- read.csv("data/extract_attribution.csv")
 
-dataset = attr %>% mutate(Source = fct_collapse(Source, Human = "Human", Ruminants = c("Cattle", "Sheep"),
+# NOTE: Bug in fct_collapse in forcats vs 0.4.0. Fixed with the Other line
+dataset = attr %>% mutate(Source = fct_collapse(Source, Human = c("Human"), Ruminants = c("Cattle", "Sheep"),
                                       Poultry = c("Supplier A", "Supplier B", "Supplier Other"),
                                       Water = "Environmental water",
-                                      group_other = TRUE)) %>%
+                                      Other = c("Cat_dog_pet", "Duck_poultry",
+                                                "Pig", "Spent_hen", "Turkey",
+                                                "Water_bird_wild", "Wild_bird_other"))) %>%
   filter(Source != "Human" | !is.na(UR2006_num)) %>%
   mutate(Year = year(SampledDate)) %>%
   mutate(Intervention = ifelse(Year < 2008, "Before", "After")) %>%
-  mutate(UR2006_fact = factor(UR2006_num))
+  mutate(UR2006_fact = factor(UR2006_num)) %>%
+  mutate(Age = cut(Age, breaks = c(-Inf, 5, Inf), right = FALSE))
 
 dataset %>% count(Source)
+
+write_csv(dataset, "data/attribution_data.csv")
 
 num_samples = 100
 

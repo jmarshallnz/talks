@@ -1,0 +1,2241 @@
+identity,Age,UR2006_num,p,Source,GenotypeModel,AttributionModel
+358,"[5, Inf)",3,0.4018027870171447,Ruminants,Island,Linear
+1642,"[5, Inf)",3,0.4005250017835367,Ruminants,Island,Linear
+1685,"[5, Inf)",3,0.3829795631527027,Ruminants,Island,Linear
+2495,"[5, Inf)",3,0.42671412394707586,Ruminants,Island,Linear
+2765,"[5, Inf)",3,0.4098162879269713,Ruminants,Island,Linear
+3958,"[5, Inf)",3,0.38093507542622923,Ruminants,Island,Linear
+4322,"[5, Inf)",3,0.4287660365343456,Ruminants,Island,Linear
+4764,"[5, Inf)",3,0.40746123396278994,Ruminants,Island,Linear
+4832,"[5, Inf)",3,0.41368964146810167,Ruminants,Island,Linear
+5903,"[5, Inf)",3,0.4087820771146485,Ruminants,Island,Linear
+6097,"[5, Inf)",3,0.4508077892622892,Ruminants,Island,Linear
+6596,"[5, Inf)",3,0.4052069421902263,Ruminants,Island,Linear
+6982,"[5, Inf)",3,0.38649672400763846,Ruminants,Island,Linear
+7149,"[5, Inf)",3,0.41989204514464284,Ruminants,Island,Linear
+7724,"[5, Inf)",3,0.38844102992891893,Ruminants,Island,Linear
+8520,"[5, Inf)",3,0.3897506642861842,Ruminants,Island,Linear
+9054,"[5, Inf)",3,0.4068865031422699,Ruminants,Island,Linear
+9635,"[5, Inf)",3,0.37573434463248273,Ruminants,Island,Linear
+9903,"[5, Inf)",3,0.37857879543978334,Ruminants,Island,Linear
+9996,"[5, Inf)",3,0.366255830325047,Ruminants,Island,Linear
+358,"[5, Inf)",-1,0.539139105227671,Ruminants,Island,Linear
+1642,"[5, Inf)",-1,0.5605358075533874,Ruminants,Island,Linear
+1685,"[5, Inf)",-1,0.568035661584511,Ruminants,Island,Linear
+2495,"[5, Inf)",-1,0.5939462740617272,Ruminants,Island,Linear
+2765,"[5, Inf)",-1,0.5919714597656062,Ruminants,Island,Linear
+3958,"[5, Inf)",-1,0.5572159856485752,Ruminants,Island,Linear
+4322,"[5, Inf)",-1,0.6018778462686472,Ruminants,Island,Linear
+4764,"[5, Inf)",-1,0.6589831916750236,Ruminants,Island,Linear
+4832,"[5, Inf)",-1,0.5590030623144905,Ruminants,Island,Linear
+5903,"[5, Inf)",-1,0.5213086883721071,Ruminants,Island,Linear
+6097,"[5, Inf)",-1,0.589434991682486,Ruminants,Island,Linear
+6596,"[5, Inf)",-1,0.5272971810795023,Ruminants,Island,Linear
+6982,"[5, Inf)",-1,0.5695987106569134,Ruminants,Island,Linear
+7149,"[5, Inf)",-1,0.5483924428274753,Ruminants,Island,Linear
+7724,"[5, Inf)",-1,0.6324674737261172,Ruminants,Island,Linear
+8520,"[5, Inf)",-1,0.5455126786863171,Ruminants,Island,Linear
+9054,"[5, Inf)",-1,0.6049399802445149,Ruminants,Island,Linear
+9635,"[5, Inf)",-1,0.5592190792036711,Ruminants,Island,Linear
+9903,"[5, Inf)",-1,0.5649662989202725,Ruminants,Island,Linear
+9996,"[5, Inf)",-1,0.6222145294771767,Ruminants,Island,Linear
+358,"[5, Inf)",1,0.4718064743081598,Ruminants,Island,Linear
+1642,"[5, Inf)",1,0.4811057929629846,Ruminants,Island,Linear
+1685,"[5, Inf)",1,0.476118579159096,Ruminants,Island,Linear
+2495,"[5, Inf)",1,0.5125604345410498,Ruminants,Island,Linear
+2765,"[5, Inf)",1,0.5045881111549789,Ruminants,Island,Linear
+3958,"[5, Inf)",1,0.46851052997170445,Ruminants,Island,Linear
+4322,"[5, Inf)",1,0.5158796816868383,Ruminants,Island,Linear
+4764,"[5, Inf)",1,0.5355267699302426,Ruminants,Island,Linear
+4832,"[5, Inf)",1,0.4926318740350673,Ruminants,Island,Linear
+5903,"[5, Inf)",1,0.4687126053352281,Ruminants,Island,Linear
+6097,"[5, Inf)",1,0.5207437440534451,Ruminants,Island,Linear
+6596,"[5, Inf)",1,0.467105695389366,Ruminants,Island,Linear
+6982,"[5, Inf)",1,0.47933416251573974,Ruminants,Island,Linear
+7149,"[5, Inf)",1,0.48963928538581836,Ruminants,Island,Linear
+7724,"[5, Inf)",1,0.5119451207345914,Ruminants,Island,Linear
+8520,"[5, Inf)",1,0.4681303279975096,Ruminants,Island,Linear
+9054,"[5, Inf)",1,0.506221108638145,Ruminants,Island,Linear
+9635,"[5, Inf)",1,0.46735006521106753,Ruminants,Island,Linear
+9903,"[5, Inf)",1,0.4722709907495264,Ruminants,Island,Linear
+9996,"[5, Inf)",1,0.4972087916874084,Ruminants,Island,Linear
+358,0-5,-1,0.6763734251311881,Ruminants,Island,Linear
+1642,0-5,-1,0.5296824911420616,Ruminants,Island,Linear
+1685,0-5,-1,0.6882355016719262,Ruminants,Island,Linear
+2495,0-5,-1,0.5234065792908598,Ruminants,Island,Linear
+2765,0-5,-1,0.6582937883611675,Ruminants,Island,Linear
+3958,0-5,-1,0.6274622321304684,Ruminants,Island,Linear
+4322,0-5,-1,0.6754600324137583,Ruminants,Island,Linear
+4764,0-5,-1,0.7046720270433858,Ruminants,Island,Linear
+4832,0-5,-1,0.77963206103485,Ruminants,Island,Linear
+5903,0-5,-1,0.5450363355213446,Ruminants,Island,Linear
+6097,0-5,-1,0.5839945336311292,Ruminants,Island,Linear
+6596,0-5,-1,0.7015556857955719,Ruminants,Island,Linear
+6982,0-5,-1,0.7791995447707137,Ruminants,Island,Linear
+7149,0-5,-1,0.7887978920239621,Ruminants,Island,Linear
+7724,0-5,-1,0.7949462128794751,Ruminants,Island,Linear
+8520,0-5,-1,0.7750573876615181,Ruminants,Island,Linear
+9054,0-5,-1,0.7665128855895106,Ruminants,Island,Linear
+9635,0-5,-1,0.6503406140164749,Ruminants,Island,Linear
+9903,0-5,-1,0.6277928127251355,Ruminants,Island,Linear
+9996,0-5,-1,0.6421311454572136,Ruminants,Island,Linear
+358,"[5, Inf)",2,0.43735970406041347,Ruminants,Island,Linear
+1642,"[5, Inf)",2,0.44060831804462786,Ruminants,Island,Linear
+1685,"[5, Inf)",2,0.42918933711751,Ruminants,Island,Linear
+2495,"[5, Inf)",2,0.47008820839904625,Ruminants,Island,Linear
+2765,"[5, Inf)",2,0.45750206555752443,Ruminants,Island,Linear
+3958,"[5, Inf)",2,0.42424660155402943,Ruminants,Island,Linear
+4322,"[5, Inf)",2,0.47212808852514176,Ruminants,Island,Linear
+4764,"[5, Inf)",2,0.4710291274592542,Ruminants,Island,Linear
+4832,"[5, Inf)",2,0.4550140993165603,Ruminants,Island,Linear
+5903,"[5, Inf)",2,0.4389418152516309,Ruminants,Island,Linear
+6097,"[5, Inf)",2,0.48574646864296367,Ruminants,Island,Linear
+6596,"[5, Inf)",2,0.4359845491330708,Ruminants,Island,Linear
+6982,"[5, Inf)",2,0.43305589171351633,Ruminants,Island,Linear
+7149,"[5, Inf)",2,0.4565271059464176,Ruminants,Island,Linear
+7724,"[5, Inf)",2,0.4497373564174119,Ruminants,Island,Linear
+8520,"[5, Inf)",2,0.4286923013745313,Ruminants,Island,Linear
+9054,"[5, Inf)",2,0.4561317374899638,Ruminants,Island,Linear
+9635,"[5, Inf)",2,0.42115785554298363,Ruminants,Island,Linear
+9903,"[5, Inf)",2,0.4252266104813361,Ruminants,Island,Linear
+9996,"[5, Inf)",2,0.4311030634394191,Ruminants,Island,Linear
+358,0-5,0,0.5927768540049306,Ruminants,Island,Linear
+1642,0-5,0,0.41620313248577323,Ruminants,Island,Linear
+1685,0-5,0,0.5493536215997145,Ruminants,Island,Linear
+2495,0-5,0,0.417206110419324,Ruminants,Island,Linear
+2765,0-5,0,0.5645229395355078,Ruminants,Island,Linear
+3958,0-5,0,0.486239374124957,Ruminants,Island,Linear
+4322,0-5,0,0.5570801824257705,Ruminants,Island,Linear
+4764,0-5,0,0.595652208713125,Ruminants,Island,Linear
+4832,0-5,0,0.64809619628117,Ruminants,Island,Linear
+5903,0-5,0,0.49252599020785676,Ruminants,Island,Linear
+6097,0-5,0,0.489132699836806,Ruminants,Island,Linear
+6596,0-5,0,0.6290203178091885,Ruminants,Island,Linear
+6982,0-5,0,0.6386222707673794,Ruminants,Island,Linear
+7149,0-5,0,0.678682368168281,Ruminants,Island,Linear
+7724,0-5,0,0.6781491955624552,Ruminants,Island,Linear
+8520,0-5,0,0.67417451071341,Ruminants,Island,Linear
+9054,0-5,0,0.6416343698679939,Ruminants,Island,Linear
+9635,0-5,0,0.5627144242484577,Ruminants,Island,Linear
+9903,0-5,0,0.5556734006631519,Ruminants,Island,Linear
+9996,0-5,0,0.5325022434465252,Ruminants,Island,Linear
+358,0-5,3,0.32325707565496015,Ruminants,Island,Linear
+1642,0-5,3,0.15056639953265133,Ruminants,Island,Linear
+1685,0-5,3,0.1656039521232354,Ruminants,Island,Linear
+2495,0-5,3,0.1475606935530727,Ruminants,Island,Linear
+2765,0-5,3,0.28147324768268583,Ruminants,Island,Linear
+3958,0-5,3,0.14162101463646126,Ruminants,Island,Linear
+4322,0-5,3,0.21254618380180146,Ruminants,Island,Linear
+4764,0-5,3,0.25459614593798496,Ruminants,Island,Linear
+4832,0-5,3,0.17646029893667872,Ruminants,Island,Linear
+5903,0-5,3,0.33055038227605243,Ruminants,Island,Linear
+6097,0-5,3,0.2135741505967686,Ruminants,Island,Linear
+6596,0-5,3,0.36420417017671686,Ruminants,Island,Linear
+6982,0-5,3,0.17775977211430816,Ruminants,Island,Linear
+7149,0-5,3,0.2411795890125532,Ruminants,Island,Linear
+7724,0-5,3,0.23775226597301757,Ruminants,Island,Linear
+8520,0-5,3,0.234984005851164,Ruminants,Island,Linear
+9054,0-5,3,0.18331603740777297,Ruminants,Island,Linear
+9635,0-5,3,0.2928567090764129,Ruminants,Island,Linear
+9903,0-5,3,0.3168297482617723,Ruminants,Island,Linear
+9996,0-5,3,0.2160316398998062,Ruminants,Island,Linear
+358,"[5, Inf)",0,0.505691819844903,Ruminants,Island,Linear
+1642,"[5, Inf)",0,0.5213977648275971,Ruminants,Island,Linear
+1685,"[5, Inf)",0,0.5227457353250934,Ruminants,Island,Linear
+2495,"[5, Inf)",0,0.5539292125723811,Ruminants,Island,Linear
+2765,"[5, Inf)",0,0.5498024715217713,Ruminants,Island,Linear
+3958,"[5, Inf)",0,0.5130602624967708,Ruminants,Island,Linear
+4322,"[5, Inf)",0,0.5593554815920958,Ruminants,Island,Linear
+4764,"[5, Inf)",0,0.5988336930869843,Ruminants,Island,Linear
+4832,"[5, Inf)",0,0.5272060027375852,Ruminants,Island,Linear
+5903,"[5, Inf)",0,0.4969480823195312,Ruminants,Island,Linear
+6097,"[5, Inf)",0,0.5554431074759091,Ruminants,Island,Linear
+6596,"[5, Inf)",0,0.49799432075700995,Ruminants,Island,Linear
+6982,"[5, Inf)",0,0.5249882318011481,Ruminants,Island,Linear
+7149,"[5, Inf)",0,0.5203790614170964,Ruminants,Island,Linear
+7724,"[5, Inf)",0,0.5734059175945314,Ruminants,Island,Linear
+8520,"[5, Inf)",0,0.5073432191727304,Ruminants,Island,Linear
+9054,"[5, Inf)",0,0.5561534257686684,Ruminants,Island,Linear
+9635,"[5, Inf)",0,0.5136090621421969,Ruminants,Island,Linear
+9903,"[5, Inf)",0,0.5190856212353032,Ruminants,Island,Linear
+9996,"[5, Inf)",0,0.5619873086333942,Ruminants,Island,Linear
+358,0-5,2,0.40985621561944174,Ruminants,Island,Linear
+1642,0-5,2,0.2202251588877502,Ruminants,Island,Linear
+1685,0-5,2,0.2672114173512932,Ruminants,Island,Linear
+2495,0-5,2,0.21919767379247795,Ruminants,Island,Linear
+2765,0-5,2,0.36879330011880246,Ruminants,Island,Linear
+3958,0-5,2,0.2287255672780888,Ruminants,Island,Linear
+4322,0-5,2,0.311378488462747,Ruminants,Island,Linear
+4764,0-5,2,0.3580633775016731,Ruminants,Island,Linear
+4832,0-5,2,0.30788488327031127,Ruminants,Island,Linear
+5903,0-5,2,0.382579380064074,Ruminants,Island,Linear
+6097,0-5,2,0.2943548581510372,Ruminants,Island,Linear
+6596,0-5,2,0.45273200192473384,Ruminants,Island,Linear
+6982,0-5,2,0.3041383819573314,Ruminants,Island,Linear
+7149,0-5,2,0.3783909290380158,Ruminants,Island,Linear
+7724,0-5,2,0.3731841413242651,Ruminants,Island,Linear
+8520,0-5,2,0.3748396206268014,Ruminants,Island,Linear
+9054,0-5,2,0.31347104296229716,Ruminants,Island,Linear
+9635,0-5,2,0.37803590435517703,Ruminants,Island,Linear
+9903,0-5,2,0.395223193463789,Ruminants,Island,Linear
+9996,0-5,2,0.30736161329336376,Ruminants,Island,Linear
+358,0-5,1,0.5018422866250262,Ruminants,Island,Linear
+1642,0-5,1,0.3100050636395015,Ruminants,Island,Linear
+1685,0-5,1,0.40054206559282707,Ruminants,Island,Linear
+2495,0-5,1,0.3112296720286757,Ruminants,Island,Linear
+2765,0-5,1,0.46546159364121414,Ruminants,Island,Linear
+3958,0-5,1,0.3466739517183438,Ruminants,Island,Linear
+4322,0-5,1,0.43034312350473874,Ruminants,Island,Linear
+4764,0-5,1,0.4758021092860949,Ruminants,Island,Linear
+4832,0-5,1,0.47777406231721997,Ruminants,Island,Linear
+5903,0-5,1,0.43715438176543037,Ruminants,Island,Linear
+6097,0-5,1,0.3888518677280286,Ruminants,Island,Linear
+6596,0-5,1,0.5434236261272203,Ruminants,Island,Linear
+6982,0-5,1,0.4682665214359288,Ruminants,Island,Linear
+7149,0-5,1,0.5345075660347709,Ruminants,Island,Linear
+7724,0-5,1,0.5297939902747283,Ruminants,Island,Linear
+8520,0-5,1,0.5329893895481278,Ruminants,Island,Linear
+9054,0-5,1,0.4784193860730504,Ruminants,Island,Linear
+9635,0-5,1,0.4699374532082921,Ruminants,Island,Linear
+9903,0-5,1,0.47658900855673597,Ruminants,Island,Linear
+9996,0-5,1,0.4161802388064456,Ruminants,Island,Linear
+358,"[5, Inf)",-2,0.5720606610957084,Ruminants,Island,Linear
+1642,"[5, Inf)",-2,0.5922156670568313,Ruminants,Island,Linear
+1685,"[5, Inf)",-2,0.6110178461471274,Ruminants,Island,Linear
+2495,"[5, Inf)",-2,0.6323430028856801,Ruminants,Island,Linear
+2765,"[5, Inf)",-2,0.6301152666637032,Ruminants,Island,Linear
+3958,"[5, Inf)",-2,0.6003249911793834,Ruminants,Island,Linear
+4322,"[5, Inf)",-2,0.6415906306479205,Ruminants,Island,Linear
+4764,"[5, Inf)",-2,0.7143935144037336,Ruminants,Island,Linear
+4832,"[5, Inf)",-2,0.587985219208245,Ruminants,Island,Linear
+5903,"[5, Inf)",-2,0.5369626174041432,Ruminants,Island,Linear
+6097,"[5, Inf)",-2,0.6220413561156912,Ruminants,Island,Linear
+6596,"[5, Inf)",-2,0.5512054550091743,Ruminants,Island,Linear
+6982,"[5, Inf)",-2,0.6127114168139786,Ruminants,Island,Linear
+7149,"[5, Inf)",-2,0.5728614244093724,Ruminants,Island,Linear
+7724,"[5, Inf)",-2,0.6876882196964861,Ruminants,Island,Linear
+8520,"[5, Inf)",-2,0.5817299586566537,Ruminants,Island,Linear
+9054,"[5, Inf)",-2,0.6516809915869668,Ruminants,Island,Linear
+9635,"[5, Inf)",-2,0.6034971732359264,Ruminants,Island,Linear
+9903,"[5, Inf)",-2,0.6092181958193008,Ruminants,Island,Linear
+9996,"[5, Inf)",-2,0.67313841774593,Ruminants,Island,Linear
+358,0-5,-2,0.7480344555253008,Ruminants,Island,Linear
+1642,0-5,-2,0.6381041142596555,Ruminants,Island,Linear
+1685,0-5,-2,0.7977827033656291,Ruminants,Island,Linear
+2495,0-5,-2,0.6131756243935973,Ruminants,Island,Linear
+2765,0-5,-2,0.7405757470318033,Ruminants,Island,Linear
+3958,0-5,-2,0.749545804899829,Ruminants,Island,Linear
+4322,0-5,-2,0.7691316294295276,Ruminants,Island,Linear
+4764,0-5,-2,0.7942012075918826,Ruminants,Island,Linear
+4832,0-5,-2,0.8610229742661001,Ruminants,Island,Linear
+5903,0-5,-2,0.5829315061267988,Ruminants,Island,Linear
+6097,0-5,-2,0.6601717484715685,Ruminants,Island,Linear
+6596,0-5,-2,0.7520667321465134,Ruminants,Island,Linear
+6982,0-5,-2,0.8751017340852616,Ruminants,Island,Linear
+7149,0-5,-2,0.8618161793223996,Ruminants,Island,Linear
+7724,0-5,-2,0.8747192663284789,Ruminants,Island,Linear
+8520,0-5,-2,0.8350325536564227,Ruminants,Island,Linear
+9054,0-5,-2,0.8415829979481496,Ruminants,Island,Linear
+9635,0-5,-2,0.7280606829338596,Ruminants,Island,Linear
+9903,0-5,-2,0.6898564547649498,Ruminants,Island,Linear
+9996,0-5,-2,0.7304271865353931,Ruminants,Island,Linear
+358,"[5, Inf)",-3,0.6042757479416304,Ruminants,Island,Linear
+1642,"[5, Inf)",-3,0.5399175031893522,Ruminants,Island,Linear
+1685,"[5, Inf)",-3,0.650854437742129,Ruminants,Island,Linear
+2495,"[5, Inf)",-3,0.6688590761037946,Ruminants,Island,Linear
+2765,"[5, Inf)",-3,0.6635107863562086,Ruminants,Island,Linear
+3958,"[5, Inf)",-3,0.641798513323881,Ruminants,Island,Linear
+4322,"[5, Inf)",-3,0.6302861000850134,Ruminants,Island,Linear
+4764,"[5, Inf)",-3,0.7640048093125549,Ruminants,Island,Linear
+4832,"[5, Inf)",-3,0.6139138720952666,Ruminants,Island,Linear
+5903,"[5, Inf)",-3,0.5346264687364092,Ruminants,Island,Linear
+6097,"[5, Inf)",-3,0.6513231938597055,Ruminants,Island,Linear
+6596,"[5, Inf)",-3,0.5587498214016912,Ruminants,Island,Linear
+6982,"[5, Inf)",-3,0.6538835429898582,Ruminants,Island,Linear
+7149,"[5, Inf)",-3,0.592813028520035,Ruminants,Island,Linear
+7724,"[5, Inf)",-3,0.737987110547546,Ruminants,Island,Linear
+8520,"[5, Inf)",-3,0.6149988132834247,Ruminants,Island,Linear
+9054,"[5, Inf)",-3,0.6956277816283462,Ruminants,Island,Linear
+9635,"[5, Inf)",-3,0.6458359049944447,Ruminants,Island,Linear
+9903,"[5, Inf)",-3,0.6512254704046909,Ruminants,Island,Linear
+9996,"[5, Inf)",-3,0.7061933453449616,Ruminants,Island,Linear
+358,0-5,-3,0.8055580522019266,Ruminants,Island,Linear
+1642,0-5,-3,0.7298061988685361,Ruminants,Island,Linear
+1685,0-5,-3,0.8731892191377881,Ruminants,Island,Linear
+2495,0-5,-3,0.6739018762581478,Ruminants,Island,Linear
+2765,0-5,-3,0.8080319136930351,Ruminants,Island,Linear
+3958,0-5,-3,0.8415702366341657,Ruminants,Island,Linear
+4322,0-5,-3,0.7947758640200958,Ruminants,Island,Linear
+4764,0-5,-3,0.86177845776657,Ruminants,Island,Linear
+4832,0-5,-3,0.9031529687221018,Ruminants,Island,Linear
+5903,0-5,-3,0.5651479494810873,Ruminants,Island,Linear
+6097,0-5,-3,0.6766603946885191,Ruminants,Island,Linear
+6596,0-5,-3,0.7689888859853898,Ruminants,Island,Linear
+6982,0-5,-3,0.9325091767564737,Ruminants,Island,Linear
+7149,0-5,-3,0.9063012039694103,Ruminants,Island,Linear
+7724,0-5,-3,0.9244724836432024,Ruminants,Island,Linear
+8520,0-5,-3,0.8653779855174725,Ruminants,Island,Linear
+9054,0-5,-3,0.8729907459786832,Ruminants,Island,Linear
+9635,0-5,-3,0.793240707261077,Ruminants,Island,Linear
+9903,0-5,-3,0.7406850613116253,Ruminants,Island,Linear
+9996,0-5,-3,0.7837542845901284,Ruminants,Island,Linear
+358,"[5, Inf)",3,0.01434104539176344,Water,Island,Linear
+1642,"[5, Inf)",3,1.3967039921715516e-8,Water,Island,Linear
+1685,"[5, Inf)",3,0.010913750136820857,Water,Island,Linear
+2495,"[5, Inf)",3,0.013021053742544753,Water,Island,Linear
+2765,"[5, Inf)",3,0.020421226202964486,Water,Island,Linear
+3958,"[5, Inf)",3,0.027529953574426728,Water,Island,Linear
+4322,"[5, Inf)",3,2.1902320486077502e-11,Water,Island,Linear
+4764,"[5, Inf)",3,4.45442297357601e-6,Water,Island,Linear
+4832,"[5, Inf)",3,0.011273396455599102,Water,Island,Linear
+5903,"[5, Inf)",3,7.799622918211454e-4,Water,Island,Linear
+6097,"[5, Inf)",3,8.0640817146684e-7,Water,Island,Linear
+6596,"[5, Inf)",3,5.7602042659019e-5,Water,Island,Linear
+6982,"[5, Inf)",3,0.018633564749734023,Water,Island,Linear
+7149,"[5, Inf)",3,0.011587182743913469,Water,Island,Linear
+7724,"[5, Inf)",3,0.00945037022479688,Water,Island,Linear
+8520,"[5, Inf)",3,0.0030715696709065748,Water,Island,Linear
+9054,"[5, Inf)",3,4.6432258915123906e-4,Water,Island,Linear
+9635,"[5, Inf)",3,0.015728574942721237,Water,Island,Linear
+9903,"[5, Inf)",3,0.007785524768676263,Water,Island,Linear
+9996,"[5, Inf)",3,1.3410547751042747e-4,Water,Island,Linear
+358,"[5, Inf)",-1,0.010808493481736306,Water,Island,Linear
+1642,"[5, Inf)",-1,7.819815787728027e-4,Water,Island,Linear
+1685,"[5, Inf)",-1,0.02473247550034373,Water,Island,Linear
+2495,"[5, Inf)",-1,0.01235379267759046,Water,Island,Linear
+2765,"[5, Inf)",-1,0.04254722808916326,Water,Island,Linear
+3958,"[5, Inf)",-1,0.011073199842305538,Water,Island,Linear
+4322,"[5, Inf)",-1,5.440429153270701e-5,Water,Island,Linear
+4764,"[5, Inf)",-1,8.617448077824313e-6,Water,Island,Linear
+4832,"[5, Inf)",-1,0.030828963446241527,Water,Island,Linear
+5903,"[5, Inf)",-1,0.020855520832593517,Water,Island,Linear
+6097,"[5, Inf)",-1,2.944032557085106e-4,Water,Island,Linear
+6596,"[5, Inf)",-1,0.006010634761156162,Water,Island,Linear
+6982,"[5, Inf)",-1,0.014249032098054273,Water,Island,Linear
+7149,"[5, Inf)",-1,3.9538952316837774e-5,Water,Island,Linear
+7724,"[5, Inf)",-1,6.867190005450684e-4,Water,Island,Linear
+8520,"[5, Inf)",-1,0.01338204956854824,Water,Island,Linear
+9054,"[5, Inf)",-1,8.410975283287706e-4,Water,Island,Linear
+9635,"[5, Inf)",-1,0.0031632670730513007,Water,Island,Linear
+9903,"[5, Inf)",-1,4.870028503983601e-4,Water,Island,Linear
+9996,"[5, Inf)",-1,0.006927884604453618,Water,Island,Linear
+358,"[5, Inf)",1,0.012620599777461388,Water,Island,Linear
+1642,"[5, Inf)",1,3.355633633856926e-6,Water,Island,Linear
+1685,"[5, Inf)",1,0.016771052767624684,Water,Island,Linear
+2495,"[5, Inf)",1,0.012912971993792691,Water,Island,Linear
+2765,"[5, Inf)",1,0.03019733141147582,Water,Island,Linear
+3958,"[5, Inf)",1,0.017755029556131213,Water,Island,Linear
+4322,"[5, Inf)",1,3.505465522861419e-8,Water,Island,Linear
+4764,"[5, Inf)",1,6.403035842541833e-6,Water,Island,Linear
+4832,"[5, Inf)",1,0.019097870435756097,Water,Island,Linear
+5903,"[5, Inf)",1,0.004095062667160186,Water,Island,Linear
+6097,"[5, Inf)",1,1.556535975166829e-5,Water,Island,Linear
+6596,"[5, Inf)",1,5.946043892675568e-4,Water,Island,Linear
+6982,"[5, Inf)",1,0.016646450015931007,Water,Island,Linear
+7149,"[5, Inf)",1,6.906582567896554e-4,Water,Island,Linear
+7724,"[5, Inf)",1,0.0026312111757060973,Water,Island,Linear
+8520,"[5, Inf)",1,0.0065089723094214295,Water,Island,Linear
+9054,"[5, Inf)",1,6.376473355137479e-4,Water,Island,Linear
+9635,"[5, Inf)",1,0.007191566302888504,Water,Island,Linear
+9903,"[5, Inf)",1,0.001988435706009585,Water,Island,Linear
+9996,"[5, Inf)",1,0.0010039221416721846,Water,Island,Linear
+358,0-5,-1,0.009353776946133825,Water,Island,Linear
+1642,0-5,-1,7.359248402133544e-4,Water,Island,Linear
+1685,0-5,-1,0.007184565887528177,Water,Island,Linear
+2495,0-5,-1,0.02750601608689618,Water,Island,Linear
+2765,0-5,-1,0.0020024444394605477,Water,Island,Linear
+3958,0-5,-1,2.2136635775234752e-4,Water,Island,Linear
+4322,0-5,-1,7.984931876208799e-4,Water,Island,Linear
+4764,0-5,-1,7.362998717725288e-5,Water,Island,Linear
+4832,0-5,-1,0.03028802192417877,Water,Island,Linear
+5903,0-5,-1,0.007926973608191471,Water,Island,Linear
+6097,0-5,-1,3.84462321277744e-4,Water,Island,Linear
+6596,0-5,-1,0.017801713958351985,Water,Island,Linear
+6982,0-5,-1,0.015323760984474539,Water,Island,Linear
+7149,0-5,-1,0.0024008443092848044,Water,Island,Linear
+7724,0-5,-1,0.0017586204928643596,Water,Island,Linear
+8520,0-5,-1,0.004140891356247146,Water,Island,Linear
+9054,0-5,-1,5.884964549765201e-4,Water,Island,Linear
+9635,0-5,-1,0.0038948781155923877,Water,Island,Linear
+9903,0-5,-1,1.3258591351656923e-4,Water,Island,Linear
+9996,0-5,-1,0.007918398179265295,Water,Island,Linear
+358,"[5, Inf)",2,0.013513901499018221,Water,Island,Linear
+1642,"[5, Inf)",2,2.17298655753303e-7,Water,Island,Linear
+1685,"[5, Inf)",2,0.013597865012636667,Water,Island,Linear
+2495,"[5, Inf)",2,0.013033902839832308,Water,Island,Linear
+2765,"[5, Inf)",2,0.024983606752724766,Water,Island,Linear
+3958,"[5, Inf)",2,0.022202232777868695,Water,Island,Linear
+4322,"[5, Inf)",2,8.796164724406231e-10,Water,Island,Linear
+4764,"[5, Inf)",2,5.385210902335334e-6,Water,Island,Linear
+4832,"[5, Inf)",2,0.014789249590504587,Water,Island,Linear
+5903,"[5, Inf)",2,0.0017921518094940062,Water,Island,Linear
+6097,"[5, Inf)",2,3.5518854976688926e-6,Water,Island,Linear
+6596,"[5, Inf)",2,1.854633397927866e-4,Water,Island,Linear
+6982,"[5, Inf)",2,0.017719874456431334,Water,Island,Linear
+7149,"[5, Inf)",2,0.002848263402194354,Water,Island,Linear
+7724,"[5, Inf)",2,0.005029061817810129,Water,Island,Linear
+8520,"[5, Inf)",2,0.004487508256512865,Water,Island,Linear
+9054,"[5, Inf)",2,5.468695028948589e-4,Water,Island,Linear
+9635,"[5, Inf)",2,0.010689065469899306,Water,Island,Linear
+9903,"[5, Inf)",2,0.0039568207734297575,Water,Island,Linear
+9996,"[5, Inf)",2,3.706745002957349e-4,Water,Island,Linear
+358,0-5,0,0.006631202139117399,Water,Island,Linear
+1642,0-5,0,2.2851802769250845e-4,Water,Island,Linear
+1685,0-5,0,0.005219370871202543,Water,Island,Linear
+2495,0-5,0,0.01589758332232868,Water,Island,Linear
+2765,0-5,0,0.0013678788338141996,Water,Island,Linear
+3958,0-5,0,3.9542093677467064e-4,Water,Island,Linear
+4322,0-5,0,7.940626152240993e-5,Water,Island,Linear
+4764,0-5,0,1.3895717348214121e-4,Water,Island,Linear
+4832,0-5,0,0.0219115497769735,Water,Island,Linear
+5903,0-5,0,0.001747396840730173,Water,Island,Linear
+6097,0-5,0,2.759617873413407e-5,Water,Island,Linear
+6596,0-5,0,0.007736605133808883,Water,Island,Linear
+6982,0-5,0,0.02068004457943009,Water,Island,Linear
+7149,0-5,0,0.0023091365672633342,Water,Island,Linear
+7724,0-5,0,0.002831895182706029,Water,Island,Linear
+8520,0-5,0,0.004334392606063882,Water,Island,Linear
+9054,0-5,0,1.2566217370130133e-4,Water,Island,Linear
+9635,0-5,0,0.003185864472661862,Water,Island,Linear
+9903,0-5,0,2.965448591006457e-4,Water,Island,Linear
+9996,0-5,0,0.002963215474854441,Water,Island,Linear
+358,0-5,3,0.0019140387934378051,Water,Island,Linear
+1642,0-5,3,5.101936170928107e-6,Water,Island,Linear
+1685,0-5,3,0.001186164650882416,Water,Island,Linear
+2495,0-5,3,0.002143517037592583,Water,Island,Linear
+2765,0-5,3,3.447300255944882e-4,Water,Island,Linear
+3958,0-5,3,0.001410567135749225,Water,Island,Linear
+4322,0-5,3,5.311128363146257e-8,Water,Island,Linear
+4764,0-5,3,6.610002237236314e-4,Water,Island,Linear
+4832,0-5,3,0.003932220307842527,Water,Island,Linear
+5903,0-5,3,1.7023206541780447e-5,Water,Island,Linear
+6097,0-5,3,7.584076215773525e-9,Water,Island,Linear
+6596,0-5,3,5.101394819293754e-4,Water,Island,Linear
+6982,0-5,3,0.025698814580826373,Water,Island,Linear
+7149,0-5,3,0.0011462464151073156,Water,Island,Linear
+7724,0-5,3,0.006677735382194046,Water,Island,Linear
+8520,0-5,3,0.0026325828521750927,Water,Island,Linear
+9054,0-5,3,5.959297705138578e-7,Water,Island,Linear
+9635,0-5,3,0.0014007259989547332,Water,Island,Linear
+9903,0-5,3,0.0027281357702973546,Water,Island,Linear
+9996,0-5,3,1.1046983945290613e-4,Water,Island,Linear
+358,"[5, Inf)",0,0.011710519010995886,Water,Island,Linear
+1642,"[5, Inf)",0,5.1431918203082824e-5,Water,Island,Linear
+1685,"[5, Inf)",0,0.020471944219461097,Water,Island,Linear
+2495,"[5, Inf)",0,0.012680062883701815,Water,Island,Linear
+2765,"[5, Inf)",0,0.036058504845855925,Water,Island,Linear
+3958,"[5, Inf)",0,0.01407972544141263,Water,Island,Linear
+4322,"[5, Inf)",0,1.3862735511116424e-6,Water,Island,Linear
+4764,"[5, Inf)",0,7.487912667494777e-6,Water,Island,Linear
+4832,"[5, Inf)",0,0.024377206245018917,Water,Island,Linear
+5903,"[5, Inf)",0,0.009290755196305624,Water,Island,Linear
+6097,"[5, Inf)",0,6.786728563296064e-5,Water,Island,Linear
+6596,"[5, Inf)",0,0.001896982430660715,Water,Island,Linear
+6982,"[5, Inf)",0,0.015473885400871896,Water,Island,Linear
+7149,"[5, Inf)",0,1.659511009209495e-4,Water,Island,Linear
+7724,"[5, Inf)",0,0.0013545615792633174,Water,Island,Linear
+8520,"[5, Inf)",0,0.009369870227122545,Water,Island,Linear
+9054,"[5, Inf)",0,7.36006755420103e-4,Water,Island,Linear
+9635,"[5, Inf)",0,0.004791816832430437,Water,Island,Linear
+9903,"[5, Inf)",0,9.889028329858227e-4,Water,Island,Linear
+9996,"[5, Inf)",0,0.002664632822990857,Water,Island,Linear
+358,0-5,2,0.0030000857359330666,Water,Island,Linear
+1642,0-5,2,1.8883244218047168e-5,Water,Island,Linear
+1685,0-5,2,0.0021029385682054735,Water,Island,Linear
+2495,0-5,2,0.0043913723066204965,Water,Island,Linear
+2765,0-5,2,5.670217169036535e-4,Water,Island,Linear
+3958,0-5,2,9.883147237234181e-4,Water,Island,Linear
+4322,0-5,2,6.452924894475515e-7,Water,Island,Linear
+4764,0-5,2,4.1637933115225956e-4,Water,Island,Linear
+4832,0-5,2,0.00788364018696922,Water,Island,Linear
+5903,0-5,2,8.07690224583809e-5,Water,Island,Linear
+6097,0-5,2,1.219685776123376e-7,Water,Island,Linear
+6596,0-5,2,0.0013082752593649633,Water,Island,Linear
+6982,0-5,2,0.026703003058476407,Water,Island,Linear
+7149,0-5,2,0.0016087677831691522,Water,Island,Linear
+7724,0-5,2,0.00555277634744458,Water,Island,Linear
+8520,0-5,2,0.0034897417755975608,Water,Island,Linear
+9054,0-5,2,3.99484094275503e-6,Water,Island,Linear
+9635,0-5,2,0.0019126909678690096,Water,Island,Linear
+9903,0-5,2,0.0013467677409554472,Water,Island,Linear
+9996,0-5,2,3.4829544738682023e-4,Water,Island,Linear
+358,0-5,1,0.004541181272330829,Water,Island,Linear
+1642,0-5,1,6.726376735419116e-5,Water,Island,Linear
+1685,0-5,1,0.0034635144481388012,Water,Island,Linear
+2495,0-5,1,0.008599107508903832,Water,Island,Linear
+2765,0-5,1,8.984112978925123e-4,Water,Island,Linear
+3958,0-5,1,6.498546868513122e-4,Water,Island,Linear
+4322,0-5,1,7.396348911864493e-6,Water,Island,Linear
+4764,0-5,1,2.4781928530811836e-4,Water,Island,Linear
+4832,0-5,1,0.01405751626478042,Water,Island,Linear
+5903,0-5,1,3.7833599862027636e-4,Water,Island,Linear
+6097,0-5,1,1.8801118670967697e-6,Water,Island,Linear
+6596,0-5,1,0.003239741523181293,Water,Island,Linear
+6982,0-5,1,0.024968430964158617,Water,Island,Linear
+7149,0-5,1,0.002032926631109255,Water,Island,Linear
+7724,0-5,1,0.0041761538549968035,Water,Island,Linear
+8520,0-5,1,0.004123542014334686,Water,Island,Linear
+9054,0-5,1,2.3901121267137124e-5,Water,Island,Linear
+9635,0-5,1,0.0025151596800942573,Water,Island,Linear
+9903,0-5,1,6.426944637678998e-4,Water,Island,Linear
+9996,0-5,1,0.0010450845707787313,Water,Island,Linear
+358,"[5, Inf)",-2,0.00992842893443982,Water,Island,Linear
+1642,"[5, Inf)",-2,0.011684298905202261,Water,Island,Linear
+1685,"[5, Inf)",-2,0.02957803205922509,Water,Island,Linear
+2495,"[5, Inf)",-2,0.011950659482819467,Water,Island,Linear
+2765,"[5, Inf)",-2,0.049631794730685935,Water,Island,Linear
+3958,"[5, Inf)",-2,0.008638926072901187,Water,Island,Linear
+4322,"[5, Inf)",-2,0.0021151763217229047,Water,Island,Linear
+4764,"[5, Inf)",-2,9.769934143060925e-6,Water,Island,Linear
+4832,"[5, Inf)",-2,0.03867695678439575,Water,Island,Linear
+5903,"[5, Inf)",-2,0.04596806341987356,Water,Island,Linear
+6097,"[5, Inf)",-2,0.001270023480269429,Water,Island,Linear
+6596,"[5, Inf)",-2,0.01880201377218896,Water,Island,Linear
+6982,"[5, Inf)",-2,0.013008849799147485,Water,Island,Linear
+7149,"[5, Inf)",-2,9.338059703570895e-6,Water,Island,Linear
+7724,"[5, Inf)",-2,3.4319167044449665e-4,Water,Island,Linear
+8520,"[5, Inf)",-2,0.018955065318046107,Water,Island,Linear
+9054,"[5, Inf)",-2,9.519540977105952e-4,Water,Island,Linear
+9635,"[5, Inf)",-2,0.0020697384637686387,Water,Island,Linear
+9903,"[5, Inf)",-2,2.3761626538216862e-4,Water,Island,Linear
+9996,"[5, Inf)",-2,0.01760007450413488,Water,Island,Linear
+358,0-5,-2,0.012788556323970135,Water,Island,Linear
+1642,0-5,-2,0.0022434278759013134,Water,Island,Linear
+1685,0-5,-2,0.009150511513599838,Water,Island,Linear
+2495,0-5,-2,0.04444075852332822,Water,Island,Linear
+2765,0-5,-2,0.0028280356873878797,Water,Island,Linear
+3958,0-5,-2,1.1471935580612954e-4,Water,Island,Linear
+4322,0-5,-2,0.007540614665566048,Water,Island,Linear
+4764,0-5,-2,3.71687292930166e-5,Water,Island,Linear
+4832,0-5,-2,0.03843647551428701,Water,Island,Linear
+5903,0-5,-2,0.034755140436666894,Water,Island,Linear
+6097,0-5,-2,0.005071362875143292,Water,Island,Linear
+6596,0-5,-2,0.03937041198709711,Water,Island,Linear
+6982,0-5,-2,0.010451641194105092,Water,Island,Linear
+7149,0-5,-2,0.002346540766466457,Water,Island,Linear
+7724,0-5,-2,0.0010251455675660847,Water,Island,Linear
+8520,0-5,-2,0.0037073828825414665,Water,Island,Linear
+9054,0-5,-2,0.0025329626542486584,Water,Island,Linear
+9635,0-5,-2,0.004612478123679758,Water,Island,Linear
+9903,0-5,-2,5.765673330318615e-5,Water,Island,Linear
+9996,0-5,-2,0.019960082914619977,Water,Island,Linear
+358,"[5, Inf)",-3,0.009079203051199237,Water,Island,Linear
+1642,"[5, Inf)",-3,0.15065369134199763,Water,Island,Linear
+1685,"[5, Inf)",-3,0.035028589133484764,Water,Island,Linear
+2495,"[5, Inf)",-3,0.011485761329634313,Water,Island,Linear
+2765,"[5, Inf)",-3,0.05727399018862358,Water,Island,Linear
+3958,"[5, Inf)",-3,0.0066879929228537945,Water,Island,Linear
+4322,"[5, Inf)",-3,0.07578618655218036,Water,Island,Linear
+4764,"[5, Inf)",-3,1.0926976790843114e-5,Water,Island,Linear
+4832,"[5, Inf)",-3,0.04816532373796133,Water,Island,Linear
+5903,"[5, Inf)",-3,0.09793742731600052,Water,Island,Linear
+6097,"[5, Inf)",-3,0.00543594221016558,Water,Island,Linear
+6596,"[5, Inf)",-3,0.0570340520110156,Water,Island,Linear
+6982,"[5, Inf)",-3,0.011782837631533132,Water,Island,Linear
+7149,"[5, Inf)",-3,2.1847320469559597e-6,Water,Island,Linear
+7724,"[5, Inf)",-3,1.6927710227162093e-4,Water,Island,Linear
+8520,"[5, Inf)",-3,0.026617312445042448,Water,Island,Linear
+9054,"[5, Inf)",-3,0.0010675906400731175,Water,Island,Linear
+9635,"[5, Inf)",-3,0.0013429157455935807,Water,Island,Linear
+9903,"[5, Inf)",-3,1.1492883821715224e-4,Water,Island,Linear
+9996,"[5, Inf)",-3,0.04335941171199802,Water,Island,Linear
+358,0-5,-3,0.017025356148359642,Water,Island,Linear
+1642,0-5,-3,0.006492782238513694,Water,Island,Linear
+1685,0-5,-3,0.01100440120304353,Water,Island,Linear
+2495,0-5,-3,0.06735988115790861,Water,Island,Linear
+2765,0-5,-3,0.0038736341123645724,Water,Island,Linear
+3958,0-5,-3,5.5878325325923253e-5,Water,Island,Linear
+4322,0-5,-3,0.06462272464694671,Water,Island,Linear
+4764,0-5,-3,1.8064347635183594e-5,Water,Island,Linear
+4832,0-5,-3,0.04632737885705066,Water,Island,Linear
+5903,0-5,-3,0.13812848173776712,Water,Island,Linear
+6097,0-5,-3,0.060654253201269,Water,Island,Linear
+6596,0-5,-3,0.08305151446424423,Water,Island,Linear
+6982,0-5,-3,0.006763762197839971,Water,Island,Linear
+7149,0-5,-3,0.0022075025892899754,Water,Island,Linear
+7724,0-5,-3,5.739754223141819e-4,Water,Island,Linear
+8520,0-5,-3,0.0031928163174646438,Water,Island,Linear
+9054,0-5,-3,0.010300277285397067,Water,Island,Linear
+9635,0-5,-3,0.005316006208654164,Water,Island,Linear
+9903,0-5,-3,2.4498254418362552e-5,Water,Island,Linear
+9996,0-5,-3,0.047461029012908565,Water,Island,Linear
+358,"[5, Inf)",3,0.5691426436906539,Poultry,Island,Linear
+1642,"[5, Inf)",3,0.5694505965354519,Poultry,Island,Linear
+1685,"[5, Inf)",3,0.5517375834386532,Poultry,Island,Linear
+2495,"[5, Inf)",3,0.5326376660113665,Poultry,Island,Linear
+2765,"[5, Inf)",3,0.5625847939305341,Poultry,Island,Linear
+3958,"[5, Inf)",3,0.5744736539025671,Poultry,Island,Linear
+4322,"[5, Inf)",3,0.5417850951040438,Poultry,Island,Linear
+4764,"[5, Inf)",3,0.5338518823949646,Poultry,Island,Linear
+4832,"[5, Inf)",3,0.5266726011474288,Poultry,Island,Linear
+5903,"[5, Inf)",3,0.5472640626148645,Poultry,Island,Linear
+6097,"[5, Inf)",3,0.4878936598399577,Poultry,Island,Linear
+6596,"[5, Inf)",3,0.5591674312375674,Poultry,Island,Linear
+6982,"[5, Inf)",3,0.5656877574671636,Poultry,Island,Linear
+7149,"[5, Inf)",3,0.5538057646175288,Poultry,Island,Linear
+7724,"[5, Inf)",3,0.5523303556057759,Poultry,Island,Linear
+8520,"[5, Inf)",3,0.5820175304173109,Poultry,Island,Linear
+9054,"[5, Inf)",3,0.556337355246808,Poultry,Island,Linear
+9635,"[5, Inf)",3,0.5630306428106084,Poultry,Island,Linear
+9903,"[5, Inf)",3,0.5696240667852664,Poultry,Island,Linear
+9996,"[5, Inf)",3,0.5878459838307383,Poultry,Island,Linear
+358,"[5, Inf)",-1,0.44951913879739824,Poultry,Island,Linear
+1642,"[5, Inf)",-1,0.3981100281617345,Poultry,Island,Linear
+1685,"[5, Inf)",-1,0.37349716263235594,Poultry,Island,Linear
+2495,"[5, Inf)",-1,0.3897445060055973,Poultry,Island,Linear
+2765,"[5, Inf)",-1,0.3494253834727411,Poultry,Island,Linear
+3958,"[5, Inf)",-1,0.4225508895634795,Poultry,Island,Linear
+4322,"[5, Inf)",-1,0.3814271993022438,Poultry,Island,Linear
+4764,"[5, Inf)",-1,0.30309138543381764,Poultry,Island,Linear
+4832,"[5, Inf)",-1,0.40598553008852323,Poultry,Island,Linear
+5903,"[5, Inf)",-1,0.4356644328052247,Poultry,Island,Linear
+6097,"[5, Inf)",-1,0.3729315658996646,Poultry,Island,Linear
+6596,"[5, Inf)",-1,0.4346777766444207,Poultry,Island,Linear
+6982,"[5, Inf)",-1,0.41252447612617227,Poultry,Island,Linear
+7149,"[5, Inf)",-1,0.4040809643550498,Poultry,Island,Linear
+7724,"[5, Inf)",-1,0.3364758963903709,Poultry,Island,Linear
+8520,"[5, Inf)",-1,0.42029141269179643,Poultry,Island,Linear
+9054,"[5, Inf)",-1,0.37267778422372155,Poultry,Island,Linear
+9635,"[5, Inf)",-1,0.39222326236508004,Poultry,Island,Linear
+9903,"[5, Inf)",-1,0.3838525017618208,Poultry,Island,Linear
+9996,"[5, Inf)",-1,0.36129273808693957,Poultry,Island,Linear
+358,"[5, Inf)",1,0.5127334651243359,Poultry,Island,Linear
+1642,"[5, Inf)",1,0.48345234935938924,Poultry,Island,Linear
+1685,"[5, Inf)",1,0.46339299665881684,Poultry,Island,Linear
+2495,"[5, Inf)",1,0.46388350229769676,Poultry,Island,Linear
+2765,"[5, Inf)",1,0.4542168504578089,Poultry,Island,Linear
+3958,"[5, Inf)",1,0.5010218421142841,Poultry,Island,Linear
+4322,"[5, Inf)",1,0.46163997816884106,Poultry,Island,Linear
+4764,"[5, Inf)",1,0.4157172580391729,Poultry,Island,Linear
+4832,"[5, Inf)",1,0.4737003782720815,Poultry,Island,Linear
+5903,"[5, Inf)",1,0.49577856584887925,Poultry,Island,Linear
+6097,"[5, Inf)",1,0.4309109777286631,Poultry,Island,Linear
+6596,"[5, Inf)",1,0.4981999179475084,Poultry,Island,Linear
+6982,"[5, Inf)",1,0.4935080326581917,Poultry,Island,Linear
+7149,"[5, Inf)",1,0.48269703735874825,Poultry,Island,Linear
+7724,"[5, Inf)",1,0.4452646294524956,Poultry,Island,Linear
+8520,"[5, Inf)",1,0.5021277379036485,Poultry,Island,Linear
+9054,"[5, Inf)",1,0.46460441003590747,Poultry,Island,Linear
+9635,"[5, Inf)",1,0.47911918376609275,Poultry,Island,Linear
+9903,"[5, Inf)",1,0.47750531388297646,Poultry,Island,Linear
+9996,"[5, Inf)",1,0.47999625137727775,Poultry,Island,Linear
+358,0-5,-1,0.3018195559049924,Poultry,Island,Linear
+1642,0-5,-1,0.4565439889098963,Poultry,Island,Linear
+1685,0-5,-1,0.2823311335161702,Poultry,Island,Linear
+2495,0-5,-1,0.42326794730584677,Poultry,Island,Linear
+2765,0-5,-1,0.3278619486072284,Poultry,Island,Linear
+3958,0-5,-1,0.3683111605180124,Poultry,Island,Linear
+4322,0-5,-1,0.28920228544860144,Poultry,Island,Linear
+4764,0-5,-1,0.29075930442159115,Poultry,Island,Linear
+4832,0-5,-1,0.17812615721677083,Poultry,Island,Linear
+5903,0-5,-1,0.41483848447681326,Poultry,Island,Linear
+6097,0-5,-1,0.37250745266103,Poultry,Island,Linear
+6596,0-5,-1,0.2493544447534116,Poultry,Island,Linear
+6982,0-5,-1,0.19178603241077313,Poultry,Island,Linear
+7149,0-5,-1,0.16532493225780037,Poultry,Island,Linear
+7724,0-5,-1,0.16867356481943985,Poultry,Island,Linear
+8520,0-5,-1,0.15451975342135643,Poultry,Island,Linear
+9054,0-5,-1,0.1909649581264949,Poultry,Island,Linear
+9635,0-5,-1,0.33996734524392425,Poultry,Island,Linear
+9903,0-5,-1,0.28917387982431836,Poultry,Island,Linear
+9996,0-5,-1,0.3363227440758519,Poultry,Island,Linear
+358,"[5, Inf)",2,0.5426336750416771,Poultry,Island,Linear
+1642,"[5, Inf)",2,0.5266504344063107,Poultry,Island,Linear
+1685,"[5, Inf)",2,0.5082116035593875,Poultry,Island,Linear
+2495,"[5, Inf)",2,0.4996417376676422,Poultry,Island,Linear
+2765,"[5, Inf)",2,0.5085756469864086,Poultry,Island,Linear
+3958,"[5, Inf)",2,0.5387615580206582,Poultry,Island,Linear
+4322,"[5, Inf)",2,0.5020427171673829,Poultry,Island,Linear
+4764,"[5, Inf)",2,0.47503262682109054,Poultry,Island,Linear
+4832,"[5, Inf)",2,0.5034409121286288,Poultry,Island,Linear
+5903,"[5, Inf)",2,0.5223361144321451,Poultry,Island,Linear
+6097,"[5, Inf)",2,0.4596828296166165,Poultry,Island,Linear
+6596,"[5, Inf)",2,0.5289295594375145,Poultry,Island,Linear
+6982,"[5, Inf)",2,0.5316029160917345,Poultry,Island,Linear
+7149,"[5, Inf)",2,0.5205658448728119,Poultry,Island,Linear
+7724,"[5, Inf)",2,0.5001419292900307,Poultry,Island,Linear
+8520,"[5, Inf)",2,0.5425552904506823,Poultry,Island,Linear
+9054,"[5, Inf)",2,0.5109687011735315,Poultry,Island,Linear
+9635,"[5, Inf)",2,0.5220007184637736,Poultry,Island,Linear
+9903,"[5, Inf)",2,0.5244812014093952,Poultry,Island,Linear
+9996,"[5, Inf)",2,0.5366240547563178,Poultry,Island,Linear
+358,0-5,0,0.3868423960547941,Poultry,Island,Linear
+1642,0-5,0,0.5731127740425374,Poultry,Island,Linear
+1685,0-5,0,0.4175753066364157,Poultry,Island,Linear
+2495,0-5,0,0.5507862902925448,Poultry,Island,Linear
+2765,0-5,0,0.42072915715717707,Poultry,Island,Linear
+3958,0-5,0,0.5053662975261537,Poultry,Island,Linear
+4322,0-5,0,0.4042380981610326,Poultry,Island,Linear
+4764,0-5,0,0.39586863292012,Poultry,Island,Linear
+4832,0-5,0,0.3080052909947709,Poultry,Island,Linear
+5903,0-5,0,0.47330384254339114,Poultry,Island,Linear
+6097,0-5,0,0.4827198668827797,Poultry,Island,Linear
+6596,0-5,0,0.3257930826153854,Poultry,Island,Linear
+6982,0-5,0,0.3224238143776417,Poultry,Island,Linear
+7149,0-5,0,0.27811638444969405,Poultry,Island,Linear
+7724,0-5,0,0.2800999956104971,Poultry,Island,Linear
+8520,0-5,0,0.2686969265956655,Poultry,Island,Linear
+9054,0-5,0,0.3281759806299004,Poultry,Island,Linear
+9635,0-5,0,0.42381952372351583,Poultry,Island,Linear
+9903,0-5,0,0.369960734187203,Poultry,Island,Linear
+9996,0-5,0,0.45118939933049573,Poultry,Island,Linear
+358,0-5,3,0.6598372480378646,Poultry,Island,Linear
+1642,0-5,3,0.8454073248533822,Poultry,Island,Linear
+1685,0-5,3,0.800823599213542,Poultry,Island,Linear
+2495,0-5,3,0.847562861775619,Poultry,Island,Linear
+2765,0-5,3,0.7029224472826787,Poultry,Island,Linear
+3958,0-5,3,0.8170910307068155,Poultry,Island,Linear
+4322,0-5,3,0.7508017057664167,Poultry,Island,Linear
+4764,0-5,3,0.707042298898321,Poultry,Island,Linear
+4832,0-5,3,0.7547581359423026,Poultry,Island,Linear
+5903,0-5,3,0.6393231415879147,Poultry,Island,Linear
+6097,0-5,3,0.7806278439641073,Poultry,Island,Linear
+6596,0-5,3,0.5836987450290472,Poultry,Island,Linear
+6982,0-5,3,0.7745702962986823,Poultry,Island,Linear
+7149,0-5,3,0.7386908977222201,Poultry,Island,Linear
+7724,0-5,3,0.724349613200882,Poultry,Island,Linear
+8520,0-5,3,0.7482545141825642,Poultry,Island,Linear
+9054,0-5,3,0.811286938763862,Poultry,Island,Linear
+9635,0-5,3,0.6596868721824649,Poultry,Island,Linear
+9903,0-5,3,0.637003593628844,Poultry,Island,Linear
+9996,0-5,3,0.7749427804522545,Poultry,Island,Linear
+358,"[5, Inf)",0,0.48136386894216476,Poultry,Island,Linear
+1642,"[5, Inf)",0,0.44047938497796424,Poultry,Island,Linear
+1685,"[5, Inf)",0,0.41818025153874566,Poultry,Island,Linear
+2495,"[5, Inf)",0,0.4268768597407187,Poultry,Island,Linear
+2765,"[5, Inf)",0,0.4007713269221766,Poultry,Island,Linear
+3958,"[5, Inf)",0,0.4620242355796386,Poultry,Island,Linear
+4322,"[5, Inf)",0,0.42122781681556293,Poultry,Island,Linear
+4764,"[5, Inf)",0,0.3578197351334702,Poultry,Island,Linear
+4832,"[5, Inf)",0,0.44057428210791394,Poultry,Island,Linear
+5903,"[5, Inf)",0,0.4672293834820241,Poultry,Island,Linear
+6097,"[5, Inf)",0,0.40189994404689144,Poultry,Island,Linear
+6596,"[5, Inf)",0,0.4669545679379125,Poultry,Island,Linear
+6982,"[5, Inf)",0,0.45333354029810996,Poultry,Island,Linear
+7149,"[5, Inf)",0,0.44351413719224503,Poultry,Island,Linear
+7724,"[5, Inf)",0,0.39004745338141966,Poultry,Island,Linear
+8520,"[5, Inf)",0,0.46120967762955567,Poultry,Island,Linear
+9054,"[5, Inf)",0,0.4181930045649463,Poultry,Island,Linear
+9635,"[5, Inf)",0,0.43552088690173824,Poultry,Island,Linear
+9903,"[5, Inf)",0,0.4302326694247243,Poultry,Island,Linear
+9996,"[5, Inf)",0,0.42076109176328286,Poultry,Island,Linear
+358,0-5,2,0.5720557126035318,Poultry,Island,Linear
+1642,0-5,2,0.7739931920122062,Poultry,Island,Linear
+1685,0-5,2,0.6973648607233299,Poultry,Island,Linear
+2495,0-5,2,0.7712246733377086,Poultry,Island,Linear
+2765,0-5,2,0.6154652732033377,Poultry,Island,Linear
+3958,0-5,2,0.7452956593438181,Poultry,Island,Linear
+4322,0-5,2,0.6489975783658793,Poultry,Island,Linear
+4764,0-5,2,0.6173646092341365,Poultry,Island,Linear
+4832,0-5,2,0.6330943864220983,Poultry,Island,Linear
+5903,0-5,2,0.586066672983594,Poultry,Island,Linear
+6097,0-5,2,0.6953833158624526,Poultry,Island,Linear
+6596,0-5,2,0.4979237245110231,Poultry,Island,Linear
+6982,0-5,2,0.6460763108794387,Poultry,Island,Linear
+7149,0-5,2,0.5927553977002491,Poultry,Island,Linear
+7724,0-5,2,0.5840744052167642,Poultry,Island,Linear
+8520,0-5,2,0.5970577061427932,Poultry,Island,Linear
+9054,0-5,2,0.6757506961750522,Poultry,Island,Linear
+9635,0-5,2,0.5910430693513116,Poultry,Island,Linear
+9903,0-5,2,0.5497497635430669,Poultry,Island,Linear
+9996,0-5,2,0.6815488014815678,Poultry,Island,Linear
+358,0-5,1,0.4789520842282452,Poultry,Island,Linear
+1642,0-5,1,0.6819794118334465,Poultry,Island,Linear
+1685,0-5,1,0.5641467184217013,Poultry,Island,Linear
+2495,0-5,1,0.6707639488512253,Poultry,Island,Linear
+2765,0-5,1,0.519104299027769,Poultry,Island,Linear
+3958,0-5,1,0.6379787689973561,Poultry,Island,Linear
+4322,0-5,1,0.5292390354414036,Poultry,Island,Linear
+4764,0-5,1,0.5093266998272927,Poultry,Island,Linear
+4832,0-5,1,0.4723043758648124,Poultry,Island,Linear
+5903,0-5,1,0.5303993801943283,Poultry,Island,Linear
+6097,0-5,1,0.5937381519212896,Poultry,Island,Linear
+6596,0-5,1,0.41014547204018864,Poultry,Island,Linear
+6982,0-5,1,0.48494326062983767,Poultry,Island,Linear
+7149,0-5,1,0.4282538358013737,Poultry,Island,Linear
+7724,0-5,1,0.4259645436333483,Poultry,Island,Linear
+8520,0-5,1,0.4246676293506352,Poultry,Island,Linear
+9054,0-5,1,0.5023575017725446,Poultry,Island,Linear
+9635,0-5,1,0.5099522995273132,Poultry,Island,Linear
+9903,0-5,1,0.4586414992652182,Poultry,Island,Linear
+9996,0-5,1,0.5704582213874468,Poultry,Island,Linear
+358,"[5, Inf)",-2,0.41778152423741904,Poultry,Island,Linear
+1642,"[5, Inf)",-2,0.3536087334032432,Poultry,Island,Linear
+1685,"[5, Inf)",-2,0.33022069274788224,Poultry,Island,Linear
+2495,"[5, Inf)",-2,0.3533214895174951,Poultry,Island,Linear
+2765,"[5, Inf)",-2,0.3011878236350166,Poultry,Island,Linear
+3958,"[5, Inf)",-2,0.38335484052905855,Poultry,Island,Linear
+4322,"[5, Inf)",-2,0.3421649105802926,Poultry,Island,Linear
+4764,"[5, Inf)",-2,0.2529169593289256,Poultry,Island,Linear
+4832,"[5, Inf)",-2,0.37112511827272476,Poultry,Island,Linear
+5903,"[5, Inf)",-2,0.3988771970814805,Poultry,Island,Linear
+6097,"[5, Inf)",-2,0.34413382136379966,Poultry,Island,Linear
+6596,"[5, Inf)",-2,0.3994728274428519,Poultry,Island,Linear
+6982,"[5, Inf)",-2,0.3721766623909233,Poultry,Island,Linear
+7149,"[5, Inf)",-2,0.36493522529274613,Poultry,Island,Linear
+7724,"[5, Inf)",-2,0.2861329252291722,Poultry,Island,Linear
+8520,"[5, Inf)",-2,0.37985357191076885,Poultry,Island,Linear
+9054,"[5, Inf)",-2,0.3289238313191062,Poultry,Island,Linear
+9635,"[5, Inf)",-2,0.35010770234134014,Poultry,Island,Linear
+9903,"[5, Inf)",-2,0.33930647421100735,Poultry,Island,Linear
+9996,"[5, Inf)",-2,0.3031331836438756,Poultry,Island,Linear
+358,0-5,-2,0.22824457061722248,Poultry,Island,Linear
+1642,0-5,-2,0.3442633765796823,Poultry,Island,Linear
+1685,0-5,-2,0.1766221635024041,Poultry,Island,Linear
+2495,0-5,-2,0.30374198720219003,Poultry,Island,Linear
+2765,0-5,-2,0.24648527886865537,Poultry,Island,Linear
+3958,0-5,-2,0.24848295521271463,Poultry,Island,Linear
+4322,0-5,-2,0.19430557742966853,Poultry,Island,Linear
+4764,0-5,-2,0.2034536037775341,Poultry,Island,Linear
+4832,0-5,-2,0.09457406404993074,Poultry,Island,Linear
+5903,0-5,-2,0.35140975810934805,Poultry,Island,Linear
+6097,0-5,-2,0.272170359886028,Poultry,Island,Linear
+6596,0-5,-2,0.1834379224710773,Poultry,Island,Linear
+6982,0-5,-2,0.10500550352144097,Poultry,Island,Linear
+7149,0-5,-2,0.0923846587531868,Poultry,Island,Linear
+7724,0-5,-2,0.09534532401364994,Poultry,Island,Linear
+8520,0-5,-2,0.08327474833731771,Poultry,Island,Linear
+9054,0-5,-2,0.10212832865773225,Poultry,Island,Linear
+9635,0-5,-2,0.26416016169337664,Poultry,Island,Linear
+9903,0-5,-2,0.21984072765161766,Poultry,Island,Linear
+9996,0-5,-2,0.2364854846111287,Poultry,Island,Linear
+358,"[5, Inf)",-3,0.38654681913126365,Poultry,Island,Linear
+1642,"[5, Inf)",-3,0.2710277943369032,Poultry,Island,Linear
+1685,"[5, Inf)",-3,0.28911654382389845,Poultry,Island,Linear
+2495,"[5, Inf)",-3,0.31822658311025925,Poultry,Island,Linear
+2765,"[5, Inf)",-3,0.2568201660833329,Poultry,Island,Linear
+3958,"[5, Inf)",-3,0.3451217341447819,Poultry,Island,Linear
+4322,"[5, Inf)",-3,0.28287159714115545,Poultry,Island,Linear
+4764,"[5, Inf)",-3,0.2081985662465168,Poultry,Island,Linear
+4832,"[5, Inf)",-3,0.33675880454018065,Poultry,Island,Linear
+5903,"[5, Inf)",-3,0.35300725304450786,Poultry,Island,Linear
+6097,"[5, Inf)",-3,0.31507903614528826,Poultry,Island,Linear
+6596,"[5, Inf)",-3,0.35600236498593324,Poultry,Island,Linear
+6982,"[5, Inf)",-3,0.3331240681944475,Poultry,Island,Linear
+7149,"[5, Inf)",-3,0.3264925104095884,Poultry,Island,Linear
+7724,"[5, Inf)",-3,0.24015161609840635,Poultry,Island,Linear
+8520,"[5, Inf)",-3,0.340344062635356,Poultry,Island,Linear
+9054,"[5, Inf)",-3,0.2876578796398287,Poultry,Island,Linear
+9635,"[5, Inf)",-3,0.30990149290103575,Poultry,Island,Linear
+9903,"[5, Inf)",-3,0.2973227256024644,Poultry,Island,Linear
+9996,"[5, Inf)",-3,0.2466395633202072,Poultry,Island,Linear
+358,0-5,-3,0.16807135796965061,Poultry,Island,Linear
+1642,0-5,-3,0.24645582930267682,Poultry,Island,Linear
+1685,0-5,-3,0.10432966978409479,Poultry,Island,Linear
+2495,0-5,-3,0.20448448257122082,Poultry,Island,Linear
+2765,0-5,-3,0.179721592251515,Poultry,Island,Linear
+3958,0-5,-3,0.15756506395852665,Poultry,Island,Linear
+4322,0-5,-3,0.11847092972294396,Poultry,Island,Linear
+4764,0-5,-3,0.13706252619176718,Poultry,Island,Linear
+4832,0-5,-3,0.047691164843230646,Poultry,Island,Linear
+5903,0-5,-3,0.26983678271582373,Poultry,Island,Linear
+6097,0-5,-3,0.1803069049784036,Poultry,Island,Linear
+6596,0-5,-3,0.12871542298547353,Poultry,Island,Linear
+6982,0-5,-3,0.05454963694566857,Poultry,Island,Linear
+7149,0-5,-3,0.04969015788205557,Poultry,Island,Linear
+7724,0-5,-3,0.051766180658184106,Poultry,Island,Linear
+8520,0-5,-3,0.043169353127447824,Poultry,Island,Linear
+9054,0-5,-3,0.05160288245733403,Poultry,Island,Linear
+9635,0-5,-3,0.19975982641054865,Poultry,Island,Linear
+9903,0-5,-3,0.1633013234125095,Poultry,Island,Linear
+9996,0-5,-3,0.15685650892244993,Poultry,Island,Linear
+358,"[5, Inf)",3,0.014713523900437883,Other,Island,Linear
+1642,"[5, Inf)",3,0.030024387713971364,Other,Island,Linear
+1685,"[5, Inf)",3,0.05436910327182317,Other,Island,Linear
+2495,"[5, Inf)",3,0.027627156299012738,Other,Island,Linear
+2765,"[5, Inf)",3,0.007177691939530076,Other,Island,Linear
+3958,"[5, Inf)",3,0.017061317096776964,Other,Island,Linear
+4322,"[5, Inf)",3,0.02944886833970822,Other,Island,Linear
+4764,"[5, Inf)",3,0.05868242921927183,Other,Island,Linear
+4832,"[5, Inf)",3,0.048364360928870385,Other,Island,Linear
+5903,"[5, Inf)",3,0.043173897978665846,Other,Island,Linear
+6097,"[5, Inf)",3,0.061297744489581744,Other,Island,Linear
+6596,"[5, Inf)",3,0.03556802452954729,Other,Island,Linear
+6982,"[5, Inf)",3,0.02918195377546381,Other,Island,Linear
+7149,"[5, Inf)",3,0.014715007493914946,Other,Island,Linear
+7724,"[5, Inf)",3,0.04977824424050836,Other,Island,Linear
+8520,"[5, Inf)",3,0.025160235625598472,Other,Island,Linear
+9054,"[5, Inf)",3,0.03631181902177071,Other,Island,Linear
+9635,"[5, Inf)",3,0.04550643761418752,Other,Island,Linear
+9903,"[5, Inf)",3,0.044011613006273945,Other,Island,Linear
+9996,"[5, Inf)",3,0.0457640803667043,Other,Island,Linear
+358,"[5, Inf)",-1,5.332624931944753e-4,Other,Island,Linear
+1642,"[5, Inf)",-1,0.040572182706105284,Other,Island,Linear
+1685,"[5, Inf)",-1,0.033734700282789354,Other,Island,Linear
+2495,"[5, Inf)",-1,0.003955427255085056,Other,Island,Linear
+2765,"[5, Inf)",-1,0.01605592867248949,Other,Island,Linear
+3958,"[5, Inf)",-1,0.009159924945639676,Other,Island,Linear
+4322,"[5, Inf)",-1,0.016640550137576326,Other,Island,Linear
+4764,"[5, Inf)",-1,0.03791680544308096,Other,Island,Linear
+4832,"[5, Inf)",-1,0.00418244415074474,Other,Island,Linear
+5903,"[5, Inf)",-1,0.022171357990074667,Other,Island,Linear
+6097,"[5, Inf)",-1,0.037339039162140965,Other,Island,Linear
+6596,"[5, Inf)",-1,0.032014407514920774,Other,Island,Linear
+6982,"[5, Inf)",-1,0.003627781118860053,Other,Island,Linear
+7149,"[5, Inf)",-1,0.04748705386515788,Other,Island,Linear
+7724,"[5, Inf)",-1,0.030369910882966922,Other,Island,Linear
+8520,"[5, Inf)",-1,0.020813859053338067,Other,Island,Linear
+9054,"[5, Inf)",-1,0.021541138003434723,Other,Island,Linear
+9635,"[5, Inf)",-1,0.0453943913581976,Other,Island,Linear
+9903,"[5, Inf)",-1,0.05069419646750837,Other,Island,Linear
+9996,"[5, Inf)",-1,0.009564847831430117,Other,Island,Linear
+358,"[5, Inf)",1,0.0028394607900428764,Other,Island,Linear
+1642,"[5, Inf)",1,0.03543850204399222,Other,Island,Linear
+1685,"[5, Inf)",1,0.043717371414462386,Other,Island,Linear
+2495,"[5, Inf)",1,0.01064309116746058,Other,Island,Linear
+2765,"[5, Inf)",1,0.010997706975736264,Other,Island,Linear
+3958,"[5, Inf)",1,0.012712598357880175,Other,Island,Linear
+4322,"[5, Inf)",1,0.02248030508966541,Other,Island,Linear
+4764,"[5, Inf)",1,0.048749568994741775,Other,Island,Linear
+4832,"[5, Inf)",1,0.014569877257095258,Other,Island,Linear
+5903,"[5, Inf)",1,0.031413766148732446,Other,Island,Linear
+6097,"[5, Inf)",1,0.0483297128581402,Other,Island,Linear
+6596,"[5, Inf)",1,0.03409978227385796,Other,Island,Linear
+6982,"[5, Inf)",1,0.010511354810137551,Other,Island,Linear
+7149,"[5, Inf)",1,0.026973018998643697,Other,Island,Linear
+7724,"[5, Inf)",1,0.0401590386372067,Other,Island,Linear
+8520,"[5, Inf)",1,0.02323296178942045,Other,Island,Linear
+9054,"[5, Inf)",1,0.028536833990433823,Other,Island,Linear
+9635,"[5, Inf)",1,0.046339184719951194,Other,Island,Linear
+9903,"[5, Inf)",1,0.04823525966148752,Other,Island,Linear
+9996,"[5, Inf)",1,0.021791034793641605,Other,Island,Linear
+358,0-5,-1,0.012453242017685705,Other,Island,Linear
+1642,0-5,-1,0.013037595107828799,Other,Island,Linear
+1685,0-5,-1,0.022248798924375462,Other,Island,Linear
+2495,0-5,-1,0.02581945731639721,Other,Island,Linear
+2765,0-5,-1,0.011841818592143612,Other,Island,Linear
+3958,0-5,-1,0.004005240993766859,Other,Island,Linear
+4322,0-5,-1,0.03453918895001947,Other,Island,Linear
+4764,0-5,-1,0.0044950385478458345,Other,Island,Linear
+4832,0-5,-1,0.011953759824200385,Other,Island,Linear
+5903,0-5,-1,0.03219820639365065,Other,Island,Linear
+6097,0-5,-1,0.04311355138656308,Other,Island,Linear
+6596,0-5,-1,0.03128815549266445,Other,Island,Linear
+6982,0-5,-1,0.013690661834038626,Other,Island,Linear
+7149,0-5,-1,0.04347633140895269,Other,Island,Linear
+7724,0-5,-1,0.034621601808220694,Other,Island,Linear
+8520,0-5,-1,0.06628196756087822,Other,Island,Linear
+9054,0-5,-1,0.04193365982901807,Other,Island,Linear
+9635,0-5,-1,0.005797162624008442,Other,Island,Linear
+9903,0-5,-1,0.08290072153702957,Other,Island,Linear
+9996,0-5,-1,0.013627712287669166,Other,Island,Linear
+358,"[5, Inf)",2,0.006492719398891149,Other,Island,Linear
+1642,"[5, Inf)",2,0.03274103025040582,Other,Island,Linear
+1685,"[5, Inf)",2,0.04900119431046572,Other,Island,Linear
+2495,"[5, Inf)",2,0.017236151093479184,Other,Island,Linear
+2765,"[5, Inf)",2,0.00893868070334226,Other,Island,Linear
+3958,"[5, Inf)",2,0.014789607647443791,Other,Island,Linear
+4322,"[5, Inf)",2,0.025829193427858922,Other,Island,Linear
+4764,"[5, Inf)",2,0.05393286050875286,Other,Island,Linear
+4832,"[5, Inf)",2,0.02675573896430645,Other,Island,Linear
+5903,"[5, Inf)",2,0.03692991850673013,Other,Island,Linear
+6097,"[5, Inf)",2,0.05456714985492214,Other,Island,Linear
+6596,"[5, Inf)",2,0.03490042808962195,Other,Island,Linear
+6982,"[5, Inf)",2,0.017621317738317842,Other,Island,Linear
+7149,"[5, Inf)",2,0.020058785778576217,Other,Island,Linear
+7724,"[5, Inf)",2,0.04509165247474742,Other,Island,Linear
+8520,"[5, Inf)",2,0.024264899918273557,Other,Island,Linear
+9054,"[5, Inf)",2,0.032352691833609816,Other,Island,Linear
+9635,"[5, Inf)",2,0.04615236052334338,Other,Island,Linear
+9903,"[5, Inf)",2,0.04633536733583878,Other,Island,Linear
+9996,"[5, Inf)",2,0.03190220730396724,Other,Island,Linear
+358,0-5,0,0.01374954780115796,Other,Island,Linear
+1642,0-5,0,0.01045557544399691,Other,Island,Linear
+1685,0-5,0,0.027851700892667242,Other,Island,Linear
+2495,0-5,0,0.0161100159658025,Other,Island,Linear
+2765,0-5,0,0.013380024473500908,Other,Island,Linear
+3958,0-5,0,0.007998907412114684,Other,Island,Linear
+4322,0-5,0,0.03860231315167454,Other,Island,Linear
+4764,0-5,0,0.008340201193272953,Other,Island,Linear
+4832,0-5,0,0.021986962947085634,Other,Island,Linear
+5903,0-5,0,0.0324227704080219,Other,Island,Linear
+6097,0-5,0,0.02811983710168015,Other,Island,Linear
+6596,0-5,0,0.03744999444161719,Other,Island,Linear
+6982,0-5,0,0.018273870275548873,Other,Island,Linear
+7149,0-5,0,0.040892110814761747,Other,Island,Linear
+7724,0-5,0,0.0389189136443416,Other,Island,Linear
+8520,0-5,0,0.05279417008486064,Other,Island,Linear
+9054,0-5,0,0.0300639873284044,Other,Island,Linear
+9635,0-5,0,0.010280187555364475,Other,Island,Linear
+9903,0-5,0,0.07406932029054454,Other,Island,Linear
+9996,0-5,0,0.013345141748124557,Other,Island,Linear
+358,0-5,3,0.014991637513737542,Other,Island,Linear
+1642,0-5,3,0.004021173677795533,Other,Island,Linear
+1685,0-5,3,0.03238628401234025,Other,Island,Linear
+2495,0-5,3,0.0027329276337158272,Other,Island,Linear
+2765,0-5,3,0.015259575009040861,Other,Island,Linear
+3958,0-5,3,0.03987738752097396,Other,Island,Linear
+4322,0-5,3,0.03665205732049824,Other,Island,Linear
+4764,0-5,3,0.03770055493997037,Other,Island,Linear
+4832,0-5,3,0.06484934481317622,Other,Island,Linear
+5903,0-5,3,0.03010945292949115,Other,Island,Linear
+6097,0-5,3,0.0057979978550478754,Other,Island,Linear
+6596,0-5,3,0.051586945312306606,Other,Island,Linear
+6982,0-5,3,0.021971117006183066,Other,Island,Linear
+7149,0-5,3,0.018983266850119303,Other,Island,Linear
+7724,0-5,3,0.0312203854439065,Other,Island,Linear
+8520,0-5,3,0.01412889711409684,Other,Island,Linear
+9054,0-5,3,0.005396427898594578,Other,Island,Linear
+9635,0-5,3,0.04605569274216743,Other,Island,Linear
+9903,0-5,3,0.04343852233908646,Other,Island,Linear
+9996,0-5,3,0.008915109808486293,Other,Island,Linear
+358,"[5, Inf)",0,0.0012337922019363362,Other,Island,Linear
+1642,"[5, Inf)",0,0.03807141827623552,Other,Island,Linear
+1685,"[5, Inf)",0,0.03860206891669978,Other,Island,Linear
+2495,"[5, Inf)",0,0.006513864803198401,Other,Island,Linear
+2765,"[5, Inf)",0,0.013367696710196091,Other,Island,Linear
+3958,"[5, Inf)",0,0.010835776482177959,Other,Island,Linear
+4322,"[5, Inf)",0,0.019415315318790177,Other,Island,Linear
+4764,"[5, Inf)",0,0.04333908386687789,Other,Island,Linear
+4832,"[5, Inf)",0,0.007842508909481842,Other,Island,Linear
+5903,"[5, Inf)",0,0.026531779002139072,Other,Island,Linear
+6097,"[5, Inf)",0,0.04258908119156647,Other,Island,Linear
+6596,"[5, Inf)",0,0.03315412887441684,Other,Island,Linear
+6982,"[5, Inf)",0,0.006204342499869891,Other,Island,Linear
+7149,"[5, Inf)",0,0.035940850289737515,Other,Island,Linear
+7724,"[5, Inf)",0,0.035192067444785625,Other,Island,Linear
+8520,"[5, Inf)",0,0.02207723297059121,Other,Island,Linear
+9054,"[5, Inf)",0,0.024917562910965203,Other,Island,Linear
+9635,"[5, Inf)",0,0.046078234123634355,Other,Island,Linear
+9903,"[5, Inf)",0,0.04969280650698658,Other,Island,Linear
+9996,"[5, Inf)",0,0.014586966780332167,Other,Island,Linear
+358,0-5,2,0.015087986041093467,Other,Island,Linear
+1642,0-5,2,0.005762765855825605,Other,Island,Linear
+1685,0-5,2,0.03332078335717131,Other,Island,Linear
+2495,0-5,2,0.0051862805631929,Other,Island,Linear
+2765,0-5,2,0.0151744049609563,Other,Island,Linear
+3958,0-5,2,0.02499045865436954,Other,Island,Linear
+4322,0-5,2,0.03962328787888408,Other,Island,Linear
+4764,0-5,2,0.024155633933038118,Other,Island,Linear
+4832,0-5,2,0.05113709012062127,Other,Island,Linear
+5903,0-5,2,0.03127317792987357,Other,Island,Linear
+6097,0-5,2,0.010261704017932619,Other,Island,Linear
+6596,0-5,2,0.04803599830487795,Other,Island,Linear
+6982,0-5,2,0.023082304104753457,Other,Island,Linear
+7149,0-5,2,0.02724490547856593,Other,Island,Linear
+7724,0-5,2,0.03718867711152616,Other,Island,Linear
+8520,0-5,2,0.024612931454807977,Other,Island,Linear
+9054,0-5,2,0.010774266021707867,Other,Island,Linear
+9635,0-5,2,0.029008335325642388,Other,Island,Linear
+9903,0-5,2,0.0536802752521886,Other,Island,Linear
+9996,0-5,2,0.010741289777681575,Other,Island,Linear
+358,0-5,1,0.014664447874397775,Other,Island,Linear
+1642,0-5,1,0.007948260759697805,Other,Island,Linear
+1685,0-5,1,0.03184770153733283,Other,Island,Linear
+2495,0-5,1,0.009407271611195346,Other,Island,Linear
+2765,0-5,1,0.014535696033124297,Other,Island,Linear
+3958,0-5,1,0.014697424597448867,Other,Island,Linear
+4322,0-5,1,0.04041044470494567,Other,Island,Linear
+4764,0-5,1,0.0146233716013044,Other,Island,Linear
+4832,0-5,1,0.03586404555318724,Other,Island,Linear
+5903,0-5,1,0.03206790204162102,Other,Island,Linear
+6097,0-5,1,0.017408100238814582,Other,Island,Linear
+6596,0-5,1,0.04319116030940983,Other,Island,Linear
+6982,0-5,1,0.02182178697007501,Other,Island,Linear
+7149,0-5,1,0.035205671532745994,Other,Island,Linear
+7724,0-5,1,0.040065312236926484,Other,Island,Linear
+8520,0-5,1,0.038219439086902396,Other,Island,Linear
+9054,0-5,1,0.019199211033137986,Other,Island,Linear
+9635,0-5,1,0.017595087584300374,Other,Island,Linear
+9903,0-5,1,0.06412679771427802,Other,Island,Linear
+9996,0-5,1,0.012316455235328856,Other,Island,Linear
+358,"[5, Inf)",-2,2.2938573243281085e-4,Other,Island,Linear
+1642,"[5, Inf)",-2,0.04249130063472327,Other,Island,Linear
+1685,"[5, Inf)",-2,0.029183429045765198,Other,Island,Linear
+2495,"[5, Inf)",-2,0.002384848114005362,Other,Island,Linear
+2765,"[5, Inf)",-2,0.019065114970594155,Other,Island,Linear
+3958,"[5, Inf)",-2,0.007681242218656912,Other,Island,Linear
+4322,"[5, Inf)",-2,0.014129282450064047,Other,Island,Linear
+4764,"[5, Inf)",-2,0.032679756333197904,Other,Island,Linear
+4832,"[5, Inf)",-2,0.0022127057346345413,Other,Island,Linear
+5903,"[5, Inf)",-2,0.018192122094502685,Other,Island,Linear
+6097,"[5, Inf)",-2,0.0325547990402397,Other,Island,Linear
+6596,"[5, Inf)",-2,0.030519703775784668,Other,Island,Linear
+6982,"[5, Inf)",-2,0.0021030709959507267,Other,Island,Linear
+7149,"[5, Inf)",-2,0.06219401223817796,Other,Island,Linear
+7724,"[5, Inf)",-2,0.025835663403897383,Other,Island,Linear
+8520,"[5, Inf)",-2,0.01946140411453138,Other,Island,Linear
+9054,"[5, Inf)",-2,0.018443222996216493,Other,Island,Linear
+9635,"[5, Inf)",-2,0.04432538595896482,Other,Island,Linear
+9903,"[5, Inf)",-2,0.051237713704309656,Other,Island,Linear
+9996,"[5, Inf)",-2,0.006128324106059564,Other,Island,Linear
+358,0-5,-2,0.010932417533506588,Other,Island,Linear
+1642,0-5,-2,0.01538908128476098,Other,Island,Linear
+1685,0-5,-2,0.016444621618366975,Other,Island,Linear
+2495,0-5,-2,0.038641629880884446,Other,Island,Linear
+2765,0-5,-2,0.010110938412153483,Other,Island,Linear
+3958,0-5,-2,0.0018565205316502177,Other,Island,Linear
+4322,0-5,-2,0.029022178475237796,Other,Island,Linear
+4764,0-5,-2,0.0023080199012902383,Other,Island,Linear
+4832,0-5,-2,0.005966486169682149,Other,Island,Linear
+5903,0-5,-2,0.03090359532718643,Other,Island,Linear
+6097,0-5,-2,0.06258652876726027,Other,Island,Linear
+6596,0-5,-2,0.025124933395312216,Other,Island,Linear
+6982,0-5,-2,0.009441121199192356,Other,Island,Linear
+7149,0-5,-2,0.04345262115794706,Other,Island,Linear
+7724,0-5,-2,0.0289102640903051,Other,Island,Linear
+8520,0-5,-2,0.07798531512371824,Other,Island,Linear
+9054,0-5,-2,0.05375571073986933,Other,Island,Linear
+9635,0-5,-2,0.003166677249083998,Other,Island,Linear
+9903,0-5,-2,0.09024516085012932,Other,Island,Linear
+9996,0-5,-2,0.013127245938858301,Other,Island,Linear
+358,"[5, Inf)",-3,9.822987590669896e-5,Other,Island,Linear
+1642,"[5, Inf)",-3,0.03840101113174695,Other,Island,Linear
+1685,"[5, Inf)",-3,0.025000429300487632,Other,Island,Linear
+2495,"[5, Inf)",-3,0.0014285794563118782,Other,Island,Linear
+2765,"[5, Inf)",-3,0.022395057371834826,Other,Island,Linear
+3958,"[5, Inf)",-3,0.006391759608483207,Other,Island,Linear
+4322,"[5, Inf)",-3,0.011056116221650756,Other,Island,Linear
+4764,"[5, Inf)",-3,0.027785697464137577,Other,Island,Linear
+4832,"[5, Inf)",-3,0.0011619996265914713,Other,Island,Linear
+5903,"[5, Inf)",-3,0.014428850903082404,Other,Island,Linear
+6097,"[5, Inf)",-3,0.02816182778484068,Other,Island,Linear
+6596,"[5, Inf)",-3,0.028213761601360045,Other,Island,Linear
+6982,"[5, Inf)",-3,0.001209551184161183,Other,Island,Linear
+7149,"[5, Inf)",-3,0.08069227633832966,Other,Island,Linear
+7724,"[5, Inf)",-3,0.021691996251776046,Other,Island,Linear
+8520,"[5, Inf)",-3,0.018039811636177006,Other,Island,Linear
+9054,"[5, Inf)",-3,0.015646748091752167,Other,Island,Linear
+9635,"[5, Inf)",-3,0.042919686358926054,Other,Island,Linear
+9903,"[5, Inf)",-3,0.051336875154627606,Other,Island,Linear
+9996,"[5, Inf)",-3,0.0038076796228331865,Other,Island,Linear
+358,0-5,-3,0.009345233680063247,Other,Island,Linear
+1642,0-5,-3,0.017245189590273286,Other,Island,Linear
+1685,0-5,-3,0.01147670987507365,Other,Island,Linear
+2495,0-5,-3,0.0542537600127227,Other,Island,Linear
+2765,0-5,-3,0.008372859943085308,Other,Island,Linear
+3958,0-5,-3,8.088210819817176e-4,Other,Island,Linear
+4322,0-5,-3,0.022130481610013585,Other,Island,Linear
+4764,0-5,-3,0.0011409516940274842,Other,Island,Linear
+4832,0-5,-3,0.0028284875776170408,Other,Island,Linear
+5903,0-5,-3,0.02688678606532192,Other,Island,Linear
+6097,0-5,-3,0.08237844713180817,Other,Island,Linear
+6596,0-5,-3,0.019244176564892385,Other,Island,Linear
+6982,0-5,-3,0.006177424100017571,Other,Island,Linear
+7149,0-5,-3,0.04180113555924424,Other,Island,Linear
+7724,0-5,-3,0.02318736027629935,Other,Island,Linear
+8520,0-5,-3,0.08825984503761501,Other,Island,Linear
+9054,0-5,-3,0.06510609427858563,Other,Island,Linear
+9635,0-5,-3,0.001683460119720307,Other,Island,Linear
+9903,0-5,-3,0.09598911702144682,Other,Island,Linear
+9996,0-5,-3,0.011928177474512946,Other,Island,Linear
+358,"[5, Inf)",3,0.3655761652813557,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",3,0.3989588208945459,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",3,0.4153124265320002,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",3,0.4273575103719163,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",3,0.4471267893720416,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",3,0.3672071815176344,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",3,0.4334409248841533,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",3,0.381763175480946,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",3,0.4221875343745658,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",3,0.2804189357978526,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",3,0.47242088519378483,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",3,0.32188850624921556,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",3,0.3916740225035822,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",3,0.3876175270817654,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",3,0.4071953597147056,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",3,0.43338841204834694,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",3,0.39251305930615576,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",3,0.37728929596325234,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",3,0.4033600509045848,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",3,0.3695466198169217,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",-1,0.5806218387156744,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",-1,0.6270888959445524,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",-1,0.5472754578942538,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",-1,0.5961573063447873,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",-1,0.5823532118057556,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",-1,0.5040074902917279,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",-1,0.6220731912473925,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",-1,0.5699203127069434,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",-1,0.5737287305287041,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",-1,0.5458038716754942,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",-1,0.6221654400860722,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",-1,0.6106149688439748,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",-1,0.6127925004882625,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",-1,0.5196637747755753,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",-1,0.5203120734036432,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",-1,0.5650477637117349,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",-1,0.6630960499685898,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",-1,0.553556577405319,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",-1,0.5473940235914794,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",-1,0.6251936248401876,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",1,0.4731376366153958,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",1,0.5148301154994029,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",1,0.48145507436319934,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",1,0.5121473451135846,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",1,0.5150170590668552,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",1,0.43544572060898096,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",1,0.5288045505909637,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",1,0.4749629388964956,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",1,0.49829161360128066,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",1,0.40717025370901105,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",1,0.5487849046396149,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",1,0.4634686322664075,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",1,0.5078951739902067,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",1,0.4528727834821792,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",1,0.4632937713278063,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",1,0.5002572384158894,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",1,0.530491804755793,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",1,0.46444242459233653,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",1,0.475222775942721,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",1,0.4978138114742739,Ruminants,Dirichlet,Linear
+358,0-5,-1,0.4743952201405417,Ruminants,Dirichlet,Linear
+1642,0-5,-1,0.7458912745460127,Ruminants,Dirichlet,Linear
+1685,0-5,-1,0.6392337649450642,Ruminants,Dirichlet,Linear
+2495,0-5,-1,0.554017397106507,Ruminants,Dirichlet,Linear
+2765,0-5,-1,0.7461888269629507,Ruminants,Dirichlet,Linear
+3958,0-5,-1,0.6863250881179024,Ruminants,Dirichlet,Linear
+4322,0-5,-1,0.6018148756243087,Ruminants,Dirichlet,Linear
+4764,0-5,-1,0.5822638505110262,Ruminants,Dirichlet,Linear
+4832,0-5,-1,0.6192084336707363,Ruminants,Dirichlet,Linear
+5903,0-5,-1,0.5857902728607818,Ruminants,Dirichlet,Linear
+6097,0-5,-1,0.520741082202069,Ruminants,Dirichlet,Linear
+6596,0-5,-1,0.6283249408284642,Ruminants,Dirichlet,Linear
+6982,0-5,-1,0.7308104418011726,Ruminants,Dirichlet,Linear
+7149,0-5,-1,0.6277992306736717,Ruminants,Dirichlet,Linear
+7724,0-5,-1,0.5165352251083211,Ruminants,Dirichlet,Linear
+8520,0-5,-1,0.6713545154960988,Ruminants,Dirichlet,Linear
+9054,0-5,-1,0.6826740398728101,Ruminants,Dirichlet,Linear
+9635,0-5,-1,0.6180226446822427,Ruminants,Dirichlet,Linear
+9903,0-5,-1,0.5821909195065175,Ruminants,Dirichlet,Linear
+9996,0-5,-1,0.6924000612044068,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",2,0.4192474386697185,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",2,0.456366282916034,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",2,0.44852046004484947,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",2,0.46953656063374266,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",2,0.48098446315469373,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",2,0.4017965003757973,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",2,0.4809513561538076,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",2,0.4277239952627696,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",2,0.4600240891635048,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",2,0.34101457280308056,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",2,0.5106706339692794,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",2,0.3904021949431316,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",2,0.44980524554116325,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",2,0.4198999424054537,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",2,0.4350394975169344,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",2,0.46683613464864243,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",2,0.46094247624158313,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",2,0.42029019207292634,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",2,0.43902739161049786,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",2,0.4326099151777018,Ruminants,Dirichlet,Linear
+358,0-5,0,0.4444902459739207,Ruminants,Dirichlet,Linear
+1642,0-5,0,0.627976448303697,Ruminants,Dirichlet,Linear
+1685,0-5,0,0.5983678570550559,Ruminants,Dirichlet,Linear
+2495,0-5,0,0.4841006250538222,Ruminants,Dirichlet,Linear
+2765,0-5,0,0.6483992194651477,Ruminants,Dirichlet,Linear
+3958,0-5,0,0.5116216150187654,Ruminants,Dirichlet,Linear
+4322,0-5,0,0.5371959084342651,Ruminants,Dirichlet,Linear
+4764,0-5,0,0.518069116434809,Ruminants,Dirichlet,Linear
+4832,0-5,0,0.5389170197044498,Ruminants,Dirichlet,Linear
+5903,0-5,0,0.5072145322880378,Ruminants,Dirichlet,Linear
+6097,0-5,0,0.4919458508608814,Ruminants,Dirichlet,Linear
+6596,0-5,0,0.5330234852292302,Ruminants,Dirichlet,Linear
+6982,0-5,0,0.6566892363160893,Ruminants,Dirichlet,Linear
+7149,0-5,0,0.5341059513122818,Ruminants,Dirichlet,Linear
+7724,0-5,0,0.5188410384800625,Ruminants,Dirichlet,Linear
+8520,0-5,0,0.5858032031042049,Ruminants,Dirichlet,Linear
+9054,0-5,0,0.578671628446026,Ruminants,Dirichlet,Linear
+9635,0-5,0,0.5162116604708423,Ruminants,Dirichlet,Linear
+9903,0-5,0,0.4908932727968243,Ruminants,Dirichlet,Linear
+9996,0-5,0,0.570837187149842,Ruminants,Dirichlet,Linear
+358,0-5,3,0.29332497933922647,Ruminants,Dirichlet,Linear
+1642,0-5,3,0.22025065339363809,Ruminants,Dirichlet,Linear
+1685,0-5,3,0.4668621240767165,Ruminants,Dirichlet,Linear
+2495,0-5,3,0.28426617659884973,Ruminants,Dirichlet,Linear
+2765,0-5,3,0.30550163121277335,Ruminants,Dirichlet,Linear
+3958,0-5,3,0.10279810239840421,Ruminants,Dirichlet,Linear
+4322,0-5,3,0.3305386041472065,Ruminants,Dirichlet,Linear
+4764,0-5,3,0.3221224274858687,Ruminants,Dirichlet,Linear
+4832,0-5,3,0.2970638460710048,Ruminants,Dirichlet,Linear
+5903,0-5,3,0.257445142485716,Ruminants,Dirichlet,Linear
+6097,0-5,3,0.39901437376668125,Ruminants,Dirichlet,Linear
+6596,0-5,3,0.2599962214463991,Ruminants,Dirichlet,Linear
+6982,0-5,3,0.373946347754665,Ruminants,Dirichlet,Linear
+7149,0-5,3,0.25028024540229604,Ruminants,Dirichlet,Linear
+7724,0-5,3,0.5228479099693027,Ruminants,Dirichlet,Linear
+8520,0-5,3,0.3020429306005869,Ruminants,Dirichlet,Linear
+9054,0-5,3,0.2608030349469582,Ruminants,Dirichlet,Linear
+9635,0-5,3,0.22986506219853634,Ruminants,Dirichlet,Linear
+9903,0-5,3,0.22728183399285762,Ruminants,Dirichlet,Linear
+9996,0-5,3,0.1942258985626558,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",0,0.5273643681670427,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",0,0.5725000578657945,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",0,0.5144751574813233,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",0,0.5545677023980324,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",0,0.5489099118024218,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",0,0.46959479220254285,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",0,0.5761273311053076,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",0,0.5226495216335874,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",0,0.5364603701914243,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",0,0.47651845455229186,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",0,0.5862547110274918,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",0,0.5380072018166512,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",0,0.563597755452332,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",0,0.4862391187986333,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",0,0.4917795089709178,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",0,0.5332025148551122,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",0,0.5986597725907691,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",0,0.5090984588612121,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",0,0.511504244849333,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",0,0.562827182281539,Ruminants,Dirichlet,Linear
+358,0-5,2,0.3450585526099562,Ruminants,Dirichlet,Linear
+1642,0-5,2,0.3414656170388551,Ruminants,Dirichlet,Linear
+1685,0-5,2,0.5118772431512061,Ruminants,Dirichlet,Linear
+2495,0-5,2,0.3471505840562299,Ruminants,Dirichlet,Linear
+2765,0-5,2,0.41576377567516853,Ruminants,Dirichlet,Linear
+3958,0-5,2,0.19335023064985202,Ruminants,Dirichlet,Linear
+4322,0-5,2,0.39778882104807783,Ruminants,Dirichlet,Linear
+4764,0-5,2,0.38635605716645444,Ruminants,Dirichlet,Linear
+4832,0-5,2,0.37324016063026727,Ruminants,Dirichlet,Linear
+5903,0-5,2,0.33573478827504605,Ruminants,Dirichlet,Linear
+6097,0-5,2,0.43002628422277966,Ruminants,Dirichlet,Linear
+6596,0-5,2,0.3422628463306302,Ruminants,Dirichlet,Linear
+6982,0-5,2,0.46968339407844995,Ruminants,Dirichlet,Linear
+7149,0-5,2,0.33589376511976443,Ruminants,Dirichlet,Linear
+7724,0-5,2,0.522162229306011,Ruminants,Dirichlet,Linear
+8520,0-5,2,0.39306505093757044,Ruminants,Dirichlet,Linear
+9054,0-5,2,0.3575366402921553,Ruminants,Dirichlet,Linear
+9635,0-5,2,0.3137566490594827,Ruminants,Dirichlet,Linear
+9903,0-5,2,0.3058249727425378,Ruminants,Dirichlet,Linear
+9996,0-5,2,0.29991420836314064,Ruminants,Dirichlet,Linear
+358,0-5,1,0.39749949810690005,Ruminants,Dirichlet,Linear
+1642,0-5,1,0.4853990746993868,Ruminants,Dirichlet,Linear
+1685,0-5,1,0.5557664427688821,Ruminants,Dirichlet,Linear
+2495,0-5,1,0.4143597067094531,Ruminants,Dirichlet,Linear
+2765,0-5,1,0.534381039239028,Ruminants,Dirichlet,Linear
+3958,0-5,1,0.3338819210926499,Ruminants,Dirichlet,Linear
+4322,0-5,1,0.4678703598076193,Ruminants,Dirichlet,Linear
+4764,0-5,1,0.4521620429597621,Ruminants,Dirichlet,Linear
+4832,0-5,1,0.45534368415190685,Ruminants,Dirichlet,Linear
+5903,0-5,1,0.42132080611848405,Ruminants,Dirichlet,Linear
+6097,0-5,1,0.4612407656065496,Ruminants,Dirichlet,Linear
+6596,0-5,1,0.4352486351573066,Ruminants,Dirichlet,Linear
+6982,0-5,1,0.5668083798817544,Ruminants,Dirichlet,Linear
+7149,0-5,1,0.4331743008765175,Ruminants,Dirichlet,Linear
+7724,0-5,1,0.5207611038687717,Ruminants,Dirichlet,Linear
+8520,0-5,1,0.49040260655167905,Ruminants,Dirichlet,Linear
+9054,0-5,1,0.4667405834421867,Ruminants,Dirichlet,Linear
+9635,0-5,1,0.411572892017015,Ruminants,Dirichlet,Linear
+9903,0-5,1,0.3958246941035777,Ruminants,Dirichlet,Linear
+9996,0-5,1,0.4314448276881667,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",-2,0.6316098567865793,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",-2,0.6751977777401128,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",-2,0.5794921608696257,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",-2,0.6360751419487936,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",-2,0.6150529877850146,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",-2,0.5383599069765262,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",-2,0.6656258566247635,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",-2,0.6159391694260286,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",-2,0.6078771426595703,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",-2,0.6107707160005983,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",-2,0.6525823998697899,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",-2,0.6780955518620632,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",-2,0.6490504630909565,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",-2,0.5527489971577018,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",-2,0.5487056145010336,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",-2,0.5949417827583647,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",-2,0.7219272774085103,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",-2,0.5970813940374132,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",-2,0.5823861005281268,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",-2,0.6825302571660844,Ruminants,Dirichlet,Linear
+358,0-5,-2,0.4693380803123059,Ruminants,Dirichlet,Linear
+1642,0-5,-2,0.8295882063322106,Ruminants,Dirichlet,Linear
+1685,0-5,-2,0.677886460721961,Ruminants,Dirichlet,Linear
+2495,0-5,-2,0.621609436859248,Ruminants,Dirichlet,Linear
+2765,0-5,-2,0.8209171396334465,Ruminants,Dirichlet,Linear
+3958,0-5,-2,0.8203377860228046,Ruminants,Dirichlet,Linear
+4322,0-5,-2,0.6579260036544223,Ruminants,Dirichlet,Linear
+4764,0-5,-2,0.6420657107421449,Ruminants,Dirichlet,Linear
+4832,0-5,-2,0.6922028668754912,Ruminants,Dirichlet,Linear
+5903,0-5,-2,0.6510338514820542,Ruminants,Dirichlet,Linear
+6097,0-5,-2,0.5430915125072827,Ruminants,Dirichlet,Linear
+6596,0-5,-2,0.7145905026491237,Ruminants,Dirichlet,Linear
+6982,0-5,-2,0.7810257392968276,Ruminants,Dirichlet,Linear
+7149,0-5,-2,0.7015662304559885,Ruminants,Dirichlet,Linear
+7724,0-5,-2,0.5139218651977192,Ruminants,Dirichlet,Linear
+8520,0-5,-2,0.7416117021297522,Ruminants,Dirichlet,Linear
+9054,0-5,-2,0.7709088239140446,Ruminants,Dirichlet,Linear
+9635,0-5,-2,0.7077722985519107,Ruminants,Dirichlet,Linear
+9903,0-5,-2,0.6606560777159397,Ruminants,Dirichlet,Linear
+9996,0-5,-2,0.7718959097688121,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",-3,0.6792020711803857,Ruminants,Dirichlet,Linear
+1642,"[5, Inf)",-3,0.7103603651107536,Ruminants,Dirichlet,Linear
+1685,"[5, Inf)",-3,0.6107071505563159,Ruminants,Dirichlet,Linear
+2495,"[5, Inf)",-3,0.6714525726956925,Ruminants,Dirichlet,Linear
+2765,"[5, Inf)",-3,0.6467407537018945,Ruminants,Dirichlet,Linear
+3958,"[5, Inf)",-3,0.5723268364601443,Ruminants,Dirichlet,Linear
+4322,"[5, Inf)",-3,0.6994521245626908,Ruminants,Dirichlet,Linear
+4764,"[5, Inf)",-3,0.6599519874973607,Ruminants,Dirichlet,Linear
+4832,"[5, Inf)",-3,0.6287698227736874,Ruminants,Dirichlet,Linear
+5903,"[5, Inf)",-3,0.6655506003063345,Ruminants,Dirichlet,Linear
+6097,"[5, Inf)",-3,0.6534550953364372,Ruminants,Dirichlet,Linear
+6596,"[5, Inf)",-3,0.7378736710945312,Ruminants,Dirichlet,Linear
+6982,"[5, Inf)",-3,0.6623292018686584,Ruminants,Dirichlet,Linear
+7149,"[5, Inf)",-3,0.5849607838417259,Ruminants,Dirichlet,Linear
+7724,"[5, Inf)",-3,0.5767778870918056,Ruminants,Dirichlet,Linear
+8520,"[5, Inf)",-3,0.6216865383236869,Ruminants,Dirichlet,Linear
+9054,"[5, Inf)",-3,0.7739123541319706,Ruminants,Dirichlet,Linear
+9635,"[5, Inf)",-3,0.6388607263585729,Ruminants,Dirichlet,Linear
+9903,"[5, Inf)",-3,0.6159504231891548,Ruminants,Dirichlet,Linear
+9996,"[5, Inf)",-3,0.732594127954205,Ruminants,Dirichlet,Linear
+358,0-5,-3,0.41346036587000923,Ruminants,Dirichlet,Linear
+1642,0-5,-3,0.8826321097619062,Ruminants,Dirichlet,Linear
+1685,0-5,-3,0.713920354674767,Ruminants,Dirichlet,Linear
+2495,0-5,-3,0.6846448118601184,Ruminants,Dirichlet,Linear
+2765,0-5,-3,0.870289187778725,Ruminants,Dirichlet,Linear
+3958,0-5,-3,0.9049258710750089,Ruminants,Dirichlet,Linear
+4322,0-5,-3,0.7022997411286296,Ruminants,Dirichlet,Linear
+4764,0-5,-3,0.689406241295029,Ruminants,Dirichlet,Linear
+4832,0-5,-3,0.7553331477784984,Ruminants,Dirichlet,Linear
+5903,0-5,-3,0.6999195281919577,Ruminants,Dirichlet,Linear
+6097,0-5,-3,0.5284429348977315,Ruminants,Dirichlet,Linear
+6596,0-5,-3,0.7876014996813706,Ruminants,Dirichlet,Linear
+6982,0-5,-3,0.7982705287233506,Ruminants,Dirichlet,Linear
+7149,0-5,-3,0.7380828517323706,Ruminants,Dirichlet,Linear
+7724,0-5,-3,0.5110218148634809,Ruminants,Dirichlet,Linear
+8520,0-5,-3,0.7942381693442949,Ruminants,Dirichlet,Linear
+9054,0-5,-3,0.8401997396506328,Ruminants,Dirichlet,Linear
+9635,0-5,-3,0.7792529882898803,Ruminants,Dirichlet,Linear
+9903,0-5,-3,0.7192946931790037,Ruminants,Dirichlet,Linear
+9996,0-5,-3,0.785035337210878,Ruminants,Dirichlet,Linear
+358,"[5, Inf)",3,0.00441855340701144,Water,Dirichlet,Linear
+1642,"[5, Inf)",3,8.926284712836661e-6,Water,Dirichlet,Linear
+1685,"[5, Inf)",3,0.0018124999722348746,Water,Dirichlet,Linear
+2495,"[5, Inf)",3,1.494821247489227e-8,Water,Dirichlet,Linear
+2765,"[5, Inf)",3,1.1037623311998503e-8,Water,Dirichlet,Linear
+3958,"[5, Inf)",3,0.005428544003595604,Water,Dirichlet,Linear
+4322,"[5, Inf)",3,5.839519331895226e-11,Water,Dirichlet,Linear
+4764,"[5, Inf)",3,1.0965855440471362e-6,Water,Dirichlet,Linear
+4832,"[5, Inf)",3,5.474231110945196e-7,Water,Dirichlet,Linear
+5903,"[5, Inf)",3,4.065951532170891e-9,Water,Dirichlet,Linear
+6097,"[5, Inf)",3,3.697796229084595e-10,Water,Dirichlet,Linear
+6596,"[5, Inf)",3,7.714516322003257e-6,Water,Dirichlet,Linear
+6982,"[5, Inf)",3,0.0014459876982707324,Water,Dirichlet,Linear
+7149,"[5, Inf)",3,7.411299720950922e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",3,1.1401042734365488e-4,Water,Dirichlet,Linear
+8520,"[5, Inf)",3,3.4775467437151656e-4,Water,Dirichlet,Linear
+9054,"[5, Inf)",3,1.5831977362284268e-12,Water,Dirichlet,Linear
+9635,"[5, Inf)",3,5.845893324185842e-7,Water,Dirichlet,Linear
+9903,"[5, Inf)",3,2.2036653470881018e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",3,2.710193603528396e-9,Water,Dirichlet,Linear
+358,"[5, Inf)",-1,7.951237108749669e-9,Water,Dirichlet,Linear
+1642,"[5, Inf)",-1,3.225398589410124e-7,Water,Dirichlet,Linear
+1685,"[5, Inf)",-1,3.5777872021431417e-9,Water,Dirichlet,Linear
+2495,"[5, Inf)",-1,7.52183538869229e-5,Water,Dirichlet,Linear
+2765,"[5, Inf)",-1,3.52465223620767e-7,Water,Dirichlet,Linear
+3958,"[5, Inf)",-1,1.770871507375841e-8,Water,Dirichlet,Linear
+4322,"[5, Inf)",-1,1.9750525561910878e-5,Water,Dirichlet,Linear
+4764,"[5, Inf)",-1,2.0716882955118653e-5,Water,Dirichlet,Linear
+4832,"[5, Inf)",-1,7.158947751152934e-4,Water,Dirichlet,Linear
+5903,"[5, Inf)",-1,2.4851030576090006e-7,Water,Dirichlet,Linear
+6097,"[5, Inf)",-1,8.51715327972976e-6,Water,Dirichlet,Linear
+6596,"[5, Inf)",-1,2.4258651993439595e-8,Water,Dirichlet,Linear
+6982,"[5, Inf)",-1,2.467980575475286e-9,Water,Dirichlet,Linear
+7149,"[5, Inf)",-1,4.684925592422812e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",-1,4.8412741448817934e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",-1,1.782648882338372e-6,Water,Dirichlet,Linear
+9054,"[5, Inf)",-1,1.947665186937438e-7,Water,Dirichlet,Linear
+9635,"[5, Inf)",-1,7.251911951632314e-5,Water,Dirichlet,Linear
+9903,"[5, Inf)",-1,4.68360161435972e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",-1,1.7516866850637725e-7,Water,Dirichlet,Linear
+358,"[5, Inf)",1,6.08708383109685e-6,Water,Dirichlet,Linear
+1642,"[5, Inf)",1,1.7464751702685133e-6,Water,Dirichlet,Linear
+1685,"[5, Inf)",1,2.5716483143398074e-6,Water,Dirichlet,Linear
+2495,"[5, Inf)",1,1.0759085618928316e-6,Water,Dirichlet,Linear
+2765,"[5, Inf)",1,6.29519159344763e-8,Water,Dirichlet,Linear
+3958,"[5, Inf)",1,9.924191931605563e-6,Water,Dirichlet,Linear
+4322,"[5, Inf)",1,3.458496674832299e-8,Water,Dirichlet,Linear
+4764,"[5, Inf)",1,4.853321957834453e-6,Water,Dirichlet,Linear
+4832,"[5, Inf)",1,2.0043046602652514e-5,Water,Dirichlet,Linear
+5903,"[5, Inf)",1,3.3083189206787394e-8,Water,Dirichlet,Linear
+6097,"[5, Inf)",1,5.680720080264451e-8,Water,Dirichlet,Linear
+6596,"[5, Inf)",1,4.522427064482687e-7,Water,Dirichlet,Linear
+6982,"[5, Inf)",1,1.9584304317882515e-6,Water,Dirichlet,Linear
+7149,"[5, Inf)",1,5.9458210428513704e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",1,7.477823742871144e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",1,2.5169903319872315e-5,Water,Dirichlet,Linear
+9054,"[5, Inf)",1,5.774150964491708e-10,Water,Dirichlet,Linear
+9635,"[5, Inf)",1,6.61706404577551e-6,Water,Dirichlet,Linear
+9903,"[5, Inf)",1,3.249103711262338e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",1,2.2565939865307192e-8,Water,Dirichlet,Linear
+358,0-5,-1,1.5608054602417047e-5,Water,Dirichlet,Linear
+1642,0-5,-1,5.30542594214963e-6,Water,Dirichlet,Linear
+1685,0-5,-1,3.3515477407872315e-5,Water,Dirichlet,Linear
+2495,0-5,-1,1.3683592785338465e-4,Water,Dirichlet,Linear
+2765,0-5,-1,3.865868058914701e-4,Water,Dirichlet,Linear
+3958,0-5,-1,1.7515263744654623e-5,Water,Dirichlet,Linear
+4322,0-5,-1,0.004027527932110058,Water,Dirichlet,Linear
+4764,0-5,-1,4.0163921671157736e-4,Water,Dirichlet,Linear
+4832,0-5,-1,0.003426484243337771,Water,Dirichlet,Linear
+5903,0-5,-1,1.579222397877462e-5,Water,Dirichlet,Linear
+6097,0-5,-1,4.16295506147146e-4,Water,Dirichlet,Linear
+6596,0-5,-1,4.2033559132812205e-7,Water,Dirichlet,Linear
+6982,0-5,-1,2.558421784225502e-4,Water,Dirichlet,Linear
+7149,0-5,-1,0.001539450322683332,Water,Dirichlet,Linear
+7724,0-5,-1,1.9160101069234646e-4,Water,Dirichlet,Linear
+8520,0-5,-1,0.006210183177240197,Water,Dirichlet,Linear
+9054,0-5,-1,7.502285732008625e-7,Water,Dirichlet,Linear
+9635,0-5,-1,9.452577318897412e-4,Water,Dirichlet,Linear
+9903,0-5,-1,6.97202655072294e-4,Water,Dirichlet,Linear
+9996,0-5,-1,0.006069501862241962,Water,Dirichlet,Linear
+358,"[5, Inf)",2,1.6532267707780523e-4,Water,Dirichlet,Linear
+1642,"[5, Inf)",2,3.975887783776676e-6,Water,Dirichlet,Linear
+1685,"[5, Inf)",2,6.847967717552992e-5,Water,Dirichlet,Linear
+2495,"[5, Inf)",2,1.2727953914941085e-7,Water,Dirichlet,Linear
+2765,"[5, Inf)",2,2.6420872514797586e-8,Water,Dirichlet,Linear
+3958,"[5, Inf)",2,2.3322377033348045e-4,Water,Dirichlet,Linear
+4322,"[5, Inf)",2,1.4276469967408912e-9,Water,Dirichlet,Linear
+4764,"[5, Inf)",2,2.3172748351988724e-6,Water,Dirichlet,Linear
+4832,"[5, Inf)",2,3.322228614395668e-6,Water,Dirichlet,Linear
+5903,"[5, Inf)",2,1.1704854830290022e-8,Water,Dirichlet,Linear
+6097,"[5, Inf)",2,4.596724167697015e-9,Water,Dirichlet,Linear
+6596,"[5, Inf)",2,1.8879456151797867e-6,Water,Dirichlet,Linear
+6982,"[5, Inf)",2,5.366751201142114e-5,Water,Dirichlet,Linear
+7149,"[5, Inf)",2,6.65287105971569e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",2,9.248236915607268e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",2,9.380076670055152e-5,Water,Dirichlet,Linear
+9054,"[5, Inf)",2,3.0541613919521976e-11,Water,Dirichlet,Linear
+9635,"[5, Inf)",2,1.9747139023142943e-6,Water,Dirichlet,Linear
+9903,"[5, Inf)",2,2.6831883567301546e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",2,7.887788413030233e-9,Water,Dirichlet,Linear
+358,0-5,0,4.777538902347037e-5,Water,Dirichlet,Linear
+1642,0-5,0,1.679604855262295e-5,Water,Dirichlet,Linear
+1685,0-5,0,1.1145575676018942e-4,Water,Dirichlet,Linear
+2495,0-5,0,3.8512750411870574e-4,Water,Dirichlet,Linear
+2765,0-5,0,9.333823867690708e-4,Water,Dirichlet,Linear
+3958,0-5,0,3.538604513762932e-5,Water,Dirichlet,Linear
+4322,0-5,0,0.005907709954498866,Water,Dirichlet,Linear
+4764,0-5,0,6.259130138249494e-5,Water,Dirichlet,Linear
+4832,0-5,0,0.0055017228916661946,Water,Dirichlet,Linear
+5903,0-5,0,1.4768116729316674e-5,Water,Dirichlet,Linear
+6097,0-5,0,3.283426357212382e-5,Water,Dirichlet,Linear
+6596,0-5,0,6.266171767455857e-7,Water,Dirichlet,Linear
+6982,0-5,0,3.798672402001535e-4,Water,Dirichlet,Linear
+7149,0-5,0,3.4594477841123217e-4,Water,Dirichlet,Linear
+7724,0-5,0,9.357804256259764e-5,Water,Dirichlet,Linear
+8520,0-5,0,0.0035746939336058128,Water,Dirichlet,Linear
+9054,0-5,0,4.6594899712744815e-7,Water,Dirichlet,Linear
+9635,0-5,0,9.83680816716856e-4,Water,Dirichlet,Linear
+9903,0-5,0,0.001530686740729709,Water,Dirichlet,Linear
+9996,0-5,0,0.0015969853551683411,Water,Dirichlet,Linear
+358,0-5,3,0.0010992377214458938,Water,Dirichlet,Linear
+1642,0-5,3,3.132117720338061e-4,Water,Dirichlet,Linear
+1685,0-5,3,0.003899137288752107,Water,Dirichlet,Linear
+2495,0-5,3,0.007557367449444212,Water,Dirichlet,Linear
+2765,0-5,3,0.009433810499730742,Water,Dirichlet,Linear
+3958,0-5,3,1.4153284898960712e-4,Water,Dirichlet,Linear
+4322,0-5,3,0.016130251392272952,Water,Dirichlet,Linear
+4764,0-5,3,2.0911116639688837e-7,Water,Dirichlet,Linear
+4832,0-5,3,0.01904238854300356,Water,Dirichlet,Linear
+5903,0-5,3,9.443108900814924e-6,Water,Dirichlet,Linear
+6097,0-5,3,1.5498469342296524e-8,Water,Dirichlet,Linear
+6596,0-5,3,1.6586518691192888e-6,Water,Dirichlet,Linear
+6982,0-5,3,9.758765212556174e-4,Water,Dirichlet,Linear
+7149,0-5,3,2.987509696558567e-6,Water,Dirichlet,Linear
+7724,0-5,3,1.0840276666414047e-5,Water,Dirichlet,Linear
+8520,0-5,3,5.291266943037195e-4,Water,Dirichlet,Linear
+9054,0-5,3,8.260318041539125e-8,Water,Dirichlet,Linear
+9635,0-5,3,8.471122899745521e-4,Water,Dirichlet,Linear
+9903,0-5,3,0.012510678655454145,Water,Dirichlet,Linear
+9996,0-5,3,1.7663387210394858e-5,Water,Dirichlet,Linear
+358,"[5, Inf)",0,2.2135653357203866e-7,Water,Dirichlet,Linear
+1642,"[5, Inf)",0,7.562265339267059e-7,Water,Dirichlet,Linear
+1685,"[5, Inf)",0,9.61383312377219e-8,Water,Dirichlet,Linear
+2495,"[5, Inf)",0,9.028721747645482e-6,Water,Dirichlet,Linear
+2765,"[5, Inf)",0,1.49299942696793e-7,Water,Dirichlet,Linear
+3958,"[5, Inf)",0,4.2022207775350707e-7,Water,Dirichlet,Linear
+4322,"[5, Inf)",0,8.30200811046876e-7,Water,Dirichlet,Linear
+4764,"[5, Inf)",0,1.0072920004994683e-5,Water,Dirichlet,Linear
+4832,"[5, Inf)",0,1.2018465503404799e-4,Water,Dirichlet,Linear
+5903,"[5, Inf)",0,9.165354840276636e-8,Water,Dirichlet,Linear
+6097,"[5, Inf)",0,6.978808028838508e-7,Water,Dirichlet,Linear
+6596,"[5, Inf)",0,1.0592861907714995e-7,Water,Dirichlet,Linear
+6982,"[5, Inf)",0,7.023449013355216e-8,Water,Dirichlet,Linear
+7149,"[5, Inf)",0,5.290026270787317e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",0,6.0266739557150846e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",0,6.717792690841826e-6,Water,Dirichlet,Linear
+9054,"[5, Inf)",0,1.0704188153584434e-8,Water,Dirichlet,Linear
+9635,"[5, Inf)",0,2.19944832631217e-5,Water,Dirichlet,Linear
+9903,"[5, Inf)",0,3.912211754551181e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",0,6.342920240550778e-8,Water,Dirichlet,Linear
+358,0-5,2,3.9582374632607826e-4,Water,Dirichlet,Linear
+1642,0-5,2,1.2913644184712173e-4,Water,Dirichlet,Linear
+1685,0-5,2,0.0012033644078307064,Water,Dirichlet,Linear
+2495,0-5,2,0.0028653065846731404,Water,Dirichlet,Linear
+2765,0-5,2,0.004620632518844495,Water,Dirichlet,Linear
+3958,0-5,2,9.822465440423016e-5,Water,Dirichlet,Linear
+4322,0-5,2,0.011813013361560971,Water,Dirichlet,Linear
+4764,0-5,2,1.4319702394118394e-6,Water,Dirichlet,Linear
+4832,0-5,2,0.012968658486198171,Water,Dirichlet,Linear
+5903,0-5,2,1.1402349570554327e-5,Water,Dirichlet,Linear
+6097,0-5,2,2.0006226106109662e-7,Water,Dirichlet,Linear
+6596,0-5,2,1.242521403984288e-6,Water,Dirichlet,Linear
+6982,0-5,2,7.417989869884501e-4,Water,Dirichlet,Linear
+7149,0-5,2,1.5179247107412406e-5,Water,Dirichlet,Linear
+7724,0-5,2,2.2265305554184823e-5,Water,Dirichlet,Linear
+8520,0-5,2,0.0010438084352634113,Water,Dirichlet,Linear
+9054,0-5,2,1.5455345000114464e-7,Water,Dirichlet,Linear
+9635,0-5,2,9.280693124293704e-4,Water,Dirichlet,Linear
+9903,0-5,2,0.00646522219053121,Water,Dirichlet,Linear
+9996,0-5,2,8.546162891768148e-5,Water,Dirichlet,Linear
+358,0-5,1,1.395764368877391e-4,Water,Dirichlet,Linear
+1642,0-5,1,4.881819801312841e-5,Water,Dirichlet,Linear
+1685,0-5,1,3.6776899655922976e-4,Water,Dirichlet,Linear
+2495,0-5,1,0.001061789830912485,Water,Dirichlet,Linear
+2765,0-5,1,0.0021374058339017794,Water,Dirichlet,Linear
+3958,0-5,1,6.258530637727046e-5,Water,Dirichlet,Linear
+4322,0-5,1,0.008455179421502881,Water,Dirichlet,Linear
+4764,0-5,1,9.56820286642031e-6,Water,Dirichlet,Linear
+4832,0-5,1,0.008575926822177901,Water,Dirichlet,Linear
+5903,0-5,1,1.32488634511973e-5,Water,Dirichlet,Linear
+6097,0-5,1,2.570204969934232e-6,Water,Dirichlet,Linear
+6596,0-5,1,8.991609839587347e-7,Water,Dirichlet,Linear
+6982,0-5,1,5.417672513041207e-4,Water,Dirichlet,Linear
+7149,0-5,1,7.410994803695904e-5,Water,Dirichlet,Linear
+7724,0-5,1,4.566883783995905e-5,Water,Dirichlet,Linear
+8520,0-5,1,0.001974124399500733,Water,Dirichlet,Linear
+9054,0-5,1,2.7536436351728667e-7,Water,Dirichlet,Linear
+9635,0-5,1,9.771330335786356e-4,Water,Dirichlet,Linear
+9903,0-5,1,0.003213717955388159,Water,Dirichlet,Linear
+9996,0-5,1,3.8521808475371256e-4,Water,Dirichlet,Linear
+358,"[5, Inf)",-2,2.8219545326646765e-10,Water,Dirichlet,Linear
+1642,"[5, Inf)",-2,1.352269303569539e-7,Water,Dirichlet,Linear
+1685,"[5, Inf)",-2,1.3253557336368724e-10,Water,Dirichlet,Linear
+2495,"[5, Inf)",-2,6.219602587511777e-4,Water,Dirichlet,Linear
+2765,"[5, Inf)",-2,8.28349398087299e-7,Water,Dirichlet,Linear
+3958,"[5, Inf)",-2,7.427065172094637e-10,Water,Dirichlet,Linear
+4322,"[5, Inf)",-2,4.656288183913993e-4,Water,Dirichlet,Linear
+4764,"[5, Inf)",-2,4.2229267467998296e-5,Water,Dirichlet,Linear
+4832,"[5, Inf)",-2,0.004224639210674241,Water,Dirichlet,Linear
+5903,"[5, Inf)",-2,6.583005692945346e-7,Water,Dirichlet,Linear
+6097,"[5, Inf)",-2,1.0273480711784037e-4,Water,Dirichlet,Linear
+6596,"[5, Inf)",-2,5.4358080131128855e-9,Water,Dirichlet,Linear
+6982,"[5, Inf)",-2,8.447999433634229e-11,Water,Dirichlet,Linear
+7149,"[5, Inf)",-2,4.129339002596813e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",-2,3.8763562324176563e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",-2,4.700037939105134e-7,Water,Dirichlet,Linear
+9054,"[5, Inf)",-2,3.483337178940086e-6,Water,Dirichlet,Linear
+9635,"[5, Inf)",-2,2.3719338415100922e-4,Water,Dirichlet,Linear
+9903,"[5, Inf)",-2,5.5743942493093415e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",-2,4.754353814237686e-7,Water,Dirichlet,Linear
+358,0-5,-2,4.726729376278213e-6,Water,Dirichlet,Linear
+1642,0-5,-2,1.5692360040774475e-6,Water,Dirichlet,Linear
+1685,0-5,-2,1.0004470723707193e-5,Water,Dirichlet,Linear
+2495,0-5,-2,4.766528399650134e-5,Water,Dirichlet,Linear
+2765,0-5,-2,1.5306601536230893e-4,Water,Dirichlet,Linear
+3958,0-5,-2,7.724727837556512e-6,Water,Dirichlet,Linear
+4322,0-5,-2,0.0026794266225568697,Water,Dirichlet,Linear
+4764,0-5,-2,0.00252863279466024,Water,Dirichlet,Linear
+4832,0-5,-2,0.002076253288127596,Water,Dirichlet,Linear
+5903,0-5,-2,1.625071301018732e-5,Water,Dirichlet,Linear
+6097,0-5,-2,0.00520023297077529,Water,Dirichlet,Linear
+6596,0-5,-2,2.7203514826911875e-7,Water,Dirichlet,Linear
+6982,0-5,-2,1.6547340505367235e-4,Water,Dirichlet,Linear
+7149,0-5,-2,0.006512970532496136,Water,Dirichlet,Linear
+7724,0-5,-2,3.920605664342487e-4,Water,Dirichlet,Linear
+8520,0-5,-2,0.010399068645377759,Water,Dirichlet,Linear
+9054,0-5,-2,1.1562646551091358e-6,Water,Dirichlet,Linear
+9635,0-5,-2,8.688781373742331e-4,Water,Dirichlet,Linear
+9903,0-5,-2,3.0385291337848967e-4,Water,Dirichlet,Linear
+9996,0-5,-2,0.021201274370044286,Water,Dirichlet,Linear
+358,"[5, Inf)",-3,9.900562969360475e-12,Water,Dirichlet,Linear
+1642,"[5, Inf)",-3,5.5397327223692367e-8,Water,Dirichlet,Linear
+1685,"[5, Inf)",-3,4.886459048697175e-12,Water,Dirichlet,Linear
+2495,"[5, Inf)",-3,0.005088160618799052,Water,Dirichlet,Linear
+2765,"[5, Inf)",-3,1.9382173958046233e-6,Water,Dirichlet,Linear
+3958,"[5, Inf)",-3,3.100152813654684e-11,Water,Dirichlet,Linear
+4322,"[5, Inf)",-3,0.010780531116681957,Water,Dirichlet,Linear
+4764,"[5, Inf)",-3,8.53401721553417e-5,Water,Dirichlet,Linear
+4832,"[5, Inf)",-3,0.024338663154147573,Water,Dirichlet,Linear
+5903,"[5, Inf)",-3,1.6981081123402062e-6,Water,Dirichlet,Linear
+6097,"[5, Inf)",-3,0.0011830188790806048,Water,Dirichlet,Linear
+6596,"[5, Inf)",-3,1.1935186901410893e-9,Water,Dirichlet,Linear
+6982,"[5, Inf)",-3,2.7860982771661843e-12,Water,Dirichlet,Linear
+7149,"[5, Inf)",-3,3.621192793877155e-5,Water,Dirichlet,Linear
+7724,"[5, Inf)",-3,3.093722699480514e-5,Water,Dirichlet,Linear
+8520,"[5, Inf)",-3,1.2298286297094334e-7,Water,Dirichlet,Linear
+9054,"[5, Inf)",-3,6.134201613672348e-5,Water,Dirichlet,Linear
+9635,"[5, Inf)",-3,7.695799607253216e-4,Water,Dirichlet,Linear
+9903,"[5, Inf)",-3,6.595370867591738e-5,Water,Dirichlet,Linear
+9996,"[5, Inf)",-3,1.268705213195705e-6,Water,Dirichlet,Linear
+358,0-5,-3,1.274604079301422e-6,Water,Dirichlet,Linear
+1642,0-5,-3,4.4400348818679443e-7,Water,Dirichlet,Linear
+1685,0-5,-3,2.9657762060492947e-6,Water,Dirichlet,Linear
+2495,0-5,-3,1.629887970861737e-5,Water,Dirichlet,Linear
+2765,0-5,-3,5.840152789829596e-5,Water,Dirichlet,Linear
+3958,0-5,-3,3.1441781057534523e-6,Water,Dirichlet,Linear
+4322,0-5,-3,0.0017405099032873075,Water,Dirichlet,Linear
+4764,0-5,-3,0.015501420783910909,Water,Dirichlet,Linear
+4832,0-5,-3,0.0012280627179276128,Water,Dirichlet,Linear
+5903,0-5,-3,1.617650406441374e-5,Water,Dirichlet,Linear
+6097,0-5,-3,0.060606301799219865,Water,Dirichlet,Linear
+6596,0-5,-3,1.7062011491083353e-7,Water,Dirichlet,Linear
+6982,0-5,-3,1.0235484613213138e-4,Water,Dirichlet,Linear
+7149,0-5,-3,0.02594066404862288,Water,Dirichlet,Linear
+7724,0-5,-3,8.017772386211627e-4,Water,Dirichlet,Linear
+8520,0-5,-3,0.016882392783829466,Water,Dirichlet,Linear
+9054,0-5,-3,1.7199301011261802e-6,Water,Dirichlet,Linear
+9635,0-5,-3,7.678267599249057e-4,Water,Dirichlet,Linear
+9903,0-5,-3,1.2705424842964828e-4,Water,Dirichlet,Linear
+9996,0-5,-3,0.06756156613874172,Water,Dirichlet,Linear
+358,"[5, Inf)",3,0.6281171584693735,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",3,0.6009681397674095,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",3,0.582812382476559,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",3,0.5725459420699736,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",3,0.5528701916709403,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",3,0.6256338757928269,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",3,0.5665251042134284,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",3,0.6174084433724256,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",3,0.5777855963775889,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",3,0.7194682843055119,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",3,0.5275785651969386,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",3,0.6779819809350118,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",3,0.6058665223006574,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",3,0.6122985173772519,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",3,0.5917627252649327,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",3,0.5654338760706904,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",3,0.6021102739378332,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",3,0.621322745428664,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",3,0.5957552100305233,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",3,0.6302476256973164,Poultry,Dirichlet,Linear
+358,"[5, Inf)",-1,0.413687488088482,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",-1,0.3689177336284501,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",-1,0.4520141163420018,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",-1,0.4034880922477245,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",-1,0.4176287532955348,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",-1,0.49362998094356614,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",-1,0.3777825401303235,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",-1,0.42968345911061184,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",-1,0.42470096041575917,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",-1,0.4498549987262264,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",-1,0.37658213613137365,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",-1,0.38785873385736913,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",-1,0.3644042059814379,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",-1,0.47995500735778357,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",-1,0.47849799121812653,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",-1,0.42795614939171267,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",-1,0.3365592867977539,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",-1,0.4462480501720333,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",-1,0.44871893325881274,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",-1,0.37185236049747683,Poultry,Dirichlet,Linear
+358,"[5, Inf)",1,0.5234900096168378,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",1,0.48464735017764243,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",1,0.5183292329900704,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",1,0.48768494794973966,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",1,0.4849755173146609,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",1,0.5624978164994504,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",1,0.47112918114347463,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",1,0.5244646702294913,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",1,0.5015365090766694,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",1,0.5921015126116901,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",1,0.4511885804051427,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",1,0.5360801811817872,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",1,0.48711908991776354,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",1,0.547009871483147,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",1,0.5355955523601368,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",1,0.4972819563583061,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",1,0.4680930700054844,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",1,0.5351313889198539,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",1,0.5229039245223114,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",1,0.5013787630757504,Poultry,Dirichlet,Linear
+358,0-5,-1,0.42453956615743704,Poultry,Dirichlet,Linear
+1642,0-5,-1,0.2206216446184421,Poultry,Dirichlet,Linear
+1685,0-5,-1,0.35459603936548517,Poultry,Dirichlet,Linear
+2495,0-5,-1,0.4435308318303182,Poultry,Dirichlet,Linear
+2765,0-5,-1,0.2495862042921457,Poultry,Dirichlet,Linear
+3958,0-5,-1,0.30922528087688056,Poultry,Dirichlet,Linear
+4322,0-5,-1,0.367701593284345,Poultry,Dirichlet,Linear
+4764,0-5,-1,0.4143070012968814,Poultry,Dirichlet,Linear
+4832,0-5,-1,0.3557821706624303,Poultry,Dirichlet,Linear
+5903,0-5,-1,0.3376589891344835,Poultry,Dirichlet,Linear
+6097,0-5,-1,0.46779859164508014,Poultry,Dirichlet,Linear
+6596,0-5,-1,0.36902848106845715,Poultry,Dirichlet,Linear
+6982,0-5,-1,0.2507268703942058,Poultry,Dirichlet,Linear
+7149,0-5,-1,0.35404328524763656,Poultry,Dirichlet,Linear
+7724,0-5,-1,0.4793050274624375,Poultry,Dirichlet,Linear
+8520,0-5,-1,0.2844858586293586,Poultry,Dirichlet,Linear
+9054,0-5,-1,0.3105188576817177,Poultry,Dirichlet,Linear
+9635,0-5,-1,0.3733744597385863,Poultry,Dirichlet,Linear
+9903,0-5,-1,0.390035164269953,Poultry,Dirichlet,Linear
+9996,0-5,-1,0.28572817563575437,Poultry,Dirichlet,Linear
+358,"[5, Inf)",2,0.5780458147166533,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",2,0.5434457397679744,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",2,0.5512951204375961,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",2,0.5303360229789708,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",2,0.5190107941771882,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",2,0.5960793842985221,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",2,0.5190009904092412,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",2,0.5715854132516658,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",2,0.5399091828074687,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",2,0.6586962045093976,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",2,0.489325538156126,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",2,0.6093590906292357,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",2,0.5478745681207292,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",2,0.5800096067707765,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",2,0.5638860252350723,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",2,0.5316445780857649,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",2,0.5362711828577088,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",2,0.5789418049988256,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",2,0.5596821132321028,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",2,0.5669789789712378,Poultry,Dirichlet,Linear
+358,0-5,0,0.5086489660172182,Poultry,Dirichlet,Linear
+1642,0-5,0,0.3444475201119855,Poultry,Dirichlet,Linear
+1685,0-5,0,0.3962777430367676,Poultry,Dirichlet,Linear
+2495,0-5,0,0.5115594795029988,Poultry,Dirichlet,Linear
+2765,0-5,0,0.3489667221319408,Poultry,Dirichlet,Linear
+3958,0-5,0,0.4829347598916163,Poultry,Dirichlet,Linear
+4322,0-5,0,0.4394545675580223,Poultry,Dirichlet,Linear
+4764,0-5,0,0.4758622558500037,Poultry,Dirichlet,Linear
+4832,0-5,0,0.436203801320944,Poultry,Dirichlet,Linear
+5903,0-5,0,0.43422553052552254,Poultry,Dirichlet,Linear
+6097,0-5,0,0.5027655280151122,Poultry,Dirichlet,Linear
+6596,0-5,0,0.4637262231566847,Poultry,Dirichlet,Linear
+6982,0-5,0,0.3346428555914047,Poultry,Dirichlet,Linear
+7149,0-5,0,0.45714274968955304,Poultry,Dirichlet,Linear
+7724,0-5,0,0.4754675036841093,Poultry,Dirichlet,Linear
+8520,0-5,0,0.3766723575957569,Poultry,Dirichlet,Linear
+9054,0-5,0,0.40970631985963485,Poultry,Dirichlet,Linear
+9635,0-5,0,0.47834580909098906,Poultry,Dirichlet,Linear
+9903,0-5,0,0.49113504285580006,Poultry,Dirichlet,Linear
+9996,0-5,0,0.41936236487820544,Poultry,Dirichlet,Linear
+358,0-5,3,0.7018417038178377,Poultry,Dirichlet,Linear
+1642,0-5,3,0.7704035179446254,Poultry,Dirichlet,Linear
+1685,0-5,3,0.526128489440051,Poultry,Dirichlet,Linear
+2495,0-5,3,0.690821626046267,Poultry,Dirichlet,Linear
+2765,0-5,3,0.6849583320956353,Poultry,Dirichlet,Linear
+3958,0-5,3,0.8922941959287745,Poultry,Dirichlet,Linear
+4322,0-5,3,0.649007260139182,Poultry,Dirichlet,Linear
+4764,0-5,3,0.6364845296712993,Poultry,Dirichlet,Linear
+4832,0-5,3,0.6721683091402766,Poultry,Dirichlet,Linear
+5903,0-5,3,0.7220560097981058,Poultry,Dirichlet,Linear
+6097,0-5,3,0.6004406652903618,Poultry,Dirichlet,Linear
+6596,0-5,3,0.7351932644446858,Poultry,Dirichlet,Linear
+6982,0-5,3,0.6244641729156403,Poultry,Dirichlet,Linear
+7149,0-5,3,0.7488890833705495,Poultry,Dirichlet,Linear
+7724,0-5,3,0.461514482815682,Poultry,Dirichlet,Linear
+8520,0-5,3,0.6785633545668533,Poultry,Dirichlet,Linear
+9054,0-5,3,0.6963871660265357,Poultry,Dirichlet,Linear
+9635,0-5,3,0.7686151870108279,Poultry,Dirichlet,Linear
+9903,0-5,3,0.7573647450164231,Poultry,Dirichlet,Linear
+9996,0-5,3,0.8050595540406963,Poultry,Dirichlet,Linear
+358,"[5, Inf)",0,0.4682316252482958,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",0,0.42604619904369156,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",0,0.4851347550820152,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",0,0.4452067206486074,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",0,0.4510785041491287,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",0,0.5282006704511919,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",0,0.42378061538410267,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",0,0.4768766570361493,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",0,0.463058067148056,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",0,0.521684289187882,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",0,0.41356257661230994,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",0,0.4611538686989183,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",0,0.4256324748082481,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",0,0.5135685358651476,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",0,0.5070710157852909,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",0,0.46265142535276227,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",0,0.40063548371479707,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",0,0.49065159110709966,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",0,0.48579019053059286,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",0,0.4356147346874836,Poultry,Dirichlet,Linear
+358,0-5,2,0.645661446155245,Poultry,Dirichlet,Linear
+1642,0-5,2,0.6440816358855,Poultry,Dirichlet,Linear
+1685,0-5,2,0.4831831144884037,Poultry,Dirichlet,Linear
+2495,0-5,2,0.6391437635571932,Poultry,Dirichlet,Linear
+2765,0-5,2,0.5793320709127686,Poultry,Dirichlet,Linear
+3958,0-5,2,0.8010750428054846,Poultry,Dirichlet,Linear
+4322,0-5,2,0.5833527468328327,Poultry,Dirichlet,Linear
+4764,0-5,2,0.5913757382068628,Poultry,Dirichlet,Linear
+4832,0-5,2,0.5995099177150109,Poultry,Dirichlet,Linear
+5903,0-5,2,0.6340084166719084,Poultry,Dirichlet,Linear
+6097,0-5,2,0.5688076599990588,Poultry,Dirichlet,Linear
+6596,0-5,2,0.6533629700086458,Poultry,Dirichlet,Linear
+6982,0-5,2,0.5280534846416903,Poultry,Dirichlet,Linear
+7149,0-5,2,0.6622226548675414,Poultry,Dirichlet,Linear
+7724,0-5,2,0.4667033652662558,Poultry,Dirichlet,Linear
+8520,0-5,2,0.5819463087548674,Poultry,Dirichlet,Linear
+9054,0-5,2,0.6133279990152671,Poultry,Dirichlet,Linear
+9635,0-5,2,0.6839982472440865,Poultry,Dirichlet,Linear
+9903,0-5,2,0.6823980852885975,Poultry,Dirichlet,Linear
+9996,0-5,2,0.6982913869345112,Poultry,Dirichlet,Linear
+358,0-5,1,0.581661848581732,Poultry,Dirichlet,Linear
+1642,0-5,1,0.49372573552631827,Poultry,Dirichlet,Linear
+1685,0-5,1,0.439421190243393,Poultry,Dirichlet,Linear
+2495,0-5,1,0.5779604112231956,Poultry,Dirichlet,Linear
+2765,0-5,1,0.46276687793249505,Poultry,Dirichlet,Linear
+3958,0-5,1,0.6602781835580681,Poultry,Dirichlet,Linear
+4322,0-5,1,0.5124547379093132,Poultry,Dirichlet,Linear
+4764,0-5,1,0.5361406901740856,Poultry,Dirichlet,Linear
+4832,0-5,1,0.5191909247087572,Poultry,Dirichlet,Linear
+5903,0-5,1,0.5357030007287902,Poultry,Dirichlet,Linear
+6097,0-5,1,0.5362743153709274,Poultry,Dirichlet,Linear
+6596,0-5,1,0.5609090573068504,Poultry,Dirichlet,Linear
+6982,0-5,1,0.42902583552902657,Poultry,Dirichlet,Linear
+7149,0-5,1,0.5626987344968133,Poultry,Dirichlet,Linear
+7724,0-5,1,0.4713022773072893,Poultry,Dirichlet,Linear
+8520,0-5,1,0.47848465841681337,Poultry,Dirichlet,Linear
+9054,0-5,1,0.5143774480517329,Poultry,Dirichlet,Linear
+9635,0-5,1,0.5849717178569523,Poultry,Dirichlet,Linear
+9903,0-5,1,0.5914148603043003,Poultry,Dirichlet,Linear
+9996,0-5,1,0.5642657455934168,Poultry,Dirichlet,Linear
+358,"[5, Inf)",-2,0.3611245193237523,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",-2,0.31401521151463013,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",-2,0.41921965428037694,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",-2,0.3629451419517668,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",-2,0.3849189632398465,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",-2,0.4591198921466724,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",-2,0.3337400824761224,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",-2,0.38371724263405876,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",-2,0.38589690271016147,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",-2,0.3789850253055332,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",-2,0.3389129255802734,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",-2,0.31918714050650704,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",-2,0.30391549390561484,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",-2,0.44641175004777406,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",-2,0.4500631722636371,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",-2,0.3933154229944145,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",-2,0.2779037404010722,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",-2,0.4026157323283573,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",-2,0.41205974430682973,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",-2,0.3119653898959659,Poultry,Dirichlet,Linear
+358,0-5,-2,0.3284623503266184,Poultry,Dirichlet,Linear
+1642,0-5,-2,0.13232077779707943,Poultry,Dirichlet,Linear
+1685,0-5,-2,0.3149734030407032,Poultry,Dirichlet,Linear
+2495,0-5,-2,0.37701439318577623,Poultry,Dirichlet,Linear
+2765,0-5,-2,0.17064810168028383,Poultry,Dirichlet,Linear
+3958,0-5,-2,0.1764181938289231,Poultry,Dirichlet,Linear
+4322,0-5,-2,0.30023474615952694,Poultry,Dirichlet,Linear
+4764,0-5,-2,0.3539083508855526,Poultry,Dirichlet,Linear
+4832,0-5,-2,0.28233224556439185,Poultry,Dirichlet,Linear
+5903,0-5,-2,0.25266915315527466,Poultry,Dirichlet,Linear
+6097,0-5,-2,0.42884362881084087,Poultry,Dirichlet,Linear
+6596,0-5,-2,0.2833303527805245,Poultry,Dirichlet,Linear
+6982,0-5,-2,0.18039976136854008,Poultry,Dirichlet,Linear
+7149,0-5,-2,0.2606846282408194,Poultry,Dirichlet,Linear
+7724,0-5,-2,0.4828749286546652,Poultry,Dirichlet,Linear
+8520,0-5,-2,0.20710095589086477,Poultry,Dirichlet,Linear
+9054,0-5,-2,0.22527434041526767,Poultry,Dirichlet,Linear
+9635,0-5,-2,0.27877885879618686,Poultry,Dirichlet,Linear
+9903,0-5,-2,0.29637274634200117,Poultry,Dirichlet,Linear
+9996,0-5,-2,0.1789260134185355,Poultry,Dirichlet,Linear
+358,"[5, Inf)",-3,0.3116277601572184,Poultry,Dirichlet,Linear
+1642,"[5, Inf)",-3,0.26116661809420566,Poultry,Dirichlet,Linear
+1685,"[5, Inf)",-3,0.3869680600392599,Poultry,Dirichlet,Linear
+2495,"[5, Inf)",-3,0.32300602194651845,Poultry,Dirichlet,Linear
+2765,"[5, Inf)",-3,0.353215587935232,Poultry,Dirichlet,Linear
+3958,"[5, Inf)",-3,0.4249974975491168,Poultry,Dirichlet,Linear
+4322,"[5, Inf)",-3,0.28954359781329725,Poultry,Dirichlet,Linear
+4764,"[5, Inf)",-3,0.33972290212842987,Poultry,Dirichlet,Linear
+4832,"[5, Inf)",-3,0.342315058545388,Poultry,Dirichlet,Linear
+5903,"[5, Inf)",-3,0.31090866704231024,Poultry,Dirichlet,Linear
+6097,"[5, Inf)",-3,0.2911839740402184,Poultry,Dirichlet,Linear
+6596,"[5, Inf)",-3,0.257385967807666,Poultry,Dirichlet,Linear
+6982,"[5, Inf)",-3,0.24420396922975193,Poultry,Dirichlet,Linear
+7149,"[5, Inf)",-3,0.4131083526210958,Poultry,Dirichlet,Linear
+7724,"[5, Inf)",-3,0.421949554002769,Poultry,Dirichlet,Linear
+8520,"[5, Inf)",-3,0.3587487239688392,Poultry,Dirichlet,Linear
+9054,"[5, Inf)",-3,0.2259480110523833,Poultry,Dirichlet,Linear
+9635,"[5, Inf)",-3,0.36033486124149744,Poultry,Dirichlet,Linear
+9903,"[5, Inf)",-3,0.3761575555674076,Poultry,Dirichlet,Linear
+9996,"[5, Inf)",-3,0.25732171906805734,Poultry,Dirichlet,Linear
+358,0-5,-3,0.22628492605968092,Poultry,Dirichlet,Linear
+1642,0-5,-3,0.07591683314535755,Poultry,Dirichlet,Linear
+1685,0-5,-3,0.277849382641179,Poultry,Dirichlet,Linear
+2495,0-5,-3,0.31459047703866966,Poultry,Dirichlet,Linear
+2765,0-5,-3,0.11243357759930246,Poultry,Dirichlet,Linear
+3958,0-5,-3,0.09289005000566743,Poultry,Dirichlet,Linear
+4322,0-5,-3,0.2393633834856741,Poultry,Dirichlet,Linear
+4764,0-5,-3,0.2943712777124436,Poultry,Dirichlet,Linear
+4832,0-5,-3,0.2186982983552092,Poultry,Dirichlet,Linear
+5903,0-5,-3,0.1828981271278667,Poultry,Dirichlet,Linear
+6097,0-5,-3,0.3667861435373575,Poultry,Dirichlet,Linear
+6596,0-5,-3,0.21081556504440657,Poultry,Dirichlet,Linear
+6982,0-5,-3,0.12413526744123848,Poultry,Dirichlet,Linear
+7149,0-5,-3,0.18070202759216566,Poultry,Dirichlet,Linear
+7724,0-5,-3,0.4861860820727065,Poultry,Dirichlet,Linear
+8520,0-5,-3,0.14616824897445085,Poultry,Dirichlet,Linear
+9054,0-5,-3,0.1577340197545515,Poultry,Dirichlet,Linear
+9635,0-5,-3,0.2001109287469158,Poultry,Dirichlet,Linear
+9903,0-5,-3,0.2160698548073529,Poultry,Dirichlet,Linear
+9996,0-5,-3,0.10221690520034762,Poultry,Dirichlet,Linear
+358,"[5, Inf)",3,0.0018881228422592579,Other,Dirichlet,Linear
+1642,"[5, Inf)",3,6.411305333181974e-5,Other,Dirichlet,Linear
+1685,"[5, Inf)",3,6.269101920591121e-5,Other,Dirichlet,Linear
+2495,"[5, Inf)",3,9.653260989772838e-5,Other,Dirichlet,Linear
+2765,"[5, Inf)",3,3.0079193947168426e-6,Other,Dirichlet,Linear
+3958,"[5, Inf)",3,0.0017303986859431924,Other,Dirichlet,Linear
+4322,"[5, Inf)",3,3.3970844023131e-5,Other,Dirichlet,Linear
+4764,"[5, Inf)",3,8.272845610844485e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",3,2.6321824734248618e-5,Other,Dirichlet,Linear
+5903,"[5, Inf)",3,1.1277583068386958e-4,Other,Dirichlet,Linear
+6097,"[5, Inf)",3,5.492394970062807e-7,Other,Dirichlet,Linear
+6596,"[5, Inf)",3,1.2179829945060945e-4,Other,Dirichlet,Linear
+6982,"[5, Inf)",3,0.0010134674974896511,Other,Dirichlet,Linear
+7149,"[5, Inf)",3,9.842543773305033e-6,Other,Dirichlet,Linear
+7724,"[5, Inf)",3,9.279045930180193e-4,Other,Dirichlet,Linear
+8520,"[5, Inf)",3,8.299572065912032e-4,Other,Dirichlet,Linear
+9054,"[5, Inf)",3,0.005376666754427671,Other,Dirichlet,Linear
+9635,"[5, Inf)",3,0.0013873740187513829,Other,Dirichlet,Linear
+9903,"[5, Inf)",3,8.627024114209255e-4,Other,Dirichlet,Linear
+9996,"[5, Inf)",3,2.0575177556816362e-4,Other,Dirichlet,Linear
+358,"[5, Inf)",-1,0.005690665244606563,Other,Dirichlet,Linear
+1642,"[5, Inf)",-1,0.003993047887138607,Other,Dirichlet,Linear
+1685,"[5, Inf)",-1,7.104221859572027e-4,Other,Dirichlet,Linear
+2495,"[5, Inf)",-1,2.793830536014393e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",-1,1.768243348588191e-5,Other,Dirichlet,Linear
+3958,"[5, Inf)",-1,0.002362511055990898,Other,Dirichlet,Linear
+4322,"[5, Inf)",-1,1.2451809672207892e-4,Other,Dirichlet,Linear
+4764,"[5, Inf)",-1,3.755112994894907e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",-1,8.544142804214813e-4,Other,Dirichlet,Linear
+5903,"[5, Inf)",-1,0.004340881087973727,Other,Dirichlet,Linear
+6097,"[5, Inf)",-1,0.0012439066292744528,Other,Dirichlet,Linear
+6596,"[5, Inf)",-1,0.0015262730400039774,Other,Dirichlet,Linear
+6982,"[5, Inf)",-1,0.02280329106231897,Other,Dirichlet,Linear
+7149,"[5, Inf)",-1,3.3436861071691723e-4,Other,Dirichlet,Linear
+7724,"[5, Inf)",-1,0.0011415226367814187,Other,Dirichlet,Linear
+8520,"[5, Inf)",-1,0.006994304247670063,Other,Dirichlet,Linear
+9054,"[5, Inf)",-1,3.444684671376011e-4,Other,Dirichlet,Linear
+9635,"[5, Inf)",-1,1.228533031312804e-4,Other,Dirichlet,Linear
+9903,"[5, Inf)",-1,0.0038402071335644165,Other,Dirichlet,Linear
+9996,"[5, Inf)",-1,0.0029538394936671013,Other,Dirichlet,Linear
+358,"[5, Inf)",1,0.0033662666839352658,Other,Dirichlet,Linear
+1642,"[5, Inf)",1,5.207878477843629e-4,Other,Dirichlet,Linear
+1685,"[5, Inf)",1,2.1312099841602004e-4,Other,Dirichlet,Linear
+2495,"[5, Inf)",1,1.6663102811375634e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",1,7.360666567785669e-6,Other,Dirichlet,Linear
+3958,"[5, Inf)",1,0.00204653869963702,Other,Dirichlet,Linear
+4322,"[5, Inf)",1,6.623368059486458e-5,Other,Dirichlet,Linear
+4764,"[5, Inf)",1,5.675375520551832e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",1,1.5183427544735034e-4,Other,Dirichlet,Linear
+5903,"[5, Inf)",1,7.282005961095879e-4,Other,Dirichlet,Linear
+6097,"[5, Inf)",1,2.6458148041537223e-5,Other,Dirichlet,Linear
+6596,"[5, Inf)",1,4.507343090987671e-4,Other,Dirichlet,Linear
+6982,"[5, Inf)",1,0.0049837776615979336,Other,Dirichlet,Linear
+7149,"[5, Inf)",1,5.788682424534654e-5,Other,Dirichlet,Linear
+7724,"[5, Inf)",1,0.0010358980746282217,Other,Dirichlet,Linear
+8520,"[5, Inf)",1,0.002435635322484585,Other,Dirichlet,Linear
+9054,"[5, Inf)",1,0.0014151246613075454,Other,Dirichlet,Linear
+9635,"[5, Inf)",1,4.1956942376380845e-4,Other,Dirichlet,Linear
+9903,"[5, Inf)",1,0.0018408084978549085,Other,Dirichlet,Linear
+9996,"[5, Inf)",1,8.074028840359233e-4,Other,Dirichlet,Linear
+358,0-5,-1,0.10104960564741872,Other,Dirichlet,Linear
+1642,0-5,-1,0.03348177540960306,Other,Dirichlet,Linear
+1685,0-5,-1,0.006136680212042666,Other,Dirichlet,Linear
+2495,0-5,-1,0.002314935135321402,Other,Dirichlet,Linear
+2765,0-5,-1,0.003838381939011969,Other,Dirichlet,Linear
+3958,0-5,-1,0.004432115741472474,Other,Dirichlet,Linear
+4322,0-5,-1,0.026456003159236307,Other,Dirichlet,Linear
+4764,0-5,-1,0.003027508975380767,Other,Dirichlet,Linear
+4832,0-5,-1,0.021582911423495735,Other,Dirichlet,Linear
+5903,0-5,-1,0.07653494578075591,Other,Dirichlet,Linear
+6097,0-5,-1,0.011044030646703671,Other,Dirichlet,Linear
+6596,0-5,-1,0.0026461577674874084,Other,Dirichlet,Linear
+6982,0-5,-1,0.018206845626198995,Other,Dirichlet,Linear
+7149,0-5,-1,0.01661803375600843,Other,Dirichlet,Linear
+7724,0-5,-1,0.00396814641854901,Other,Dirichlet,Linear
+8520,0-5,-1,0.03794944269730245,Other,Dirichlet,Linear
+9054,0-5,-1,0.006806352216899029,Other,Dirichlet,Linear
+9635,0-5,-1,0.007657637847281377,Other,Dirichlet,Linear
+9903,0-5,-1,0.027076713568457197,Other,Dirichlet,Linear
+9996,0-5,-1,0.01580226129759684,Other,Dirichlet,Linear
+358,"[5, Inf)",2,0.0025414239365505287,Other,Dirichlet,Linear
+1642,"[5, Inf)",2,1.8400142820791188e-4,Other,Dirichlet,Linear
+1685,"[5, Inf)",2,1.1593984037888207e-4,Other,Dirichlet,Linear
+2495,"[5, Inf)",2,1.2728910774746887e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",2,4.716247245579295e-6,Other,Dirichlet,Linear
+3958,"[5, Inf)",2,0.0018908915553470535,Other,Dirichlet,Linear
+4322,"[5, Inf)",2,4.765200930421804e-5,Other,Dirichlet,Linear
+4764,"[5, Inf)",2,6.882742107295423e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",2,6.340580041203565e-5,Other,Dirichlet,Linear
+5903,"[5, Inf)",2,2.892109826670788e-4,Other,Dirichlet,Linear
+6097,"[5, Inf)",2,3.823277870460368e-6,Other,Dirichlet,Linear
+6596,"[5, Inf)",2,2.3682648201758168e-4,Other,Dirichlet,Linear
+6982,"[5, Inf)",2,0.002266518826096165,Other,Dirichlet,Linear
+7149,"[5, Inf)",2,2.392211317257135e-5,Other,Dirichlet,Linear
+7724,"[5, Inf)",2,9.819948788372796e-4,Other,Dirichlet,Linear
+8520,"[5, Inf)",2,0.00142548649889198,Other,Dirichlet,Linear
+9054,"[5, Inf)",2,0.0027863408701663886,Other,Dirichlet,Linear
+9635,"[5, Inf)",2,7.660282143457987e-4,Other,Dirichlet,Linear
+9903,"[5, Inf)",2,0.0012636632738320082,Other,Dirichlet,Linear
+9996,"[5, Inf)",2,4.110979632719765e-4,Other,Dirichlet,Linear
+358,0-5,0,0.04681301261983768,Other,Dirichlet,Linear
+1642,0-5,0,0.027559235535764864,Other,Dirichlet,Linear
+1685,0-5,0,0.00524294415141639,Other,Dirichlet,Linear
+2495,0-5,0,0.003954767939060312,Other,Dirichlet,Linear
+2765,0-5,0,0.0017006760161425267,Other,Dirichlet,Linear
+3958,0-5,0,0.005408239044480667,Other,Dirichlet,Linear
+4322,0-5,0,0.017441814053213666,Other,Dirichlet,Linear
+4764,0-5,0,0.006006036413804859,Other,Dirichlet,Linear
+4832,0-5,0,0.01937745608293995,Other,Dirichlet,Linear
+5903,0-5,0,0.05854516906971041,Other,Dirichlet,Linear
+6097,0-5,0,0.0052557868604343715,Other,Dirichlet,Linear
+6596,0-5,0,0.003249664996908386,Other,Dirichlet,Linear
+6982,0-5,0,0.0082880408523058,Other,Dirichlet,Linear
+7149,0-5,0,0.008405354219753908,Other,Dirichlet,Linear
+7724,0-5,0,0.00559787979326562,Other,Dirichlet,Linear
+8520,0-5,0,0.0339497453664323,Other,Dirichlet,Linear
+9054,0-5,0,0.011621585745342139,Other,Dirichlet,Linear
+9635,0-5,0,0.004458849621451793,Other,Dirichlet,Linear
+9903,0-5,0,0.016440997606645868,Other,Dirichlet,Linear
+9996,0-5,0,0.008203462616784134,Other,Dirichlet,Linear
+358,0-5,3,0.003734079121489939,Other,Dirichlet,Linear
+1642,0-5,3,0.00903261688970275,Other,Dirichlet,Linear
+1685,0-5,3,0.003110249194480507,Other,Dirichlet,Linear
+2495,0-5,3,0.017354829905439084,Other,Dirichlet,Linear
+2765,0-5,3,1.0622619186062374e-4,Other,Dirichlet,Linear
+3958,0-5,3,0.004766168823831669,Other,Dirichlet,Linear
+4322,0-5,3,0.004323884321338598,Other,Dirichlet,Linear
+4764,0-5,3,0.041392833731665524,Other,Dirichlet,Linear
+4832,0-5,3,0.011725456245714977,Other,Dirichlet,Linear
+5903,0-5,3,0.020489404607277408,Other,Dirichlet,Linear
+6097,0-5,3,5.449454444876311e-4,Other,Dirichlet,Linear
+6596,0-5,3,0.004808855457045916,Other,Dirichlet,Linear
+6982,0-5,3,6.136028084390678e-4,Other,Dirichlet,Linear
+7149,0-5,3,8.276837174578543e-4,Other,Dirichlet,Linear
+7724,0-5,3,0.015626766938348732,Other,Dirichlet,Linear
+8520,0-5,3,0.018864588138255995,Other,Dirichlet,Linear
+9054,0-5,3,0.04280971642332556,Other,Dirichlet,Linear
+9635,0-5,3,6.726385006613472e-4,Other,Dirichlet,Linear
+9903,0-5,3,0.002842742335265075,Other,Dirichlet,Linear
+9996,0-5,3,6.968840094375908e-4,Other,Dirichlet,Linear
+358,"[5, Inf)",0,0.004403785228127835,Other,Dirichlet,Linear
+1642,"[5, Inf)",0,0.0014529868639800284,Other,Dirichlet,Linear
+1685,"[5, Inf)",0,3.8999129833007073e-4,Other,Dirichlet,Linear
+2495,"[5, Inf)",0,2.165482316124536e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",0,1.1434748506758224e-5,Other,Dirichlet,Linear
+3958,"[5, Inf)",0,0.0022041171241875255,Other,Dirichlet,Linear
+4322,"[5, Inf)",0,9.122330977876322e-5,Other,Dirichlet,Linear
+4764,"[5, Inf)",0,4.63748410258258e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",0,3.6137800548553616e-4,Other,Dirichlet,Linear
+5903,"[5, Inf)",0,0.0017971646062776318,Other,Dirichlet,Linear
+6097,"[5, Inf)",0,1.8201447939524432e-4,Other,Dirichlet,Linear
+6596,"[5, Inf)",0,8.388235558114442e-4,Other,Dirichlet,Linear
+6982,"[5, Inf)",0,0.0107696995049297,Other,Dirichlet,Linear
+7149,"[5, Inf)",0,1.394450735111926e-4,Other,Dirichlet,Linear
+7724,"[5, Inf)",0,0.0010892085042340104,Other,Dirichlet,Linear
+8520,"[5, Inf)",0,0.004139341999434811,Other,Dirichlet,Linear
+9054,"[5, Inf)",0,0.00070473299024567605,Other,Dirichlet,Linear
+9635,"[5, Inf)",0,2.2795554842525387e-4,Other,Dirichlet,Linear
+9903,"[5, Inf)",0,0.002666442502528765,Other,Dirichlet,Linear
+9996,"[5, Inf)",0,0.0015580196017749952,Other,Dirichlet,Linear
+358,0-5,2,0.008884177488472684,Other,Dirichlet,Linear
+1642,0-5,2,0.014323610633797758,Other,Dirichlet,Linear
+1685,0-5,2,0.0037362779525594372,Other,Dirichlet,Linear
+2495,0-5,2,0.010840345801903845,Other,Dirichlet,Linear
+2765,0-5,2,2.835208932183775e-4,Other,Dirichlet,Linear
+3958,0-5,2,0.005476501890259115,Other,Dirichlet,Linear
+4322,0-5,2,0.007045418757528449,Other,Dirichlet,Linear
+4764,0-5,2,0.022266772656443192,Other,Dirichlet,Linear
+4832,0-5,2,0.014281263168523642,Other,Dirichlet,Linear
+5903,0-5,2,0.030245392703474955,Other,Dirichlet,Linear
+6097,0-5,2,0.0011658557159004157,Other,Dirichlet,Linear
+6596,0-5,2,0.004372941139319963,Other,Dirichlet,Linear
+6982,0-5,2,0.0015213222928711473,Other,Dirichlet,Linear
+7149,0-5,2,0.0018684007655867933,Other,Dirichlet,Linear
+7724,0-5,2,0.011112140122179206,Other,Dirichlet,Linear
+8520,0-5,2,0.02394483187229865,Other,Dirichlet,Linear
+9054,0-5,2,0.029135206139127595,Other,Dirichlet,Linear
+9635,0-5,2,0.0013170343840013532,Other,Dirichlet,Linear
+9903,0-5,2,0.005311719778333483,Other,Dirichlet,Linear
+9996,0-5,2,0.0017089430734304758,Other,Dirichlet,Linear
+358,0-5,1,0.020699076874480367,Other,Dirichlet,Linear
+1642,0-5,1,0.020826371576281703,Other,Dirichlet,Linear
+1685,0-5,1,0.004444597991165744,Other,Dirichlet,Linear
+2495,0-5,1,0.0066180922364388745,Other,Dirichlet,Linear
+2765,0-5,1,7.146769945750114e-4,Other,Dirichlet,Linear
+3958,0-5,1,0.005777310042904753,Other,Dirichlet,Linear
+4322,0-5,1,0.011219722861564623,Other,Dirichlet,Linear
+4764,0-5,1,0.011687698663285914,Other,Dirichlet,Linear
+4832,0-5,1,0.016889464317158053,Other,Dirichlet,Linear
+5903,0-5,1,0.04296294428927463,Other,Dirichlet,Linear
+6097,0-5,1,0.0024823488175530414,Other,Dirichlet,Linear
+6596,0-5,1,0.00384140837485903,Other,Dirichlet,Linear
+6982,0-5,1,0.003624017337914953,Other,Dirichlet,Linear
+7149,0-5,1,0.004052854678632243,Other,Dirichlet,Linear
+7724,0-5,1,0.007890949986099065,Other,Dirichlet,Linear
+8520,0-5,1,0.029138610632006737,Other,Dirichlet,Linear
+9054,0-5,1,0.018881693141716824,Other,Dirichlet,Linear
+9635,0-5,1,0.002478257092454071,Other,Dirichlet,Linear
+9903,0-5,1,0.00954672763673376,Other,Dirichlet,Linear
+9996,0-5,1,0.003904208633662842,Other,Dirichlet,Linear
+358,"[5, Inf)",-2,0.007265623607472962,Other,Dirichlet,Linear
+1642,"[5, Inf)",-2,0.010786875518326817,Other,Dirichlet,Linear
+1685,"[5, Inf)",-2,0.001288184717461676,Other,Dirichlet,Linear
+2495,"[5, Inf)",-2,3.57755840688403e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",-2,2.7220625740844323e-5,Other,Dirichlet,Linear
+3958,"[5, Inf)",-2,0.002520200134094776,Other,Dirichlet,Linear
+4322,"[5, Inf)",-2,1.6843208072270135e-4,Other,Dirichlet,Linear
+4764,"[5, Inf)",-2,3.0135867244462754e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",-2,0.002001315419594029,Other,Dirichlet,Linear
+5903,"[5, Inf)",-2,0.010243600393299366,Other,Dirichlet,Linear
+6097,"[5, Inf)",-2,0.00840193974281882,Other,Dirichlet,Linear
+6596,"[5, Inf)",-2,0.002717302195621831,Other,Dirichlet,Linear
+6982,"[5, Inf)",-2,0.04703404291894867,Other,Dirichlet,Linear
+7149,"[5, Inf)",-2,7.979594044982452e-4,Other,Dirichlet,Linear
+7724,"[5, Inf)",-2,0.0011924496730051054,Other,Dirichlet,Linear
+8520,"[5, Inf)",-2,0.011742324243426838,Other,Dirichlet,Linear
+9054,"[5, Inf)",-2,1.6549885323861107e-4,Other,Dirichlet,Linear
+9635,"[5, Inf)",-2,6.56802500784905e-5,Other,Dirichlet,Linear
+9903,"[5, Inf)",-2,0.005498411222550433,Other,Dirichlet,Linear
+9996,"[5, Inf)",-2,0.005503877502568235,Other,Dirichlet,Linear
+358,0-5,-2,0.2021948426316994,Other,Dirichlet,Linear
+1642,0-5,-2,0.03808944663470588,Other,Dirichlet,Linear
+1685,0-5,-2,0.007130131766612157,Other,Dirichlet,Linear
+2495,0-5,-2,0.0013285046709793434,Other,Dirichlet,Linear
+2765,0-5,-2,0.00828169267090736,Other,Dirichlet,Linear
+3958,0-5,-2,0.0032362954204347752,Other,Dirichlet,Linear
+4322,0-5,-2,0.03915982356349396,Other,Dirichlet,Linear
+4764,0-5,-2,0.0014973055776422053,Other,Dirichlet,Linear
+4832,0-5,-2,0.02338863427198939,Other,Dirichlet,Linear
+5903,0-5,-2,0.0962807446496609,Other,Dirichlet,Linear
+6097,0-5,-2,0.022864625711101084,Other,Dirichlet,Linear
+6596,0-5,-2,0.0020788725352034595,Other,Dirichlet,Linear
+6982,0-5,-2,0.038409025929578657,Other,Dirichlet,Linear
+7149,0-5,-2,0.03123617077069606,Other,Dirichlet,Linear
+7724,0-5,-2,0.0028111455811813627,Other,Dirichlet,Linear
+8520,0-5,-2,0.04088827333400515,Other,Dirichlet,Linear
+9054,0-5,-2,0.0038156794060326842,Other,Dirichlet,Linear
+9635,0-5,-2,0.012579964514528159,Other,Dirichlet,Linear
+9903,0-5,-2,0.04266732302868058,Other,Dirichlet,Linear
+9996,0-5,-2,0.02797680244260809,Other,Dirichlet,Linear
+358,"[5, Inf)",-3,0.009170168652495434,Other,Dirichlet,Linear
+1642,"[5, Inf)",-3,0.028472961397713617,Other,Dirichlet,Linear
+1685,"[5, Inf)",-3,0.002324789399537731,Other,Dirichlet,Linear
+2495,"[5, Inf)",-3,4.5324473899006505e-4,Other,Dirichlet,Linear
+2765,"[5, Inf)",-3,4.172014547763392e-5,Other,Dirichlet,Linear
+3958,"[5, Inf)",-3,0.0026756659597373996,Other,Dirichlet,Linear
+4322,"[5, Inf)",-3,2.2374650732996274e-4,Other,Dirichlet,Linear
+4764,"[5, Inf)",-3,2.397702020540091e-4,Other,Dirichlet,Linear
+4832,"[5, Inf)",-3,0.004576455526776976,Other,Dirichlet,Linear
+5903,"[5, Inf)",-3,0.02353903454324305,Other,Dirichlet,Linear
+6097,"[5, Inf)",-3,0.05417791174426378,Other,Dirichlet,Linear
+6596,"[5, Inf)",-3,0.004740359904284323,Other,Dirichlet,Linear
+6982,"[5, Inf)",-3,0.0934668288988036,Other,Dirichlet,Linear
+7149,"[5, Inf)",-3,0.0018946516092394543,Other,Dirichlet,Linear
+7724,"[5, Inf)",-3,0.0012416216784305642,Other,Dirichlet,Linear
+8520,"[5, Inf)",-3,0.019564614724610886,Other,Dirichlet,Linear
+9054,"[5, Inf)",-3,7.829279950941257e-5,Other,Dirichlet,Linear
+9635,"[5, Inf)",-3,3.4832439204251894e-5,Other,Dirichlet,Linear
+9903,"[5, Inf)",-3,0.007826067534761649,Other,Dirichlet,Linear
+9996,"[5, Inf)",-3,0.010082884272524455,Other,Dirichlet,Linear
+358,0-5,-3,0.3602534334662305,Other,Dirichlet,Linear
+1642,0-5,-3,0.041450613089248085,Other,Dirichlet,Linear
+1685,0-5,-3,0.00822729690784796,Other,Dirichlet,Linear
+2495,0-5,-3,7.484122215033152e-4,Other,Dirichlet,Linear
+2765,0-5,-3,0.01721883309407426,Other,Dirichlet,Linear
+3958,0-5,-3,0.002180934741217919,Other,Dirichlet,Linear
+4322,0-5,-3,0.056596365482409164,Other,Dirichlet,Linear
+4764,0-5,-3,7.210602086164065e-4,Other,Dirichlet,Linear
+4832,0-5,-3,0.02474049114836479,Other,Dirichlet,Linear
+5903,0-5,-3,0.11716616817611125,Other,Dirichlet,Linear
+6097,0-5,-3,0.044164619765691145,Other,Dirichlet,Linear
+6596,0-5,-3,0.001582764654107887,Other,Dirichlet,Linear
+6982,0-5,-3,0.07749184898927874,Other,Dirichlet,Linear
+7149,0-5,-3,0.05527445662684075,Other,Dirichlet,Linear
+7724,0-5,-3,0.001990325825191369,Other,Dirichlet,Linear
+8520,0-5,-3,0.042711188897424715,Other,Dirichlet,Linear
+9054,0-5,-3,0.0020645206647146226,Other,Dirichlet,Linear
+9635,0-5,-3,0.019868256203279068,Other,Dirichlet,Linear
+9903,0-5,-3,0.064508397765213707,Other,Dirichlet,Linear
+9996,0-5,-3,0.04518619145003263,Other,Dirichlet,Linear

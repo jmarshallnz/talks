@@ -1,0 +1,211 @@
+---
+title: "cgMLST attribution experiments"
+author: "Jonathan Marshall, Massey University"
+date: "22 November 2019"
+output: 
+  ioslides_presentation: 
+    widescreen: yes
+    css: css/ioslides.css
+    logo: logos/idrec_square.png
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(grid)
+library(knitr)
+theme_set(theme_bw(base_size=15))
+opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
+
+ans <- read_csv("~/cgmlst/confusion.csv")
+
+best <- ans %>% filter(str_detect(Genes, "Best"), str_detect(Data, "CV")) %>%
+  extract(Genes, into='Genes', regex="([0-9]+)", convert=TRUE)
+mlst <- ans %>% filter(str_detect(Genes, "MLST") | str_detect(Genes, "Sheppard"),
+                       str_detect(Data, "CV")) %>%
+  mutate(Genes = case_when(Genes == "MLST" ~ 7,
+                           Genes == "rMLST" ~ 52,
+                           Genes == "Sheppard" ~ 13))
+random <- ans %>% filter(str_detect(Genes, "Random_1[0-9]"), str_detect(Data, "CV"))
+
+attr <- read_csv("~/cgmlst/attribution.csv")
+best_attr <- attr %>% filter(str_detect(Genes, "Best"), str_detect(Data, "Full")) %>%
+  extract(Genes, into='Genes', regex="([0-9]+)", convert=TRUE) %>%
+  spread(quantile, value)
+mlst_attr <- attr %>% filter(str_detect(Genes, "MLST") | str_detect(Genes, "Sheppard"),
+                       str_detect(Data, "Full")) %>%
+  mutate(Genes = case_when(Genes == "MLST" ~ 7,
+                           Genes == "rMLST" ~ 52,
+                           Genes == "Sheppard" ~ 13)) %>%
+  spread(quantile, value)
+
+random_attr <- attr %>% filter(str_detect(Genes, "Random"), str_detect(Data, "Full")) %>%
+  extract(Genes, into="Genes", regex="([0-9]+)", convert=TRUE) %>%
+  mutate(Genes = sprintf("R%02i", Genes)) %>%
+  bind_rows(attr %>% filter(str_detect(Genes, "^MLST"), str_detect(Data, "Full"))) %>%
+  spread(quantile, value)
+
+fig_width = 10
+```
+
+## Choosing the best genes
+
+Use the F-statistic:
+$$
+\begin{aligned}
+F &= \frac{\mathsf{Between~source~variation}}{\mathsf{Within~source~variation}}\\
+ &= \frac{\mathsf{Total~source~variation} - \mathsf{Within~source~variation}}{\mathsf{Within~source~variation}}
+\end{aligned}
+$$
+We can estimate Total and Within source variation just as the sum of squared pairwise distances.
+
+Similar to how MANOVA or PERMANOVA works.
+
+## Choosing the best genes
+
+- Choose the gene that has maximal F.
+
+- Choose the next gene that, combined with the first, maximises F.
+
+- Keep adding the next best gene that maximises F combined with the genes already chosen.
+
+- Locally optimal, not necessarily globally optimal.
+
+## cgMLST attribution
+
+```{r}
+ggplot(best_attr, aes(x=Genes, y=`0.5`, fill=Source)) +
+  geom_ribbon(aes(ymin=`0.025`, ymax=`0.975`), alpha=0.3) +
+  geom_ribbon(aes(ymin=`0.25`, ymax=`0.75`), alpha=0.3) +
+  geom_line(aes(col=Source), lwd=2) +
+  scale_y_continuous("Attribution of human cases", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+  scale_x_continuous(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+```
+
+## What about MLST, Sheppard, rMLST
+
+- MLST: Standard 7 genes
+
+- Sheppard: 13 genes selected via GWAS to separate sources in the UK.
+
+    - Thépault et al (2017) Genome-wide identification of host-segregating epidemiological markers for source attribution in *Campylobacter jejuni*.
+
+- rMLST: Ribosomal MLST.
+
+## MLST, Sheppard, rMLST
+
+```{r}
+ggplot(best_attr, aes(x=Genes, y=`0.5`, fill=Source)) +
+  geom_ribbon(aes(ymin=`0.025`, ymax=`0.975`), alpha=0.3) +
+  geom_ribbon(aes(ymin=`0.25`, ymax=`0.75`), alpha=0.3) +
+  geom_line(aes(col=Source), lwd=2) +
+  geom_linerange(data=mlst_attr, aes(ymin=`0.025`, ymax=`0.975`), col='black') +
+  geom_linerange(data=mlst_attr, aes(ymin=`0.25`, ymax=`0.75`), lwd=2) +
+  geom_point(data=mlst_attr, size=2, shape=21, col='black') +
+  scale_y_continuous("Attribution of human cases", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+  scale_x_continuous(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+```
+
+## Cross validation
+
+- Use only the source isolates
+
+- Divide into 10 groups, preserving source structure in each group.
+
+- Use 9 to train the island model, and retain the last group as "Human" cases.
+
+- Compare attributed source to actual source.
+
+- Repeat across the 10 groups (cross-validation).
+
+## Cross validation results
+
+```{r, fig.width=10}
+p <- ggplot(best, aes(x=Genes, y=Percent, col=Source)) + geom_line(aes(group=interaction(Source, Data)), alpha=0.5) +
+  geom_line(data=best %>% group_by(Genes, TrueSource, Source) %>% summarise(Percent = mean(Percent)) %>% ungroup(), lwd=1.5) +
+  facet_wrap(~TrueSource) + scale_y_continuous("Percent attribution", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+  scale_x_continuous(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+
+g <- ggplot_gtable(ggplot_build(p))
+facet_top <- which(grepl('strip-t', g$layout$name))
+fills <- alpha(scales::hue_pal(h = c(0, 360) + 15, c = 100, l = 65)(3), 0.5)
+k <- 1
+for (i in facet_top) {
+  j <- which(grepl('rect', g$grobs[[i]]$grobs[[1]]$childrenOrder))
+  g$grobs[[i]]$grobs[[1]]$children[[j]]$gp$fill <- fills[k]
+  k <- k+1
+}
+grid.draw(g)
+```
+
+## With MLST, Sheppard genes, rMLST
+
+```{r}
+p <- ggplot(best, aes(x=Genes, y=Percent, col=Source)) + geom_line(aes(group=interaction(Source, Data)), alpha=0.5) +
+  geom_line(data=best %>% group_by(Genes, TrueSource, Source) %>% summarise(Percent = mean(Percent)) %>% ungroup(), lwd=1.5) +
+  geom_point(data=mlst, aes(group=interaction(Source, Data)), alpha=0.5, size=2) +
+  geom_point(data=mlst %>% group_by(Genes, TrueSource, Source) %>% summarise(Percent = mean(Percent)) %>% ungroup(), aes(fill=Source), size=3, shape=21, col='black') +
+  facet_wrap(~TrueSource) + scale_y_continuous("Percent attribution", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+  scale_x_continuous(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+
+g <- ggplot_gtable(ggplot_build(p))
+facet_top <- which(grepl('strip-t', g$layout$name))
+fills <- alpha(scales::hue_pal(h = c(0, 360) + 15, c = 100, l = 65)(3), 0.5)
+k <- 1
+for (i in facet_top) {
+  j <- which(grepl('rect', g$grobs[[i]]$grobs[[1]]$childrenOrder))
+  g$grobs[[i]]$grobs[[1]]$children[[j]]$gp$fill <- fills[k]
+  k <- k+1
+}
+grid.draw(g)
+```
+
+## What about 7 genes picked at random?
+
+```{r}
+p <- ggplot(random, aes(x=Genes, y=Percent, col=Source)) + geom_boxplot() +
+  #  geom_line(data=ans %>% group_by(Genes, true_source, Source) %>% summarise(Percent = mean(Percent)) %>% ungroup(), lwd=1.5) +
+  facet_wrap(~TrueSource) + scale_y_continuous("Percent attribution", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+  #  scale_x_continuous(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none') +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank())
+
+g <- ggplot_gtable(ggplot_build(p))
+facet_top <- which(grepl('strip-t', g$layout$name))
+fills <- alpha(scales::hue_pal(h = c(0, 360) + 15, c = 100, l = 65)(3), 0.5)
+k <- 1
+for (i in facet_top) {
+  j <- which(grepl('rect', g$grobs[[i]]$grobs[[1]]$childrenOrder))
+  g$grobs[[i]]$grobs[[1]]$children[[j]]$gp$fill <- fills[k]
+  k <- k+1
+}
+grid.draw(g)
+```
+
+## Attribution from 7 random genes
+
+```{r}
+ggplot(random_attr, aes(x=Genes, y=`0.5`, fill=Source)) +
+  geom_linerange(aes(ymin=`0.025`, ymax=`0.975`), col='black') +
+  geom_linerange(aes(ymin=`0.25`, ymax=`0.75`, col=Source), lwd=2) +
+  geom_point(size=2, shape=21, col='black') +
+  scale_y_continuous("Attribution of human cases", labels = scales::percent, expand=c(0,0), limits=c(0,1)) +
+ # scale_x_discrete(limits = c(0,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none') +
+  theme(axis.title.x = element_blank())
+```
+
+## Conclusion
+
+- Any 7 genes seem to do just as well as MLST.
+
+- Increasing the number of genes appears to break the attribution model.
+
+- The F-statistic doesn't appear to correspond well with how well attribution happens.
+
+- Need a better measure? (And to fix the model!)
