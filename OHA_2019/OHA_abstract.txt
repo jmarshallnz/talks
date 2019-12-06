@@ -1,0 +1,7 @@
+Where did it come from? Attributing human cases of disease to sources
+
+J. Marshall
+
+An important public health question is determining the source of food or environmentally acquired disease. In the absence of epidemiological information for each human case, the use of genomic information allows attribution of cases to sources by comparing the types observed in human cases to the types observed in food and environmental samples. Several statistical models are available for attribution, all of which involve first estimating the distribution of sequence types on each source, and secondly using those distributions to infer the most likely source for each human case. Additional demographic or epidemiological information for human cases may be incorporated into the second step, allowing refined estimates of likely sources for each case. In addition, higher resolution genomic data from whole genome sequencing potentially allows human cases of types seen across multiple sources to be more accurately attributed. Recent work on model development with application to cases of campylobacteriosis in New Zealand will be presented.
+
+
