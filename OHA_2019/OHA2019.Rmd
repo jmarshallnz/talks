@@ -98,17 +98,17 @@ ggplot(best_attr, aes(x=Genes, y=`0.5`, fill=Source)) +
   guides(col = 'none', fill='none')
 ```
 
-## What about MLST, Sheppard, rMLST
+## What about MLST, Thépault et al, rMLST
 
 - MLST: Standard 7 genes
 
-- Sheppard: 13 genes selected via GWAS to separate sources in the UK.
+- Thépault  et al: 13 genes selected via GWAS to separate sources in the UK.
 
     - Thépault et al (2017) Genome-wide identification of host-segregating epidemiological markers for source attribution in *Campylobacter jejuni*.
 
 - rMLST: Ribosomal MLST.
 
-## MLST, Sheppard, rMLST
+## MLST, Thépault et al, rMLST
 
 ```{r}
 ggplot(best_attr, aes(x=Genes, y=`0.5`, fill=Source)) +
