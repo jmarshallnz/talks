@@ -1,7 +1,8 @@
 library(tidyverse)
 library(patchwork)
 
-attr_data <- read.csv("../data/attribution_data.csv")
+
+attr_data <- read.csv("attribution_data.csv")
 sts = attr_data %>% filter(Source != "Human" | Year >= 2008) %>%
   group_by(ST) %>% count(Source) %>% spread(Source, n, fill=0) %>%
   ungroup()
