@@ -1,7 +1,8 @@
 library(tidyverse)
+library(patchwork)
 
-attr_data <- read.csv("data/attribution_data.csv")
-sts = attr_data %>%
+attr_data <- read.csv("../data/attribution_data.csv")
+sts = attr_data %>% filter(Source != "Human" | Year >= 2008) %>%
   group_by(ST) %>% count(Source) %>% spread(Source, n, fill=0) %>%
   ungroup()
 
@@ -17,44 +18,21 @@ top20_anim <- top20 %>% select(-Human) %>% gather(Source, Count, -ST) %>%
 library(shiny)
 
 ui <- fluidPage(
+  tags$head(
+    tags$style(HTML("
+      span.irs-min,span.irs-max,span.irs-single {
+        visibility: hidden !important;
+      }
+    "))),
   fluidRow(plotOutput("sourceplot", height="160px")),
-  fluidRow(column(3,sliderInput("s1", NULL, 0, 100, 25, step=1, ticks=FALSE, post='%'), align='center'),
-           column(3,sliderInput("s2", NULL, 0, 100, 25, step=1, ticks=FALSE, post='%'), align='center'),
-           column(3,sliderInput("s3", NULL, 0, 100, 25, step=1, ticks=FALSE, post='%'), align='center'),
-           column(3,sliderInput("s4", NULL, 0, 100, 25, step=1, ticks=FALSE, post='%'), align='center')),
-  fluidRow(column(8, offset=2, plotOutput("humanplot", height="330px")))
+  fluidRow(column(3,sliderInput("s1", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s2", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s3", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s4", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center')),
+  fluidRow(plotOutput("humanplot", height="330px"))
 )
 
 server <- function(input, output, session) {
-  state <- reactiveValues(balance = rep(0.25, 4))
-  observeEvent(input$s1, {
-    # normalise the others
-    state$balance[1] <- input$s1 / 100
-    state$balance[-1] <- state$balance[-1] / sum(state$balance[-1]) * (1-state$balance[1])
-  })
-  observeEvent(input$s2, {
-    # normalise the others
-    state$balance[2] <- input$s2 / 100
-    state$balance[-2] <- state$balance[-2] / sum(state$balance[-2]) * (1-state$balance[2])
-  })
-  observeEvent(input$s3, {
-    # normalise the others
-    state$balance[3] <- input$s3 / 100
-    state$balance[-3] <- state$balance[-3] / sum(state$balance[-3]) * (1-state$balance[3])
-  })
-  observeEvent(input$s4, {
-    # normalise the others
-    state$balance[4] <- input$s4 / 100
-    state$balance[-4] <- state$balance[-4] / sum(state$balance[-4]) * (1-state$balance[4])
-  })
-  
-  observeEvent(state$balance, {
-    updateSliderInput(session, "s1", value = state$balance[1] * 100)
-    updateSliderInput(session, "s2", value = state$balance[2] * 100)
-    updateSliderInput(session, "s3", value = state$balance[3] * 100)
-    updateSliderInput(session, "s4", value = state$balance[4] * 100)
-  })
-
   output$sourceplot = renderPlot({
     ggplot(top20_anim, aes(x=ST, y=Count, fill=Source)) +
       geom_col() +
@@ -69,9 +47,18 @@ server <- function(input, output, session) {
             axis.text = element_blank())
   })
   output$humanplot = renderPlot({
-    balance <- tibble(Source = levels(top20_anim$Source), Balance = state$balance)
+    bal <- c(input$s1, input$s2, input$s3, input$s4)
+    balance <- tibble(Source = levels(top20_anim$Source), Balance = bal/sum(bal)) %>%
+      mutate(Source = fct_inorder(Source))
     attrib_data <- top20_anim %>% left_join(balance, by="Source") %>% mutate(Total = Count * Balance)
-    ggplot(attrib_data, aes(x=ST)) + geom_col(aes(y=Total, fill=Source)) +
+    g1 = ggplot(balance, aes(x=Source)) + geom_col(aes(y=Balance, fill=Source)) +
+      theme_bw(base_size=16) +
+      guides(fill='none') +
+      scale_y_continuous(name = "Overall attribution", expand=c(0,0), labels=scales::percent_format(accuracy = 1), limits=c(0,1)) +
+      scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+      theme(axis.title.x = element_blank(),
+            axis.ticks = element_blank())
+    g2 = ggplot(attrib_data, aes(x=ST)) + geom_col(aes(y=Total, fill=Source)) +
       geom_col(data=top20_hum, aes(y=Human), fill=NA, col='black') +
       theme_bw(base_size=16) +
       guides(fill='none') +
@@ -81,6 +68,7 @@ server <- function(input, output, session) {
       theme(axis.title.x = element_blank(),
             axis.ticks = element_blank(),
             axis.text.x = element_text(angle = 90, vjust=0.5))
+    g1 + g2 + plot_layout(nrow = 1, widths = c(1,3))
   })
 }
 
