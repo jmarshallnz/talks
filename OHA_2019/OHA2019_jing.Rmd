@@ -8,7 +8,6 @@ output:
     widescreen: yes
     css: css/ioslides.css
     logo: logos/idrec_square.png
-runtime: shiny
 ---
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
@@ -118,11 +117,7 @@ ggplot(top20, aes(x=ST, y=Count, fill=Colour)) + geom_col(data=top_humans, aes(y
 
 ## Assume human types are a mix of source types {#slideID} 
 
-```{r}
-shinyAppDir("shiny",
-  options = list(width = "100%", height=600)
-)
-```
+<iframe src="http://shiny.massey.ac.nz/jcmarsha/OHA2019/" style="border: none"></iframe>
 
 ## Adding statistics {.bigequation .flexbox .vcenter}
 
