@@ -21,9 +21,11 @@ library(shiny)
 library(gtools)
 library(gganimate)
 library(transformr)
-theme_set(theme_bw(base_size=15))
+theme_set(theme_bw(base_size=15) + theme(plot.background = element_rect(fill = "transparent", color = NA)))
+#theme_update(theme(plot.background = element_rect(fill = "transparent", color = NA)))
 opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
-attr_data <- read.csv("data/attribution_data.csv")
+attr_data <- read.csv("data/attribution_data.csv") %>%
+  filter(Source != "Human" | Year >= 2008)
 sts = attr_data %>%
   group_by(ST) %>% count(Source) %>% spread(Source, n, fill=0) %>%
   ungroup()
@@ -31,13 +33,27 @@ sts_ur = attr_data %>% filter(Source == "Human") %>%
   group_by(ST) %>% count(UR2006) %>% ungroup()
 nz = read_csv("data/dhb_cases.csv") %>%
   mutate(Date = dmy(paste(1, Month, Year))) %>%
-  filter(Year >= 2004) %>% count(Date, wt=Count)
+  filter(Year >= 2006) %>% group_by(Date) %>%
+  summarise(Count = sum(Count, na.rm=TRUE), Population = sum(PopulationInterpolated, na.rm=TRUE)) %>%
+  mutate(Rate = Count/Population*100000*12)
 
 attribution = read.csv("data/attribution.csv")
 alpha = function(col, alpha) { rgb(t(col2rgb(col)/255), alpha=alpha) }
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
 ax_col = "grey20"
 fig_width = 10
+
+source_cols <- c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")
+```
+
+## New Zealand campylobacteriosis cases
+
+```{r, nz cases, fig.width=fig_width}
+ggplot(nz, aes(x=Date, y=Rate)) + geom_line(col='grey50') +
+  geom_smooth(span=0.5, col="steelblue", fill="steelblue", alpha=0.3) +
+  scale_y_continuous("Cases per 100,000 people per year", expand = c(0,0), lim=c(0,600)) +
+  scale_x_date(expand = c(0,0)) +
+  theme(axis.title.x = element_blank())
 ```
 
 ## Manawatu sentinel surveillance site
@@ -57,28 +73,15 @@ ggplot() + geom_sf(data = nz.map, fill = "grey80", col=NA, stroke=0) +
   theme_void()
 ```
 
-## Manawatu campylobacteriosis cases
+## Where are people getting it from?
 
-```{r, human cases, fig.width=fig_width}
-man_cases <- attr_data %>% filter(Source == "Human") %>%
-  mutate(Date = floor_date(ymd(SampledDate), unit="month")) %>%
-  count(Date)
-ggplot(man_cases, aes(x=Date, y=n)) + geom_line(col='grey50') +
-  geom_smooth(span=0.4, col="steelblue", fill="steelblue", alpha=0.3) +
-  scale_y_continuous("Cases", expand = c(0,0), lim = c(0,35)) +
-  scale_x_date(expand = c(0,0)) +
-  theme(axis.title.x = element_blank())
-```
-
-## New Zealand campylobacteriosis cases
-
-```{r, nz cases, fig.width=fig_width}
-ggplot(nz, aes(x=Date, y=n)) + geom_line(col='grey50') +
-  geom_smooth(span=0.5, col="steelblue", fill="steelblue", alpha=0.3) +
-  scale_y_continuous("Cases", expand = c(0,0), lim=c(0,2200)) +
-  scale_x_date(expand = c(0,0)) +
-  theme(axis.title.x = element_blank())
-```
+<div align="center">
+<span class='inline'>
+  <img src="figures/Chicken-25.png" alt="Drawing" style="width: 180px;" align="center">
+  <img src="figures/sheep.png" alt="Drawing" style="width: 250px;" align="center">
+  <img src="figures/cow-07.png" alt="Drawing" style="width: 400px;" align="center">
+</span>
+</div>
 
 ## MLST distribution of human cases
 
@@ -99,7 +102,8 @@ ggplot(top_humans, aes(x=ST, y=Human, fill=Colour)) +
   scale_y_continuous("Percent human cases", labels = scales::percent, expand=c(0,0)) + 
   coord_cartesian(ylim = c(0,0.25)) +
   guides(fill='none') +
-  theme(axis.title.x = element_blank())
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 90, vjust=0.5))
 ```
 
 ## MLSTs are source specific
@@ -145,13 +149,7 @@ $$
 
 # Genomic models
 
-## Some genomic models
-
-- Asymmetric Island model (Wilson et al 2009)
-
-- Dirichlet model (Liao et al 2019)
-
-## Aymmetric Island model | D. Wilson (2009)
+## Asymmetric Island model | D. Wilson (2009)
 
 Assume that genotypes arise from two or more homogeneous mixing populations
 where we have
@@ -162,47 +160,6 @@ where we have
 not in this allelic profile (i.e. the alleles come from at least two different genotypes).
 
 - **Migration** between sources of genotypes and alleles.
-
-## Mutation
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2    29    1    5
-
-<br />
-
-- We have a novel allele at the pgm locus.
-
-- We assume this genotype has arisen through **mutation**.
-
-## Recombination
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2     1    1    5
-45      4     7    10     4     1    7    1
-3718    2     4     1     4     1    1    5
-
-<br />
-
-- We have seen this pgm allele before, but haven't seen this genotype.
-
-- We assume it arose through **recombination**, either from 45 or 3718.
-
-## Migration
-
- ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
----  ----- ----- ----- ----- ---- ---- -----
-474     2     4     1     2     2    1    5
-?       2     4     1     2     2    1    5
-
-<br />
-
-- This is just 474. We've seen it before, but possibly not on this source.
-
-- We assume it arose through **migration**.
 
 ## Asymmetric Island model{.smaller}
 
@@ -234,7 +191,7 @@ Use the source isolates to estimate the unknown parameters:
 
 using a leave one out pseudo-likelihood MCMC algorithm.
 
-Once we have these estimated, we can use all source sequences as candidates and estimate $P(\mathsf{st}_h~\mathsf{given~source}_j)$ for the observed human sequences (even those unobserved on the sources).
+Once we have these estimated, we can use all source sequences as candidates and estimate $P(\mathsf{st}_h~\mathsf{from~source}_j)$ for the observed human sequences (even those unobserved on the sources).
 
 ## Dirichlet model
 
@@ -242,7 +199,7 @@ Before we collect data, assume each type is equally likely for each source.
 
 ```{r, fig.width=10, fig.height=3.5}
 set.seed(5)
-top50 <- sts %>% mutate(ST = fct_lump(factor(ST), n=50, w=Human)) %>%
+top50 <- sts %>% mutate(ST = fct_lump(factor(ST), n=49, w=Human)) %>%
   gather(Source, Count, -ST) %>% 
   group_by(ST, Source) %>% summarise(Count = sum(Count)) %>%
   ungroup() %>% spread(Source, Count) %>%
@@ -308,7 +265,8 @@ anim <- ggplot(uncertainty, aes(x=ST, y=Proportion, fill=Source)) + geom_col() +
   scale_fill_manual(values=c(Poultry = "steelblue", Prior = "grey50")) +
   guides(fill='none') +
   coord_cartesian(ylim = c(0,25*scale_fact)) +
-  theme(axis.title.x = element_blank(),
+  theme(plot.background = element_rect(fill = "white", color = NA),
+        axis.title.x = element_blank(),
         axis.text.x = element_text(angle = 90, vjust=0.5)) +
   transition_states(Iteration, transition_length = 1, state_length = 0.1) +
   ease_aes('cubic-in-out')
@@ -381,12 +339,13 @@ ggplot(plot_weird) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Mo
 ```{r, fig.width = 7}
 overall <- read_csv("data/overall_attribution.csv") %>%
   mutate(Source = fct_relevel(Source, "Other", after=2))
-ggplot(overall) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Model), position=position_dodge(0.5)) + 
-  geom_linerange(aes(x=Source, ymin = lcl, ymax = ucl, col=Model), size=2, position=position_dodge(0.5)) +
-  geom_point(aes(x=Source, y=m, fill=Model), position=position_dodge(0.5), shape=21, size=2) +
+
+ggplot(overall) + 
+  geom_boxplot(aes(x=Source, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, fill=Source), stat="identity", alpha=0.7, width=0.6) +
   scale_y_continuous(name="Attributed cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
-  scale_fill_manual(values = c("steelblue2", "brown")) +
-  scale_colour_manual(values = c("steelblue2", "brown")) +
+  scale_fill_manual(values = source_cols) +
+  facet_wrap(~Model) +
+  guides(fill='none', col='none') +
   theme(axis.title.x = element_blank(),
         legend.position = c(0.90,0.89),
         legend.title = element_blank())
@@ -402,36 +361,25 @@ top20_ur <- sts_ur %>% group_by(ST) %>% mutate(Total = sum(n)) %>% ungroup() %>%
   group_by(ST, UR2006) %>% summarise(n = sum(n)) %>% mutate(total = sum(n)) %>% group_by(UR2006) %>%   mutate(n = n/sum(n)) %>% ungroup() %>%
   spread(UR2006, n) %>% mutate(ST = fct_reorder(ST, total, .fun = identity, .desc=TRUE),
                                     ST = fct_relevel(ST, "Other", after = 23)) %>%
-  gather(UR2006, Count, -ST, -total) %>%
-  mutate(Colour = ST == "Other")
+  gather(UR2006, Count, -ST, -total)
 
-ggplot(top20_ur, aes(x=ST, y=Count, fill=Colour)) + geom_col() +
-  scale_fill_manual(values=c("steelblue", "grey60")) +
+highlight <- top20_ur %>% group_by(ST) %>% summarise(d = diff(Count), m = mean(Count)) %>% filter(abs(d/m) > 0.3, m > 0.016)
+
+plot20_ur <- top20_ur %>% left_join(highlight) %>% mutate(Colour = case_when(ST == "Other" ~ "Other",
+                                                                !is.na(d) ~ "Highlight",
+                                                                TRUE ~ "Normal"))
+
+ggplot(plot20_ur, aes(x=ST, y=Count, fill=Colour)) + geom_col() +
+  scale_fill_manual(values=c(Normal = alpha("steelblue", 0.5), Other = "grey60", Highlight="steelblue")) +
   scale_y_continuous("Percent human cases", labels = scales::percent, expand=c(0,0)) +
   coord_cartesian(ylim = c(0,0.25)) +
   facet_wrap(~UR2006, nrow=2) +
   guides(fill='none') +
-  theme(axis.title.x = element_blank())
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 90, vjust=0.5))
 ```
 
-## Human cases by age and rurality
-
-```{r}
-ur_cats <- mb2006 %>% select(UR2006_num, UR2006_name) %>% unique()
-
-hum_tab <- attr_data %>% filter(Source == "Human") %>% mutate(Age = fct_explicit_na(Age, na_level = "Unknown"),
-                                                   Age = fct_recode(Age, `Under 5` = "[-Inf,5)",
-                                                   `5 and over` = "[5, Inf)")) %>%
-  group_by(UR2006_num) %>% count(Age) %>% mutate(Total = sum(n)) %>% spread(Age, n) %>%
-  ungroup() %>% 
-  left_join(ur_cats) %>% select(-UR2006_num, Area = UR2006_name)
-
-totals <- hum_tab %>% select(-Area) %>% summarise_all(sum) %>% mutate(Area = "Total")
-
-bind_rows(hum_tab, totals) %>% select(5,2:4,1) %>% kable()
-```
-
-## Attribution with covariates{.bigequation .flexbox .vcenter}
+## Attribution with covariates{.largeequation .flexbox .vcenter}
 
 $$
 P(\mathsf{st}_h \mid \underbrace{\mathbf{x}_h}_\text{covariates}) =
@@ -457,7 +405,6 @@ We'll present four different covariate models:
 - Seasons by urban/rural split.
 - Rurality as 7 separate categories.
 - Rurality as a linear trend (on logit scale).
-- Separate linear trends for rurality pre/post 2008 poultry industry intervention.
 - Separate linear trends for under 5 versus older than 5 years old (2008 onwards).
 
 # Results
@@ -466,19 +413,18 @@ We'll present four different covariate models:
 
 ```{r, fig.width = 10}
 plot_df <- read_csv("data/season_attribution.csv") %>%
-  mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry"))),
-         Season = factor(Season, levels=c("Autumn", "Winter", "Spring", "Summer")))
+  mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry")),
+                         labels=rev(c("Other", "Water", "Rum", "Poultry"))),
+         Season = factor(Season, levels=c("Autumn", "Winter", "Spring", "Summer"))) %>%
+  mutate(x = as.numeric(interaction(Model, Source)))
 
-ggplot(plot_df) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Model), position=position_dodge(0.5)) + 
-  geom_linerange(aes(x=Source, ymin = lcl, ymax = ucl, col=Model), size=2, position=position_dodge(0.5)) +
-  geom_point(aes(x=Source, y=m, fill=Model), position=position_dodge(0.5), shape=21, size=2) +
+ggplot(plot_df) + geom_boxplot(aes(x=x, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, fill=factor(x), group=x), stat="identity", alpha=rep(c(1, 0.4),32), width=0.6) +
   facet_grid(UR2006~Season) +
-  scale_fill_manual(values = c("steelblue2", "brown")) +
-  scale_colour_manual(values = c("steelblue2", "brown")) +
+  scale_fill_manual(values = rep(source_cols, each=2) %>% unname()) +
+  scale_x_continuous(breaks=0.5+c(1,3,5,7), labels = levels(plot_df$Source)) +
   scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
-  theme(axis.title.x = element_blank(),
-        legend.position = c(0.90,0.89),
-        legend.title = element_blank())
+  guides(fill = 'none') +
+  theme(axis.title.x = element_blank())
 ```
 
 ## Urban/Rural scales
@@ -487,39 +433,19 @@ ggplot(plot_df) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Model
 plot_df <- read_csv("data/cat_lin_compare.csv") %>%
   mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry"))))
 ggplot(plot_df) +
-  geom_ribbon(aes(x=UR2006_num, ymin=lc, ymax=uc, fill=Source), alpha=0.3) +
-  geom_ribbon(aes(x=UR2006_num, ymin=li, ymax=ui, fill=Source), alpha=0.3) +
+  geom_ribbon(aes(x=UR2006_num, ymin=lcl, ymax=ucl, fill=Source), alpha=0.3) +
+  geom_ribbon(aes(x=UR2006_num, ymin=lci, ymax=uci, fill=Source), alpha=0.3) +
   geom_line(aes(x=UR2006_num, y=m, col=Source), lwd=1) +
   facet_grid(GenotypeModel~AttributionModel) +
   scale_x_continuous(name=NULL, breaks=c(-3,3), labels=c("Rural", "Urban"), expand=c(0,0)) +
   scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
-  scale_color_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
-  scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  scale_color_manual(name=NULL, values = source_cols) +
+  scale_fill_manual(name=NULL, values = source_cols) +
   theme(axis.text.x = element_text(hjust=c(-0.1,1.1)),
         axis.text.y = element_text(vjust=c(-0.1,rep(0.5, 3), 1.1)))
 ```
 
-## Poultry industry intervention in 2008
-
-```{r, fig.width = 10}
-plot_df <- read_csv("data/intervention.csv") %>%
-  mutate(Source = factor(Source, levels=rev(c("Other", "Water", "Ruminants", "Poultry"))))
-
-# plot
-ggplot(plot_df) +
-  geom_ribbon(aes(x=UR2006_num, ymin=lc, ymax=uc, fill=Source), alpha=0.3) +
-  geom_ribbon(aes(x=UR2006_num, ymin=li, ymax=ui, fill=Source), alpha=0.3) +
-  geom_line(aes(x=UR2006_num, y=m, col=Source), lwd=1) +
-  facet_grid(GenotypeModel~Intervention) +
-  scale_x_continuous(name=NULL, breaks=c(-3,3), labels=c("Rural", "Urban"), expand=c(0,0)) +
-  scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
-  scale_color_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
-  scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
-  theme(axis.text.x = element_text(hjust=c(-0.1,1.1)),
-        axis.text.y = element_text(vjust=c(-0.1,rep(0.5, 3), 1.1)))
-```
-
-## Post 2008: Young kids
+## Young kids
 
 ```{r, fig.width = 10}
 plot_df <- read_csv("data/age.csv") %>%
@@ -533,32 +459,110 @@ ggplot(plot_df) +
   facet_grid(GenotypeModel~Age) +
   scale_x_continuous(name=NULL, breaks=c(-3,3), labels=c("Rural", "Urban"), expand=c(0,0)) +
   scale_y_continuous(name="Percentage of cases", labels=scales::percent_format(), limits=c(0,1), expand=c(0,0)) +
-  scale_color_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
-  scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+  scale_color_manual(name=NULL, values = source_cols) +
+  scale_fill_manual(name=NULL, values = source_cols) +
   theme(axis.text.x = element_text(hjust=c(-0.1,1.1)),
         axis.text.y = element_text(vjust=c(-0.1,rep(0.5, 3), 1.1)))
 ```
 
 ## Summary
 
-- The Island model can assign genotypes not observed on the sources where the simple Dirichlet
-model has no information. But few cases are of this type.
+- The Island model assigns genotypes not observed on sources where the Dirichlet model has no information. **But few cases are of this type**.
 
 - The simple Dirichlet model seems to do just as well as the Island model.
 
-- With higher genomic precision, the Dirichlet model will lose ability to discriminate, as every human type will differ from source types.
+- Urban cases tend to be more associated with poultry, and rural cases with ruminants, with a linear relationship between attribution and rurality being adequate.
 
-- The Island model in theory will still work with higher genomic precision, but does the statistical model still hold?
+- Kids under 5 in rural areas are more likely to have ruminant associated campylobacteriosis compared to over 5's.
+
+- Strong evidence for seasonality of attribution, with a higher proportion of poultry related cases in summer and strong ruminant association in rural areas in winter and spring.
+
+# What if we have more genes?
+
+## What if we have more genes?
+
+- With higher genomic precision, the counts used for the Dirichlet model will eventually drop to 1 of each as each isolate is likely unique.
+
+- Worse than that, the human isolates will differ from all source isolates, so the source counts for them will be 0, so we lose all ability to discriminate.
+
+- In theory the Island model should still work.
+
+- But it... **doesn't :(**
+
+## Island model attribution with more genes
+
+```{r}
+many_genes <- read_csv("data/many_genes.csv")
+ggplot(many_genes %>% filter(Model == "PerSource"), aes(x=Genes, y=fits, fill=Source, col=Source)) +
+  geom_ribbon(aes(ymin=fits-0.03, ymax = fits+0.03), alpha=0.4, col='transparent') +
+  geom_line(lwd=1) +
+  scale_y_continuous("Attribution of human cases", labels = scales::percent, expand=c(0,0), limits = c(-1,1)) +
+  coord_cartesian(ylim = c(0,1)) +
+  scale_x_continuous(limits = c(5,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+```
+
+## Why does this happen?
+
+The island likelihood for each type is complicated, but if we have $g$ genes is approximately
+$$
+p(\mathsf{st} \mid m) \approx m^d (1-m)^{g-d}
+$$
+where $m$ is a combination of mutation and recombination probabilities, and $d$ is the average number of loci that differ between isolate pairs.
+
+This is maximised when $m = d/g$ so that
+$$
+p(\mathsf{st} \mid m) \approx  f(m)^g
+$$
+where
+$$
+f(m) = m^m (1-m)^{1-m}
+$$
+
+## Why does this happen?
+
+Suppose we have two sources with $m_1=0.02$ and $m_2=0.03$.
+
+```{r}
+f <- function(m) { m^m *(1-m)^(1-m) }
+fm <- expand.grid(m = c(0.02, 0.03), g = 1:100) %>% mutate(f = f(m)^g)
+df <- fm %>% group_by(g) %>% summarise(df=exp(-diff(log(f))))
+expr <- expression(paste("p( st |" ~ m[1] ~ ") / (p( st |"~m[2]~")"))
+ggplot(df, aes(x=g, y=df)) + geom_line(lwd=2) +
+  scale_y_continuous(expr, expand=c(0,0), lim=c(0,40)) + scale_x_continuous("Number of genes", expand=c(0,0))
+```
+
+The island model just ends up assigning everything to the lower diversity source.
+
+## Can we avoid it?
+
+- Instead of per-source estimates of recombination and mutation probabilities, make them common across all sources.
+
+- This then stabilises the genotype probability distributions to be the same order of magnitude across all sources.
+
+- We thus get sensible attribution with increasing gene counts
+
+## Stable attribution as gene count increases
+
+```{r}
+ggplot(many_genes %>% filter(Model == "Common"), aes(x=Genes, y=fits, fill=Source, col=Source)) +
+  geom_ribbon(aes(ymin=fits-0.03, ymax = fits+0.03), alpha=0.4, col='transparent') +
+  geom_line(lwd=1) +
+  scale_y_continuous("Attribution of human cases", labels = scales::percent, expand=c(0,0), limits = c(-1,1)) +
+  coord_cartesian(ylim = c(0,1)) +
+  scale_x_continuous(limits = c(5,100), expand=c(0,0)) +
+  guides(col = 'none', fill='none')
+```
 
 ## Summary
 
-- Urban cases tend to be more associated with poultry, and rural cases with ruminants.
+- As we increase the number of genes, the Dirichlet model loses all ability to differentiate between sources.
 
-- A linear relationship between attribution and rurality seems adequate.
+- The Island model still works as it should, but we need to estimate shared mutation and recombination probabilities.
 
-- Strong evidence of the intervention in the poultry industry reducing the burden from poultry.
+- We get a stable attribution as the number of genes increases.
 
-- Strong evidence that kids under 5 in rural areas are more likely to have ruminant associated campylobacteriosis compared to over 5's.
+- **But how should we choose genes?**
 
 ## Acknowledgements {.banner}
 
@@ -568,9 +572,8 @@ model has no information. But few cases are of this type.
 - **ESR**: Phil Carter
 - **mEpiLab**: Rukhshana Akhter, Julie Collins-Emerson,<br>
 Ahmed Fayaz, Anne Midwinter, Sarah Moore, Antoine Nohra,<br>
-Angie Reynolds, Lynn Rogers
-- **Ministry for Primary Industries**: Donald Campbell,<br>
-Peter van der Logt
+Angie Reynolds, Lynn Rogers, David Wilkinson
+- **Ministry for Primary Industries**
 
 ![](logos/logo_banner.png)
 
@@ -584,197 +587,55 @@ Github:  [jmarshallnz](https://github.com/jmarshallnz)
 
 ![](logos/logo_banner.png)
 
+## Aymmetric Island model | D. Wilson (2009)
 
-## Urban attribution
+Assume that genotypes arise from two or more homogeneous mixing populations
+where we have
 
-```{r, fig.width=fig_width}
-urban = attribution[attribution$Location == 0,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, d$mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+- **Mutation**, where novel alleles are produced.
 
-## Rural attribution
+- **Recombination**, where the allele at a given locus has been observed before, but
+not in this allelic profile (i.e. the alleles come from at least two different genotypes).
 
-```{r, fig.width=fig_width}
-rural = attribution[attribution$Location == 1,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = rural[rural$Source == sources[src],]
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, d$mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+- **Migration** between sources of genotypes and alleles.
 
-## Urban attribution
+## Mutation
 
-```{r, fig.width=fig_width}
-urban = attribution[attribution$Location == 0,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  mu = d$mu * d$Count
-  li = d$li * d$Count
-  ui = d$ui * d$Count
-  xi = d$xi * d$Count
-  yi = d$yi * d$Count
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2    29    1    5
 
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,40,by=10), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  title(ylab="Cases", col.lab=ax_col)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+<br />
 
-## Rural attribution
+- We have a novel allele at the pgm locus.
 
-```{r, fig.width=fig_width}
-rural = attribution[attribution$Location == 1,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Poultry", "Ruminants")
-for (src in seq_along(sources)) {
-  d = rural[rural$Source == sources[src],]
-  mu = d$mu * d$Count
-  li = d$li * d$Count
-  ui = d$ui * d$Count
-  xi = d$xi * d$Count
-  yi = d$yi * d$Count
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,40,by=10), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  title(ylab="Cases", col.lab=ax_col)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+- We assume this genotype has arisen through **mutation**.
 
-## Urban water/other attribution
+## Recombination
 
-```{r, fig.width=fig_width}
-urban = attribution[attribution$Location == 0,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Other", "Water")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, d$mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     1    1    5
+45      4     7    10     4     1    7    1
+3718    2     4     1     4     1    1    5
 
-## Rural water/other attribution
+<br />
 
-```{r, fig.width=fig_width}
-rural = attribution[attribution$Location == 1,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Other", "Water")
-for (src in seq_along(sources)) {
-  d = rural[rural$Source == sources[src],]
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,1), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(d$ui[times], rev(d$li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(d$yi[times], rev(d$xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, d$mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,1,by=0.2), labels=paste0(seq(0,100,by=20),'%'), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+- We have seen this pgm allele before, but haven't seen this genotype.
 
-## Urban water/other attribution
+- We assume it arose through **recombination**, either from 45 or 3718.
 
-```{r, fig.width=fig_width}
-urban = attribution[attribution$Location == 0,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Other", "Water")
-for (src in seq_along(sources)) {
-  d = urban[urban$Source == sources[src],]
-  mu = d$mu * d$Count
-  li = d$li * d$Count
-  ui = d$ui * d$Count
-  xi = d$xi * d$Count
-  yi = d$yi * d$Count
+## Migration
 
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,40,by=10), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  title(ylab="Cases", col.lab=ax_col)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+ ST   aspA  glnA  gltA  glyA  pgm  txt  uncA
+---  ----- ----- ----- ----- ---- ---- -----
+474     2     4     1     2     2    1    5
+?       2     4     1     2     2    1    5
 
-## Rural water/other attribution
+<br />
 
-```{r, fig.width=fig_width}
-rural = attribution[attribution$Location == 1,]
-par(mfrow=c(2,1), mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.03)
-cols = c("plum4", "steelblue")
-sources = c("Other", "Water")
-for (src in seq_along(sources)) {
-  d = rural[rural$Source == sources[src],]
-  mu = d$mu * d$Count
-  li = d$li * d$Count
-  ui = d$ui * d$Count
-  xi = d$xi * d$Count
-  yi = d$yi * d$Count
-  n_times = max(d$Time)
-  times = 1:n_times
-  plot(NULL, xlim=range(times), ylim=c(0,40), type="n", main=d$Source[1], axes=FALSE, col.main=ax_col, ylab="", xlab="", xaxs="i", yaxs="i")
-  polygon(c(times, rev(times)), c(ui[times], rev(li[times])), col=alpha(cols[src], 0.25), border=NA)
-  polygon(c(times, rev(times)), c(yi[times], rev(xi[times])), col=alpha(cols[src], 0.35), border=NA)
-  lines(times, mu[times], lwd=2, col=cols[src])
-  axis(1, at=seq(0,120,by=12), labels=rep("", 11), col=ax_col, col.axis=ax_col, cex.axis=0.8)
-  axis(2, at=seq(0,40,by=10), col=ax_col, col.axis=ax_col, cex.axis=0.8, las=1)
-  title(ylab="Cases", col.lab=ax_col)
-  mtext(2005:2014, side=1, col=ax_col, at=seq(0,108,by=12)+6, line=0.5)
-}
-```
+- This is just 474. We've seen it before, but possibly not on this source.
+
+- We assume it arose through **migration**.
