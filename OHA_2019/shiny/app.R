@@ -1,6 +1,7 @@
 library(tidyverse)
 library(patchwork)
 
+source_cols <- c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")
 
 attr_data <- read.csv("attribution_data.csv")
 sts = attr_data %>% filter(Source != "Human" | Year >= 2008) %>%
@@ -42,7 +43,7 @@ server <- function(input, output, session) {
       theme_bw(base_size=14) +
       coord_cartesian(ylim = c(0,0.20)) +
       scale_y_continuous(expand=c(0,0)) +
-      scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+      scale_fill_manual(name=NULL, values = source_cols) +
       theme(axis.title = element_blank(),
             axis.ticks = element_blank(),
             axis.text = element_blank())
@@ -56,7 +57,7 @@ server <- function(input, output, session) {
       theme_bw(base_size=16) +
       guides(fill='none') +
       scale_y_continuous(name = "Overall attribution", expand=c(0,0), labels=scales::percent_format(accuracy = 1), limits=c(0,1)) +
-      scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+      scale_fill_manual(name=NULL, values = source_cols) +
       theme(axis.title.x = element_blank(),
             axis.ticks = element_blank())
     g2 = ggplot(attrib_data, aes(x=ST)) + geom_col(aes(y=Total, fill=Source)) +
@@ -65,7 +66,7 @@ server <- function(input, output, session) {
       guides(fill='none') +
       coord_cartesian(ylim = c(0,0.25)) +
       scale_y_continuous(name = "Attributed human cases", expand=c(0,0), labels=scales::percent_format(accuracy = 1)) +
-      scale_fill_manual(name=NULL, values = c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="green4")) +
+      scale_fill_manual(name=NULL, values = source_cols) +
       theme(axis.title.x = element_blank(),
             axis.ticks = element_blank(),
             axis.text.x = element_text(angle = 90, vjust=0.5))
