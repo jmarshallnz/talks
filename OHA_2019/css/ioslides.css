@@ -47,7 +47,7 @@ slides > slide:not(.nobackground):after {
   content: '';
 }
 
-#slideID {
+.nomargin {
   margin-top: 0;
 }
 

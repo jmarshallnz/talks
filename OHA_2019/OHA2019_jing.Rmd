@@ -21,6 +21,7 @@ library(shiny)
 library(gtools)
 library(gganimate)
 library(transformr)
+library(patchwork)
 theme_set(theme_bw(base_size=15) + theme(plot.background = element_rect(fill = "transparent", color = NA)))
 #theme_update(theme(plot.background = element_rect(fill = "transparent", color = NA)))
 opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, fig.height = 5, fig.align='center', bg='transparent', dev.args=list(bg='transparent'))
@@ -49,14 +50,24 @@ source_cols <- c(Poultry="brown", Ruminants="steelblue2", Other="plum4", Water="
 ## New Zealand campylobacteriosis cases
 
 ```{r, nz cases, fig.width=fig_width}
-ggplot(nz, aes(x=Date, y=Rate)) + geom_line(col='grey50') +
-  geom_smooth(span=0.5, col="steelblue", fill="steelblue", alpha=0.3) +
+ggplot(nz, aes(x=Date, y=Rate)) + geom_line(lwd=1.5) +
+#  geom_smooth(span=0.5, col="steelblue", fill="steelblue", alpha=0.3) +
   scale_y_continuous("Cases per 100,000 people per year", expand = c(0,0), lim=c(0,600)) +
   scale_x_date(expand = c(0,0)) +
   theme(axis.title.x = element_blank())
 ```
 
-## Manawatu sentinel surveillance site
+## Where are people getting it from?
+
+<div align="center">
+<span class='inline'>
+  <img src="figures/Chicken-25.png" alt="Drawing" style="width: 180px;" align="center">
+  <img src="figures/sheep.png" alt="Drawing" style="width: 250px;" align="center">
+  <img src="figures/cow-07.png" alt="Drawing" style="width: 400px;" align="center">
+</span>
+</div>
+
+## Manawatu sentinel surveillance site{.nomargin}
 
 ```{r, manawatu map, fig.width=8.5, fig.height=6}
 manawatu = read_sf("maps/midcentral.shp")
@@ -72,16 +83,6 @@ ggplot() + geom_sf(data = nz.map, fill = "grey80", col=NA, stroke=0) +
   geom_sf(data = manawatu, fill="steelblue", col = NA, stroke = 0) +
   theme_void()
 ```
-
-## Where are people getting it from?
-
-<div align="center">
-<span class='inline'>
-  <img src="figures/Chicken-25.png" alt="Drawing" style="width: 180px;" align="center">
-  <img src="figures/sheep.png" alt="Drawing" style="width: 250px;" align="center">
-  <img src="figures/cow-07.png" alt="Drawing" style="width: 400px;" align="center">
-</span>
-</div>
 
 ## MLST distribution of human cases
 
@@ -109,8 +110,8 @@ ggplot(top_humans, aes(x=ST, y=Human, fill=Colour)) +
 ## MLSTs are source specific
 
 ```{r, source specific mlst, fig.width=10}
-ggplot(top20, aes(x=ST, y=Count, fill=Colour)) + geom_col(data=top_humans, aes(y=Human), alpha=0.3) + geom_col(aes(y=Count)) +
-  scale_fill_manual(values=c("steelblue", "grey60")) +
+ggplot(top20, aes(x=ST, y=Count, fill=Source)) + geom_col(data=top_humans, aes(y=Human), fill='grey70') + geom_col(aes(y=Count)) +
+  scale_fill_manual(values=source_cols) + #c("steelblue", "grey60")) +
   scale_y_continuous("Percent isolates", labels = scales::percent, expand=c(0,0)) +
   coord_cartesian(ylim = c(0,0.25)) +
   facet_wrap(~Source) +
@@ -119,32 +120,26 @@ ggplot(top20, aes(x=ST, y=Count, fill=Colour)) + geom_col(data=top_humans, aes(y
         axis.text.x = element_text(angle = 90, vjust=0.5))
 ```
 
-## Assume human types are a mix of source types {#slideID} 
+## Assume human types are a mix of source types {.nomargin}
 
 <iframe src="http://shiny.massey.ac.nz/jcmarsha/OHA2019/" style="border: none"></iframe>
 
-## Adding statistics {.bigequation .flexbox .vcenter}
-
-$$
-P(\mathsf{Human~cases}) = \prod_h P(\mathsf{st}_h)
-$$
-
-## Adding statistics {.bigequation .flexbox .vcenter}
+## Statistical model {.bigequation .flexbox .vcenter}
 
 $$
 P(\mathsf{st}_h) = \sum_j P(\mathsf{st}_h~\mathsf{from~source}_j) P(\mathsf{source}_j)
 $$
 
-## Adding statistics {.bigequation .flexbox .vcenter}
+## Statistical model {.bigequation .flexbox .vcenter}
 
 $$
 P(\mathsf{st}_h) = \sum_j \underbrace{P(\mathsf{st}_h~\mathsf{from~source}_j)}_\text{genomic model} P(\mathsf{source}_j)
 $$
 
-## Adding statistics {.bigequation .flexbox .vcenter}
+## Statistical model {.bigequation .flexbox .vcenter}
 
 $$
-P(\mathsf{st}) = \sum_j \underbrace{P(\mathsf{st}_h~\mathsf{from~source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j)}_\text{attribution to source}
+P(\mathsf{st}_h) = \sum_j \underbrace{P(\mathsf{st}_h~\mathsf{from~source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j)}_\text{attribution to source}
 $$
 
 # Genomic models
@@ -248,7 +243,7 @@ ggplot(top50, aes(x=ST, y=Proportion, fill=Source)) + geom_col() +
 
 ## Dirichlet model
 
-Get uncertainty directly.
+Get uncertainty directly (the posterior is a Dirichlet distribution).
 
 ```{r, gganimate = list(nframes = 220, fps = 20), fig.width=10, fig.height=3.5, fig.retina=1, dpi=96}
 alpha <- top50$Count
@@ -274,24 +269,6 @@ anim <- ggplot(uncertainty, aes(x=ST, y=Proportion, fill=Source)) + geom_col() +
 anim
 ```
 
-## Dirichlet model | S.J. Liao 2019
-
-The prior and data model are:
-
-$$
-\begin{aligned}
-\mathbf{\pi}_j &\sim \mathsf{Dirichlet}(\mathbf{\alpha}_j)\\
-\mathbf{X}_{j} &\sim \mathsf{Multinomial}(n_j, \mathbf{\pi}_j)
-\end{aligned}
-$$
-
-so that the posterior is
-$$
-\mathbf{\pi}_{j} \sim \mathsf{Dirichlet}(\mathbf{X}_j + \mathbf{\alpha}_j)
-$$
-
-where $\pi_j$ is the genotype distribution, $\mathbf{X}_j$ are the counts, and $\mathbf{\alpha}_j$ is the prior for source $j$.
-
 ## Genotype distributions
 
 ```{r, fig.width=10}
@@ -301,18 +278,18 @@ genotype_fit <- read_csv("data/genotypes.csv") %>%
 common_sts <- c(474, 45, 50, 53, 48, 61, 190, 42) #, 354, 520)
 plot_common <- genotype_fit %>% filter(ST %in% common_sts) %>%
   mutate(ST = factor(ST, levels=common_sts, labels = paste0("ST-", common_sts)),
-         Source = fct_recode(Source, Rum = "Ruminants"))
+         Source = fct_recode(Source, Rum = "Ruminants")) %>%
+  mutate(x = as.numeric(interaction(Model, Source)))
 
-ggplot(plot_common) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Model), position=position_dodge(0.5)) + 
-  geom_linerange(aes(x=Source, ymin = lcl, ymax = ucl, col=Model), size=2, position=position_dodge(0.5)) +
-  geom_point(aes(x=Source, y=m, fill=Model), position=position_dodge(0.5), shape=21, size=2) +
+cols <- alpha(rep(source_cols, each=2), rep(c(1,0.6), 4)) %>% unname()
+ggplot(plot_common) + geom_boxplot(aes(x=x, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, col=factor(x), fill=factor(x), group=x), stat="identity", alpha=0.3, width=0.6) +
   facet_wrap(~ST, nrow=2) +
   xlab("") +
   scale_y_continuous(name = "P(Source | ST)", limits=c(0,1), expand = c(0,0)) +
-  scale_fill_manual(values = c("steelblue2", "brown")) +
-  scale_colour_manual(values = c("steelblue2", "brown")) +
-  theme(legend.position = c(0.93,0.89),
-        legend.title = element_blank())
+  scale_x_continuous(breaks=0.5+c(1,3,5,7), labels = levels(plot_common$Source)) +
+  scale_colour_manual(values = cols) +
+  scale_fill_manual(values = rep(source_cols, each=2) %>% unname()) +
+  guides(fill='none', col='none')
 ```
 
 ## Genotype distributions
@@ -320,18 +297,17 @@ ggplot(plot_common) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=M
 ```{r, fig.width=7}
 sts <- c(403, 2343, 2026, 474)
 plot_weird <- genotype_fit %>% filter(ST %in% sts) %>%
-  mutate(ST = factor(ST, levels=sts, labels = paste0("ST-", sts)))
+  mutate(ST = factor(ST, levels=sts, labels = paste0("ST-", sts))) %>%
+  mutate(x = as.numeric(interaction(Model, Source)))
 
-ggplot(plot_weird) + geom_linerange(aes(x=Source, ymin = lci, ymax=uci, group=Model), position=position_dodge(0.5)) + 
-  geom_linerange(aes(x=Source, ymin = lcl, ymax = ucl, col=Model), size=2, position=position_dodge(0.5)) +
-  geom_point(aes(x=Source, y=m, fill=Model), position=position_dodge(0.5), shape=21, size=2) +
+ggplot(plot_weird) + geom_boxplot(aes(x=x, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, col=factor(x), fill=factor(x), group=x), stat="identity", alpha=0.3, width=0.6) +
   facet_wrap(~ST, nrow=2) +
   xlab("") +
   scale_y_continuous(name = "P(Source | ST)", limits=c(0,1), expand = c(0,0)) +
-  scale_fill_manual(values = c("steelblue2", "brown")) +
-  scale_colour_manual(values = c("steelblue2", "brown")) +
-  theme(legend.position = c(0.90,0.89),
-        legend.title = element_blank())
+  scale_x_continuous(breaks=0.5+c(1,3,5,7), labels = levels(plot_common$Source)) +
+  scale_colour_manual(values = cols) +
+  scale_fill_manual(values = rep(source_cols, each=2) %>% unname()) +
+  guides(fill='none', col='none')
 ```
 
 ## Attribution results
@@ -352,6 +328,13 @@ ggplot(overall) +
 ```
 
 # Adding covariates
+
+## Attribution with covariates{.largeequation .flexbox .vcenter}
+
+$$
+P(\mathsf{st}_h \mid \underbrace{\mathbf{x}_h}_\text{covariates}) =
+ \sum_j \underbrace{P(\mathsf{st}_h~\mathsf{from~source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j \mid \mathbf{x}_h)}_\text{attribution with covariates}
+$$
 
 ## MLSTs differ by rurality
 
@@ -379,20 +362,13 @@ ggplot(plot20_ur, aes(x=ST, y=Count, fill=Colour)) + geom_col() +
         axis.text.x = element_text(angle = 90, vjust=0.5))
 ```
 
-## Attribution with covariates{.largeequation .flexbox .vcenter}
-
-$$
-P(\mathsf{st}_h \mid \underbrace{\mathbf{x}_h}_\text{covariates}) =
- \sum_j \underbrace{P(\mathsf{st}_h~\mathsf{from~source}_j)}_\text{genomic model} \underbrace{P(\mathsf{source}_j \mid \mathbf{x}_h)}_\text{attribution with covariates}
-$$
-
 ## Attribution with covariates
 
 Within each source $j$ we have a linear model on the logit scale for attribution:
 $$
 \begin{aligned}
-\eta_{hj} &= \alpha_j + \beta_{j1} x_{1h} + \cdots + \beta_{jp} x_{ph}\\
-P(\mathsf{source}_j \mid \mathbf{x}_h) &= \frac{\exp(\eta_{hj})}{\sum_j \exp(\eta_{hj})}
+P(\mathsf{source}_j \mid \mathbf{x}_h) &= \frac{\exp(\eta_{hj})}{\sum_j \exp(\eta_{hj})}\\
+\eta_{hj} &= \alpha_j + \beta_{j1} x_{1h} + \cdots + \beta_{jp} x_{ph}
 \end{aligned}
 $$
 
@@ -405,9 +381,7 @@ We'll present four different covariate models:
 - Seasons by urban/rural split.
 - Rurality as 7 separate categories.
 - Rurality as a linear trend (on logit scale).
-- Separate linear trends for under 5 versus older than 5 years old (2008 onwards).
-
-# Results
+- Separate linear trends for under 5 versus older than 5 years old.
 
 ## Seasonality
 
@@ -418,7 +392,7 @@ plot_df <- read_csv("data/season_attribution.csv") %>%
          Season = factor(Season, levels=c("Autumn", "Winter", "Spring", "Summer"))) %>%
   mutate(x = as.numeric(interaction(Model, Source)))
 
-ggplot(plot_df) + geom_boxplot(aes(x=x, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, fill=factor(x), group=x), stat="identity", alpha=rep(c(1, 0.4),32), width=0.6) +
+ggplot(plot_df) + geom_boxplot(aes(x=x, lower = lcl, upper=ucl, ymin=lci, ymax=uci, middle=m, fill=factor(x), group=x), stat="identity", alpha=rep(c(1, 0.3),32), width=0.6) +
   facet_grid(UR2006~Season) +
   scale_fill_manual(values = rep(source_cols, each=2) %>% unname()) +
   scale_x_continuous(breaks=0.5+c(1,3,5,7), labels = levels(plot_df$Source)) +
@@ -469,13 +443,13 @@ ggplot(plot_df) +
 
 - The Island model assigns genotypes not observed on sources where the Dirichlet model has no information. **But few cases are of this type**.
 
-- The simple Dirichlet model seems to do just as well as the Island model.
+- The Dirichlet model seems to do just as well as the Island model.
 
-- Urban cases tend to be more associated with poultry, and rural cases with ruminants, with a linear relationship between attribution and rurality being adequate.
+- A linear relationship between attribution and rurality is adequate, with increasing rurality associated with increasing ruminant campylobacteriosis.
 
-- Kids under 5 in rural areas are more likely to have ruminant associated campylobacteriosis compared to over 5's.
+- Kids under 5 show a stronger relationship than over 5's.
 
-- Strong evidence for seasonality of attribution, with a higher proportion of poultry related cases in summer and strong ruminant association in rural areas in winter and spring.
+- There's a higher proportion of poultry related cases in summer and higher ruminant related cases in rural areas in winter and spring.
 
 # What if we have more genes?
 
@@ -504,30 +478,26 @@ ggplot(many_genes %>% filter(Model == "PerSource"), aes(x=Genes, y=fits, fill=So
 
 ## Why does this happen?
 
-The island likelihood for each type is complicated, but if we have $g$ genes is approximately
+The likelihood for each type is complicated, but when maximised is approximately
 $$
-p(\mathsf{st} \mid m) \approx m^d (1-m)^{g-d}
+p(\mathsf{st} \mid m) \approx \left(m^m (1-m)^{1-m}\right)^g
 $$
-where $m$ is a combination of mutation and recombination probabilities, and $d$ is the average number of loci that differ between isolate pairs.
+where $m$ is a combination of mutation and recombination probabilities and $g$ is the total number of genes.
 
-This is maximised when $m = d/g$ so that
+With two sources with $m=m_1$ and $m=m_2$ the relative chance of seeing $\mathsf{st}$ on the first source compared to the second is:
 $$
-p(\mathsf{st} \mid m) \approx  f(m)^g
-$$
-where
-$$
-f(m) = m^m (1-m)^{1-m}
+r(m_1, m_2) = \left[\frac{m_1^{m_1} (1-m_1)^{1-m_1}}{m_2^{m_2} (1-m_2)^{1-m_2}}\right]^g
 $$
 
 ## Why does this happen?
 
-Suppose we have two sources with $m_1=0.02$ and $m_2=0.03$.
+With $m_1=0.02$ and $m_2=0.03$
 
 ```{r}
 f <- function(m) { m^m *(1-m)^(1-m) }
 fm <- expand.grid(m = c(0.02, 0.03), g = 1:100) %>% mutate(f = f(m)^g)
 df <- fm %>% group_by(g) %>% summarise(df=exp(-diff(log(f))))
-expr <- expression(paste("p( st |" ~ m[1] ~ ") / (p( st |"~m[2]~")"))
+expr <- expression(paste("r(" ~ m[1] ~ "," ~ m[2] ~ ")"))
 ggplot(df, aes(x=g, y=df)) + geom_line(lwd=2) +
   scale_y_continuous(expr, expand=c(0,0), lim=c(0,40)) + scale_x_continuous("Number of genes", expand=c(0,0))
 ```
