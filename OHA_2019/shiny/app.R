@@ -27,10 +27,10 @@ ui <- fluidPage(
       }
     "))),
   fluidRow(plotOutput("sourceplot", height="160px")),
-  fluidRow(column(3,sliderInput("s1", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
-           column(3,sliderInput("s2", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
-           column(3,sliderInput("s3", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center'),
-           column(3,sliderInput("s4", NULL, 0, 100, 25, step=1, ticks=FALSE), align='center')),
+  fluidRow(column(3,sliderInput("s1", NULL, 0, 100, 0, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s2", NULL, 0, 100, 0, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s3", NULL, 0, 100, 0, step=1, ticks=FALSE), align='center'),
+           column(3,sliderInput("s4", NULL, 0, 100, 0, step=1, ticks=FALSE), align='center')),
   fluidRow(plotOutput("humanplot", height="330px"))
 )
 
@@ -49,8 +49,10 @@ server <- function(input, output, session) {
             axis.text = element_blank())
   })
   output$humanplot = renderPlot({
-    bal <- c(input$s1, input$s2, input$s3, input$s4)
-    balance <- tibble(Source = levels(top20_anim$Source), Balance = bal/sum(bal)) %>%
+    bal <- c(input$s1, input$s2, input$s3, input$s4)/100
+    if (sum(bal) > 1)
+      bal <- bal / sum(bal)
+    balance <- tibble(Source = levels(top20_anim$Source) %>% str_replace("Ruminants", "Rum"), Balance = bal) %>%
       mutate(Source = fct_inorder(Source))
     attrib_data <- top20_anim %>% left_join(balance, by="Source") %>% mutate(Total = Count * Balance)
     g1 = ggplot(balance, aes(x=Source)) + geom_col(aes(y=Balance, fill=Source)) +
