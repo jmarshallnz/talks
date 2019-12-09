@@ -17,6 +17,10 @@ hgroup,h2 {
   color: #404040;
 }
 
+.largeequation {
+  font-size: 125%;
+}
+
 .bigequation {
   font-size: 150%;
 }
