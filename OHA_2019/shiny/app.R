@@ -52,7 +52,7 @@ server <- function(input, output, session) {
     bal <- c(input$s1, input$s2, input$s3, input$s4)/100
     if (sum(bal) > 1)
       bal <- bal / sum(bal)
-    balance <- tibble(Source = levels(top20_anim$Source) %>% str_replace("Ruminants", "Rum"), Balance = bal) %>%
+    balance <- tibble(Source = levels(top20_anim$Source), Balance = bal) %>%
       mutate(Source = fct_inorder(Source))
     attrib_data <- top20_anim %>% left_join(balance, by="Source") %>% mutate(Total = Count * Balance)
     g1 = ggplot(balance, aes(x=Source)) + geom_col(aes(y=Balance, fill=Source)) +
@@ -60,6 +60,7 @@ server <- function(input, output, session) {
       guides(fill='none') +
       scale_y_continuous(name = "Overall attribution", expand=c(0,0), labels=scales::percent_format(accuracy = 1), limits=c(0,1)) +
       scale_fill_manual(name=NULL, values = source_cols) +
+      scale_x_discrete(labels = levels(top20_anim$Source) %>% str_replace("Ruminants", "Rum")) +
       theme(axis.title.x = element_blank(),
             axis.ticks = element_blank())
     g2 = ggplot(attrib_data, aes(x=ST)) + geom_col(aes(y=Total, fill=Source)) +
